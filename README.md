@@ -1,4 +1,4 @@
-# ProjetoLoja
+#  ProjetoLoja
 ###Comandos Git###
 ```
 * clone <url repositório> = baixa o projeto do repositório informado

@@ -1,4 +1,4 @@
-# ProjetoLoja
+﻿# ProjetoLoja
 ###Comandos Git###
 ```
 * clone <url repositório> = baixa o projeto do repositório informado
@@ -14,6 +14,7 @@
 * rm -rf <caminho arquivo> = remove arquivo do repositorio
 * commit -m "<mensagem do commit>" = cria um commit com todas as alterações adicionadas
 ```
+teste naiane
 ###Como começar###
 
 * Clonar um projeto git:

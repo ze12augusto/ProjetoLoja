@@ -1,3 +1,6 @@
+CREATE DATABASE ProjetoLoja
+GO
+USE ProjetoLoja
 CREATE TABLE TipoPessoa (idTipoPessoa tinyint IDENTITY NOT NULL, descricao varchar(20) NOT NULL, PRIMARY KEY (idTipoPessoa));
 CREATE TABLE StatusTransacao (idStatus int IDENTITY NOT NULL, descricao varchar(20) NOT NULL, PRIMARY KEY (idStatus));
 CREATE TABLE TipoPagamento (idTipoPagamento tinyint IDENTITY NOT NULL, descricao varchar(15) NOT NULL, PRIMARY KEY (idTipoPagamento));

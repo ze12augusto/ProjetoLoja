@@ -76,6 +76,7 @@
       <LastGenOutput>ProjetoLojaEntity.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="App.Config" />
+    <None Include="Properties\DataSources\ProjetoLojaDesktop.Entity.ProjetoLojaEntities.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

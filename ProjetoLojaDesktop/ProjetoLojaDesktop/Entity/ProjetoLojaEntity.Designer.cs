@@ -8,12 +8,13 @@
 //------------------------------------------------------------------------------
 
 using System;
+using System.ComponentModel;
+using System.Data.EntityClient;
 using System.Data.Objects;
 using System.Data.Objects.DataClasses;
-using System.Data.EntityClient;
-using System.ComponentModel;
-using System.Xml.Serialization;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Xml.Serialization;
 
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
@@ -545,6 +546,7 @@ namespace ProjetoLojaDesktop.Entity
         private ObjectSet<Usuario> _Usuario;
 
         #endregion
+
         #region AddTo Methods
     
         /// <summary>
@@ -772,11 +774,11 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
     }
-    
 
     #endregion
-    
+
     #region Entities
     
     /// <summary>
@@ -807,6 +809,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -909,6 +912,7 @@ namespace ProjetoLojaDesktop.Entity
         partial void OndescricaoChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -951,6 +955,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -977,6 +982,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1031,6 +1037,7 @@ namespace ProjetoLojaDesktop.Entity
         partial void OnnomeChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -1057,6 +1064,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -1077,12 +1085,11 @@ namespace ProjetoLojaDesktop.Entity
         /// <param name="logradouro">Initial value of the logradouro property.</param>
         /// <param name="numero">Initial value of the numero property.</param>
         /// <param name="bairro">Initial value of the bairro property.</param>
-        /// <param name="cidade">Initial value of the cidade property.</param>
         /// <param name="uF">Initial value of the UF property.</param>
         /// <param name="idCidade">Initial value of the idCidade property.</param>
         /// <param name="cEP">Initial value of the CEP property.</param>
         /// <param name="idTipoEndereco">Initial value of the idTipoEndereco property.</param>
-        public static Endereco CreateEndereco(global::System.Int32 idEndereco, global::System.Int32 idPessoa, global::System.String logradouro, global::System.Int32 numero, global::System.String bairro, global::System.String cidade, global::System.String uF, global::System.Int32 idCidade, global::System.String cEP, global::System.Byte idTipoEndereco)
+        public static Endereco CreateEndereco(global::System.Int32 idEndereco, global::System.Int32 idPessoa, global::System.String logradouro, global::System.Int32 numero, global::System.String bairro, global::System.String uF, global::System.Int32 idCidade, global::System.String cEP, global::System.Byte idTipoEndereco)
         {
             Endereco endereco = new Endereco();
             endereco.idEndereco = idEndereco;
@@ -1090,7 +1097,6 @@ namespace ProjetoLojaDesktop.Entity
             endereco.logradouro = logradouro;
             endereco.numero = numero;
             endereco.bairro = bairro;
-            endereco.cidade = cidade;
             endereco.UF = uF;
             endereco.idCidade = idCidade;
             endereco.CEP = cEP;
@@ -1099,6 +1105,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1280,30 +1287,6 @@ namespace ProjetoLojaDesktop.Entity
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String cidade
-        {
-            get
-            {
-                return _cidade;
-            }
-            set
-            {
-                OncidadeChanging(value);
-                ReportPropertyChanging("cidade");
-                _cidade = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("cidade");
-                OncidadeChanged();
-            }
-        }
-        private global::System.String _cidade;
-        partial void OncidadeChanging(global::System.String value);
-        partial void OncidadeChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
         public global::System.String UF
         {
             get
@@ -1396,6 +1379,7 @@ namespace ProjetoLojaDesktop.Entity
         partial void OnidTipoEnderecoChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -1552,6 +1536,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -1580,6 +1565,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1658,6 +1644,7 @@ namespace ProjetoLojaDesktop.Entity
         partial void OnidProdutoChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -1700,6 +1687,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -1726,6 +1714,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1780,6 +1769,7 @@ namespace ProjetoLojaDesktop.Entity
         partial void OndescricaoChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -1806,6 +1796,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -1834,6 +1825,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1912,6 +1904,7 @@ namespace ProjetoLojaDesktop.Entity
         partial void OnidMarcaChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -1976,6 +1969,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -2004,6 +1998,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -2082,6 +2077,7 @@ namespace ProjetoLojaDesktop.Entity
         partial void OndataHoraChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -2124,6 +2120,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -2156,6 +2153,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -2333,6 +2331,7 @@ namespace ProjetoLojaDesktop.Entity
         partial void OnvalorChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -2375,6 +2374,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -2401,6 +2401,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -2455,6 +2456,7 @@ namespace ProjetoLojaDesktop.Entity
         partial void OnvalorTotalChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -2573,6 +2575,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -2601,6 +2604,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -2679,6 +2683,7 @@ namespace ProjetoLojaDesktop.Entity
         partial void OnidTipoPagamentoChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -2759,6 +2764,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -2791,6 +2797,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -2917,6 +2924,7 @@ namespace ProjetoLojaDesktop.Entity
         partial void OnvalorParcelaChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -2959,6 +2967,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -2987,6 +2996,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -3089,6 +3099,7 @@ namespace ProjetoLojaDesktop.Entity
         partial void OnidTipoPessoaChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -3311,6 +3322,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -3339,6 +3351,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -3417,6 +3430,7 @@ namespace ProjetoLojaDesktop.Entity
         partial void OnRGChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -3459,6 +3473,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -3489,6 +3504,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -3591,6 +3607,7 @@ namespace ProjetoLojaDesktop.Entity
         partial void OnrazaoSocialChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -3633,6 +3650,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -3669,6 +3687,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -3843,6 +3862,7 @@ namespace ProjetoLojaDesktop.Entity
         partial void OnidModeloChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -3973,6 +3993,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -4003,6 +4024,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -4132,6 +4154,7 @@ namespace ProjetoLojaDesktop.Entity
         partial void OnprecoChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -4174,6 +4197,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -4200,6 +4224,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -4254,6 +4279,7 @@ namespace ProjetoLojaDesktop.Entity
         partial void OndescricaoChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -4280,6 +4306,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -4310,6 +4337,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -4412,6 +4440,7 @@ namespace ProjetoLojaDesktop.Entity
         partial void OnidTipoTelefoneChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -4492,6 +4521,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -4518,6 +4548,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -4572,6 +4603,7 @@ namespace ProjetoLojaDesktop.Entity
         partial void OndescricaoChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -4598,6 +4630,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -4624,6 +4657,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -4678,6 +4712,7 @@ namespace ProjetoLojaDesktop.Entity
         partial void OndescricaoChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -4704,6 +4739,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -4730,6 +4766,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -4784,6 +4821,7 @@ namespace ProjetoLojaDesktop.Entity
         partial void OndescricaoChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -4810,6 +4848,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -4836,6 +4875,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -4890,6 +4930,7 @@ namespace ProjetoLojaDesktop.Entity
         partial void OndescricaoChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -4916,6 +4957,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -4942,6 +4984,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -4996,6 +5039,7 @@ namespace ProjetoLojaDesktop.Entity
         partial void OndescricaoChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -5022,6 +5066,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -5048,6 +5093,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -5102,6 +5148,7 @@ namespace ProjetoLojaDesktop.Entity
         partial void OndescricaoChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -5128,6 +5175,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -5158,6 +5206,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -5308,6 +5357,7 @@ namespace ProjetoLojaDesktop.Entity
         partial void OnidStatusChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -5546,6 +5596,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -5576,6 +5627,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -5681,6 +5733,7 @@ namespace ProjetoLojaDesktop.Entity
         partial void OnvalorUnitarioChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -5761,6 +5814,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -5785,6 +5839,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -5839,6 +5894,7 @@ namespace ProjetoLojaDesktop.Entity
         partial void OnnomeChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -5865,6 +5921,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -5893,6 +5950,7 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -5971,6 +6029,7 @@ namespace ProjetoLojaDesktop.Entity
         partial void OnidTipoUsuarioChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -6051,8 +6110,10 @@ namespace ProjetoLojaDesktop.Entity
         }
 
         #endregion
+
     }
 
     #endregion
+
     
 }

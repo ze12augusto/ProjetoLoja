@@ -1,4 +1,4 @@
-﻿namespace cad_fornecedor
+﻿namespace ProjetoLojaDesktop
 {
     partial class FormFornecedor
     {
@@ -640,4 +640,3 @@
         private System.Windows.Forms.Button btnNovoTel;
     }
 }
-

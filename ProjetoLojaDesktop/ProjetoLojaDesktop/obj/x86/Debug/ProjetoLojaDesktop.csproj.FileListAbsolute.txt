@@ -20,3 +20,5 @@ D:\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaDesktop\bin\Debug\ProjetoLojaDeskto
 D:\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaDesktop\bin\Debug\ProjetoLojaDesktop.pdb
 D:\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaDesktop\obj\x86\Debug\ProjetoLojaDesktop.Properties.Resources.resources
 D:\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaDesktop\obj\x86\Debug\ProjetoLojaDesktop.csproj.GenerateResource.Cache
+D:\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaDesktop\obj\x86\Debug\ProjetoLojaDesktop.Form1.resources
+D:\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaDesktop\obj\x86\Debug\ProjetoLojaDesktop.Produto.Produto.resources

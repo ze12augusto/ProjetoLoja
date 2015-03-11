@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using ProjetoLojaDesktop.Produto;
 
 namespace ProjetoLojaDesktop
 {
@@ -14,6 +15,11 @@ namespace ProjetoLojaDesktop
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new Produto.Produto().Show();
         }
     }
 }

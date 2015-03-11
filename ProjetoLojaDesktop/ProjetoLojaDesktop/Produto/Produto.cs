@@ -14,6 +14,9 @@ namespace ProjetoLojaDesktop.Produto
         public Produto()
         {
             InitializeComponent();
+            ((Control)this.tabProduto).Enabled = false;
+            ((Control)this.tabDetalhesProduto).Enabled = false;
+
         }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
@@ -25,5 +28,22 @@ namespace ProjetoLojaDesktop.Produto
         {
 
         }
+
+        private void btnNovoProduto_Click(object sender, EventArgs e)
+        {
+            tabProdutos.SelectedIndex = 1;
+            ((Control)this.tabProduto).Enabled = true;
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            tabProdutos.SelectedIndex = 2;
+            ((Control)this.tabDetalhesProduto).Enabled = true;
+        }
+
+        
+
+      
+       
     }
 }

@@ -54,11 +54,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProjetoLojaEntity.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="FormCadFuncionarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormCadFuncionarios.Designer.cs">
+      <DependentUpon>FormCadFuncionarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

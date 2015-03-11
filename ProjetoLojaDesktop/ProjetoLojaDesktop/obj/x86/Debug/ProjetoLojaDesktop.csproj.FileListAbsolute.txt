@@ -13,3 +13,10 @@ G:\ProjetoLojaDesktop\ProjetoLojaDesktop\obj\x86\Debug\ProjetoLojaDesktop.pdb
 E:\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaDesktop\bin\Debug\ProjetoLojaDesktop.exe.config
 E:\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaDesktop\obj\x86\Debug\ProjetoLojaDesktop.exe
 E:\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaDesktop\obj\x86\Debug\ProjetoLojaDesktop.pdb
+C:\Users\Luiz Fernando\Desktop\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaDesktop\bin\Debug\ProjetoLojaDesktop.exe.config
+C:\Users\Luiz Fernando\Desktop\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaDesktop\obj\x86\Debug\ProjetoLojaDesktop.exe
+C:\Users\Luiz Fernando\Desktop\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaDesktop\obj\x86\Debug\ProjetoLojaDesktop.pdb
+C:\Users\Luiz Fernando\Desktop\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaDesktop\obj\x86\Debug\ProjetoLojaDesktop.Properties.Resources.resources
+C:\Users\Luiz Fernando\Desktop\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaDesktop\obj\x86\Debug\ProjetoLojaDesktop.csproj.GenerateResource.Cache
+C:\Users\Luiz Fernando\Desktop\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaDesktop\bin\Debug\ProjetoLojaDesktop.exe
+C:\Users\Luiz Fernando\Desktop\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaDesktop\bin\Debug\ProjetoLojaDesktop.pdb

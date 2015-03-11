@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace ProjetoLojaDesktop
+namespace SevenInfo
 {
     static class Program
     {
@@ -15,7 +15,7 @@ namespace ProjetoLojaDesktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new frmCadFuncionarios());
         }
     }
 }

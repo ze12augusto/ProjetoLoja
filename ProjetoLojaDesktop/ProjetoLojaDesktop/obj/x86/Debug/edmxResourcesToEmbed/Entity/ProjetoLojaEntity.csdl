@@ -168,7 +168,6 @@
     <Property Name="complemento" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
     <Property Name="referencia" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
     <Property Name="bairro" Type="String" Nullable="false" MaxLength="80" Unicode="false" FixedLength="false" />
-    <Property Name="cidade" Type="String" Nullable="false" MaxLength="80" Unicode="false" FixedLength="false" />
     <Property Name="UF" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="true" />
     <Property Name="idCidade" Type="Int32" Nullable="false" />
     <Property Name="CEP" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />

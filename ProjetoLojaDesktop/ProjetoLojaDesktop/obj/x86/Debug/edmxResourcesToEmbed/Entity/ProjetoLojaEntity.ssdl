@@ -166,7 +166,6 @@
     <Property Name="complemento" Type="varchar" MaxLength="100" />
     <Property Name="referencia" Type="varchar" MaxLength="50" />
     <Property Name="bairro" Type="varchar" Nullable="false" MaxLength="80" />
-    <Property Name="cidade" Type="varchar" Nullable="false" MaxLength="80" />
     <Property Name="UF" Type="char" Nullable="false" MaxLength="2" />
     <Property Name="idCidade" Type="int" Nullable="false" />
     <Property Name="CEP" Type="varchar" Nullable="false" MaxLength="10" />

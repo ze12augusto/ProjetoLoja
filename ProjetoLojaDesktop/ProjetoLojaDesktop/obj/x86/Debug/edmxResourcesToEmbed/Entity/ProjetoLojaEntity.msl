@@ -29,7 +29,6 @@
           <ScalarProperty Name="complemento" ColumnName="complemento" />
           <ScalarProperty Name="referencia" ColumnName="referencia" />
           <ScalarProperty Name="bairro" ColumnName="bairro" />
-          <ScalarProperty Name="cidade" ColumnName="cidade" />
           <ScalarProperty Name="UF" ColumnName="UF" />
           <ScalarProperty Name="idCidade" ColumnName="idCidade" />
           <ScalarProperty Name="CEP" ColumnName="CEP" />

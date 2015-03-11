@@ -62,6 +62,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -70,12 +73,14 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EntityDeploy Include="Entity\ProjetoLojaEntity.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ProjetoLojaEntity.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="App.Config" />
+    <None Include="Properties\DataSources\ProjetoLojaDesktop.Entity.ProjetoLojaEntities.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -86,7 +91,36 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Business-Man.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User-Group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User-Profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder-Picture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Money-Coin-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Verify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Door-Closed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marca.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marca1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marca2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,3 +1,25 @@
+<<<<<<< HEAD
+C:\Documents and Settings\bc027636\Desktop\ProjetoLojaDesktop\ProjetoLojaDesktop\bin\Debug\ProjetoLojaDesktop.exe
+C:\Documents and Settings\bc027636\Desktop\ProjetoLojaDesktop\ProjetoLojaDesktop\bin\Debug\ProjetoLojaDesktop.pdb
+C:\Documents and Settings\bc027636\Desktop\ProjetoLojaDesktop\ProjetoLojaDesktop\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\bc027636\Desktop\ProjetoLojaDesktop\ProjetoLojaDesktop\obj\x86\Debug\ProjetoLojaDesktop.Properties.Resources.resources
+C:\Documents and Settings\bc027636\Desktop\ProjetoLojaDesktop\ProjetoLojaDesktop\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\bc027636\Desktop\ProjetoLojaDesktop\ProjetoLojaDesktop\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\bc027636\Desktop\ProjetoLojaDesktop\ProjetoLojaDesktop\obj\x86\Debug\ProjetoLojaDesktop.exe
+C:\Documents and Settings\bc027636\Desktop\ProjetoLojaDesktop\ProjetoLojaDesktop\obj\x86\Debug\ProjetoLojaDesktop.pdb
+C:\Documents and Settings\bc027636\Desktop\ProjetoLojaDesktop\ProjetoLojaDesktop\bin\Debug\ProjetoLojaDesktop.exe.config
+G:\ProjetoLojaDesktop\ProjetoLojaDesktop\bin\Debug\ProjetoLojaDesktop.exe.config
+G:\ProjetoLojaDesktop\ProjetoLojaDesktop\obj\x86\Debug\ProjetoLojaDesktop.exe
+G:\ProjetoLojaDesktop\ProjetoLojaDesktop\obj\x86\Debug\ProjetoLojaDesktop.pdb
+C:\Users\HELENOROSA\Desktop\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaDesktop\bin\Debug\ProjetoLojaDesktop.exe.config
+C:\Users\HELENOROSA\Desktop\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaDesktop\obj\x86\Debug\ProjetoLojaDesktop.exe
+C:\Users\HELENOROSA\Desktop\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaDesktop\obj\x86\Debug\ProjetoLojaDesktop.pdb
+C:\Users\HELENOROSA\Desktop\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaDesktop\bin\Debug\ProjetoLojaDesktop.exe
+C:\Users\HELENOROSA\Desktop\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaDesktop\bin\Debug\ProjetoLojaDesktop.pdb
+C:\Users\HELENOROSA\Desktop\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaDesktop\obj\x86\Debug\ProjetoLojaDesktop.Form1.resources
+C:\Users\HELENOROSA\Desktop\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaDesktop\obj\x86\Debug\ProjetoLojaDesktop.Properties.Resources.resources
+C:\Users\HELENOROSA\Desktop\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaDesktop\obj\x86\Debug\ProjetoLojaDesktop.csproj.GenerateResource.Cache
+=======
 C:\Documents and Settings\bc027636\Desktop\ProjetoLojaDesktop\ProjetoLojaDesktop\bin\Debug\ProjetoLojaDesktop.exe
 C:\Documents and Settings\bc027636\Desktop\ProjetoLojaDesktop\ProjetoLojaDesktop\bin\Debug\ProjetoLojaDesktop.pdb
 C:\Documents and Settings\bc027636\Desktop\ProjetoLojaDesktop\ProjetoLojaDesktop\obj\x86\Debug\ResolveAssemblyReference.cache
@@ -13,3 +35,4 @@ G:\ProjetoLojaDesktop\ProjetoLojaDesktop\obj\x86\Debug\ProjetoLojaDesktop.pdb
 E:\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaDesktop\bin\Debug\ProjetoLojaDesktop.exe.config
 E:\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaDesktop\obj\x86\Debug\ProjetoLojaDesktop.exe
 E:\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaDesktop\obj\x86\Debug\ProjetoLojaDesktop.pdb
+>>>>>>> master

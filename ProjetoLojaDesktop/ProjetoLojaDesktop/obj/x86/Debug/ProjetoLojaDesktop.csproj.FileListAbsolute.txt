@@ -10,3 +10,6 @@ C:\Documents and Settings\bc027636\Desktop\ProjetoLojaDesktop\ProjetoLojaDesktop
 G:\ProjetoLojaDesktop\ProjetoLojaDesktop\bin\Debug\ProjetoLojaDesktop.exe.config
 G:\ProjetoLojaDesktop\ProjetoLojaDesktop\obj\x86\Debug\ProjetoLojaDesktop.exe
 G:\ProjetoLojaDesktop\ProjetoLojaDesktop\obj\x86\Debug\ProjetoLojaDesktop.pdb
+C:\Documents and Settings\a11025676\Desktop\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaDesktop\bin\Debug\ProjetoLojaDesktop.exe.config
+C:\Documents and Settings\a11025676\Desktop\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaDesktop\obj\x86\Debug\ProjetoLojaDesktop.exe
+C:\Documents and Settings\a11025676\Desktop\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaDesktop\obj\x86\Debug\ProjetoLojaDesktop.pdb

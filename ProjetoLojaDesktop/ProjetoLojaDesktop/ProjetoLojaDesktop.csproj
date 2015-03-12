@@ -60,6 +60,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+     <Compile Include="Forms\FormMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormMarca.Designer.cs">
+      <DependentUpon>FormMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormModelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormModelo.Designer.cs">
+      <DependentUpon>FormModelo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormFornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +85,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormFornecedor.resx">
       <DependentUpon>FormFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormMarca.resx">
+      <DependentUpon>FormMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormModelo.resx">
+      <DependentUpon>FormModelo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -9,13 +9,11 @@ using System.Windows.Forms;
 
 namespace ProjetoLojaDesktop
 {
-    public partial class Form1 : Form
+    public partial class FormFornecedor : Form
     {
-        public Form1()
+        public FormFornecedor()
         {
             InitializeComponent();
         }
-
-      
     }
 }

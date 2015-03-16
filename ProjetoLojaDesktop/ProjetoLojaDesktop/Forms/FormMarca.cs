@@ -7,13 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace cad_fornecedor
+namespace ProjetoLojaDesktop.Forms
 {
-    public partial class FormFornecedor : Form
+    public partial class FormMarca : Form
     {
-        public FormFornecedor()
+        public FormMarca()
         {
             InitializeComponent();
         }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

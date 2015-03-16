@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace cad_fornecedor
+namespace ProjetoLojaDesktop
 {
     public partial class FormFornecedor : Form
     {

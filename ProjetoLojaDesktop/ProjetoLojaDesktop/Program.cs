@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using ProjetoLojaDesktop;
 
-namespace SevenInfo
+namespace cad_fornecedor
 {
     static class Program
     {
@@ -15,7 +16,7 @@ namespace SevenInfo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmCadFuncionarios());
+            Application.Run(new FormFornecedor());
         }
     }
 }

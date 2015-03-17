@@ -117,35 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="User-Group" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\User-Group.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Folder-Picture" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Folder-Picture.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Business-Man" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Business-Man.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Money-Coin-01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Money-Coin-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="User-Profile" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\User-Profile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="marca1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\marca1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Verify" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Verify.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Door-Closed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Door-Closed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="marca" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\marca.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="marca2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\marca2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>

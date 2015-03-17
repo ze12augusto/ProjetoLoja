@@ -1,6 +1,6 @@
-﻿namespace ProjetoLojaDesktop.Produto
+﻿namespace ProjetoLojaDesktop.Forms
 {
-    partial class Produto
+    partial class FormProdutos
     {
         /// <summary>
         /// Required designer variable.
@@ -397,7 +397,7 @@
             this.btnAdcCarac.TabIndex = 42;
             this.btnAdcCarac.Text = "Adcionar";
             this.btnAdcCarac.UseVisualStyleBackColor = true;
-            
+
             // 
             // btnExcCarac
             // 

@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace ProjetoLojaDesktop.Produto
+namespace ProjetoLojaDesktop.Forms
 {
-    public partial class Produto : Form
+    public partial class FormProdutos : Form
     {
-        public Produto()
+        public FormProdutos()
         {
             InitializeComponent();
             ((Control)this.tabProduto).Enabled = false;
@@ -40,10 +40,5 @@ namespace ProjetoLojaDesktop.Produto
             tabProdutos.SelectedIndex = 2;
             ((Control)this.tabDetalhesProduto).Enabled = true;
         }
-
-        
-
-      
-       
     }
 }

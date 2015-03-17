@@ -7,15 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace ProjetoLojaDesktop
+namespace cad_fornecedor
 {
-    public partial class Form1 : Form
+    public partial class FormFornecedor : Form
     {
-        public Form1()
+        public FormFornecedor()
         {
             InitializeComponent();
         }
-
-      
     }
 }

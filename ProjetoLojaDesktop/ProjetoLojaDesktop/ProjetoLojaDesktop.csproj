@@ -72,12 +72,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProjetoLojaEntity.edmx</DependentUpon>
     </Compile>
-     <Compile Include="Forms\Frm_cadCliente.cs">
-      <SubType>Form</SubType> 
-     </Compile> 
-      <Compile Include="Forms\Frm_cadCliente.Designer.cs"> 
-      <DependentUpon>Frm_cadCliente.cs</DependentUpon> 
-      </Compile>
+    <Compile Include="FormPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrincipal.Designer.cs">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_cadCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_cadCliente.Designer.cs">
+      <DependentUpon>Frm_cadCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormCadFuncionarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,21 +102,18 @@
     <Compile Include="Forms\FormModelo.Designer.cs">
       <DependentUpon>FormModelo.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormFornecedor.cs">
+    <Compile Include="Forms\FormFornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormFornecedor.Designer.cs">
+    <Compile Include="Forms\FormFornecedor.Designer.cs">
       <DependentUpon>FormFornecedor.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\Frm_cadCliente.resx"> 
-    <DependentUpon>Frm_cadCliente.cs</DependentUpon> 
-    </EmbeddedResource> 
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Frm_cadCliente.resx">
+      <DependentUpon>Frm_cadCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormFornecedor.resx">
+    <EmbeddedResource Include="Forms\FormFornecedor.resx">
       <DependentUpon>FormFornecedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormMarca.resx">

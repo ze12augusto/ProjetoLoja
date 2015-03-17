@@ -146,6 +146,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+    <Folder Include="Produtp\" />
+=======
     <None Include="Resources\Business-Man.png" />
   </ItemGroup>
   <ItemGroup>
@@ -174,6 +177,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\marca2.png" />
+>>>>>>> master
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

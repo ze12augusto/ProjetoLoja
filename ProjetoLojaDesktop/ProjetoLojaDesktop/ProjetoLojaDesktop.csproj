@@ -72,12 +72,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProjetoLojaEntity.edmx</DependentUpon>
     </Compile>
-     <Compile Include="Forms\Frm_cadCliente.cs">
-      <SubType>Form</SubType> 
-     </Compile> 
-      <Compile Include="Forms\Frm_cadCliente.Designer.cs"> 
-      <DependentUpon>Frm_cadCliente.cs</DependentUpon> 
-      </Compile>
+    <Compile Include="Forms\FormProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormProdutos.Designer.cs">
+      <DependentUpon>FormProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_cadCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_cadCliente.Designer.cs">
+      <DependentUpon>Frm_cadCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormCadFuncionarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,11 +110,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\Frm_cadCliente.resx"> 
-    <DependentUpon>Frm_cadCliente.cs</DependentUpon> 
-    </EmbeddedResource> 
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Frm_cadCliente.resx">
+      <DependentUpon>Frm_cadCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormFornecedor.resx">
       <DependentUpon>FormFornecedor.cs</DependentUpon>

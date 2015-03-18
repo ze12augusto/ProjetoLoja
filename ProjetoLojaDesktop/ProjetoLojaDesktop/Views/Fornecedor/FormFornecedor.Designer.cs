@@ -28,16 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnNovoPesq = new System.Windows.Forms.Button();
-            this.btnEditarPesq = new System.Windows.Forms.Button();
-            this.btnDesatiivarPesq = new System.Windows.Forms.Button();
-            this.btnPesquisar = new System.Windows.Forms.Button();
             this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.dgvPesquisar = new System.Windows.Forms.DataGridView();
             this.Fornecedores = new System.Windows.Forms.TabControl();
             this.tabFornecedor = new System.Windows.Forms.TabPage();
             this.tabDadosFornecedor = new System.Windows.Forms.TabPage();
-            this.btnSalvarDadosForn = new System.Windows.Forms.Button();
             this.lblNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -78,6 +73,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbxTipoTel = new System.Windows.Forms.ComboBox();
             this.lblTelefone = new System.Windows.Forms.Label();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.btnNovoPesq = new System.Windows.Forms.Button();
+            this.btnEditarPesq = new System.Windows.Forms.Button();
+            this.btnDesatiivarPesq = new System.Windows.Forms.Button();
+            this.btnSalvarDadosForn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPesquisar)).BeginInit();
             this.Fornecedores.SuspendLayout();
             this.tabFornecedor.SuspendLayout();
@@ -88,53 +88,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvTelefone)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnNovoPesq
-            // 
-            this.btnNovoPesq.Location = new System.Drawing.Point(156, 286);
-            this.btnNovoPesq.Name = "btnNovoPesq";
-            this.btnNovoPesq.Size = new System.Drawing.Size(55, 23);
-            this.btnNovoPesq.TabIndex = 0;
-            this.btnNovoPesq.Text = "Novo";
-            this.btnNovoPesq.UseVisualStyleBackColor = true;
-            // 
-            // btnEditarPesq
-            // 
-            this.btnEditarPesq.Location = new System.Drawing.Point(217, 286);
-            this.btnEditarPesq.Name = "btnEditarPesq";
-            this.btnEditarPesq.Size = new System.Drawing.Size(55, 23);
-            this.btnEditarPesq.TabIndex = 1;
-            this.btnEditarPesq.Text = "Editar";
-            this.btnEditarPesq.UseVisualStyleBackColor = true;
-            // 
-            // btnDesatiivarPesq
-            // 
-            this.btnDesatiivarPesq.Location = new System.Drawing.Point(278, 286);
-            this.btnDesatiivarPesq.Name = "btnDesatiivarPesq";
-            this.btnDesatiivarPesq.Size = new System.Drawing.Size(68, 23);
-            this.btnDesatiivarPesq.TabIndex = 2;
-            this.btnDesatiivarPesq.Text = "Desativar";
-            this.btnDesatiivarPesq.UseVisualStyleBackColor = true;
-            // 
-            // btnPesquisar
-            // 
-            this.btnPesquisar.Location = new System.Drawing.Point(273, 13);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(75, 23);
-            this.btnPesquisar.TabIndex = 3;
-            this.btnPesquisar.Text = "Pesquisar";
-            this.btnPesquisar.UseVisualStyleBackColor = true;
-            // 
             // txtPesquisar
             // 
             this.txtPesquisar.Location = new System.Drawing.Point(15, 14);
             this.txtPesquisar.Name = "txtPesquisar";
-            this.txtPesquisar.Size = new System.Drawing.Size(252, 20);
+            this.txtPesquisar.Size = new System.Drawing.Size(300, 20);
             this.txtPesquisar.TabIndex = 4;
             // 
             // dgvPesquisar
             // 
             this.dgvPesquisar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPesquisar.Location = new System.Drawing.Point(15, 42);
+            this.dgvPesquisar.Location = new System.Drawing.Point(15, 47);
             this.dgvPesquisar.Name = "dgvPesquisar";
             this.dgvPesquisar.Size = new System.Drawing.Size(332, 229);
             this.dgvPesquisar.TabIndex = 7;
@@ -188,15 +152,6 @@
             this.tabDadosFornecedor.Text = "Dados do Fornecedor";
             this.tabDadosFornecedor.UseVisualStyleBackColor = true;
             // 
-            // btnSalvarDadosForn
-            // 
-            this.btnSalvarDadosForn.Location = new System.Drawing.Point(275, 187);
-            this.btnSalvarDadosForn.Name = "btnSalvarDadosForn";
-            this.btnSalvarDadosForn.Size = new System.Drawing.Size(68, 23);
-            this.btnSalvarDadosForn.TabIndex = 48;
-            this.btnSalvarDadosForn.Text = "Salvar";
-            this.btnSalvarDadosForn.UseVisualStyleBackColor = true;
-            // 
             // lblNome
             // 
             this.lblNome.Location = new System.Drawing.Point(98, 25);
@@ -207,7 +162,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(54, 32);
+            this.label2.Location = new System.Drawing.Point(57, 29);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 46;
@@ -215,7 +170,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(98, 157);
+            this.txtEmail.Location = new System.Drawing.Point(98, 158);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(245, 20);
             this.txtEmail.TabIndex = 45;
@@ -223,7 +178,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(49, 162);
+            this.lblEmail.Location = new System.Drawing.Point(58, 161);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(38, 13);
             this.lblEmail.TabIndex = 44;
@@ -231,21 +186,21 @@
             // 
             // txtCnpj
             // 
-            this.txtCnpj.Location = new System.Drawing.Point(98, 131);
+            this.txtCnpj.Location = new System.Drawing.Point(98, 125);
             this.txtCnpj.Name = "txtCnpj";
             this.txtCnpj.Size = new System.Drawing.Size(245, 20);
             this.txtCnpj.TabIndex = 19;
             // 
             // txtNomeFantasia
             // 
-            this.txtNomeFantasia.Location = new System.Drawing.Point(98, 60);
+            this.txtNomeFantasia.Location = new System.Drawing.Point(98, 58);
             this.txtNomeFantasia.Name = "txtNomeFantasia";
             this.txtNomeFantasia.Size = new System.Drawing.Size(245, 20);
             this.txtNomeFantasia.TabIndex = 15;
             // 
             // txtRazaoSocial
             // 
-            this.txtRazaoSocial.Location = new System.Drawing.Point(98, 97);
+            this.txtRazaoSocial.Location = new System.Drawing.Point(98, 92);
             this.txtRazaoSocial.Name = "txtRazaoSocial";
             this.txtRazaoSocial.Size = new System.Drawing.Size(245, 20);
             this.txtRazaoSocial.TabIndex = 17;
@@ -253,7 +208,7 @@
             // lblRazaoSocial
             // 
             this.lblRazaoSocial.AutoSize = true;
-            this.lblRazaoSocial.Location = new System.Drawing.Point(19, 100);
+            this.lblRazaoSocial.Location = new System.Drawing.Point(22, 96);
             this.lblRazaoSocial.Name = "lblRazaoSocial";
             this.lblRazaoSocial.Size = new System.Drawing.Size(73, 13);
             this.lblRazaoSocial.TabIndex = 16;
@@ -262,7 +217,7 @@
             // lblNomeFantasia
             // 
             this.lblNomeFantasia.AutoSize = true;
-            this.lblNomeFantasia.Location = new System.Drawing.Point(11, 67);
+            this.lblNomeFantasia.Location = new System.Drawing.Point(14, 62);
             this.lblNomeFantasia.Name = "lblNomeFantasia";
             this.lblNomeFantasia.Size = new System.Drawing.Size(81, 13);
             this.lblNomeFantasia.TabIndex = 14;
@@ -271,7 +226,7 @@
             // lblCnpj
             // 
             this.lblCnpj.AutoSize = true;
-            this.lblCnpj.Location = new System.Drawing.Point(55, 131);
+            this.lblCnpj.Location = new System.Drawing.Point(58, 129);
             this.lblCnpj.Name = "lblCnpj";
             this.lblCnpj.Size = new System.Drawing.Size(37, 13);
             this.lblCnpj.TabIndex = 18;
@@ -308,16 +263,19 @@
             // 
             // btnNovoEnd
             // 
-            this.btnNovoEnd.Location = new System.Drawing.Point(24, 299);
+            this.btnNovoEnd.Image = global::ProjetoLojaDesktop.Properties.Resources.Document_02;
+            this.btnNovoEnd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNovoEnd.Location = new System.Drawing.Point(78, 288);
             this.btnNovoEnd.Name = "btnNovoEnd";
-            this.btnNovoEnd.Size = new System.Drawing.Size(68, 23);
+            this.btnNovoEnd.Size = new System.Drawing.Size(60, 25);
             this.btnNovoEnd.TabIndex = 49;
             this.btnNovoEnd.Text = "Novo";
+            this.btnNovoEnd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNovoEnd.UseVisualStyleBackColor = true;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(89, 113);
+            this.textBox2.Location = new System.Drawing.Point(89, 111);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(258, 20);
             this.textBox2.TabIndex = 48;
@@ -325,7 +283,7 @@
             // lblCidade
             // 
             this.lblCidade.AutoSize = true;
-            this.lblCidade.Location = new System.Drawing.Point(46, 118);
+            this.lblCidade.Location = new System.Drawing.Point(44, 115);
             this.lblCidade.Name = "lblCidade";
             this.lblCidade.Size = new System.Drawing.Size(43, 13);
             this.lblCidade.TabIndex = 47;
@@ -333,7 +291,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(89, 44);
+            this.textBox1.Location = new System.Drawing.Point(89, 47);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(258, 20);
             this.textBox1.TabIndex = 46;
@@ -341,7 +299,7 @@
             // lblComplemento
             // 
             this.lblComplemento.AutoSize = true;
-            this.lblComplemento.Location = new System.Drawing.Point(9, 51);
+            this.lblComplemento.Location = new System.Drawing.Point(12, 51);
             this.lblComplemento.Name = "lblComplemento";
             this.lblComplemento.Size = new System.Drawing.Size(74, 13);
             this.lblComplemento.TabIndex = 45;
@@ -349,43 +307,52 @@
             // 
             // btnEditarEnd
             // 
-            this.btnEditarEnd.Location = new System.Drawing.Point(98, 299);
+            this.btnEditarEnd.Image = global::ProjetoLojaDesktop.Properties.Resources.Data_Edit;
+            this.btnEditarEnd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditarEnd.Location = new System.Drawing.Point(141, 288);
             this.btnEditarEnd.Name = "btnEditarEnd";
-            this.btnEditarEnd.Size = new System.Drawing.Size(68, 23);
+            this.btnEditarEnd.Size = new System.Drawing.Size(60, 25);
             this.btnEditarEnd.TabIndex = 42;
             this.btnEditarEnd.Text = "Editar";
+            this.btnEditarEnd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditarEnd.UseVisualStyleBackColor = true;
             // 
             // btnDesativarEnd
             // 
-            this.btnDesativarEnd.Location = new System.Drawing.Point(172, 299);
+            this.btnDesativarEnd.Image = global::ProjetoLojaDesktop.Properties.Resources.Garbage;
+            this.btnDesativarEnd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDesativarEnd.Location = new System.Drawing.Point(204, 288);
             this.btnDesativarEnd.Name = "btnDesativarEnd";
-            this.btnDesativarEnd.Size = new System.Drawing.Size(68, 23);
+            this.btnDesativarEnd.Size = new System.Drawing.Size(80, 25);
             this.btnDesativarEnd.TabIndex = 43;
             this.btnDesativarEnd.Text = "Desativar";
+            this.btnDesativarEnd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDesativarEnd.UseVisualStyleBackColor = true;
             // 
             // dgvEndereco
             // 
             this.dgvEndereco.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEndereco.Location = new System.Drawing.Point(12, 180);
+            this.dgvEndereco.Location = new System.Drawing.Point(12, 177);
             this.dgvEndereco.Name = "dgvEndereco";
             this.dgvEndereco.Size = new System.Drawing.Size(335, 99);
             this.dgvEndereco.TabIndex = 41;
             // 
             // btnSalvarEnd
             // 
-            this.btnSalvarEnd.Location = new System.Drawing.Point(246, 299);
+            this.btnSalvarEnd.Image = global::ProjetoLojaDesktop.Properties.Resources.Save;
+            this.btnSalvarEnd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalvarEnd.Location = new System.Drawing.Point(287, 288);
             this.btnSalvarEnd.Name = "btnSalvarEnd";
-            this.btnSalvarEnd.Size = new System.Drawing.Size(68, 23);
+            this.btnSalvarEnd.Size = new System.Drawing.Size(60, 25);
             this.btnSalvarEnd.TabIndex = 40;
             this.btnSalvarEnd.Text = "Salvar";
+            this.btnSalvarEnd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSalvarEnd.UseVisualStyleBackColor = true;
             // 
             // cbxEstado
             // 
             this.cbxEstado.FormattingEnabled = true;
-            this.cbxEstado.Location = new System.Drawing.Point(89, 140);
+            this.cbxEstado.Location = new System.Drawing.Point(89, 142);
             this.cbxEstado.Name = "cbxEstado";
             this.cbxEstado.Size = new System.Drawing.Size(110, 21);
             this.cbxEstado.TabIndex = 35;
@@ -399,14 +366,14 @@
             // 
             // txtCEP
             // 
-            this.txtCEP.Location = new System.Drawing.Point(246, 140);
+            this.txtCEP.Location = new System.Drawing.Point(246, 144);
             this.txtCEP.Name = "txtCEP";
             this.txtCEP.Size = new System.Drawing.Size(101, 20);
             this.txtCEP.TabIndex = 33;
             // 
             // txtBairro
             // 
-            this.txtBairro.Location = new System.Drawing.Point(89, 77);
+            this.txtBairro.Location = new System.Drawing.Point(89, 79);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(258, 20);
             this.txtBairro.TabIndex = 32;
@@ -414,7 +381,7 @@
             // lblCEP
             // 
             this.lblCEP.AutoSize = true;
-            this.lblCEP.Location = new System.Drawing.Point(209, 142);
+            this.lblCEP.Location = new System.Drawing.Point(212, 147);
             this.lblCEP.Name = "lblCEP";
             this.lblCEP.Size = new System.Drawing.Size(31, 13);
             this.lblCEP.TabIndex = 30;
@@ -423,7 +390,7 @@
             // lblBairro
             // 
             this.lblBairro.AutoSize = true;
-            this.lblBairro.Location = new System.Drawing.Point(46, 82);
+            this.lblBairro.Location = new System.Drawing.Point(49, 82);
             this.lblBairro.Name = "lblBairro";
             this.lblBairro.Size = new System.Drawing.Size(37, 13);
             this.lblBairro.TabIndex = 29;
@@ -432,7 +399,7 @@
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
-            this.lblEstado.Location = new System.Drawing.Point(40, 148);
+            this.lblEstado.Location = new System.Drawing.Point(43, 146);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(43, 13);
             this.lblEstado.TabIndex = 28;
@@ -441,7 +408,7 @@
             // lblNumero
             // 
             this.lblNumero.AutoSize = true;
-            this.lblNumero.Location = new System.Drawing.Point(292, 17);
+            this.lblNumero.Location = new System.Drawing.Point(291, 17);
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(22, 13);
             this.lblNumero.TabIndex = 27;
@@ -457,7 +424,7 @@
             // lblRua
             // 
             this.lblRua.AutoSize = true;
-            this.lblRua.Location = new System.Drawing.Point(53, 21);
+            this.lblRua.Location = new System.Drawing.Point(56, 17);
             this.lblRua.Name = "lblRua";
             this.lblRua.Size = new System.Drawing.Size(30, 13);
             this.lblRua.TabIndex = 25;
@@ -483,44 +450,56 @@
             // 
             // btnNovoTel
             // 
-            this.btnNovoTel.Location = new System.Drawing.Point(28, 290);
+            this.btnNovoTel.Image = global::ProjetoLojaDesktop.Properties.Resources.Document_02;
+            this.btnNovoTel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNovoTel.Location = new System.Drawing.Point(57, 282);
             this.btnNovoTel.Name = "btnNovoTel";
-            this.btnNovoTel.Size = new System.Drawing.Size(68, 23);
+            this.btnNovoTel.Size = new System.Drawing.Size(60, 25);
             this.btnNovoTel.TabIndex = 53;
             this.btnNovoTel.Text = "Novo";
+            this.btnNovoTel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNovoTel.UseVisualStyleBackColor = true;
             // 
             // btnEditarTel
             // 
-            this.btnEditarTel.Location = new System.Drawing.Point(102, 290);
+            this.btnEditarTel.Image = global::ProjetoLojaDesktop.Properties.Resources.Data_Edit;
+            this.btnEditarTel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditarTel.Location = new System.Drawing.Point(121, 282);
             this.btnEditarTel.Name = "btnEditarTel";
-            this.btnEditarTel.Size = new System.Drawing.Size(68, 23);
+            this.btnEditarTel.Size = new System.Drawing.Size(60, 25);
             this.btnEditarTel.TabIndex = 51;
             this.btnEditarTel.Text = "Editar";
+            this.btnEditarTel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditarTel.UseVisualStyleBackColor = true;
             // 
             // btnDesativarTel
             // 
-            this.btnDesativarTel.Location = new System.Drawing.Point(176, 290);
+            this.btnDesativarTel.Image = global::ProjetoLojaDesktop.Properties.Resources.Garbage;
+            this.btnDesativarTel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDesativarTel.Location = new System.Drawing.Point(185, 282);
             this.btnDesativarTel.Name = "btnDesativarTel";
-            this.btnDesativarTel.Size = new System.Drawing.Size(68, 23);
+            this.btnDesativarTel.Size = new System.Drawing.Size(80, 25);
             this.btnDesativarTel.TabIndex = 52;
             this.btnDesativarTel.Text = "Desativar";
+            this.btnDesativarTel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDesativarTel.UseVisualStyleBackColor = true;
             // 
             // btnSalvarTel
             // 
-            this.btnSalvarTel.Location = new System.Drawing.Point(250, 290);
+            this.btnSalvarTel.Image = global::ProjetoLojaDesktop.Properties.Resources.Save;
+            this.btnSalvarTel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalvarTel.Location = new System.Drawing.Point(269, 282);
             this.btnSalvarTel.Name = "btnSalvarTel";
-            this.btnSalvarTel.Size = new System.Drawing.Size(68, 23);
+            this.btnSalvarTel.Size = new System.Drawing.Size(60, 25);
             this.btnSalvarTel.TabIndex = 50;
             this.btnSalvarTel.Text = "Salvar";
+            this.btnSalvarTel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSalvarTel.UseVisualStyleBackColor = true;
             // 
             // dgvTelefone
             // 
             this.dgvTelefone.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTelefone.Location = new System.Drawing.Point(28, 90);
+            this.dgvTelefone.Location = new System.Drawing.Point(29, 90);
             this.dgvTelefone.Name = "dgvTelefone";
             this.dgvTelefone.Size = new System.Drawing.Size(300, 180);
             this.dgvTelefone.TabIndex = 49;
@@ -535,7 +514,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 25);
+            this.label1.Location = new System.Drawing.Point(37, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 47;
@@ -548,7 +527,7 @@
             "Celular",
             "Fixo",
             "Fax"});
-            this.cbxTipoTel.Location = new System.Drawing.Point(87, 49);
+            this.cbxTipoTel.Location = new System.Drawing.Point(87, 56);
             this.cbxTipoTel.Name = "cbxTipoTel";
             this.cbxTipoTel.Size = new System.Drawing.Size(241, 21);
             this.cbxTipoTel.TabIndex = 46;
@@ -556,11 +535,68 @@
             // lblTelefone
             // 
             this.lblTelefone.AutoSize = true;
-            this.lblTelefone.Location = new System.Drawing.Point(45, 52);
+            this.lblTelefone.Location = new System.Drawing.Point(53, 60);
             this.lblTelefone.Name = "lblTelefone";
             this.lblTelefone.Size = new System.Drawing.Size(31, 13);
             this.lblTelefone.TabIndex = 40;
             this.lblTelefone.Text = "Tipo:";
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Image = global::ProjetoLojaDesktop.Properties.Resources.Search;
+            this.btnPesquisar.Location = new System.Drawing.Point(321, 12);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(25, 23);
+            this.btnPesquisar.TabIndex = 3;
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            // 
+            // btnNovoPesq
+            // 
+            this.btnNovoPesq.Image = global::ProjetoLojaDesktop.Properties.Resources.Document_02;
+            this.btnNovoPesq.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNovoPesq.Location = new System.Drawing.Point(141, 288);
+            this.btnNovoPesq.Name = "btnNovoPesq";
+            this.btnNovoPesq.Size = new System.Drawing.Size(60, 25);
+            this.btnNovoPesq.TabIndex = 0;
+            this.btnNovoPesq.Text = "Novo";
+            this.btnNovoPesq.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNovoPesq.UseVisualStyleBackColor = true;
+            // 
+            // btnEditarPesq
+            // 
+            this.btnEditarPesq.Image = global::ProjetoLojaDesktop.Properties.Resources.Data_Edit;
+            this.btnEditarPesq.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditarPesq.Location = new System.Drawing.Point(205, 288);
+            this.btnEditarPesq.Name = "btnEditarPesq";
+            this.btnEditarPesq.Size = new System.Drawing.Size(60, 25);
+            this.btnEditarPesq.TabIndex = 1;
+            this.btnEditarPesq.Text = "Editar";
+            this.btnEditarPesq.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditarPesq.UseVisualStyleBackColor = true;
+            // 
+            // btnDesatiivarPesq
+            // 
+            this.btnDesatiivarPesq.Image = global::ProjetoLojaDesktop.Properties.Resources.Garbage;
+            this.btnDesatiivarPesq.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDesatiivarPesq.Location = new System.Drawing.Point(269, 288);
+            this.btnDesatiivarPesq.Name = "btnDesatiivarPesq";
+            this.btnDesatiivarPesq.Size = new System.Drawing.Size(80, 25);
+            this.btnDesatiivarPesq.TabIndex = 2;
+            this.btnDesatiivarPesq.Text = "Desativar";
+            this.btnDesatiivarPesq.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDesatiivarPesq.UseVisualStyleBackColor = true;
+            // 
+            // btnSalvarDadosForn
+            // 
+            this.btnSalvarDadosForn.Image = global::ProjetoLojaDesktop.Properties.Resources.Save;
+            this.btnSalvarDadosForn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalvarDadosForn.Location = new System.Drawing.Point(283, 190);
+            this.btnSalvarDadosForn.Name = "btnSalvarDadosForn";
+            this.btnSalvarDadosForn.Size = new System.Drawing.Size(60, 25);
+            this.btnSalvarDadosForn.TabIndex = 48;
+            this.btnSalvarDadosForn.Text = "Salvar";
+            this.btnSalvarDadosForn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSalvarDadosForn.UseVisualStyleBackColor = true;
             // 
             // FormFornecedor
             // 

@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace ProjetoLojaDesktop
 {
-    public partial class FormFornecedor : Form
+    public partial class FormPrincipal : Form
     {
-        public FormFornecedor()
+        public FormPrincipal()
         {
             InitializeComponent();
         }

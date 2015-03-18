@@ -17,7 +17,7 @@ namespace cad_fornecedor
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMarca());
+            Application.Run(new FormPrincipal());
         }
     }
 }

@@ -94,6 +94,7 @@
             this.dgvMarcas.Name = "dgvMarcas";
             this.dgvMarcas.Size = new System.Drawing.Size(307, 176);
             this.dgvMarcas.TabIndex = 3;
+            this.dgvMarcas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMarcas_CellContentClick);
             // 
             // label2
             // 

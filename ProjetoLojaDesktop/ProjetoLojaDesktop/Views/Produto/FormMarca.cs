@@ -159,6 +159,10 @@ namespace ProjetoLojaDesktop.Forms
             atualizarTabela(marcaData.buscaMarcas(txtPesquisar.Text));
         }
 
+        private void dgvMarcas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
 
     }
 }

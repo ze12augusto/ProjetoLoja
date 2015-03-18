@@ -51,6 +51,7 @@
             this.btnLimpar.TabIndex = 17;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnPesquisar
             // 
@@ -60,6 +61,7 @@
             this.btnPesquisar.TabIndex = 16;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // txtPesquisar
             // 
@@ -100,6 +102,7 @@
             this.Excluir.TabIndex = 9;
             this.Excluir.Text = "Excluir";
             this.Excluir.UseVisualStyleBackColor = true;
+            this.Excluir.Click += new System.EventHandler(this.Excluir_Click);
             // 
             // Editar
             // 
@@ -109,6 +112,7 @@
             this.Editar.TabIndex = 10;
             this.Editar.Text = "Editar";
             this.Editar.UseVisualStyleBackColor = true;
+            this.Editar.Click += new System.EventHandler(this.Editar_Click);
             // 
             // Salvar
             // 
@@ -118,6 +122,7 @@
             this.Salvar.TabIndex = 11;
             this.Salvar.Text = "Salvar";
             this.Salvar.UseVisualStyleBackColor = true;
+            this.Salvar.Click += new System.EventHandler(this.Salvar_Click);
             // 
             // label1
             // 
@@ -139,6 +144,7 @@
             // 
             // cbxMarcas
             // 
+            this.cbxMarcas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxMarcas.FormattingEnabled = true;
             this.cbxMarcas.Location = new System.Drawing.Point(73, 49);
             this.cbxMarcas.Name = "cbxMarcas";

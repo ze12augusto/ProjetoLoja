@@ -58,6 +58,7 @@
             this.Salvar.TabIndex = 1;
             this.Salvar.Text = "Salvar";
             this.Salvar.UseVisualStyleBackColor = true;
+            this.Salvar.Click += new System.EventHandler(this.Salvar_Click);
             // 
             // Editar
             // 
@@ -67,6 +68,7 @@
             this.Editar.TabIndex = 1;
             this.Editar.Text = "Editar";
             this.Editar.UseVisualStyleBackColor = true;
+            this.Editar.Click += new System.EventHandler(this.Editar_Click);
             // 
             // Excluir
             // 
@@ -76,6 +78,7 @@
             this.Excluir.TabIndex = 1;
             this.Excluir.Text = "Excluir";
             this.Excluir.UseVisualStyleBackColor = true;
+            this.Excluir.Click += new System.EventHandler(this.Excluir_Click);
             // 
             // txtDescricao
             // 
@@ -116,6 +119,7 @@
             this.btnPesquisar.TabIndex = 6;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // btnLimpar
             // 

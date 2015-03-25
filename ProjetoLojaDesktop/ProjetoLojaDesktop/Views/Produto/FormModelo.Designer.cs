@@ -45,27 +45,28 @@
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(270, 322);
+            this.btnLimpar.Image = global::ProjetoLojaDesktop.Properties.Resources.Clean;
+            this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLimpar.Location = new System.Drawing.Point(234, 312);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpar.Size = new System.Drawing.Size(70, 25);
             this.btnLimpar.TabIndex = 17;
             this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLimpar.UseVisualStyleBackColor = true;
-            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.Location = new System.Drawing.Point(278, 78);
+            this.btnPesquisar.Image = global::ProjetoLojaDesktop.Properties.Resources.Search;
+            this.btnPesquisar.Location = new System.Drawing.Point(278, 88);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(67, 23);
+            this.btnPesquisar.Size = new System.Drawing.Size(25, 25);
             this.btnPesquisar.TabIndex = 16;
-            this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
-            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // txtPesquisar
             // 
-            this.txtPesquisar.Location = new System.Drawing.Point(73, 78);
+            this.txtPesquisar.Location = new System.Drawing.Point(73, 90);
             this.txtPesquisar.Name = "txtPesquisar";
             this.txtPesquisar.Size = new System.Drawing.Size(199, 20);
             this.txtPesquisar.TabIndex = 15;
@@ -73,89 +74,94 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 78);
+            this.label2.Location = new System.Drawing.Point(17, 93);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 13);
+            this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 14;
-            this.label2.Text = "Pesquisar :";
+            this.label2.Text = "Pesquisar";
             // 
             // dgvModelos
             // 
             this.dgvModelos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvModelos.Location = new System.Drawing.Point(38, 122);
+            this.dgvModelos.Location = new System.Drawing.Point(15, 123);
             this.dgvModelos.Name = "dgvModelos";
-            this.dgvModelos.Size = new System.Drawing.Size(307, 176);
+            this.dgvModelos.Size = new System.Drawing.Size(288, 176);
             this.dgvModelos.TabIndex = 13;
             // 
             // txtDescricao
             // 
             this.txtDescricao.Location = new System.Drawing.Point(73, 22);
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(199, 20);
+            this.txtDescricao.Size = new System.Drawing.Size(230, 20);
             this.txtDescricao.TabIndex = 12;
             // 
             // Excluir
             // 
-            this.Excluir.Location = new System.Drawing.Point(194, 322);
+            this.Excluir.Image = global::ProjetoLojaDesktop.Properties.Resources.Garbage;
+            this.Excluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Excluir.Location = new System.Drawing.Point(161, 312);
             this.Excluir.Name = "Excluir";
-            this.Excluir.Size = new System.Drawing.Size(53, 23);
+            this.Excluir.Size = new System.Drawing.Size(70, 25);
             this.Excluir.TabIndex = 9;
             this.Excluir.Text = "Excluir";
+            this.Excluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Excluir.UseVisualStyleBackColor = true;
-            this.Excluir.Click += new System.EventHandler(this.Excluir_Click);
             // 
             // Editar
             // 
-            this.Editar.Location = new System.Drawing.Point(115, 322);
+            this.Editar.Image = global::ProjetoLojaDesktop.Properties.Resources.Data_Edit;
+            this.Editar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Editar.Location = new System.Drawing.Point(87, 312);
             this.Editar.Name = "Editar";
-            this.Editar.Size = new System.Drawing.Size(53, 23);
+            this.Editar.Size = new System.Drawing.Size(70, 25);
             this.Editar.TabIndex = 10;
             this.Editar.Text = "Editar";
+            this.Editar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Editar.UseVisualStyleBackColor = true;
-            this.Editar.Click += new System.EventHandler(this.Editar_Click);
             // 
             // Salvar
             // 
-            this.Salvar.Location = new System.Drawing.Point(38, 322);
+            this.Salvar.Image = global::ProjetoLojaDesktop.Properties.Resources.Save;
+            this.Salvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Salvar.Location = new System.Drawing.Point(14, 312);
             this.Salvar.Name = "Salvar";
-            this.Salvar.Size = new System.Drawing.Size(53, 23);
+            this.Salvar.Size = new System.Drawing.Size(70, 25);
             this.Salvar.TabIndex = 11;
             this.Salvar.Text = "Salvar";
+            this.Salvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Salvar.UseVisualStyleBackColor = true;
-            this.Salvar.Click += new System.EventHandler(this.Salvar_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 25);
+            this.label1.Location = new System.Drawing.Point(15, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 13);
+            this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Descricão :";
+            this.label1.Text = "Descricão";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 49);
+            this.label3.Location = new System.Drawing.Point(33, 59);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 13);
+            this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 18;
-            this.label3.Text = "Marca:";
+            this.label3.Text = "Marca";
             // 
             // cbxMarcas
             // 
-            this.cbxMarcas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxMarcas.FormattingEnabled = true;
-            this.cbxMarcas.Location = new System.Drawing.Point(73, 49);
+            this.cbxMarcas.Location = new System.Drawing.Point(73, 55);
             this.cbxMarcas.Name = "cbxMarcas";
-            this.cbxMarcas.Size = new System.Drawing.Size(199, 21);
+            this.cbxMarcas.Size = new System.Drawing.Size(230, 21);
             this.cbxMarcas.TabIndex = 19;
             // 
             // FormModelo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(476, 392);
+            this.ClientSize = new System.Drawing.Size(318, 352);
             this.Controls.Add(this.cbxMarcas);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnLimpar);

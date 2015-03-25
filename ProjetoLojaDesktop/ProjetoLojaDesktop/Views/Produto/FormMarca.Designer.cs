@@ -36,53 +36,56 @@
             this.dgvMarcas = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.txtPesquisar = new System.Windows.Forms.TextBox();
-            this.btnPesquisar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
+            this.btnPesquisar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 43);
+            this.label1.Location = new System.Drawing.Point(15, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 13);
+            this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Descricão :";
+            this.label1.Text = "Descricão";
             // 
             // Salvar
             // 
-            this.Salvar.Location = new System.Drawing.Point(38, 340);
+            this.Salvar.Image = global::ProjetoLojaDesktop.Properties.Resources.Save;
+            this.Salvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Salvar.Location = new System.Drawing.Point(54, 272);
             this.Salvar.Name = "Salvar";
-            this.Salvar.Size = new System.Drawing.Size(53, 23);
+            this.Salvar.Size = new System.Drawing.Size(70, 25);
             this.Salvar.TabIndex = 1;
             this.Salvar.Text = "Salvar";
+            this.Salvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Salvar.UseVisualStyleBackColor = true;
-            this.Salvar.Click += new System.EventHandler(this.Salvar_Click);
             // 
             // Editar
             // 
-            this.Editar.Location = new System.Drawing.Point(115, 340);
+            this.Editar.Image = global::ProjetoLojaDesktop.Properties.Resources.Data_Edit;
+            this.Editar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Editar.Location = new System.Drawing.Point(128, 272);
             this.Editar.Name = "Editar";
-            this.Editar.Size = new System.Drawing.Size(53, 23);
+            this.Editar.Size = new System.Drawing.Size(70, 25);
             this.Editar.TabIndex = 1;
             this.Editar.Text = "Editar";
+            this.Editar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Editar.UseVisualStyleBackColor = true;
-            this.Editar.Click += new System.EventHandler(this.Editar_Click);
             // 
             // Excluir
             // 
-            this.Excluir.Location = new System.Drawing.Point(194, 340);
+            this.Excluir.Location = new System.Drawing.Point(201, 272);
             this.Excluir.Name = "Excluir";
-            this.Excluir.Size = new System.Drawing.Size(53, 23);
+            this.Excluir.Size = new System.Drawing.Size(70, 25);
             this.Excluir.TabIndex = 1;
             this.Excluir.Text = "Excluir";
             this.Excluir.UseVisualStyleBackColor = true;
-            this.Excluir.Click += new System.EventHandler(this.Excluir_Click);
             // 
             // txtDescricao
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(73, 40);
+            this.txtDescricao.Location = new System.Drawing.Point(73, 19);
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(272, 20);
             this.txtDescricao.TabIndex = 2;
@@ -90,16 +93,15 @@
             // dgvMarcas
             // 
             this.dgvMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMarcas.Location = new System.Drawing.Point(38, 140);
+            this.dgvMarcas.Location = new System.Drawing.Point(15, 83);
             this.dgvMarcas.Name = "dgvMarcas";
-            this.dgvMarcas.Size = new System.Drawing.Size(307, 176);
+            this.dgvMarcas.Size = new System.Drawing.Size(330, 176);
             this.dgvMarcas.TabIndex = 3;
-            this.dgvMarcas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMarcas_CellContentClick);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 96);
+            this.label2.Location = new System.Drawing.Point(12, 54);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 13);
             this.label2.TabIndex = 4;
@@ -107,36 +109,38 @@
             // 
             // txtPesquisar
             // 
-            this.txtPesquisar.Location = new System.Drawing.Point(73, 96);
+            this.txtPesquisar.Location = new System.Drawing.Point(73, 51);
             this.txtPesquisar.Name = "txtPesquisar";
-            this.txtPesquisar.Size = new System.Drawing.Size(199, 20);
+            this.txtPesquisar.Size = new System.Drawing.Size(241, 20);
             this.txtPesquisar.TabIndex = 5;
-            // 
-            // btnPesquisar
-            // 
-            this.btnPesquisar.Location = new System.Drawing.Point(278, 96);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(67, 23);
-            this.btnPesquisar.TabIndex = 6;
-            this.btnPesquisar.Text = "Pesquisar";
-            this.btnPesquisar.UseVisualStyleBackColor = true;
-            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(270, 340);
+            this.btnLimpar.Image = global::ProjetoLojaDesktop.Properties.Resources.Clean;
+            this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLimpar.Location = new System.Drawing.Point(274, 272);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpar.Size = new System.Drawing.Size(70, 25);
             this.btnLimpar.TabIndex = 7;
             this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Image = global::ProjetoLojaDesktop.Properties.Resources.Search;
+            this.btnPesquisar.Location = new System.Drawing.Point(320, 49);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(25, 25);
+            this.btnPesquisar.TabIndex = 6;
+            this.btnPesquisar.UseVisualStyleBackColor = true;
             // 
             // FormMarca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(416, 375);
+            this.ClientSize = new System.Drawing.Size(360, 315);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.txtPesquisar);

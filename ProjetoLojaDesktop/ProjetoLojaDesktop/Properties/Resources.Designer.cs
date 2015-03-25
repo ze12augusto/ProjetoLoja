@@ -63,9 +63,29 @@ namespace ProjetoLojaDesktop.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Add_New {
+            get {
+                object obj = ResourceManager.GetObject("Add-New", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Business_Man {
             get {
                 object obj = ResourceManager.GetObject("Business-Man", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Clean {
+            get {
+                object obj = ResourceManager.GetObject("Clean", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

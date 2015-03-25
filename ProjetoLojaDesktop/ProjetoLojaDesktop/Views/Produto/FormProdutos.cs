@@ -40,5 +40,7 @@ namespace ProjetoLojaDesktop.Forms
             tabProdutos.SelectedIndex = 2;
             ((Control)this.tabDetalhesProduto).Enabled = true;
         }
+
+       
     }
 }

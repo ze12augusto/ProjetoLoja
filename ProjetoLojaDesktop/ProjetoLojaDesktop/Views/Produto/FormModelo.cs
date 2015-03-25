@@ -15,5 +15,8 @@ namespace ProjetoLojaDesktop.Forms
         {
             InitializeComponent();
         }
+
+    
+     
     }
 }

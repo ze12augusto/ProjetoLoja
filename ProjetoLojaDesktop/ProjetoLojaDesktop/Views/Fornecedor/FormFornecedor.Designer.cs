@@ -32,7 +32,12 @@
             this.dgvPesquisar = new System.Windows.Forms.DataGridView();
             this.Fornecedores = new System.Windows.Forms.TabControl();
             this.tabFornecedor = new System.Windows.Forms.TabPage();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.btnNovoPesq = new System.Windows.Forms.Button();
+            this.btnEditarPesq = new System.Windows.Forms.Button();
+            this.btnDesatiivarPesq = new System.Windows.Forms.Button();
             this.tabDadosFornecedor = new System.Windows.Forms.TabPage();
+            this.btnSalvarDadosForn = new System.Windows.Forms.Button();
             this.lblNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -73,11 +78,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbxTipoTel = new System.Windows.Forms.ComboBox();
             this.lblTelefone = new System.Windows.Forms.Label();
-            this.btnPesquisar = new System.Windows.Forms.Button();
-            this.btnNovoPesq = new System.Windows.Forms.Button();
-            this.btnEditarPesq = new System.Windows.Forms.Button();
-            this.btnDesatiivarPesq = new System.Windows.Forms.Button();
-            this.btnSalvarDadosForn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPesquisar)).BeginInit();
             this.Fornecedores.SuspendLayout();
             this.tabFornecedor.SuspendLayout();
@@ -112,7 +112,7 @@
             this.Fornecedores.Location = new System.Drawing.Point(10, 12);
             this.Fornecedores.Name = "Fornecedores";
             this.Fornecedores.SelectedIndex = 0;
-            this.Fornecedores.Size = new System.Drawing.Size(369, 366);
+            this.Fornecedores.Size = new System.Drawing.Size(369, 352);
             this.Fornecedores.TabIndex = 15;
             // 
             // tabFornecedor
@@ -126,10 +126,55 @@
             this.tabFornecedor.Location = new System.Drawing.Point(4, 22);
             this.tabFornecedor.Name = "tabFornecedor";
             this.tabFornecedor.Padding = new System.Windows.Forms.Padding(3);
-            this.tabFornecedor.Size = new System.Drawing.Size(361, 340);
+            this.tabFornecedor.Size = new System.Drawing.Size(361, 326);
             this.tabFornecedor.TabIndex = 0;
             this.tabFornecedor.Text = "Pesquisar Fornecedor";
             this.tabFornecedor.UseVisualStyleBackColor = true;
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Image = global::ProjetoLojaDesktop.Properties.Resources.Search;
+            this.btnPesquisar.Location = new System.Drawing.Point(321, 12);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(25, 23);
+            this.btnPesquisar.TabIndex = 3;
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            // 
+            // btnNovoPesq
+            // 
+            this.btnNovoPesq.Image = global::ProjetoLojaDesktop.Properties.Resources.Document_02;
+            this.btnNovoPesq.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNovoPesq.Location = new System.Drawing.Point(141, 288);
+            this.btnNovoPesq.Name = "btnNovoPesq";
+            this.btnNovoPesq.Size = new System.Drawing.Size(60, 25);
+            this.btnNovoPesq.TabIndex = 0;
+            this.btnNovoPesq.Text = "Novo";
+            this.btnNovoPesq.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNovoPesq.UseVisualStyleBackColor = true;
+            // 
+            // btnEditarPesq
+            // 
+            this.btnEditarPesq.Image = global::ProjetoLojaDesktop.Properties.Resources.Data_Edit;
+            this.btnEditarPesq.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditarPesq.Location = new System.Drawing.Point(205, 288);
+            this.btnEditarPesq.Name = "btnEditarPesq";
+            this.btnEditarPesq.Size = new System.Drawing.Size(60, 25);
+            this.btnEditarPesq.TabIndex = 1;
+            this.btnEditarPesq.Text = "Editar";
+            this.btnEditarPesq.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditarPesq.UseVisualStyleBackColor = true;
+            // 
+            // btnDesatiivarPesq
+            // 
+            this.btnDesatiivarPesq.Image = global::ProjetoLojaDesktop.Properties.Resources.Garbage;
+            this.btnDesatiivarPesq.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDesatiivarPesq.Location = new System.Drawing.Point(269, 288);
+            this.btnDesatiivarPesq.Name = "btnDesatiivarPesq";
+            this.btnDesatiivarPesq.Size = new System.Drawing.Size(80, 25);
+            this.btnDesatiivarPesq.TabIndex = 2;
+            this.btnDesatiivarPesq.Text = "Desativar";
+            this.btnDesatiivarPesq.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDesatiivarPesq.UseVisualStyleBackColor = true;
             // 
             // tabDadosFornecedor
             // 
@@ -147,10 +192,22 @@
             this.tabDadosFornecedor.Location = new System.Drawing.Point(4, 22);
             this.tabDadosFornecedor.Name = "tabDadosFornecedor";
             this.tabDadosFornecedor.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDadosFornecedor.Size = new System.Drawing.Size(361, 340);
+            this.tabDadosFornecedor.Size = new System.Drawing.Size(361, 326);
             this.tabDadosFornecedor.TabIndex = 3;
             this.tabDadosFornecedor.Text = "Dados do Fornecedor";
             this.tabDadosFornecedor.UseVisualStyleBackColor = true;
+            // 
+            // btnSalvarDadosForn
+            // 
+            this.btnSalvarDadosForn.Image = global::ProjetoLojaDesktop.Properties.Resources.Save;
+            this.btnSalvarDadosForn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalvarDadosForn.Location = new System.Drawing.Point(283, 190);
+            this.btnSalvarDadosForn.Name = "btnSalvarDadosForn";
+            this.btnSalvarDadosForn.Size = new System.Drawing.Size(60, 25);
+            this.btnSalvarDadosForn.TabIndex = 48;
+            this.btnSalvarDadosForn.Text = "Salvar";
+            this.btnSalvarDadosForn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSalvarDadosForn.UseVisualStyleBackColor = true;
             // 
             // lblNome
             // 
@@ -256,7 +313,7 @@
             this.tabEndereco.Location = new System.Drawing.Point(4, 22);
             this.tabEndereco.Name = "tabEndereco";
             this.tabEndereco.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEndereco.Size = new System.Drawing.Size(361, 340);
+            this.tabEndereco.Size = new System.Drawing.Size(361, 326);
             this.tabEndereco.TabIndex = 1;
             this.tabEndereco.Text = "Endereço";
             this.tabEndereco.UseVisualStyleBackColor = true;
@@ -443,7 +500,7 @@
             this.tabTelefone.Controls.Add(this.lblTelefone);
             this.tabTelefone.Location = new System.Drawing.Point(4, 22);
             this.tabTelefone.Name = "tabTelefone";
-            this.tabTelefone.Size = new System.Drawing.Size(361, 340);
+            this.tabTelefone.Size = new System.Drawing.Size(361, 326);
             this.tabTelefone.TabIndex = 2;
             this.tabTelefone.Text = "Telefone";
             this.tabTelefone.UseVisualStyleBackColor = true;
@@ -499,9 +556,9 @@
             // dgvTelefone
             // 
             this.dgvTelefone.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTelefone.Location = new System.Drawing.Point(29, 90);
+            this.dgvTelefone.Location = new System.Drawing.Point(17, 90);
             this.dgvTelefone.Name = "dgvTelefone";
-            this.dgvTelefone.Size = new System.Drawing.Size(300, 180);
+            this.dgvTelefone.Size = new System.Drawing.Size(312, 180);
             this.dgvTelefone.TabIndex = 49;
             // 
             // txtNumeroTel
@@ -541,68 +598,11 @@
             this.lblTelefone.TabIndex = 40;
             this.lblTelefone.Text = "Tipo:";
             // 
-            // btnPesquisar
-            // 
-            this.btnPesquisar.Image = global::ProjetoLojaDesktop.Properties.Resources.Search;
-            this.btnPesquisar.Location = new System.Drawing.Point(321, 12);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(25, 23);
-            this.btnPesquisar.TabIndex = 3;
-            this.btnPesquisar.UseVisualStyleBackColor = true;
-            // 
-            // btnNovoPesq
-            // 
-            this.btnNovoPesq.Image = global::ProjetoLojaDesktop.Properties.Resources.Document_02;
-            this.btnNovoPesq.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNovoPesq.Location = new System.Drawing.Point(141, 288);
-            this.btnNovoPesq.Name = "btnNovoPesq";
-            this.btnNovoPesq.Size = new System.Drawing.Size(60, 25);
-            this.btnNovoPesq.TabIndex = 0;
-            this.btnNovoPesq.Text = "Novo";
-            this.btnNovoPesq.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNovoPesq.UseVisualStyleBackColor = true;
-            // 
-            // btnEditarPesq
-            // 
-            this.btnEditarPesq.Image = global::ProjetoLojaDesktop.Properties.Resources.Data_Edit;
-            this.btnEditarPesq.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditarPesq.Location = new System.Drawing.Point(205, 288);
-            this.btnEditarPesq.Name = "btnEditarPesq";
-            this.btnEditarPesq.Size = new System.Drawing.Size(60, 25);
-            this.btnEditarPesq.TabIndex = 1;
-            this.btnEditarPesq.Text = "Editar";
-            this.btnEditarPesq.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditarPesq.UseVisualStyleBackColor = true;
-            // 
-            // btnDesatiivarPesq
-            // 
-            this.btnDesatiivarPesq.Image = global::ProjetoLojaDesktop.Properties.Resources.Garbage;
-            this.btnDesatiivarPesq.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDesatiivarPesq.Location = new System.Drawing.Point(269, 288);
-            this.btnDesatiivarPesq.Name = "btnDesatiivarPesq";
-            this.btnDesatiivarPesq.Size = new System.Drawing.Size(80, 25);
-            this.btnDesatiivarPesq.TabIndex = 2;
-            this.btnDesatiivarPesq.Text = "Desativar";
-            this.btnDesatiivarPesq.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDesatiivarPesq.UseVisualStyleBackColor = true;
-            // 
-            // btnSalvarDadosForn
-            // 
-            this.btnSalvarDadosForn.Image = global::ProjetoLojaDesktop.Properties.Resources.Save;
-            this.btnSalvarDadosForn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvarDadosForn.Location = new System.Drawing.Point(283, 190);
-            this.btnSalvarDadosForn.Name = "btnSalvarDadosForn";
-            this.btnSalvarDadosForn.Size = new System.Drawing.Size(60, 25);
-            this.btnSalvarDadosForn.TabIndex = 48;
-            this.btnSalvarDadosForn.Text = "Salvar";
-            this.btnSalvarDadosForn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSalvarDadosForn.UseVisualStyleBackColor = true;
-            // 
             // FormFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(388, 388);
+            this.ClientSize = new System.Drawing.Size(388, 374);
             this.Controls.Add(this.Fornecedores);
             this.Name = "FormFornecedor";
             this.Text = "Cadastro de Fornecedor";

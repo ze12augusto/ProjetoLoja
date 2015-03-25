@@ -14,7 +14,7 @@ namespace SevenInfo
         public frmCadFuncionarios()
         {
             InitializeComponent();
-            grpCadastrar.Enabled = false;
+            btnSalvar.Enabled = false;
             ((Control)this.tabExtras).Enabled = false;
         }
 
@@ -26,12 +26,12 @@ namespace SevenInfo
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            grpCadastrar.Enabled = true;
+            btnSalvar.Enabled = true;
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            grpCadastrar.Enabled = true;
+            btnSalvar.Enabled = true;
             ((Control)this.tabExtras).Enabled = true;
         }
     }

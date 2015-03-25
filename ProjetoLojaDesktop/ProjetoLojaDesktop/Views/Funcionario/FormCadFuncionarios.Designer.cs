@@ -30,62 +30,62 @@
         {
             this.tabFuncionarios = new System.Windows.Forms.TabControl();
             this.tabCadFuncionarios = new System.Windows.Forms.TabPage();
-            this.btnNovo = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.txtSenha = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.lblSenha = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.cbxTipoUsuario = new System.Windows.Forms.ComboBox();
+            this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.lblTipoUsuario = new System.Windows.Forms.Label();
+            this.btnNovo = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
+            this.dgvFuncionarios = new System.Windows.Forms.DataGridView();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.lblEmail = new System.Windows.Forms.Label();
+            this.btnExcluir = new System.Windows.Forms.Button();
             this.lblCPF = new System.Windows.Forms.Label();
+            this.lblRG = new System.Windows.Forms.Label();
             this.mtxtCPF = new System.Windows.Forms.MaskedTextBox();
             this.txtRG = new System.Windows.Forms.TextBox();
-            this.lblRG = new System.Windows.Forms.Label();
-            this.txtPesquisa = new System.Windows.Forms.TextBox();
-            this.dgvFuncionarios = new System.Windows.Forms.DataGridView();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
             this.tabExtras = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnNovoTelefone = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnExcluirTelefone = new System.Windows.Forms.Button();
+            this.btnNovoEndereco = new System.Windows.Forms.Button();
             this.btnEditarTelefone = new System.Windows.Forms.Button();
             this.btnSalvarTelefone = new System.Windows.Forms.Button();
+            this.cbxTipoEndereco = new System.Windows.Forms.ComboBox();
             this.dgvTelefone = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lblTelefone = new System.Windows.Forms.Label();
-            this.cbxTipoTelefone = new System.Windows.Forms.ComboBox();
-            this.lblTipoTelefone = new System.Windows.Forms.Label();
-            this.btnNovoEndereco = new System.Windows.Forms.Button();
-            this.cbxTipoEndereco = new System.Windows.Forms.ComboBox();
             this.btnExcluirEndereco = new System.Windows.Forms.Button();
-            this.cbxUF = new System.Windows.Forms.ComboBox();
-            this.btnEditarEndereco = new System.Windows.Forms.Button();
+            this.lblTelefone = new System.Windows.Forms.Label();
             this.lblTipoEndereco = new System.Windows.Forms.Label();
+            this.cbxTipoTelefone = new System.Windows.Forms.ComboBox();
+            this.cbxUF = new System.Windows.Forms.ComboBox();
+            this.lblTipoTelefone = new System.Windows.Forms.Label();
+            this.txtReferencia = new System.Windows.Forms.TextBox();
+            this.btnEditarEndereco = new System.Windows.Forms.Button();
+            this.lblReferencia = new System.Windows.Forms.Label();
+            this.lblBairro = new System.Windows.Forms.Label();
             this.btnSalvarEndereco = new System.Windows.Forms.Button();
+            this.txtComplemento = new System.Windows.Forms.TextBox();
             this.lblUF = new System.Windows.Forms.Label();
+            this.txtBairro = new System.Windows.Forms.TextBox();
             this.dgvEndereco = new System.Windows.Forms.DataGridView();
+            this.lblComplemento = new System.Windows.Forms.Label();
             this.lblLogradouro = new System.Windows.Forms.Label();
+            this.lblCEP = new System.Windows.Forms.Label();
             this.cbxCidade = new System.Windows.Forms.ComboBox();
+            this.txtNumero = new System.Windows.Forms.TextBox();
             this.txtLogradouro = new System.Windows.Forms.TextBox();
+            this.mtxtCEP = new System.Windows.Forms.MaskedTextBox();
             this.lblCidade = new System.Windows.Forms.Label();
             this.lblNumero = new System.Windows.Forms.Label();
-            this.mtxtCEP = new System.Windows.Forms.MaskedTextBox();
-            this.txtNumero = new System.Windows.Forms.TextBox();
-            this.lblCEP = new System.Windows.Forms.Label();
-            this.lblComplemento = new System.Windows.Forms.Label();
-            this.txtBairro = new System.Windows.Forms.TextBox();
-            this.txtComplemento = new System.Windows.Forms.TextBox();
-            this.lblBairro = new System.Windows.Forms.Label();
-            this.lblReferencia = new System.Windows.Forms.Label();
-            this.txtReferencia = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.tabFuncionarios.SuspendLayout();
             this.tabCadFuncionarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionarios)).BeginInit();
@@ -130,10 +130,79 @@
             this.tabCadFuncionarios.Location = new System.Drawing.Point(4, 22);
             this.tabCadFuncionarios.Name = "tabCadFuncionarios";
             this.tabCadFuncionarios.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCadFuncionarios.Size = new System.Drawing.Size(776, 421);
+            this.tabCadFuncionarios.Size = new System.Drawing.Size(727, 432);
             this.tabCadFuncionarios.TabIndex = 0;
             this.tabCadFuncionarios.Text = "Funcionários";
             this.tabCadFuncionarios.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(18, 218);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 13);
+            this.label2.TabIndex = 32;
+            this.label2.Text = "Cadastro";
+            // 
+            // txtSenha
+            // 
+            this.txtSenha.Location = new System.Drawing.Point(315, 344);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '*';
+            this.txtSenha.Size = new System.Drawing.Size(167, 20);
+            this.txtSenha.TabIndex = 31;
+            // 
+            // button1
+            // 
+            this.button1.Image = global::ProjetoLojaDesktop.Properties.Resources.Search;
+            this.button1.Location = new System.Drawing.Point(457, 28);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(25, 25);
+            this.button1.TabIndex = 15;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // lblSenha
+            // 
+            this.lblSenha.AutoSize = true;
+            this.lblSenha.Location = new System.Drawing.Point(274, 347);
+            this.lblSenha.Name = "lblSenha";
+            this.lblSenha.Size = new System.Drawing.Size(38, 13);
+            this.lblSenha.TabIndex = 30;
+            this.lblSenha.Text = "Senha";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(14, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Pesquisar";
+            // 
+            // cbxTipoUsuario
+            // 
+            this.cbxTipoUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxTipoUsuario.FormattingEnabled = true;
+            this.cbxTipoUsuario.Location = new System.Drawing.Point(315, 310);
+            this.cbxTipoUsuario.Name = "cbxTipoUsuario";
+            this.cbxTipoUsuario.Size = new System.Drawing.Size(167, 21);
+            this.cbxTipoUsuario.TabIndex = 29;
+            // 
+            // txtPesquisa
+            // 
+            this.txtPesquisa.Location = new System.Drawing.Point(16, 31);
+            this.txtPesquisa.Name = "txtPesquisa";
+            this.txtPesquisa.Size = new System.Drawing.Size(437, 20);
+            this.txtPesquisa.TabIndex = 0;
+            // 
+            // lblTipoUsuario
+            // 
+            this.lblTipoUsuario.AutoSize = true;
+            this.lblTipoUsuario.Location = new System.Drawing.Point(230, 314);
+            this.lblTipoUsuario.Name = "lblTipoUsuario";
+            this.lblTipoUsuario.Size = new System.Drawing.Size(82, 13);
+            this.lblTipoUsuario.TabIndex = 28;
+            this.lblTipoUsuario.Text = "Tipo de Usuário";
             // 
             // btnNovo
             // 
@@ -147,41 +216,6 @@
             this.btnNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNovo.UseVisualStyleBackColor = true;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
-            // 
-            // txtSenha
-            // 
-            this.txtSenha.Location = new System.Drawing.Point(315, 344);
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.PasswordChar = '*';
-            this.txtSenha.Size = new System.Drawing.Size(167, 20);
-            this.txtSenha.TabIndex = 31;
-            // 
-            // lblSenha
-            // 
-            this.lblSenha.AutoSize = true;
-            this.lblSenha.Location = new System.Drawing.Point(274, 347);
-            this.lblSenha.Name = "lblSenha";
-            this.lblSenha.Size = new System.Drawing.Size(38, 13);
-            this.lblSenha.TabIndex = 30;
-            this.lblSenha.Text = "Senha";
-            // 
-            // cbxTipoUsuario
-            // 
-            this.cbxTipoUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxTipoUsuario.FormattingEnabled = true;
-            this.cbxTipoUsuario.Location = new System.Drawing.Point(315, 310);
-            this.cbxTipoUsuario.Name = "cbxTipoUsuario";
-            this.cbxTipoUsuario.Size = new System.Drawing.Size(167, 21);
-            this.cbxTipoUsuario.TabIndex = 29;
-            // 
-            // lblTipoUsuario
-            // 
-            this.lblTipoUsuario.AutoSize = true;
-            this.lblTipoUsuario.Location = new System.Drawing.Point(230, 314);
-            this.lblTipoUsuario.Name = "lblTipoUsuario";
-            this.lblTipoUsuario.Size = new System.Drawing.Size(82, 13);
-            this.lblTipoUsuario.TabIndex = 28;
-            this.lblTipoUsuario.Text = "Tipo de Usuário";
             // 
             // txtEmail
             // 
@@ -199,6 +233,16 @@
             this.lblNome.TabIndex = 0;
             this.lblNome.Text = "Nome";
             // 
+            // dgvFuncionarios
+            // 
+            this.dgvFuncionarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFuncionarios.Location = new System.Drawing.Point(15, 63);
+            this.dgvFuncionarios.MultiSelect = false;
+            this.dgvFuncionarios.Name = "dgvFuncionarios";
+            this.dgvFuncionarios.ReadOnly = true;
+            this.dgvFuncionarios.Size = new System.Drawing.Size(467, 110);
+            this.dgvFuncionarios.TabIndex = 8;
+            // 
             // txtNome
             // 
             this.txtNome.Location = new System.Drawing.Point(66, 245);
@@ -210,7 +254,7 @@
             // 
             this.btnSalvar.Image = global::ProjetoLojaDesktop.Properties.Resources.Save;
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvar.Location = new System.Drawing.Point(411, 376);
+            this.btnSalvar.Location = new System.Drawing.Point(411, 377);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(70, 25);
             this.btnSalvar.TabIndex = 9;
@@ -218,6 +262,19 @@
             this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Image = global::ProjetoLojaDesktop.Properties.Resources.Data_Edit;
+            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditar.Location = new System.Drawing.Point(338, 185);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(70, 25);
+            this.btnEditar.TabIndex = 10;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // lblEmail
             // 
@@ -228,6 +285,18 @@
             this.lblEmail.TabIndex = 2;
             this.lblEmail.Text = "E-mail";
             // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Image = global::ProjetoLojaDesktop.Properties.Resources.Garbage;
+            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExcluir.Location = new System.Drawing.Point(412, 185);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(70, 25);
+            this.btnExcluir.TabIndex = 11;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            // 
             // lblCPF
             // 
             this.lblCPF.AutoSize = true;
@@ -236,6 +305,15 @@
             this.lblCPF.Size = new System.Drawing.Size(27, 13);
             this.lblCPF.TabIndex = 3;
             this.lblCPF.Text = "CPF";
+            // 
+            // lblRG
+            // 
+            this.lblRG.AutoSize = true;
+            this.lblRG.Location = new System.Drawing.Point(40, 348);
+            this.lblRG.Name = "lblRG";
+            this.lblRG.Size = new System.Drawing.Size(23, 13);
+            this.lblRG.TabIndex = 6;
+            this.lblRG.Text = "RG";
             // 
             // mtxtCPF
             // 
@@ -251,57 +329,6 @@
             this.txtRG.Name = "txtRG";
             this.txtRG.Size = new System.Drawing.Size(155, 20);
             this.txtRG.TabIndex = 7;
-            // 
-            // lblRG
-            // 
-            this.lblRG.AutoSize = true;
-            this.lblRG.Location = new System.Drawing.Point(40, 348);
-            this.lblRG.Name = "lblRG";
-            this.lblRG.Size = new System.Drawing.Size(23, 13);
-            this.lblRG.TabIndex = 6;
-            this.lblRG.Text = "RG";
-            // 
-            // txtPesquisa
-            // 
-            this.txtPesquisa.Location = new System.Drawing.Point(16, 31);
-            this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(437, 20);
-            this.txtPesquisa.TabIndex = 0;
-            // 
-            // dgvFuncionarios
-            // 
-            this.dgvFuncionarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFuncionarios.Location = new System.Drawing.Point(15, 63);
-            this.dgvFuncionarios.MultiSelect = false;
-            this.dgvFuncionarios.Name = "dgvFuncionarios";
-            this.dgvFuncionarios.ReadOnly = true;
-            this.dgvFuncionarios.Size = new System.Drawing.Size(467, 110);
-            this.dgvFuncionarios.TabIndex = 8;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Image = global::ProjetoLojaDesktop.Properties.Resources.Data_Edit;
-            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditar.Location = new System.Drawing.Point(338, 185);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(70, 25);
-            this.btnEditar.TabIndex = 10;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.Image = global::ProjetoLojaDesktop.Properties.Resources.Garbage;
-            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcluir.Location = new System.Drawing.Point(412, 185);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(70, 25);
-            this.btnExcluir.TabIndex = 11;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnExcluir.UseVisualStyleBackColor = true;
             // 
             // tabExtras
             // 
@@ -347,6 +374,15 @@
             this.tabExtras.Text = "Extras";
             this.tabExtras.UseVisualStyleBackColor = true;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(10, 252);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(94, 13);
+            this.label4.TabIndex = 34;
+            this.label4.Text = "Cadastro Telefone";
+            // 
             // btnNovoTelefone
             // 
             this.btnNovoTelefone.Image = global::ProjetoLojaDesktop.Properties.Resources.Document_02;
@@ -359,6 +395,15 @@
             this.btnNovoTelefone.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNovoTelefone.UseVisualStyleBackColor = true;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(9, 7);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 13);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "Endereço";
+            // 
             // btnExcluirTelefone
             // 
             this.btnExcluirTelefone.Image = global::ProjetoLojaDesktop.Properties.Resources.Garbage;
@@ -370,6 +415,18 @@
             this.btnExcluirTelefone.Text = "Excluir";
             this.btnExcluirTelefone.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExcluirTelefone.UseVisualStyleBackColor = true;
+            // 
+            // btnNovoEndereco
+            // 
+            this.btnNovoEndereco.Image = global::ProjetoLojaDesktop.Properties.Resources.Document_02;
+            this.btnNovoEndereco.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNovoEndereco.Location = new System.Drawing.Point(422, 231);
+            this.btnNovoEndereco.Name = "btnNovoEndereco";
+            this.btnNovoEndereco.Size = new System.Drawing.Size(70, 25);
+            this.btnNovoEndereco.TabIndex = 31;
+            this.btnNovoEndereco.Text = "Novo";
+            this.btnNovoEndereco.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNovoEndereco.UseVisualStyleBackColor = true;
             // 
             // btnEditarTelefone
             // 
@@ -395,6 +452,15 @@
             this.btnSalvarTelefone.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSalvarTelefone.UseVisualStyleBackColor = true;
             // 
+            // cbxTipoEndereco
+            // 
+            this.cbxTipoEndereco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxTipoEndereco.FormattingEnabled = true;
+            this.cbxTipoEndereco.Location = new System.Drawing.Point(105, 27);
+            this.cbxTipoEndereco.Name = "cbxTipoEndereco";
+            this.cbxTipoEndereco.Size = new System.Drawing.Size(141, 21);
+            this.cbxTipoEndereco.TabIndex = 3;
+            // 
             // dgvTelefone
             // 
             this.dgvTelefone.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -412,54 +478,6 @@
             this.textBox1.Size = new System.Drawing.Size(121, 20);
             this.textBox1.TabIndex = 7;
             // 
-            // lblTelefone
-            // 
-            this.lblTelefone.AutoSize = true;
-            this.lblTelefone.Location = new System.Drawing.Point(240, 281);
-            this.lblTelefone.Name = "lblTelefone";
-            this.lblTelefone.Size = new System.Drawing.Size(49, 13);
-            this.lblTelefone.TabIndex = 6;
-            this.lblTelefone.Text = "Telefone";
-            // 
-            // cbxTipoTelefone
-            // 
-            this.cbxTipoTelefone.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxTipoTelefone.FormattingEnabled = true;
-            this.cbxTipoTelefone.Location = new System.Drawing.Point(102, 277);
-            this.cbxTipoTelefone.Name = "cbxTipoTelefone";
-            this.cbxTipoTelefone.Size = new System.Drawing.Size(121, 21);
-            this.cbxTipoTelefone.TabIndex = 5;
-            // 
-            // lblTipoTelefone
-            // 
-            this.lblTipoTelefone.AutoSize = true;
-            this.lblTipoTelefone.Location = new System.Drawing.Point(11, 281);
-            this.lblTipoTelefone.Name = "lblTipoTelefone";
-            this.lblTipoTelefone.Size = new System.Drawing.Size(88, 13);
-            this.lblTipoTelefone.TabIndex = 4;
-            this.lblTipoTelefone.Text = "Tipo de Telefone";
-            // 
-            // btnNovoEndereco
-            // 
-            this.btnNovoEndereco.Image = global::ProjetoLojaDesktop.Properties.Resources.Document_02;
-            this.btnNovoEndereco.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNovoEndereco.Location = new System.Drawing.Point(422, 231);
-            this.btnNovoEndereco.Name = "btnNovoEndereco";
-            this.btnNovoEndereco.Size = new System.Drawing.Size(70, 25);
-            this.btnNovoEndereco.TabIndex = 31;
-            this.btnNovoEndereco.Text = "Novo";
-            this.btnNovoEndereco.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNovoEndereco.UseVisualStyleBackColor = true;
-            // 
-            // cbxTipoEndereco
-            // 
-            this.cbxTipoEndereco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxTipoEndereco.FormattingEnabled = true;
-            this.cbxTipoEndereco.Location = new System.Drawing.Point(105, 27);
-            this.cbxTipoEndereco.Name = "cbxTipoEndereco";
-            this.cbxTipoEndereco.Size = new System.Drawing.Size(141, 21);
-            this.cbxTipoEndereco.TabIndex = 3;
-            // 
             // btnExcluirEndereco
             // 
             this.btnExcluirEndereco.Image = global::ProjetoLojaDesktop.Properties.Resources.Garbage;
@@ -472,6 +490,33 @@
             this.btnExcluirEndereco.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExcluirEndereco.UseVisualStyleBackColor = true;
             // 
+            // lblTelefone
+            // 
+            this.lblTelefone.AutoSize = true;
+            this.lblTelefone.Location = new System.Drawing.Point(240, 281);
+            this.lblTelefone.Name = "lblTelefone";
+            this.lblTelefone.Size = new System.Drawing.Size(49, 13);
+            this.lblTelefone.TabIndex = 6;
+            this.lblTelefone.Text = "Telefone";
+            // 
+            // lblTipoEndereco
+            // 
+            this.lblTipoEndereco.AutoSize = true;
+            this.lblTipoEndereco.Location = new System.Drawing.Point(10, 31);
+            this.lblTipoEndereco.Name = "lblTipoEndereco";
+            this.lblTipoEndereco.Size = new System.Drawing.Size(92, 13);
+            this.lblTipoEndereco.TabIndex = 2;
+            this.lblTipoEndereco.Text = "Tipo de Endereço";
+            // 
+            // cbxTipoTelefone
+            // 
+            this.cbxTipoTelefone.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxTipoTelefone.FormattingEnabled = true;
+            this.cbxTipoTelefone.Location = new System.Drawing.Point(102, 277);
+            this.cbxTipoTelefone.Name = "cbxTipoTelefone";
+            this.cbxTipoTelefone.Size = new System.Drawing.Size(121, 21);
+            this.cbxTipoTelefone.TabIndex = 5;
+            // 
             // cbxUF
             // 
             this.cbxUF.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -480,6 +525,22 @@
             this.cbxUF.Name = "cbxUF";
             this.cbxUF.Size = new System.Drawing.Size(43, 21);
             this.cbxUF.TabIndex = 30;
+            // 
+            // lblTipoTelefone
+            // 
+            this.lblTipoTelefone.AutoSize = true;
+            this.lblTipoTelefone.Location = new System.Drawing.Point(11, 281);
+            this.lblTipoTelefone.Name = "lblTipoTelefone";
+            this.lblTipoTelefone.Size = new System.Drawing.Size(88, 13);
+            this.lblTipoTelefone.TabIndex = 4;
+            this.lblTipoTelefone.Text = "Tipo de Telefone";
+            // 
+            // txtReferencia
+            // 
+            this.txtReferencia.Location = new System.Drawing.Point(328, 60);
+            this.txtReferencia.Name = "txtReferencia";
+            this.txtReferencia.Size = new System.Drawing.Size(385, 20);
+            this.txtReferencia.TabIndex = 22;
             // 
             // btnEditarEndereco
             // 
@@ -493,14 +554,23 @@
             this.btnEditarEndereco.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditarEndereco.UseVisualStyleBackColor = true;
             // 
-            // lblTipoEndereco
+            // lblReferencia
             // 
-            this.lblTipoEndereco.AutoSize = true;
-            this.lblTipoEndereco.Location = new System.Drawing.Point(10, 31);
-            this.lblTipoEndereco.Name = "lblTipoEndereco";
-            this.lblTipoEndereco.Size = new System.Drawing.Size(92, 13);
-            this.lblTipoEndereco.TabIndex = 2;
-            this.lblTipoEndereco.Text = "Tipo de Endereço";
+            this.lblReferencia.AutoSize = true;
+            this.lblReferencia.Location = new System.Drawing.Point(266, 63);
+            this.lblReferencia.Name = "lblReferencia";
+            this.lblReferencia.Size = new System.Drawing.Size(59, 13);
+            this.lblReferencia.TabIndex = 21;
+            this.lblReferencia.Text = "Referência";
+            // 
+            // lblBairro
+            // 
+            this.lblBairro.AutoSize = true;
+            this.lblBairro.Location = new System.Drawing.Point(293, 95);
+            this.lblBairro.Name = "lblBairro";
+            this.lblBairro.Size = new System.Drawing.Size(34, 13);
+            this.lblBairro.TabIndex = 23;
+            this.lblBairro.Text = "Bairro";
             // 
             // btnSalvarEndereco
             // 
@@ -514,6 +584,13 @@
             this.btnSalvarEndereco.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSalvarEndereco.UseVisualStyleBackColor = true;
             // 
+            // txtComplemento
+            // 
+            this.txtComplemento.Location = new System.Drawing.Point(105, 59);
+            this.txtComplemento.Name = "txtComplemento";
+            this.txtComplemento.Size = new System.Drawing.Size(140, 20);
+            this.txtComplemento.TabIndex = 20;
+            // 
             // lblUF
             // 
             this.lblUF.AutoSize = true;
@@ -522,6 +599,13 @@
             this.lblUF.Size = new System.Drawing.Size(21, 13);
             this.lblUF.TabIndex = 29;
             this.lblUF.Text = "UF";
+            // 
+            // txtBairro
+            // 
+            this.txtBairro.Location = new System.Drawing.Point(330, 92);
+            this.txtBairro.Name = "txtBairro";
+            this.txtBairro.Size = new System.Drawing.Size(140, 20);
+            this.txtBairro.TabIndex = 24;
             // 
             // dgvEndereco
             // 
@@ -533,6 +617,15 @@
             this.dgvEndereco.Size = new System.Drawing.Size(700, 89);
             this.dgvEndereco.TabIndex = 12;
             // 
+            // lblComplemento
+            // 
+            this.lblComplemento.AutoSize = true;
+            this.lblComplemento.Location = new System.Drawing.Point(31, 62);
+            this.lblComplemento.Name = "lblComplemento";
+            this.lblComplemento.Size = new System.Drawing.Size(71, 13);
+            this.lblComplemento.TabIndex = 19;
+            this.lblComplemento.Text = "Complemento";
+            // 
             // lblLogradouro
             // 
             this.lblLogradouro.AutoSize = true;
@@ -541,6 +634,15 @@
             this.lblLogradouro.Size = new System.Drawing.Size(61, 13);
             this.lblLogradouro.TabIndex = 4;
             this.lblLogradouro.Text = "Logradouro";
+            // 
+            // lblCEP
+            // 
+            this.lblCEP.AutoSize = true;
+            this.lblCEP.Location = new System.Drawing.Point(506, 97);
+            this.lblCEP.Name = "lblCEP";
+            this.lblCEP.Size = new System.Drawing.Size(28, 13);
+            this.lblCEP.TabIndex = 25;
+            this.lblCEP.Text = "CEP";
             // 
             // cbxCidade
             // 
@@ -551,12 +653,27 @@
             this.cbxCidade.Size = new System.Drawing.Size(141, 21);
             this.cbxCidade.TabIndex = 28;
             // 
+            // txtNumero
+            // 
+            this.txtNumero.Location = new System.Drawing.Point(681, 28);
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.Size = new System.Drawing.Size(32, 20);
+            this.txtNumero.TabIndex = 18;
+            // 
             // txtLogradouro
             // 
             this.txtLogradouro.Location = new System.Drawing.Point(328, 28);
             this.txtLogradouro.Name = "txtLogradouro";
             this.txtLogradouro.Size = new System.Drawing.Size(284, 20);
             this.txtLogradouro.TabIndex = 16;
+            // 
+            // mtxtCEP
+            // 
+            this.mtxtCEP.Location = new System.Drawing.Point(537, 93);
+            this.mtxtCEP.Mask = "99,999-999";
+            this.mtxtCEP.Name = "mtxtCEP";
+            this.mtxtCEP.Size = new System.Drawing.Size(85, 20);
+            this.mtxtCEP.TabIndex = 26;
             // 
             // lblCidade
             // 
@@ -575,123 +692,6 @@
             this.lblNumero.Size = new System.Drawing.Size(44, 13);
             this.lblNumero.TabIndex = 17;
             this.lblNumero.Text = "Número";
-            // 
-            // mtxtCEP
-            // 
-            this.mtxtCEP.Location = new System.Drawing.Point(537, 93);
-            this.mtxtCEP.Mask = "99,999-999";
-            this.mtxtCEP.Name = "mtxtCEP";
-            this.mtxtCEP.Size = new System.Drawing.Size(85, 20);
-            this.mtxtCEP.TabIndex = 26;
-            // 
-            // txtNumero
-            // 
-            this.txtNumero.Location = new System.Drawing.Point(681, 28);
-            this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(32, 20);
-            this.txtNumero.TabIndex = 18;
-            // 
-            // lblCEP
-            // 
-            this.lblCEP.AutoSize = true;
-            this.lblCEP.Location = new System.Drawing.Point(506, 97);
-            this.lblCEP.Name = "lblCEP";
-            this.lblCEP.Size = new System.Drawing.Size(28, 13);
-            this.lblCEP.TabIndex = 25;
-            this.lblCEP.Text = "CEP";
-            // 
-            // lblComplemento
-            // 
-            this.lblComplemento.AutoSize = true;
-            this.lblComplemento.Location = new System.Drawing.Point(31, 62);
-            this.lblComplemento.Name = "lblComplemento";
-            this.lblComplemento.Size = new System.Drawing.Size(71, 13);
-            this.lblComplemento.TabIndex = 19;
-            this.lblComplemento.Text = "Complemento";
-            // 
-            // txtBairro
-            // 
-            this.txtBairro.Location = new System.Drawing.Point(330, 92);
-            this.txtBairro.Name = "txtBairro";
-            this.txtBairro.Size = new System.Drawing.Size(140, 20);
-            this.txtBairro.TabIndex = 24;
-            // 
-            // txtComplemento
-            // 
-            this.txtComplemento.Location = new System.Drawing.Point(105, 59);
-            this.txtComplemento.Name = "txtComplemento";
-            this.txtComplemento.Size = new System.Drawing.Size(140, 20);
-            this.txtComplemento.TabIndex = 20;
-            // 
-            // lblBairro
-            // 
-            this.lblBairro.AutoSize = true;
-            this.lblBairro.Location = new System.Drawing.Point(293, 95);
-            this.lblBairro.Name = "lblBairro";
-            this.lblBairro.Size = new System.Drawing.Size(34, 13);
-            this.lblBairro.TabIndex = 23;
-            this.lblBairro.Text = "Bairro";
-            // 
-            // lblReferencia
-            // 
-            this.lblReferencia.AutoSize = true;
-            this.lblReferencia.Location = new System.Drawing.Point(266, 63);
-            this.lblReferencia.Name = "lblReferencia";
-            this.lblReferencia.Size = new System.Drawing.Size(59, 13);
-            this.lblReferencia.TabIndex = 21;
-            this.lblReferencia.Text = "Referência";
-            // 
-            // txtReferencia
-            // 
-            this.txtReferencia.Location = new System.Drawing.Point(328, 60);
-            this.txtReferencia.Name = "txtReferencia";
-            this.txtReferencia.Size = new System.Drawing.Size(385, 20);
-            this.txtReferencia.TabIndex = 22;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 13);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Pesquisar";
-            // 
-            // button1
-            // 
-            this.button1.Image = global::ProjetoLojaDesktop.Properties.Resources.Search;
-            this.button1.Location = new System.Drawing.Point(457, 28);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(25, 25);
-            this.button1.TabIndex = 15;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 218);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
-            this.label2.TabIndex = 32;
-            this.label2.Text = "Cadastro";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 7);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 13);
-            this.label3.TabIndex = 33;
-            this.label3.Text = "Endereço";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 252);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(94, 13);
-            this.label4.TabIndex = 34;
-            this.label4.Text = "Cadastro Telefone";
             // 
             // frmCadFuncionarios
             // 

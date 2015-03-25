@@ -16,10 +16,10 @@ namespace ProjetoLojaDesktop.Data
             db = new ProjetoLojaEntities();
         }
 
-        public Modelo obterModelo(int idModelo, int idMarca)
+        public Modelo obterModelo(int idModelo)
         {
             var Lista = from o in db.Modelo
-                        where o.idMarca == idMarca && o.idModelo == idModelo
+                        where o.idModelo == idModelo
                         select o;
 
             return Lista.ToList().FirstOrDefault();
@@ -33,10 +33,20 @@ namespace ProjetoLojaDesktop.Data
             return Lista.ToList();
         }
 
+        public List<Modelo> buscaModelos(String texto)
+        {
+            var Lista = from o in db.Modelo
+                        where o.descricao.Contains(texto)
+                        select o;
+
+            return Lista.ToList();
+        }
+
         public string adicionarModelo(Modelo o) {
             string erro = null;
             try
             {
+
                 db.Modelo.AddObject(o);
                 db.SaveChanges();
 

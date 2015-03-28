@@ -110,6 +110,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\FormCadFuncionarios.resx">
+      <DependentUpon>FormCadFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_cadCliente.resx">
       <DependentUpon>Frm_cadCliente.cs</DependentUpon>
     </EmbeddedResource>

@@ -19,12 +19,15 @@ namespace ProjetoLojaDesktop.Data
             enderecos = db.CreateObjectSet<Endereco>();
         }
 
-        public List<Endereco> todosEnderecos()
+        public List<Endereco> todosEnderecos( int idPessoa )
         {
-            return enderecos.ToList();
+            var lista = from e in enderecos
+                        where e.idPessoa == idPessoa
+                        select e;
+            return lista.ToList();
         }
 
-        public string salvarCliente(Endereco endereco)
+        public string salvarEndereco(Endereco endereco)
         {
             string erro = null;
             try
@@ -55,7 +58,7 @@ namespace ProjetoLojaDesktop.Data
             string erro = null;
             try
             {
-                enderecos.DeleteObject(endereco);
+                db.Endereco.DeleteObject(endereco);
                 db.SaveChanges();
             }
             catch (Exception ex)
@@ -64,8 +67,6 @@ namespace ProjetoLojaDesktop.Data
             }
             return erro;
         }
-
-        
 
 	public Endereco obterEndereco (int id)
 	{
@@ -79,11 +80,7 @@ namespace ProjetoLojaDesktop.Data
             string erro = null;
             try
             {
-
-
                 enderecos.AddObject(endereco);
-                
-                
                 db.SaveChanges();
             }
             catch (Exception ex)
@@ -98,11 +95,9 @@ namespace ProjetoLojaDesktop.Data
             string erro = null;
             try
             {
-
-
                 if (endereco.EntityState == System.Data.EntityState.Detached)
                 {
-                    enderecos.Attach(endereco);
+                    db.Endereco.Attach(endereco);
                 }
                 db.ObjectStateManager.ChangeObjectState(endereco, System.Data.EntityState.Modified);
                 

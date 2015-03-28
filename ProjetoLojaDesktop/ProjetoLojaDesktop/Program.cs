@@ -4,7 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using ProjetoLojaDesktop;
 
-namespace cad_fornecedor
+namespace ProjetoLojaDesktop
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace cad_fornecedor
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormFornecedor());
+            Application.Run(new FormCadFuncionarios());
         }
     }
 }

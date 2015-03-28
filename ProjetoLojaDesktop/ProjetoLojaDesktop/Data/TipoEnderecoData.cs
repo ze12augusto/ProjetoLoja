@@ -18,7 +18,7 @@ namespace ProjetoLojaDesktop.Data
             tipoenderecos = db.CreateObjectSet<TipoEndereco>();
         }
 
-        public List<TipoEndereco> todostipoenderecos()
+        public List<TipoEndereco> obterTodos()
         {
             return tipoenderecos.ToList();
         }

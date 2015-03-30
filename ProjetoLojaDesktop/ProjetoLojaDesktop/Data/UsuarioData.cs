@@ -11,9 +11,9 @@ namespace ProjetoLojaDesktop.Data
     {
         private ProjetoLojaEntities db;
 
-        public UsuarioData() {
+        public UsuarioData(ProjetoLojaEntities _db) {
 
-            db = new ProjetoLojaEntities();
+            db = _db;
         }
 
         public Usuario obterUsuario(int idPessoa, int idTipoUsuario)
@@ -50,17 +50,36 @@ namespace ProjetoLojaDesktop.Data
             return erro;
         }
 
-        public string editarUsuario(Usuario u)
+        public string salvarUsuario(Pessoa pessoa)
         {
             string erro = null;
+
             try
             {
+                if (pessoa.idPessoa == 0)
+                {
+                    db.Pessoa.AddObject(pessoa);
+                    db.Usuario.AddObject(pessoa.Usuario);
+                    db.PessoaFisica.AddObject(pessoa.PessoaFisica);
+                }
+                else
+                {                    
+                    if (pessoa.EntityState == System.Data.EntityState.Detached)
+                    {
+                        db.Pessoa.Attach(pessoa);
+                    }
 
-                if (u.EntityState == System.Data.EntityState.Detached)
-                    db.Usuario.Attach(u);
-                db.ObjectStateManager.ChangeObjectState(u, System.Data.EntityState.Modified);
+                    db.ObjectStateManager.ChangeObjectState(
+                        pessoa, System.Data.EntityState.Modified);
+
+                    db.ObjectStateManager.ChangeObjectState(
+                        pessoa.PessoaFisica, System.Data.EntityState.Modified);
+
+                    db.ObjectStateManager.ChangeObjectState(
+                        pessoa.Usuario, System.Data.EntityState.Modified);
+                }
+
                 db.SaveChanges();
-
             }
 
             catch (Exception ex)

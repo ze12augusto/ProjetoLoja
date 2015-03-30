@@ -72,63 +72,54 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProjetoLojaEntity.edmx</DependentUpon>
     </Compile>
-    <Compile Include="FormPrincipal.cs">
+    <Compile Include="Forms\FormProdutos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPrincipal.Designer.cs">
-      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    <Compile Include="Forms\FormProdutos.Designer.cs">
+      <DependentUpon>FormProdutos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Cliente\Frm_cadCliente.cs">
+    <Compile Include="Forms\FormCadastroCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Cliente\Frm_cadCliente.Designer.cs">
-      <DependentUpon>Frm_cadCliente.cs</DependentUpon>
+    <Compile Include="Forms\FormCadastroCliente.Designer.cs">
+      <DependentUpon>FormCadastroCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Funcionario\FormCadFuncionarios.cs">
+    <Compile Include="Forms\FormCadFuncionarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Funcionario\FormCadFuncionarios.Designer.cs">
+    <Compile Include="Forms\FormCadFuncionarios.Designer.cs">
       <DependentUpon>FormCadFuncionarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Produto\FormMarca.cs">
+    <Compile Include="Forms\FormMarca.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Produto\FormMarca.Designer.cs">
+    <Compile Include="Forms\FormMarca.Designer.cs">
       <DependentUpon>FormMarca.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Produto\FormModelo.cs">
+    <Compile Include="Forms\FormModelo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Produto\FormModelo.Designer.cs">
+    <Compile Include="Forms\FormModelo.Designer.cs">
       <DependentUpon>FormModelo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Fornecedor\FormFornecedor.cs">
+    <Compile Include="FormFornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Fornecedor\FormFornecedor.Designer.cs">
+    <Compile Include="FormFornecedor.Designer.cs">
       <DependentUpon>FormFornecedor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Produto\FormProdutos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Produto\FormProdutos.Designer.cs">
-      <DependentUpon>FormProdutos.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Views\Cliente\Frm_cadCliente.resx">
-      <DependentUpon>Frm_cadCliente.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormCadastroCliente.resx">
+      <DependentUpon>FormCadastroCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Fornecedor\FormFornecedor.resx">
+    <EmbeddedResource Include="FormFornecedor.resx">
       <DependentUpon>FormFornecedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Funcionario\FormCadFuncionarios.resx">
-      <DependentUpon>FormCadFuncionarios.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Produto\FormMarca.resx">
+    <EmbeddedResource Include="Forms\FormMarca.resx">
       <DependentUpon>FormMarca.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Produto\FormModelo.resx">
+    <EmbeddedResource Include="Forms\FormModelo.resx">
       <DependentUpon>FormModelo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -141,9 +132,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Views\Produto\FormProdutos.resx">
-      <DependentUpon>FormProdutos.cs</DependentUpon>
-    </EmbeddedResource>
     <EntityDeploy Include="Entity\ProjetoLojaEntity.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ProjetoLojaEntity.Designer.cs</LastGenOutput>
@@ -189,27 +177,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\marca2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Search.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Garbage.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Data-Edit.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Document-02.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Save.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Clean.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Add-New.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

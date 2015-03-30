@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using ProjetoLojaDesktop.Entity;
+using ProjetoLojaDesktop.Data;
 using System.Data.Objects;
 
 namespace ProjetoLojaDesktop.Data
@@ -23,53 +24,13 @@ namespace ProjetoLojaDesktop.Data
             return pessoas.ToList();
         }
 
-        public List<Pessoa> todasPessoaFisicasPorTipo(int idTipoPessoa)
-        {
-            var Lista = from p in db.Pessoa
-                        where p.TipoPessoa.idTipoPessoa == idTipoPessoa
-                        select p;
-
-            return Lista.ToList();
-        }
-
-        public List<Pessoa> buscarPessoasFisicasPorNome(string nome)
-        {
-            var Lista = from p in db.Pessoa
-                        where p.nome.Contains(nome)
-                        select p;
-
-             return Lista.ToList();
-        }
-
         public string excluirPessoa(Pessoa pessoa)
         {
             string erro = null;
             try
             {
-                pessoas.DeleteObject(pessoa);
-                db.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-                erro = ex.Message;
-            }
-            return erro;
-        }
-
-        public string excluirPessoaFisica(Pessoa pessoa)
-        {
-            string erro = null;
-            try
-            {
-                foreach (Endereco endereco in pessoa.Endereco.ToList())
-                {
-                    db.Endereco.DeleteObject(endereco);
-                }
-                foreach (Telefone telefone in pessoa.Telefone.ToList())
-                db.Telefone.DeleteObject(telefone);
                 db.PessoaFisica.DeleteObject(pessoa.PessoaFisica);
-                db.Usuario.DeleteObject(pessoa.Usuario);
-                db.Pessoa.DeleteObject(pessoa);
+                pessoas.DeleteObject(pessoa);
                 db.SaveChanges();
             }
             catch (Exception ex)
@@ -86,22 +47,75 @@ namespace ProjetoLojaDesktop.Data
             return lista.ToList().FirstOrDefault();
         }
 
-        public string adicionarPessoa(Pessoa pessoa)
+        public string adicionarPessoaFisica(Pessoa pessoa)
         {
             string erro = null;
+
             try
             {
+                if (pessoa.idPessoa == 0)
+                { 
+                    db.Pessoa.AddObject(pessoa);
+                    db.PessoaFisica.AddObject(pessoa.PessoaFisica);
+                }
+                else
+                {
+                    if (pessoa.EntityState == System.Data.EntityState.Detached)
+                    {
+                        db.Pessoa.Attach(pessoa);
+                    }
 
+                    db.ObjectStateManager.ChangeObjectState(
+                        pessoa, System.Data.EntityState.Modified);
 
-                pessoas.AddObject(pessoa);
-
+                    db.ObjectStateManager.ChangeObjectState(
+                        pessoa.PessoaFisica, System.Data.EntityState.Modified);
+                }
 
                 db.SaveChanges();
             }
+
             catch (Exception ex)
             {
                 erro = ex.Message;
             }
+
+            return erro;
+        }
+
+        public string adicionarPessoaJuridica(Pessoa pessoa)
+        {
+            string erro = null;
+
+            try
+            {
+                if (pessoa.idPessoa == 0)
+                {
+                    db.Pessoa.AddObject(pessoa);
+                    db.PessoaJuridica.AddObject(pessoa.PessoaJuridica);
+                }
+                else
+                {
+                    if (pessoa.EntityState == System.Data.EntityState.Detached)
+                    {
+                        db.Pessoa.Attach(pessoa);
+                    }
+
+                    db.ObjectStateManager.ChangeObjectState(
+                        pessoa, System.Data.EntityState.Modified);
+
+                    db.ObjectStateManager.ChangeObjectState(
+                        pessoa.PessoaJuridica, System.Data.EntityState.Modified);
+                }
+
+                db.SaveChanges();
+            }
+
+            catch (Exception ex)
+            {
+                erro = ex.Message;
+            }
+
             return erro;
         }
 
@@ -110,6 +124,8 @@ namespace ProjetoLojaDesktop.Data
             string erro = null;
             try
             {
+
+
                 if (pessoa.EntityState == System.Data.EntityState.Detached)
                 {
                     pessoas.Attach(pessoa);
@@ -123,6 +139,14 @@ namespace ProjetoLojaDesktop.Data
                 erro = ex.Message;
             }
             return erro;
+        }
+
+        public List<Pessoa> pesquisarPessoaPorNome(string nome)
+        {
+            var lista = from p in todasPessoas()
+                        where p.nome.ToLower().Contains(nome.ToLower())
+                        select p;
+            return lista.ToList();
         }
     }
 }

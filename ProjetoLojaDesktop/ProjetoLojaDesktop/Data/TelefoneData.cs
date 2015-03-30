@@ -19,12 +19,9 @@ namespace ProjetoLojaDesktop.Data
             telefones = db.CreateObjectSet<Telefone>();
         }
 
-        public List<Telefone> todosTelefones( int idPessoa )
+        public List<Telefone> todosTelefones()
         {
-            var lista = from t in telefones
-                        where t.idPessoa == idPessoa
-                        select t;
-            return lista.ToList();
+            return telefones.ToList();
         }
 
         public string salvarTelefone(Telefone telefone)
@@ -68,21 +65,20 @@ namespace ProjetoLojaDesktop.Data
             return erro;
         }
 
-        
-
-	public Telefone obterTelefone (int id)
+	    public Telefone obterTelefone (int id)
 	{
+
         var lista = from c in telefones where c.idTelefone == id select c;
         return lista.ToList().FirstOrDefault();
 		
 	}
 
-    public string adicionarTelefone(Telefone telefone)
+        public string adicionarTelefone(Telefone telefone)
         {
             string erro = null;
             try
             {
-                telefones.AddObject(telefone);
+                telefones.AddObject(telefone);   
                 db.SaveChanges();
             }
             catch (Exception ex)
@@ -92,14 +88,16 @@ namespace ProjetoLojaDesktop.Data
             return erro;
         }
 
-    public string editarTelefone(Telefone telefone)
+        public string editarTelefone(Telefone telefone)
         {
             string erro = null;
             try
             {
+
+
                 if (telefone.EntityState == System.Data.EntityState.Detached)
                 {
-                    db.Telefone.Attach(telefone);
+                    telefones.Attach(telefone);
                 }
                 db.ObjectStateManager.ChangeObjectState(telefone, System.Data.EntityState.Modified);
                 
@@ -110,6 +108,14 @@ namespace ProjetoLojaDesktop.Data
                 erro = ex.Message;
             }
             return erro;
+        }
+
+        public List<Telefone> pesquisarTelefone(int idPessoa)
+        {
+            var lista = from t in todosTelefones()
+                    where t.idPessoa == idPessoa
+                    select t;
+            return lista.ToList();
         }
     }
 }

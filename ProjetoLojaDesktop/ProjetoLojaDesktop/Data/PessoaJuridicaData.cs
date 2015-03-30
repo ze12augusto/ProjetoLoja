@@ -41,7 +41,10 @@ namespace ProjetoLojaDesktop.Data
         public PessoaJuridica obterPessoaJuridica(int id)
         {
 
-            var lista = from c in pessoasjuridicas where c.idPessoa == id select c;
+            var lista = from c in db.PessoaJuridica
+                        where c.idPessoa == id 
+                        select c;
+
             return lista.ToList().FirstOrDefault();
         }
 

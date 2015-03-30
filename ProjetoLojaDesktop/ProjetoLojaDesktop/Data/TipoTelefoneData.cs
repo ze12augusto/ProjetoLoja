@@ -18,7 +18,7 @@ namespace ProjetoLojaDesktop.Data
             tipoTelefones = db.CreateObjectSet<TipoTelefone>();
         }
 
-        public List<TipoTelefone> obterTodos()
+        public List<TipoTelefone> todosTiposTelefones()
         {
             return tipoTelefones.ToList();
         }

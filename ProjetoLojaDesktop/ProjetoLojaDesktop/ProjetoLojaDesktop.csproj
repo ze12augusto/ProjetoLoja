@@ -60,11 +60,14 @@
     <Compile Include="Data\PessoaJuridicaData.cs" />
     <Compile Include="Data\ProdutoData.cs" />
     <Compile Include="Data\ProdutoVigenciaData.cs" />
+    <Compile Include="Data\StatusTransacaoData.cs" />
     <Compile Include="Data\TelefoneData.cs" />
     <Compile Include="Data\TipoEnderecoData.cs" />
     <Compile Include="Data\TipoPessoaData.cs" />
     <Compile Include="Data\TipoTelefoneData.cs" />
+    <Compile Include="Data\TipoTransacaoData.cs" />
     <Compile Include="Data\TipoUsuarioData.cs" />
+    <Compile Include="Data\TransacaoData.cs" />
     <Compile Include="Data\UF_Data.cs" />
     <Compile Include="Data\UsuarioData.cs" />
     <Compile Include="Entity\ProjetoLojaEntity.Designer.cs">

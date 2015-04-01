@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data.Entity;
 using ProjetoLojaDesktop.Entity;
+using System.Data.Objects;
 
 namespace ProjetoLojaDesktop.Data
 {

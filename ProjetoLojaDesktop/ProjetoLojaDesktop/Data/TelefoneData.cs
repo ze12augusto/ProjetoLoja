@@ -19,12 +19,9 @@ namespace ProjetoLojaDesktop.Data
             telefones = db.CreateObjectSet<Telefone>();
         }
 
-        public List<Telefone> todosTelefones( int idPessoa )
+        public List<Telefone> todosTelefones()
         {
-            var lista = from t in telefones
-                        where t.idPessoa == idPessoa
-                        select t;
-            return lista.ToList();
+            return telefones.ToList();
         }
 
         public string salvarTelefone(Telefone telefone)
@@ -72,17 +69,22 @@ namespace ProjetoLojaDesktop.Data
 
 	public Telefone obterTelefone (int id)
 	{
+
         var lista = from c in telefones where c.idTelefone == id select c;
         return lista.ToList().FirstOrDefault();
 		
 	}
 
-    public string adicionarTelefone(Telefone telefone)
+    public string adicionarCliente(Telefone telefone)
         {
             string erro = null;
             try
             {
+
+
                 telefones.AddObject(telefone);
+                
+                
                 db.SaveChanges();
             }
             catch (Exception ex)
@@ -97,9 +99,11 @@ namespace ProjetoLojaDesktop.Data
             string erro = null;
             try
             {
+
+
                 if (telefone.EntityState == System.Data.EntityState.Detached)
                 {
-                    db.Telefone.Attach(telefone);
+                    telefones.Attach(telefone);
                 }
                 db.ObjectStateManager.ChangeObjectState(telefone, System.Data.EntityState.Modified);
                 

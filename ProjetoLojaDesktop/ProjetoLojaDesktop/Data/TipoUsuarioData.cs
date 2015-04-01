@@ -11,26 +11,82 @@ namespace ProjetoLojaDesktop.Data
     {
         private ProjetoLojaEntities db;
 
-        public TipoUsuarioData(ProjetoLojaEntities _db)
-        {
-            db = _db;
+        public TipoUsuarioData() {
+
+            db = new ProjetoLojaEntities();
         }
 
-        public List<TipoUsuario> obterTodos()
+        public TipoUsuario obterTipoUsuario(int id)
         {
+            var Lista = from t in db.TipoUsuario
+                        where t.idTipoUsuario == id
+                        select t;
+
+            return Lista.ToList().FirstOrDefault();
+
+        }
+
+        public List<TipoUsuario> todasTipoUsuarios() {
             var Lista = from t in db.TipoUsuario
                         select t;
 
             return Lista.ToList();
         }
 
-        public TipoUsuario obterTipoUsuario( string tipo )
-        {
-            var Lista = from t in db.TipoUsuario
-                        where t.descricao == tipo
-                        select t;
+        public string adicionarTipoUsuario(TipoUsuario t) {
+            string erro = null;
+            try
+            {
+                db.TipoUsuario.AddObject(t);
+                db.SaveChanges();
 
-            return Lista.ToList().FirstOrDefault();
+            }
+
+            catch (Exception ex)
+            {
+                erro = ex.Message;
+            }
+
+            return erro;
+        }
+
+        public string editarTipoUsuario(TipoUsuario t)
+        {
+            string erro = null;
+            try
+            {
+
+                if (t.EntityState == System.Data.EntityState.Detached)
+                    db.TipoUsuario.Attach(t);
+                db.ObjectStateManager.ChangeObjectState(t, System.Data.EntityState.Modified);
+                db.SaveChanges();
+
+            }
+
+            catch (Exception ex)
+            {
+                erro = ex.Message;
+            }
+
+            return erro;
+        }
+
+        public string excluirTipoUsuario(TipoUsuario t)
+        {
+            string erro = null;
+            try
+            {
+                db.TipoUsuario.DeleteObject(t);
+                db.SaveChanges();
+
+            }
+
+            catch (Exception ex)
+            {
+                erro = ex.Message;
+            }
+
+            return erro;
         }
     }
 }

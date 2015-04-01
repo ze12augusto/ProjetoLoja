@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using ProjetoLojaDesktop;
 using ProjetoLojaDesktop.Forms;
+
 
 namespace cad_fornecedor
 {
@@ -17,7 +17,7 @@ namespace cad_fornecedor
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormPrincipal());
+            Application.Run(new FormProdutos());
         }
     }
 }

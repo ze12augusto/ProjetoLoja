@@ -11,9 +11,9 @@ namespace ProjetoLojaDesktop.Data
     {
          private ProjetoLojaEntities db;
 
-        public PessoaFisicaData(ProjetoLojaEntities _db) {
+        public PessoaFisicaData() {
 
-            db = _db;
+            db = new ProjetoLojaEntities();
         }
 
         public PessoaFisica obterPessoaFisica(int id)
@@ -26,44 +26,8 @@ namespace ProjetoLojaDesktop.Data
 
         }
 
-        public bool verificarCPF(int idPessoa, string cpf)
-        {
-            if (idPessoa == 0)
-            {
-                var lista = from p in db.PessoaFisica
-                            where p.CPF == cpf
-                            select p;
-
-                if (lista.Count() == 0)
-                    return true;
-                else
-                    return false;
-            }
-            else
-            {
-                var lista = from p in db.PessoaFisica
-                            where p.idPessoa == idPessoa && p.CPF == cpf
-                            select p;
-
-                if (lista.Count() == 1)
-                    return true;
-                else
-                    return false;
-            }
-        }
-
-        public List<PessoaFisica> todasPessoaFisicasPorTipo( int idTipoPessoa ) {
+        public List<PessoaFisica> todasPessoaFisicas() {
             var Lista = from p in db.PessoaFisica
-                        where p.Pessoa.TipoPessoa.idTipoPessoa == idTipoPessoa
-                        select p;
-
-            return Lista.ToList();
-        }
-
-        public List<PessoaFisica> buscarPessoasFisicasPorNome(string nome)
-        {
-            var Lista = from p in db.PessoaFisica
-                        where p.Pessoa.nome == nome
                         select p;
 
             return Lista.ToList();
@@ -73,7 +37,6 @@ namespace ProjetoLojaDesktop.Data
             string erro = null;
             try
             {
-                db.Pessoa.AddObject(m.Pessoa);
                 db.PessoaFisica.AddObject(m);
                 db.SaveChanges();
 

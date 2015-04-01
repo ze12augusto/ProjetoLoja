@@ -18,7 +18,7 @@ namespace ProjetoLojaDesktop.Data
             cidades = db.CreateObjectSet<Cidade>();
         }
 
-        public List<Cidade> obterTodas()
+        public List<Cidade> todasCidades()
         {
             return cidades.ToList();
         }

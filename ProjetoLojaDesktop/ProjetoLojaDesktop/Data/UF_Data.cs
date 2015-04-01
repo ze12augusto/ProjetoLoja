@@ -18,7 +18,7 @@ namespace ProjetoLojaDesktop.Data
             unidadeFederativas = db.CreateObjectSet<UnidadeFederativa>();
         }
 
-        public List<UnidadeFederativa> obterTodas()
+        public List<UnidadeFederativa> todasUnidadesFederativas()
         {
             return unidadeFederativas.ToList();
         }

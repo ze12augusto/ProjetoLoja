@@ -172,37 +172,26 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Business-Man.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\User-Group.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\User-Profile.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Folder-Picture.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Money-Coin-01.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Verify.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Door-Closed.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\marca.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\marca1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\marca2.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Assets\Img\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Add-New.png" />
+    <Content Include="Resources\Business-Man.png" />
+    <Content Include="Resources\Clean.png" />
+    <Content Include="Resources\Data-Edit.png" />
+    <Content Include="Resources\Document-02.png" />
+    <Content Include="Resources\Door-Closed.png" />
+    <Content Include="Resources\Folder-Picture.png" />
+    <Content Include="Resources\Garbage.png" />
+    <Content Include="Resources\marca.png" />
+    <Content Include="Resources\marca1.png" />
+    <Content Include="Resources\marca2.png" />
+    <Content Include="Resources\Money-Coin-01.png" />
+    <Content Include="Resources\Save.png" />
+    <Content Include="Resources\Search.png" />
+    <Content Include="Resources\User-Group.png" />
+    <Content Include="Resources\User-Profile.png" />
+    <Content Include="Resources\Verify.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

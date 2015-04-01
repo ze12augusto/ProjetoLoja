@@ -89,5 +89,31 @@ namespace ProjetoLojaDesktop.Data
 
             return erro;
         }
+
+        public bool verificarCPF(int idPessoa, string cpf)
+        {
+            if (idPessoa == 0)
+            {
+                var lista = from p in db.PessoaFisica
+                            where p.CPF == cpf
+                            select p;
+
+                if (lista.Count() == 0)
+                    return true;
+                else
+                    return false;
+            }
+            else
+            {
+                var lista = from p in db.PessoaFisica
+                            where p.idPessoa == idPessoa && p.CPF == cpf
+                            select p;
+
+                if (lista.Count() == 1)
+                    return true;
+                else
+                    return false;
+            }
+        }
     }
 }

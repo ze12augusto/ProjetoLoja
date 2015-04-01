@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnLimpar = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,24 +39,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cbxMarcas = new System.Windows.Forms.ComboBox();
+            this.btnLimpar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModelos)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnLimpar
-            // 
-            this.btnLimpar.Image = global::ProjetoLojaDesktop.Properties.Resources.Clean;
-            this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLimpar.Location = new System.Drawing.Point(234, 312);
-            this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(70, 25);
-            this.btnLimpar.TabIndex = 17;
-            this.btnLimpar.Text = "Limpar";
-            this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLimpar.UseVisualStyleBackColor = true;
-            // 
             // btnPesquisar
             // 
-            this.btnPesquisar.Image = global::ProjetoLojaDesktop.Properties.Resources.Search;
             this.btnPesquisar.Location = new System.Drawing.Point(278, 88);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(25, 25);
@@ -97,7 +84,6 @@
             // 
             // Excluir
             // 
-            this.Excluir.Image = global::ProjetoLojaDesktop.Properties.Resources.Garbage;
             this.Excluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Excluir.Location = new System.Drawing.Point(161, 312);
             this.Excluir.Name = "Excluir";
@@ -109,7 +95,6 @@
             // 
             // Editar
             // 
-            this.Editar.Image = global::ProjetoLojaDesktop.Properties.Resources.Data_Edit;
             this.Editar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Editar.Location = new System.Drawing.Point(87, 312);
             this.Editar.Name = "Editar";
@@ -121,7 +106,6 @@
             // 
             // Salvar
             // 
-            this.Salvar.Image = global::ProjetoLojaDesktop.Properties.Resources.Save;
             this.Salvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Salvar.Location = new System.Drawing.Point(14, 312);
             this.Salvar.Name = "Salvar";
@@ -156,6 +140,18 @@
             this.cbxMarcas.Name = "cbxMarcas";
             this.cbxMarcas.Size = new System.Drawing.Size(230, 21);
             this.cbxMarcas.TabIndex = 19;
+            // 
+            // btnLimpar
+            // 
+            this.btnLimpar.Image = global::ProjetoLojaDesktop.Properties.Resources.Clean;
+            this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLimpar.Location = new System.Drawing.Point(234, 312);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(70, 25);
+            this.btnLimpar.TabIndex = 17;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLimpar.UseVisualStyleBackColor = true;
             // 
             // FormModelo
             // 

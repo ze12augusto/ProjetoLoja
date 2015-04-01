@@ -69,17 +69,16 @@ namespace ProjetoLojaDesktop.Forms
         {
             dgvProduto.DataSource = produtoData.todosProdutos();
             dgvProduto.Columns[0].Visible = false;
-            dgvProduto.Columns[1].Visible = false;
+            dgvProduto.Columns[5].Visible = false;
             dgvProduto.Columns[6].Visible = false;
             dgvProduto.Columns[7].Visible = false;
             dgvProduto.Columns[8].Visible = false;
             dgvProduto.Columns[9].Visible = false;
             dgvProduto.Columns[10].Visible = false;
-            dgvProduto.Columns[11].Visible = false;
-            dgvProduto.Columns[2].HeaderText = "Nome";
-            dgvProduto.Columns[3].HeaderText = "Descrição";
-            dgvProduto.Columns[4].HeaderText = "Quantidade Mínima";
-            dgvProduto.Columns[5].HeaderText = "Quantidade Atual";
+            dgvProduto.Columns[1].HeaderText = "Nome";
+            dgvProduto.Columns[2].HeaderText = "Descrição";
+            dgvProduto.Columns[3].HeaderText = "Quantidade Mínima";
+            dgvProduto.Columns[4].HeaderText = "Quantidade Atual";
         }
         private bool validarCampos()
         {
@@ -112,8 +111,9 @@ namespace ProjetoLojaDesktop.Forms
             produto.descricao = txtDescricao.Text;
             produto.qtdMinima = Convert.ToInt32(txtQtdM.Text);
             produto.qtdAtual = Convert.ToInt32(txtQtdA.Text);
-            produto.idMarcaProduto = (int)cbxMarca.SelectedValue;
+            //produto.idMarcaProduto = (int)cbxMarca.SelectedValue;
             produto.idModelo = (int)cbxModelo.SelectedValue;
+
         }
         private void resetarCampos()
         {
@@ -182,7 +182,7 @@ namespace ProjetoLojaDesktop.Forms
                 txtDescricao.Text = produto.descricao;
                 txtQtdM.Text = produto.qtdMinima.ToString();
                 txtQtdA.Text = produto.qtdAtual.ToString();
-                cbxMarca.SelectedValue = produto.idMarcaProduto;
+                //cbxMarca.SelectedValue = produto.idMarcaProduto;
                 cbxModelo.SelectedValue = produto.idModelo;
                 IdProduto.Text = produto.idProduto.ToString();
             }

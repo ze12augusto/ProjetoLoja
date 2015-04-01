@@ -72,10 +72,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProjetoLojaEntity.edmx</DependentUpon>
     </Compile>
-    <Compile Include="FormPrincipal.cs">
+    <Compile Include="Views\FormPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPrincipal.Designer.cs">
+    <Compile Include="Views\FormPrincipal.Designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Produto\FormProdutos.cs">
@@ -122,6 +122,12 @@
     <Compile Include="Views\Produto\FormModelo.Designer.cs">
       <DependentUpon>FormModelo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Produto\FormSelecionarProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Produto\FormSelecionarProduto.Designer.cs">
+      <DependentUpon>FormSelecionarProduto.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Views\Produto\FormProdutos.resx">
       <DependentUpon>FormProdutos.cs</DependentUpon>
     </EmbeddedResource>
@@ -152,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Produto\FormModelo.resx">
       <DependentUpon>FormModelo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Produto\FormSelecionarProduto.resx">
+      <DependentUpon>FormSelecionarProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Entity\ProjetoLojaEntity.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

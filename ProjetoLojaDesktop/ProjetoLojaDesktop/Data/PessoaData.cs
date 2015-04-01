@@ -23,6 +23,24 @@ namespace ProjetoLojaDesktop.Data
             return pessoas.ToList();
         }
 
+        public List<Pessoa> todasPessoaFisicasPorTipo(int tipo)
+        {
+            var lista = from p in db.Pessoa
+                        where p.idTipoPessoa == tipo
+                        select p;
+
+            return lista.ToList();
+        }
+
+        public List<Pessoa> buscarPessoasFisicasPorNome( string nome )
+        {
+            var lista = from p in db.Pessoa
+                        where p.nome == nome
+                        select p;
+
+            return lista.ToList();
+        }
+
         public string excluirPessoa(Pessoa pessoa)
         {
             string erro = null;

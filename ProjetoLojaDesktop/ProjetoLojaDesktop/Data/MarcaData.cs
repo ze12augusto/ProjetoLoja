@@ -33,6 +33,15 @@ namespace ProjetoLojaDesktop.Data
             return Lista.ToList();
         }
 
+        public List<Marca> buscaMarcas( string busca )
+        {
+            var Lista = from m in db.Marca
+                        where m.descricao == busca
+                        select m;
+
+            return Lista.ToList();
+        }
+
         public string adicionarMarca(Marca m) {
             string erro = null;
             try

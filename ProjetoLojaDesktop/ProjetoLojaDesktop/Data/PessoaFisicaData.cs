@@ -11,9 +11,10 @@ namespace ProjetoLojaDesktop.Data
     {
          private ProjetoLojaEntities db;
 
-        public PessoaFisicaData() {
+         public PessoaFisicaData(ProjetoLojaEntities db)
+         {
 
-            db = new ProjetoLojaEntities();
+            this.db = db;
         }
 
         public PessoaFisica obterPessoaFisica(int id)

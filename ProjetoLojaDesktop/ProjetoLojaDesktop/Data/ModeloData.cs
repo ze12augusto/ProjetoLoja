@@ -33,6 +33,15 @@ namespace ProjetoLojaDesktop.Data
             return Lista.ToList();
         }
 
+        public List<Modelo> buscaModelos(string busca)
+        {
+            var Lista = from m in db.Modelo
+                        where m.descricao == busca
+                        select m;
+
+            return Lista.ToList();
+        }
+
         public string adicionarModelo(Modelo o) {
             string erro = null;
             try

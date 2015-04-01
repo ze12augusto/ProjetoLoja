@@ -19,10 +19,10 @@ CREATE TABLE PagamentoAVista (idTransacao int NOT NULL, valorRecebido float(10) 
 CREATE TABLE Pagamento (idTransacao int NOT NULL, valorTotal float(10) NOT NULL, PRIMARY KEY (idTransacao));
 CREATE TABLE TransacaoProduto (idTransacao int NOT NULL, idProduto int NOT NULL, qtdProduto int NOT NULL, valorUnitario money NOT NULL, PRIMARY KEY (idTransacao, idProduto));
 CREATE TABLE TipoTransacao (idTipoTransacao tinyint IDENTITY NOT NULL, descricao varchar(10) NOT NULL, PRIMARY KEY (idTipoTransacao));
-CREATE TABLE Transacao (idTransacao int IDENTITY NOT NULL, data date, desconto float(10), idTipoTransacao tinyint NOT NULL, idCliente int NOT NULL, idStatus int NOT NULL, PRIMARY KEY (idTransacao));
+CREATE TABLE Transacao (idTransacao int IDENTITY NOT NULL, data date, desconto float(10), idTipoTransacao tinyint NOT NULL, idCliente int NOT NULL, idFuncionario int NOT NULL, idStatus int NOT NULL, PRIMARY KEY (idTransacao));
 CREATE TABLE TipoUsuario (idTipoUsuario int IDENTITY NOT NULL, descricao varchar(60) NOT NULL, PRIMARY KEY (idTipoUsuario));
 CREATE TABLE Usuario (idPessoa int NOT NULL, senha varchar(256) NOT NULL, idTipoUsuario int NOT NULL, PRIMARY KEY (idPessoa));
-CREATE TABLE OrdemServico (idTransacao int NOT NULL, numero int NOT NULL, dataEntrada date NOT NULL, dataPrevistaEntrega date NOT NULL, dataEntrega date, descricao varchar(100) NOT NULL, valor money, PRIMARY KEY (idTransacao, numero));
+CREATE TABLE OrdemServico (idTransacao int NOT NULL, numero int NOT NULL, dataEntrada date NOT NULL, dataPrevistaEntrega date NOT NULL, dataEntrega date, descricao text NOT NULL, valor money, PRIMARY KEY (idTransacao, numero));
 CREATE TABLE ImagemProduto (idAlbumFoto int IDENTITY NOT NULL, caminho varchar(100) NOT NULL, idProduto int NOT NULL, PRIMARY KEY (idAlbumFoto));
 CREATE TABLE Produto (idProduto int IDENTITY NOT NULL, idMarcaProduto int NOT NULL, nome varchar(100) NOT NULL, descricao varchar(255) NOT NULL, qtdMinima int NOT NULL, qtdAtual int NOT NULL, idModelo int NOT NULL, PRIMARY KEY (idProduto));
 CREATE TABLE Endereco (idEndereco int NOT NULL IDENTITY, idPessoa int NOT NULL, logradouro varchar(80) NOT NULL, numero int NOT NULL, complemento varchar(100), referencia varchar(50), bairro varchar(80) NOT NULL, UF char(2) NOT NULL, idCidade int NOT NULL, CEP varchar(10) NOT NULL, idTipoEndereco tinyint NOT NULL, PRIMARY KEY (idEndereco, idPessoa));
@@ -53,6 +53,7 @@ ALTER TABLE ImagemProduto ADD CONSTRAINT FKImagemProd470431 FOREIGN KEY (idProdu
 ALTER TABLE Usuario ADD CONSTRAINT FKUsuario557876 FOREIGN KEY (idTipoUsuario) REFERENCES TipoUsuario (idTipoUsuario);
 ALTER TABLE Transacao ADD CONSTRAINT FKTransacao266380 FOREIGN KEY (idTipoTransacao) REFERENCES TipoTransacao (idTipoTransacao);
 ALTER TABLE Transacao ADD CONSTRAINT FKTransacao806039 FOREIGN KEY (idCliente) REFERENCES Pessoa (idPessoa);
+ALTER TABLE Transacao ADD CONSTRAINT FKTransaaco242424 FOREIGN KEY (idFuncionario) REFERENCES Pessoa (idPessoa);
 ALTER TABLE TransacaoProduto ADD CONSTRAINT FKTransacaoP922972 FOREIGN KEY (idProduto) REFERENCES Produto (idProduto);
 ALTER TABLE TransacaoProduto ADD CONSTRAINT FKTransacaoP933760 FOREIGN KEY (idTransacao) REFERENCES Transacao (idTransacao);
 ALTER TABLE Pessoa ADD CONSTRAINT FKPessoa328913 FOREIGN KEY (idTipoPessoa) REFERENCES TipoPessoa (idTipoPessoa);

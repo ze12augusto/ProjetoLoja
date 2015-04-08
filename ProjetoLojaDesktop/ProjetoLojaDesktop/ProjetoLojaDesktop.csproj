@@ -72,6 +72,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProjetoLojaEntity.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Enums\TipoTransacaoEnum.cs" />
     <Compile Include="Views\FormPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>

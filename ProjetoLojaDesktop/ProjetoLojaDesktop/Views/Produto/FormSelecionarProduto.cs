@@ -3,24 +3,39 @@ using System.Linq;
 using System.Windows.Forms;
 using ProjetoLojaDesktop.Data;
 using ProjetoLojaDesktop.Entity;
+using ProjetoLojaDesktop.Enums;
 
 namespace ProjetoLojaDesktop.Views
 {
     public partial class FormSelecionarProduto : Form
     {
         private ProdutoData produtoData;
+        private TipoTransacaoEnum tipoTransacao;
+        private TransacaoProduto transacaoProduto;
+        private ProdutoVigenciaData produtoVigenciaData;
         private Produto produtoSelecionado;
+        private float valorAtualProduto;
 
-        public FormSelecionarProduto()
+        public FormSelecionarProduto( TipoTransacaoEnum tipoTransacao )
         {
             InitializeComponent();
             instanciarObjetos();
             preencherTabelaDeProdutos();
+
+            this.tipoTransacao = tipoTransacao;
+            if (tipoTransacao == TipoTransacaoEnum.ENTRADA)
+            {
+                lblGenerico.Text = "Valor Unitário";
+            }
         }
 
         private void instanciarObjetos()
         {
-            produtoData = new ProdutoData(new ProjetoLojaEntities());
+            ProjetoLojaEntities db = new ProjetoLojaEntities();
+            produtoData = new ProdutoData(db);
+            transacaoProduto = new TransacaoProduto();
+            produtoVigenciaData = new ProdutoVigenciaData(db);
+            valorAtualProduto = 0;
         }
 
         private void preencherTabelaDeProdutos()
@@ -50,14 +65,18 @@ namespace ProjetoLojaDesktop.Views
 
         private void btnSelecionarProduto_Click(object sender, EventArgs e)
         {
-            Produto produto = getProdutoSelecionadoNaTabela();
-
-            if (produto == null)
+            if (produtoSelecionado == null)
             {
                 MessageBox.Show("Você precisa selecionar um produto antes.");
             }
 
-            produtoSelecionado = produto;
+            transacaoProduto.idProduto = produtoSelecionado.idProduto;
+            transacaoProduto.qtdProduto = Int32.Parse(txtQuantidade.Text);
+            if (tipoTransacao == TipoTransacaoEnum.SAIDA)
+                transacaoProduto.valorUnitario = (decimal)valorAtualProduto;
+            else
+                transacaoProduto.valorUnitario = decimal.Parse(txtGenerico.Text);
+
             Dispose();
         }
 
@@ -75,9 +94,56 @@ namespace ProjetoLojaDesktop.Views
             atualizarTabela();
         }
 
-        public Produto getProdutoSelecionado()
+        public TransacaoProduto getTransacaoProduto()
         {
-            return produtoSelecionado;
+            return transacaoProduto;
+        }
+
+        private void txtQuantidade_TextChanged(object sender, EventArgs e)
+        {
+            if (produtoSelecionado != null)
+            {
+                valorAtualProduto = produtoVigenciaData.obterPrecoVigenteAtual(produtoSelecionado.idProduto); ;
+
+                if (tipoTransacao == TipoTransacaoEnum.SAIDA)
+                {
+                    if (txtQuantidade.Text != "")
+                        txtGenerico.Text = (Int32.Parse(txtQuantidade.Text) * valorAtualProduto).ToString();
+                    else
+                        txtGenerico.Text = "";
+                }
+            }
+        }
+
+        private void txtQuantidade_Enter(object sender, EventArgs e)
+        {
+            if (getProdutoSelecionadoNaTabela() == null)
+            {
+                MessageBox.Show("Selecione um produto antes de colocar a quantidade.");
+                dgvProdutos.Focus();
+            }
+        }
+
+        private void dgvProdutos_DoubleClick(object sender, EventArgs e)
+        {
+            produtoSelecionado = getProdutoSelecionadoNaTabela();
+
+            if( produtoSelecionado != null ) { 
+
+                if (tipoTransacao == TipoTransacaoEnum.ENTRADA)
+                {
+                    txtGenerico.Enabled = true;
+                }
+                else
+                {
+                    txtGenerico.Enabled = false;
+                }
+
+                txtQuantidade.Enabled = true;
+
+                if (produtoSelecionado != null)
+                    valorAtualProduto = produtoVigenciaData.obterPrecoVigenteAtual(produtoSelecionado.idProduto);
+            }
         }
     }
 }

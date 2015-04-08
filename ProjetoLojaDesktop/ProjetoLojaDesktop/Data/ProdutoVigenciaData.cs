@@ -5,6 +5,8 @@ using System.Text;
 using ProjetoLojaDesktop.Entity;
 using System.Data.Objects;
 
+using System.Windows.Forms;
+
 namespace ProjetoLojaDesktop.Data
 {
     class ProdutoVigenciaData
@@ -77,6 +79,77 @@ namespace ProjetoLojaDesktop.Data
                 erro = ex.Message;
             }
             return erro;
+        }
+
+        public ProdutoVigenciaPreco obterUltimaVigencia(int idProduto)
+        {
+
+            var lista = from vg in db.ProdutoVigenciaPreco
+
+                        where vg.idProduto == idProduto && vg.dataVigenciaFim == null
+
+                        select vg;
+
+            return lista.ToList().FirstOrDefault();
+
+        }
+
+
+
+        public bool verificarVigenciaExistente(DateTime dataVigenciaInicio, int idProduto)
+        {
+
+            var lista = from vg in db.ProdutoVigenciaPreco
+
+                        where vg.dataVigenciaInicio >= dataVigenciaInicio.Date && vg.idProduto == idProduto
+
+                        select vg;
+
+            if (lista.ToList().Count > 0)
+            {
+
+                return false;
+
+            }
+
+            return true;
+
+        }
+
+        public ProdutoVigenciaPreco obterVigenciaAtual(int idProduto)
+        {
+
+            DateTime agora = DateTime.Now.Date;
+
+            var lista = from vg in db.ProdutoVigenciaPreco
+
+                        where vg.idProduto == idProduto && vg.dataVigenciaInicio <= agora &&
+
+                        (vg.dataVigenciaFim == null || vg.dataVigenciaFim >= agora)
+
+                        select vg;
+
+            if (lista.ToList().Count == 0)
+                return null;
+
+            return lista.ToList().FirstOrDefault();
+
+        }
+
+        public float obterPrecoVigenteAtual(int idProduto)
+        {
+
+            ProdutoVigenciaPreco atual = obterVigenciaAtual(idProduto);
+
+            if (atual == null)
+            {
+
+                return 0;
+
+            }
+
+            return atual.preco;
+
         }
     }
 }

@@ -104,6 +104,27 @@ namespace ProjetoLojaDesktop.Data
             return erro;
         }
 
-
+        public string excluirPessoaFisica(Pessoa pessoa)
+        {
+            string erro = null;
+            try
+            {
+                foreach (Endereco endereco in pessoa.Endereco.ToList())
+                {
+                    db.Endereco.DeleteObject(endereco);
+                }
+                foreach (Telefone telefone in pessoa.Telefone.ToList())
+                    db.Telefone.DeleteObject(telefone);
+                db.PessoaFisica.DeleteObject(pessoa.PessoaFisica);
+                db.Usuario.DeleteObject(pessoa.Usuario);
+                db.Pessoa.DeleteObject(pessoa);
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                erro = ex.Message;
+            }
+            return erro;
+        }
     }
 }

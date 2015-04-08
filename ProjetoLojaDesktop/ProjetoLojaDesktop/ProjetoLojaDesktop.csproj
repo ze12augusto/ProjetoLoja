@@ -55,11 +55,6 @@
     <Compile Include="Data\ImagemProdutoData.cs" />
     <Compile Include="Data\MarcaData.cs" />
     <Compile Include="Data\ModeloData.cs" />
-    <Compile Include="Data\NotaFiscalData.cs" />
-    <Compile Include="Data\OrdemDeServicoData.cs" />
-    <Compile Include="Data\PagamentoAVistaData.cs" />
-    <Compile Include="Data\PagamentoCartaoData.cs" />
-    <Compile Include="Data\PagamentoData.cs" />
     <Compile Include="Data\PessoaData.cs" />
     <Compile Include="Data\PessoaFisicaData.cs" />
     <Compile Include="Data\PessoaJuridicaData.cs" />
@@ -68,12 +63,10 @@
     <Compile Include="Data\StatusTransacaoData.cs" />
     <Compile Include="Data\TelefoneData.cs" />
     <Compile Include="Data\TipoEnderecoData.cs" />
-    <Compile Include="Data\TipoPagamentoData.cs" />
     <Compile Include="Data\TipoPessoaData.cs" />
     <Compile Include="Data\TipoTelefoneData.cs" />
     <Compile Include="Data\TipoTransacaoData.cs" />
     <Compile Include="Data\TipoUsuarioData.cs" />
-    <Compile Include="Data\TransacaoProdutoData.cs" />
     <Compile Include="Data\TransacaoData.cs" />
     <Compile Include="Data\UF_Data.cs" />
     <Compile Include="Data\UsuarioData.cs" />

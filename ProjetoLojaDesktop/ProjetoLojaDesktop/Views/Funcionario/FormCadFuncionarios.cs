@@ -60,23 +60,23 @@ namespace ProjetoLojaDesktop
 
         private void inicializarDataSources()
         {
-            cbxTipoEndereco.DataSource = tipoEnderecoData.obterTodos();
+            cbxTipoEndereco.DataSource = tipoEnderecoData.todostipoenderecos();
             cbxTipoEndereco.DisplayMember = "descricao";
             cbxTipoEndereco.ValueMember = "idTipoEndereco";
 
-            cbxUF.DataSource = ufData.obterTodas();
+            cbxUF.DataSource = ufData.todasUnidadesFederativas();
             cbxUF.DisplayMember = "nome";
             cbxUF.ValueMember = "UF";
 
-            cbxCidade.DataSource = cidadeData.obterTodas();
+            cbxCidade.DataSource = cidadeData.todasCidades();
             cbxCidade.DisplayMember = "nome";
             cbxCidade.ValueMember = "idCidade";
 
-            cbxTipoUsuario.DataSource = tipoUsuarioData.obterTodos();
+            cbxTipoUsuario.DataSource = tipoUsuarioData.todasTipoUsuarios();
             cbxTipoUsuario.DisplayMember = "descricao";
             cbxTipoUsuario.ValueMember = "idTipoUsuario";
 
-            cbxTipoTelefone.DataSource = tipoTelefoneData.obterTodos();
+            cbxTipoTelefone.DataSource = tipoTelefoneData.todosTiposTelefones();
             cbxTipoTelefone.DisplayMember = "descricao";
             cbxTipoTelefone.ValueMember = "idTipoTelefone";
         }
@@ -368,7 +368,7 @@ namespace ProjetoLojaDesktop
 
         private void atualizarListaDeEnderecos()
         {
-            List<Endereco> enderecos = enderecoData.todosEnderecos(funcionario.idPessoa);
+            List<Endereco> enderecos = funcionario.Endereco.ToList();
             dgvEndereco.DataSource = enderecos;
 
             dgvEndereco.Columns[0].Visible = false;
@@ -467,7 +467,7 @@ namespace ProjetoLojaDesktop
                 string retornoSalvar = null;
 
                 if (telefone.idTelefone == 0)
-                    retornoSalvar = telefoneData.adicionarTelefone(telefone);
+                    retornoSalvar = telefoneData.salvarTelefone(telefone);
                 else
                     retornoSalvar = telefoneData.editarTelefone(telefone);
 
@@ -549,7 +549,7 @@ namespace ProjetoLojaDesktop
 
         private void atualizarListaDeTelefones()
         {
-            List<Telefone> telefones = telefoneData.todosTelefones(funcionario.idPessoa);
+            List<Telefone> telefones = funcionario.Telefone.ToList();
             dgvTelefone.DataSource = telefones;
 
             dgvTelefone.Columns[0].Visible = false;

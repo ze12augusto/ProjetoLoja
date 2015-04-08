@@ -16,6 +16,11 @@ namespace ProjetoLojaDesktop.Data
         {
             db = _db;
             status = db.CreateObjectSet<StatusTransacao>();
+	}
+
+        public StatusTransacaoData() {
+
+            db = new ProjetoLojaEntities();
         }
 
         public StatusTransacao obterStatusTransacaoData(int id)
@@ -33,6 +38,12 @@ namespace ProjetoLojaDesktop.Data
                         select s;
 
             return lista.ToList();
+	}
+        public List<StatusTransacao> todosStatusTransacao() {
+            var Lista = from s in db.StatusTransacao
+                        select s;
+
+            return Lista.ToList();
         }
 
         public List<StatusTransacao> buscaStatusTransacao(String texto)

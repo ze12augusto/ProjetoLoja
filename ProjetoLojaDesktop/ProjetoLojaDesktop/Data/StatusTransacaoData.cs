@@ -10,13 +10,6 @@ namespace ProjetoLojaDesktop.Data
     class StatusTransacaoData
     {
         private ProjetoLojaEntities db;
-        private ObjectSet<StatusTransacao> status;
-
-        public StatusTransacaoData(ProjetoLojaEntities _db)
-        {
-            db = _db;
-            status = db.CreateObjectSet<StatusTransacao>();
-	}
 
         public StatusTransacaoData() {
 
@@ -33,12 +26,6 @@ namespace ProjetoLojaDesktop.Data
 
         }
 
-        public List<StatusTransacao> obterTodos() {
-            var lista = from s in db.StatusTransacao
-                        select s;
-
-            return lista.ToList();
-	}
         public List<StatusTransacao> todosStatusTransacao() {
             var Lista = from s in db.StatusTransacao
                         select s;

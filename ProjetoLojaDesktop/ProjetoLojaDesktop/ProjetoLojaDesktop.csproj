@@ -75,67 +75,64 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProjetoLojaEntity.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormProdutos.cs">
+    <Compile Include="Views\FormPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormProdutos.Designer.cs">
+    <Compile Include="Views\FormPrincipal.Designer.cs">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Produto\FormProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Produto\FormProdutos.Designer.cs">
       <DependentUpon>FormProdutos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FormTransacaoSaida.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormTransacaoSaida.Designer.cs">
-      <DependentUpon>FormTransacaoSaida.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Frm_cadCliente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Frm_cadCliente.Designer.cs">
-      <DependentUpon>Frm_cadCliente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FormCadFuncionarios.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormCadFuncionarios.Designer.cs">
-      <DependentUpon>FormCadFuncionarios.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FormMarca.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormMarca.Designer.cs">
-      <DependentUpon>FormMarca.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FormModelo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormModelo.Designer.cs">
-      <DependentUpon>FormModelo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormFornecedor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormFornecedor.Designer.cs">
-      <DependentUpon>FormFornecedor.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\FormProdutos.resx">
-      <DependentUpon>FormProdutos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormTransacaoSaida.resx">
-      <DependentUpon>FormTransacaoSaida.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Frm_cadCliente.resx">
+    <Compile Include="Views\Cliente\Frm_cadCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Cliente\Frm_cadCliente.Designer.cs">
       <DependentUpon>Frm_cadCliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormFornecedor.resx">
+    </Compile>
+    <Compile Include="Views\Form_Fornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Form_Fornecedor.Designer.cs">
+      <DependentUpon>Form_Fornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Fornecedor\FormFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Fornecedor\FormFornecedor.Designer.cs">
       <DependentUpon>FormFornecedor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormMarca.resx">
+    </Compile>
+    <Compile Include="Views\Funcionario\FormCadFuncionarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Funcionario\FormCadFuncionarios.Designer.cs">
+      <DependentUpon>FormCadFuncionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Produto\FormMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Produto\FormMarca.Designer.cs">
       <DependentUpon>FormMarca.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormModelo.resx">
+    </Compile>
+    <Compile Include="Views\Produto\FormModelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Produto\FormModelo.Designer.cs">
       <DependentUpon>FormModelo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Produto\FormSelecionarProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Produto\FormSelecionarProduto.Designer.cs">
+      <DependentUpon>FormSelecionarProduto.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\Produto\FormProdutos.resx">
+      <DependentUpon>FormProdutos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -147,11 +144,34 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\Cliente\Frm_cadCliente.resx">
+      <DependentUpon>Frm_cadCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Form_Fornecedor.resx">
+      <DependentUpon>Form_Fornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Fornecedor\FormFornecedor.resx">
+      <DependentUpon>FormFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Funcionario\FormCadFuncionarios.resx">
+      <DependentUpon>FormCadFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Produto\FormMarca.resx">
+      <DependentUpon>FormMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Produto\FormModelo.resx">
+      <DependentUpon>FormModelo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Produto\FormSelecionarProduto.resx">
+      <DependentUpon>FormSelecionarProduto.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="Entity\ProjetoLojaEntity.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ProjetoLojaEntity.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="App.Config" />
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\DataSources\ProjetoLojaDesktop.Entity.ProjetoLojaEntities.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -164,49 +184,26 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Business-Man.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\User-Group.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\User-Profile.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Folder-Picture.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Money-Coin-01.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Verify.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Door-Closed.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\marca.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\marca1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\marca2.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Assets\Img\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Document-02.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Save.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Data-Edit.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Search.png" />
+    <Content Include="Resources\Add-New.png" />
+    <Content Include="Resources\Business-Man.png" />
+    <Content Include="Resources\Clean.png" />
+    <Content Include="Resources\Data-Edit.png" />
+    <Content Include="Resources\Document-02.png" />
+    <Content Include="Resources\Door-Closed.png" />
+    <Content Include="Resources\Folder-Picture.png" />
+    <Content Include="Resources\Garbage.png" />
+    <Content Include="Resources\marca.png" />
+    <Content Include="Resources\marca1.png" />
+    <Content Include="Resources\marca2.png" />
+    <Content Include="Resources\Money-Coin-01.png" />
+    <Content Include="Resources\Save.png" />
+    <Content Include="Resources\Search.png" />
+    <Content Include="Resources\User-Group.png" />
+    <Content Include="Resources\User-Profile.png" />
+    <Content Include="Resources\Verify.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

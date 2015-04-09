@@ -8,7 +8,7 @@ using ProjetoLojaDesktop;
 using ProjetoLojaDesktop.Enums;
 
 
-namespace cad_fornecedor
+namespace ProjetoLojaDesktop
 {
     static class Program
     {
@@ -20,7 +20,7 @@ namespace cad_fornecedor
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormSelecionarProduto(TipoTransacaoEnum.SAIDA));
+            Application.Run(new FormPrincipal());
         }
     }
 }

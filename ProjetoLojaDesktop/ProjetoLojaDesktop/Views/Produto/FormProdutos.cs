@@ -16,34 +16,38 @@ namespace ProjetoLojaDesktop.Forms
     public partial class FormProdutos : Form
     {
         private ProjetoLojaEntities db;
-        
+
         private Produto produto;
+        private ProdutoVigenciaPreco vigencia;
         private CaracteristicaProduto caracteristicaProduto;
         private ImagemProduto imagemProduto;
 
         private ProdutoData produtoData;
         private MarcaData marcaData;
         private ModeloData modeloData;
+        private ProdutoVigenciaData vigenciaData;
 
         private ImagemProdutoData imagemProdutoData;
         private CaracteristicaProdutoData caracteristicaProdutoData;
-        
+
         public FormProdutos()
         {
             InitializeComponent();
 
             db = new ProjetoLojaEntities();
-            
+
             produtoData = new ProdutoData(db);
             caracteristicaProdutoData = new CaracteristicaProdutoData();
             imagemProdutoData = new ImagemProdutoData();
             marcaData = new MarcaData();
             modeloData = new ModeloData();
+            vigenciaData = new ProdutoVigenciaData(db);
             produto = new Produto();
             caracteristicaProduto = new CaracteristicaProduto();
             imagemProduto = new ImagemProduto();
             ((Control)this.tabProduto).Enabled = false;
             ((Control)this.tabDetalhesProduto).Enabled = false;
+            ((Control)this.tabVigencia).Enabled = false;
             inicializar();
         }
         private void inicializar()
@@ -52,8 +56,10 @@ namespace ProjetoLojaDesktop.Forms
             inicializarDataGridView();
             inicializarDataGridViewImagens();
             inicializarDataGridViewCaracteristicas();
+            inicializarDataGridViewVigencia();
             atualizarTabelaCaracteristicas();
             atualizarTabelaImagens();
+            atualizarTabelaVigencia();
             inicializarCbx();
         }
         private void inicializarCbx()
@@ -69,16 +75,16 @@ namespace ProjetoLojaDesktop.Forms
         {
             dgvProduto.DataSource = produtoData.todosProdutos();
             dgvProduto.Columns[0].Visible = false;
-            dgvProduto.Columns[5].Visible = false;
+            dgvProduto.Columns[1].Visible = false;
             dgvProduto.Columns[6].Visible = false;
             dgvProduto.Columns[7].Visible = false;
             dgvProduto.Columns[8].Visible = false;
             dgvProduto.Columns[9].Visible = false;
             dgvProduto.Columns[10].Visible = false;
-            dgvProduto.Columns[1].HeaderText = "Nome";
-            dgvProduto.Columns[2].HeaderText = "Descrição";
-            dgvProduto.Columns[3].HeaderText = "Quantidade Mínima";
-            dgvProduto.Columns[4].HeaderText = "Quantidade Atual";
+            dgvProduto.Columns[2].HeaderText = "Nome";
+            dgvProduto.Columns[3].HeaderText = "Descrição";
+            dgvProduto.Columns[4].HeaderText = "Quantidade Mínima";
+            dgvProduto.Columns[5].HeaderText = "Quantidade Atual";
         }
         private bool validarCampos()
         {
@@ -111,9 +117,8 @@ namespace ProjetoLojaDesktop.Forms
             produto.descricao = txtDescricao.Text;
             produto.qtdMinima = Convert.ToInt32(txtQtdM.Text);
             produto.qtdAtual = Convert.ToInt32(txtQtdA.Text);
-            //produto.idMarcaProduto = (int)cbxMarca.SelectedValue;
+            produto.Modelo.Marca.idMarca = (int)cbxMarca.SelectedValue;
             produto.idModelo = (int)cbxModelo.SelectedValue;
-
         }
         private void resetarCampos()
         {
@@ -182,7 +187,7 @@ namespace ProjetoLojaDesktop.Forms
                 txtDescricao.Text = produto.descricao;
                 txtQtdM.Text = produto.qtdMinima.ToString();
                 txtQtdA.Text = produto.qtdAtual.ToString();
-                //cbxMarca.SelectedValue = produto.idMarcaProduto;
+                cbxMarca.SelectedValue = produto.Modelo.Marca.idMarca;
                 cbxModelo.SelectedValue = produto.idModelo;
                 IdProduto.Text = produto.idProduto.ToString();
             }
@@ -205,7 +210,6 @@ namespace ProjetoLojaDesktop.Forms
             }
             inicializar();
         }
-
         private void inicializarDataGridViewImagens()
         {
             dgvImagem.DataSource = imagemProdutoData.todasImagemProdutos();
@@ -223,7 +227,16 @@ namespace ProjetoLojaDesktop.Forms
             dgvCaracteristicasProduto.Columns[2].HeaderText = "Título";
             dgvCaracteristicasProduto.Columns[3].HeaderText = "Descrição";
         }
-        
+        private void inicializarDataGridViewVigencia()
+        {
+            dgvVigencia.DataSource = vigenciaData.todosProdutoVigencia();
+            dgvVigencia.Columns[0].Visible = false;
+            dgvVigencia.Columns[1].Visible = false;
+            dgvVigencia.Columns[5].Visible = false;
+            dgvVigencia.Columns[2].HeaderText = "Data Início";
+            dgvVigencia.Columns[3].HeaderText = "Data Fim";
+            dgvVigencia.Columns[4].HeaderText = "Preço";
+        }
         private bool validarCamposCaracteristicas()
         {
             if (txtTitulo.Text == "" || txtTitulo.Text == null)
@@ -239,7 +252,7 @@ namespace ProjetoLojaDesktop.Forms
             return true;
         }
 
-        
+
         private void obterImagemProduto()
         {
             imagemProduto.idProduto = Convert.ToInt32(IdProduto.Text);
@@ -252,7 +265,6 @@ namespace ProjetoLojaDesktop.Forms
             caracteristicaProduto.descricao = txtDescricaoCaracteristicaProduto.Text;
         }
 
-        
         private void resetarCamposImagem()
         {
             imagemProduto = new ImagemProduto();
@@ -266,8 +278,11 @@ namespace ProjetoLojaDesktop.Forms
             txtTitulo.Text = "";
             txtDescricaoCaracteristicaProduto.Text = "";
         }
-
-        
+        private void resetarCamposVigencia()
+        {
+            mtxtPreco.Text = "";
+            dtpDataInicio.Value = DateTime.Now.Date;
+        }
         private ImagemProduto getImagemSelecionada()
         {
             DataGridViewRow p = dgvImagem.CurrentRow;
@@ -282,10 +297,6 @@ namespace ProjetoLojaDesktop.Forms
                 return (CaracteristicaProduto)p.DataBoundItem;
             return null;
         }
-        
-       
-        
-
         private void btnAdcCarac_Click(object sender, EventArgs e)
         {
             if (!validarCamposCaracteristicas())
@@ -347,10 +358,6 @@ namespace ProjetoLojaDesktop.Forms
             atualizarTabelaImagens();
             resetarCamposImagem();
         }
-
-        
-
-        
         private void txtPesquisar_TextChanged(object sender, EventArgs e)
         {
             atualizarTabela();
@@ -376,17 +383,20 @@ namespace ProjetoLojaDesktop.Forms
                         select ip;
             dgvImagem.DataSource = lista.ToList();
         }
-
-
-      
+        public void atualizarTabelaVigencia()
+        {
+            var lista = from vg in vigenciaData.todosProdutoVigencia()
+                        where vg.idProduto == produto.idProduto
+                        select vg;
+            dgvVigencia.DataSource = lista.ToList();
+        }
         private void dgvImagem_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             MessageBox.Show("OK");
         }
 
-  
-
-        private string geraNomeImagem() {
+        private string geraNomeImagem()
+        {
             string caracteresValidos = "abcdefghijklmnopqrstuvwxyz1234567890";
             int valormaximo = caracteresValidos.Length;
             Random random = new Random(DateTime.Now.Millisecond);
@@ -416,13 +426,13 @@ namespace ProjetoLojaDesktop.Forms
                 ((Control)this.tabDetalhesProduto).Enabled = true;
                 resetarCamposImagem();
                 atualizarTabelaImagens();
-           }
+            }
             else
             {
                 MessageBox.Show("Erro ao salvar a imagem." + erro);
                 tabProdutos.SelectedIndex = 1;
                 ((Control)this.tabDetalhesProduto).Enabled = false;
-            }   
+            }
         }
 
         private void btnSelecionar_Click(object sender, EventArgs e)
@@ -445,8 +455,6 @@ namespace ProjetoLojaDesktop.Forms
             obterImagemProduto();
             salvarCaminhoImagem();
         }
-
-  
         private void dgvImagem_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             imagemProduto = getImagemSelecionada();
@@ -468,8 +476,98 @@ namespace ProjetoLojaDesktop.Forms
             txtTitulo.Text = caracteristicaProduto.titulo;
             txtDescricaoCaracteristicaProduto.Text = caracteristicaProduto.descricao;
         }
-        
 
-        
+        private void btnVigencia_Click(object sender, EventArgs e)
+        {
+            tabProdutos.SelectedIndex = 3;
+            ((Control)this.tabVigencia).Enabled = true;
+            produto = getProdutoSelecionado();
+            inicializarDataGridViewVigencia();
+            atualizarTabelaVigencia();
+            btnEditarVigencia.Enabled = false;
+            mtxtPreco.Enabled = false;
+            dtpDataInicio.Enabled = false;
+        }
+        private void btnNovoVigencia_Click(object sender, EventArgs e)
+        {
+            mtxtPreco.Enabled = true;
+            dtpDataInicio.Enabled = true;
+            resetarCamposVigencia();
+        }
+        private void btnSalvarVigencia_Click(object sender, EventArgs e)
+        {
+
+            produto = getProdutoSelecionado();
+            if (validarVigencia())
+            {
+                string erro = null;
+
+                ProdutoVigenciaPreco antigo = vigenciaData.obterUltimaVigencia(produto.idProduto);
+                if (antigo != null)
+                {
+                    antigo.dataVigenciaFim = dtpDataInicio.Value.Date.AddDays(-1);
+                    erro = vigenciaData.editarProdutoVigencia(antigo);
+                }
+                ProdutoVigenciaPreco novo = new ProdutoVigenciaPreco();
+                novo.preco = (float)Convert.ToDouble(mtxtPreco.Text);
+                novo.dataVigenciaInicio = dtpDataInicio.Value.Date;
+                novo.dataVigenciaFim = null;
+                novo.idProduto = produto.idProduto;
+                erro = vigenciaData.adicionarProdutoVigencia(novo);
+                resetarCamposVigencia();
+                inicializarDataGridViewVigencia();
+                atualizarTabelaVigencia();
+            }
+        }
+        private ProdutoVigenciaPreco getVigenciaSelecionada()
+        {
+            DataGridViewRow p = dgvVigencia.CurrentRow;
+            if (p != null)
+                return (ProdutoVigenciaPreco)p.DataBoundItem;
+            return null;
+        }
+        private void dgvVigencia_SelectionChanged(object sender, EventArgs e)
+        {
+            vigencia = getVigenciaSelecionada();
+
+            if (vigencia != null && vigencia.dataVigenciaInicio > DateTime.Now.Date)
+            {
+                btnEditarVigencia.Enabled = true;
+            }
+            else
+            {
+                btnEditarVigencia.Enabled = false;
+            }
+        }
+        public bool validarVigencia()
+        {
+            if (vigenciaData.verificarVigenciaExistente(dtpDataInicio.Value.Date,produto.idProduto) == false)
+            {
+                MessageBox.Show("VigÊncia Cadastrada");
+                return false;
+            }
+            return true;
+        }
+
+        private void btnEditarVigencia_Click(object sender, EventArgs e)
+        {
+            resetarCamposVigencia();
+            vigencia = getVigenciaSelecionada();
+            if (vigencia != null)
+            {
+                mtxtPreco.Enabled = true;
+                dtpDataInicio.Enabled = true;
+                mtxtPreco.Text = vigencia.preco.ToString();
+                dtpDataInicio.Value = vigencia.dataVigenciaInicio;
+            }
+            else
+            {
+                MessageBox.Show("Nenhuma vigência selecionada!");
+            }
+
+        }
+
+
+
     }
 }

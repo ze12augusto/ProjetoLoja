@@ -18,6 +18,16 @@ namespace ProjetoLojaDesktop.Data
             pessoasjuridicas = db.CreateObjectSet<PessoaJuridica>();
         }
 
+
+        public List<PessoaJuridica> buscarPessoaJurica(string nomePJus)
+        {
+            var result = from a in db.PessoaJuridica
+                         where a.nomeFantasia.StartsWith(nomePJus)
+                         select a;
+            return result.ToList();
+
+        }
+
         public List<PessoaJuridica> todasPessoasJuridicas()
         {
             return pessoasjuridicas.ToList();

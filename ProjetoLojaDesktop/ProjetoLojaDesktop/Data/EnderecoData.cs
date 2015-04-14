@@ -93,6 +93,12 @@ namespace ProjetoLojaDesktop.Data
             return erro;
         }
 
+    public Endereco obterUltimoEndereco()
+    {
+        var lista = from c in enderecos orderby c.idEndereco descending select c;
+        return lista.ToList().FirstOrDefault();
+    }
+
     public string editarEndereco(Endereco endereco)
         {
             string erro = null;
@@ -114,5 +120,22 @@ namespace ProjetoLojaDesktop.Data
             }
             return erro;
         }
+
+    public List<Endereco> obterEnderecoDaPessoa(int idPessoa)
+    {
+
+        var lista = from c in enderecos where c.idPessoa == idPessoa select c;
+        return lista.ToList();
+    }
+
+    public void excluirTodosEnderecosPessoa(int idPessoa)
+    {
+        List<Endereco> ender = obterEnderecoDaPessoa(idPessoa);
+        foreach (Endereco item in ender)
+        {
+            excluirEndereco(item);
+        }
+    }
+
     }
 }

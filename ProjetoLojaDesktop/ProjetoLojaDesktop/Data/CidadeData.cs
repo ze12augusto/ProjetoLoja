@@ -78,5 +78,12 @@ namespace ProjetoLojaDesktop.Data
             }
             return erro;
         }
+
+        public Cidade obterCidade(string nomeCidade)
+        {
+            var lista = from c in cidades where c.nome.Equals(nomeCidade) select c;
+            return lista.ToList().FirstOrDefault();
+        }
+
     }
 }

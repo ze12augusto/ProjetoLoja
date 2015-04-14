@@ -115,5 +115,14 @@ namespace ProjetoLojaDesktop.Data
             }
             return erro;
         }
+
+    public object obterObjTelefoneDaPessoa(int idPessoa)
+    {
+        var lista = from c in telefones
+                    where c.idPessoa == idPessoa
+                    select new { c.idPessoa, c.idTelefone, c.numero, c.TipoTelefone.descricao };
+        return lista.ToList();
+    }
+
     }
 }

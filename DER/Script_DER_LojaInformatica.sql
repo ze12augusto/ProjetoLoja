@@ -10,7 +10,7 @@ CREATE TABLE PessoaJuridica (idPessoa int NOT NULL, CNPJ varchar(18) NOT NULL UN
 CREATE TABLE PessoaFisica (idPessoa int NOT NULL, CPF varchar(14) NOT NULL UNIQUE, RG varchar(11) NOT NULL, PRIMARY KEY (idPessoa));
 CREATE TABLE CaracteristicaProduto (idCaracteristica int IDENTITY NOT NULL, idProduto int NOT NULL, titulo varchar(80) NOT NULL, descricao text NOT NULL, PRIMARY KEY (idCaracteristica));
 CREATE TABLE NotaFiscal (idTransacao int NOT NULL, numero varchar(100) NOT NULL, dataHora date NOT NULL, PRIMARY KEY (idTransacao));
-CREATE TABLE ProdutoVigenciaPreco (idVigencia int NOT NULL, idProduto int NOT NULL, dataVigenciaInicio date NOT NULL, dataVigenciaFim date, preco float(10) NOT NULL, PRIMARY KEY (idVigencia, idProduto));
+CREATE TABLE ProdutoVigenciaPreco (idVigencia int IDENTITY NOT NULL, idProduto int NOT NULL, dataVigenciaInicio date NOT NULL, dataVigenciaFim date, preco float(10) NOT NULL, PRIMARY KEY (idVigencia, idProduto));
 CREATE TABLE UnidadeFederativa (UF char(2) NOT NULL, nome varchar(100), PRIMARY KEY (UF));
 CREATE TABLE Marca (idMarca int IDENTITY NOT NULL, descricao varchar(80) NOT NULL, PRIMARY KEY (idMarca));
 CREATE TABLE Modelo (idModelo int IDENTITY NOT NULL, descricao varchar(80) NOT NULL, idMarca int NOT NULL, PRIMARY KEY (idModelo));

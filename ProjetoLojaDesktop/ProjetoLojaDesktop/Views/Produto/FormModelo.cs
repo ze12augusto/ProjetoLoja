@@ -143,5 +143,7 @@ namespace ProjetoLojaDesktop.Forms
             }
             atribuirModelo((Modelo)dgvModelos.CurrentRow.Cells[0].Value);
         }
+
+       
     }
 }

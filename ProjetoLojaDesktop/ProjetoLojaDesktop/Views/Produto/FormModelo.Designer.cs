@@ -45,6 +45,7 @@
             // 
             // btnPesquisar
             // 
+            this.btnPesquisar.Image = global::ProjetoLojaDesktop.Properties.Resources.Search;
             this.btnPesquisar.Location = new System.Drawing.Point(278, 88);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(25, 25);
@@ -84,6 +85,7 @@
             // 
             // Excluir
             // 
+            this.Excluir.Image = global::ProjetoLojaDesktop.Properties.Resources.Garbage;
             this.Excluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Excluir.Location = new System.Drawing.Point(161, 312);
             this.Excluir.Name = "Excluir";
@@ -95,6 +97,7 @@
             // 
             // Editar
             // 
+            this.Editar.Image = global::ProjetoLojaDesktop.Properties.Resources.Data_Edit;
             this.Editar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Editar.Location = new System.Drawing.Point(87, 312);
             this.Editar.Name = "Editar";
@@ -106,6 +109,7 @@
             // 
             // Salvar
             // 
+            this.Salvar.Image = global::ProjetoLojaDesktop.Properties.Resources.Save;
             this.Salvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Salvar.Location = new System.Drawing.Point(14, 312);
             this.Salvar.Name = "Salvar";

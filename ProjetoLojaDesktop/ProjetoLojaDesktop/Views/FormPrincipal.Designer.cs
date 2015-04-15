@@ -39,10 +39,10 @@
             this.financeiroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSair = new System.Windows.Forms.Button();
             this.btnRelatorio = new System.Windows.Forms.Button();
             this.btnFinanceiro = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnMarca = new System.Windows.Forms.Button();
             this.btnModelo = new System.Windows.Forms.Button();
             this.btnUsuario = new System.Windows.Forms.Button();
             this.btnFornecedor = new System.Windows.Forms.Button();
@@ -79,18 +79,21 @@
             this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
             this.clienteToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.clienteToolStripMenuItem.Text = "Cliente";
+            this.clienteToolStripMenuItem.Click += new System.EventHandler(this.clienteToolStripMenuItem_Click);
             // 
             // fornecerdorToolStripMenuItem
             // 
             this.fornecerdorToolStripMenuItem.Name = "fornecerdorToolStripMenuItem";
             this.fornecerdorToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.fornecerdorToolStripMenuItem.Text = "Fornecerdor";
+            this.fornecerdorToolStripMenuItem.Click += new System.EventHandler(this.fornecerdorToolStripMenuItem_Click);
             // 
             // usuárioToolStripMenuItem
             // 
             this.usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
             this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.usuárioToolStripMenuItem.Text = "Usuário";
+            this.usuárioToolStripMenuItem.Click += new System.EventHandler(this.usuárioToolStripMenuItem_Click);
             // 
             // produtosToolStripMenuItem
             // 
@@ -106,12 +109,14 @@
             this.cadastrarMarcaToolStripMenuItem.Name = "cadastrarMarcaToolStripMenuItem";
             this.cadastrarMarcaToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.cadastrarMarcaToolStripMenuItem.Text = "Cadastrar Marca";
+            this.cadastrarMarcaToolStripMenuItem.Click += new System.EventHandler(this.cadastrarMarcaToolStripMenuItem_Click);
             // 
             // cadastrarModeloToolStripMenuItem
             // 
             this.cadastrarModeloToolStripMenuItem.Name = "cadastrarModeloToolStripMenuItem";
             this.cadastrarModeloToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.cadastrarModeloToolStripMenuItem.Text = "Cadastrar Modelo";
+            this.cadastrarModeloToolStripMenuItem.Click += new System.EventHandler(this.cadastrarModeloToolStripMenuItem_Click);
             // 
             // financeiroToolStripMenuItem
             // 
@@ -130,15 +135,17 @@
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
             this.sairToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
             this.sairToolStripMenuItem.Text = "Sair";
+            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
-            // button1
+            // btnSair
             // 
-            this.button1.BackgroundImage = global::ProjetoLojaDesktop.Properties.Resources.Door_Closed;
-            this.button1.Location = new System.Drawing.Point(411, 43);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(50, 50);
-            this.button1.TabIndex = 8;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSair.BackgroundImage = global::ProjetoLojaDesktop.Properties.Resources.Door_Closed;
+            this.btnSair.Location = new System.Drawing.Point(411, 43);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(50, 50);
+            this.btnSair.TabIndex = 8;
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // btnRelatorio
             // 
@@ -158,14 +165,15 @@
             this.btnFinanceiro.TabIndex = 6;
             this.btnFinanceiro.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnMarca
             // 
-            this.button3.BackgroundImage = global::ProjetoLojaDesktop.Properties.Resources.marca2;
-            this.button3.Location = new System.Drawing.Point(240, 43);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(50, 50);
-            this.button3.TabIndex = 5;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnMarca.BackgroundImage = global::ProjetoLojaDesktop.Properties.Resources.marca2;
+            this.btnMarca.Location = new System.Drawing.Point(240, 43);
+            this.btnMarca.Name = "btnMarca";
+            this.btnMarca.Size = new System.Drawing.Size(50, 50);
+            this.btnMarca.TabIndex = 5;
+            this.btnMarca.UseVisualStyleBackColor = true;
+            this.btnMarca.Click += new System.EventHandler(this.btnMarca_Click);
             // 
             // btnModelo
             // 
@@ -175,6 +183,7 @@
             this.btnModelo.Size = new System.Drawing.Size(50, 50);
             this.btnModelo.TabIndex = 4;
             this.btnModelo.UseVisualStyleBackColor = true;
+            this.btnModelo.Click += new System.EventHandler(this.btnModelo_Click);
             // 
             // btnUsuario
             // 
@@ -184,15 +193,17 @@
             this.btnUsuario.Size = new System.Drawing.Size(50, 50);
             this.btnUsuario.TabIndex = 3;
             this.btnUsuario.UseVisualStyleBackColor = true;
+            this.btnUsuario.Click += new System.EventHandler(this.btnUsuario_Click);
             // 
             // btnFornecedor
             // 
-            this.btnFornecedor.BackgroundImage = global::ProjetoLojaDesktop.Properties.Resources.User_Group;
+            this.btnFornecedor.Image = global::ProjetoLojaDesktop.Properties.Resources.User_Group1;
             this.btnFornecedor.Location = new System.Drawing.Point(69, 43);
             this.btnFornecedor.Name = "btnFornecedor";
             this.btnFornecedor.Size = new System.Drawing.Size(50, 50);
             this.btnFornecedor.TabIndex = 2;
             this.btnFornecedor.UseVisualStyleBackColor = true;
+            this.btnFornecedor.Click += new System.EventHandler(this.btnFornecedor_Click);
             // 
             // btnCliente
             // 
@@ -202,23 +213,24 @@
             this.btnCliente.Size = new System.Drawing.Size(50, 50);
             this.btnCliente.TabIndex = 1;
             this.btnCliente.UseVisualStyleBackColor = true;
+            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
             // 
-            // Form1
+            // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 111);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnRelatorio);
             this.Controls.Add(this.btnFinanceiro);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnMarca);
             this.Controls.Add(this.btnModelo);
             this.Controls.Add(this.btnUsuario);
             this.Controls.Add(this.btnFornecedor);
             this.Controls.Add(this.btnCliente);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "FormPrincipal";
             this.Text = "ProjetoLoja";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -244,10 +256,10 @@
         private System.Windows.Forms.Button btnFornecedor;
         private System.Windows.Forms.Button btnUsuario;
         private System.Windows.Forms.Button btnModelo;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnMarca;
         private System.Windows.Forms.Button btnFinanceiro;
         private System.Windows.Forms.Button btnRelatorio;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSair;
     }
 }
 

@@ -97,10 +97,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\FormTransacaoSaida.cs">
+    <Compile Include="Views\Produto\FormTransacaoSaida.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FormTransacaoSaida.Designer.cs">
+    <Compile Include="Views\Produto\FormTransacaoSaida.Designer.cs">
       <DependentUpon>FormTransacaoSaida.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Fornecedor\FormFornecedor.cs">
@@ -152,7 +152,10 @@
     <EmbeddedResource Include="Views\Cliente\FormCadastroCliente.resx">
       <DependentUpon>FormCadastroCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormTransacaoSaida.resx">
+    <EmbeddedResource Include="Views\FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Produto\FormTransacaoSaida.resx">
       <DependentUpon>FormTransacaoSaida.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Fornecedor\FormFornecedor.resx">
@@ -193,9 +196,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\Img\" />
+    <Folder Include="Views\Relatorios\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Add-New.png" />
+    <None Include="Resources\Add-New1.png" />
     <Content Include="Resources\Business-Man.png" />
     <Content Include="Resources\Clean.png" />
     <Content Include="Resources\Data-Edit.png" />
@@ -210,6 +215,7 @@
     <Content Include="Resources\Save.png" />
     <Content Include="Resources\Search.png" />
     <Content Include="Resources\User-Group.png" />
+    <None Include="Resources\User-Group1.png" />
     <Content Include="Resources\User-Profile.png" />
     <Content Include="Resources\Verify.png" />
   </ItemGroup>

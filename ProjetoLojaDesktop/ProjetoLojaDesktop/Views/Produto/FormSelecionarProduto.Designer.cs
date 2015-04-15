@@ -41,29 +41,26 @@
             // 
             // txtPesquisa
             // 
-            this.txtPesquisa.Location = new System.Drawing.Point(11, 36);
+            this.txtPesquisa.Location = new System.Drawing.Point(71, 18);
             this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(468, 20);
+            this.txtPesquisa.Size = new System.Drawing.Size(350, 20);
             this.txtPesquisa.TabIndex = 1;
             this.txtPesquisa.TextChanged += new System.EventHandler(this.txtPesquisa_TextChanged);
             // 
             // dgvProdutos
             // 
-            this.dgvProdutos.AllowUserToAddRows = false;
-            this.dgvProdutos.AllowUserToDeleteRows = false;
             this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProdutos.Location = new System.Drawing.Point(11, 78);
+            this.dgvProdutos.Location = new System.Drawing.Point(17, 51);
             this.dgvProdutos.Name = "dgvProdutos";
-            this.dgvProdutos.ReadOnly = true;
-            this.dgvProdutos.Size = new System.Drawing.Size(469, 219);
+            this.dgvProdutos.Size = new System.Drawing.Size(404, 219);
             this.dgvProdutos.TabIndex = 3;
             this.dgvProdutos.DoubleClick += new System.EventHandler(this.dgvProdutos_DoubleClick);
             // 
             // btnSelecionarProduto
             // 
-            this.btnSelecionarProduto.Location = new System.Drawing.Point(367, 314);
+            this.btnSelecionarProduto.Location = new System.Drawing.Point(309, 286);
             this.btnSelecionarProduto.Name = "btnSelecionarProduto";
-            this.btnSelecionarProduto.Size = new System.Drawing.Size(112, 23);
+            this.btnSelecionarProduto.Size = new System.Drawing.Size(112, 25);
             this.btnSelecionarProduto.TabIndex = 4;
             this.btnSelecionarProduto.Text = "Selecionar Produto";
             this.btnSelecionarProduto.UseVisualStyleBackColor = true;
@@ -72,7 +69,7 @@
             // lblPesquisar
             // 
             this.lblPesquisar.AutoSize = true;
-            this.lblPesquisar.Location = new System.Drawing.Point(12, 20);
+            this.lblPesquisar.Location = new System.Drawing.Point(15, 21);
             this.lblPesquisar.Name = "lblPesquisar";
             this.lblPesquisar.Size = new System.Drawing.Size(53, 13);
             this.lblPesquisar.TabIndex = 5;
@@ -81,7 +78,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 303);
+            this.label1.Location = new System.Drawing.Point(17, 290);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 13);
             this.label1.TabIndex = 6;
@@ -90,7 +87,7 @@
             // txtQuantidade
             // 
             this.txtQuantidade.Enabled = false;
-            this.txtQuantidade.Location = new System.Drawing.Point(15, 320);
+            this.txtQuantidade.Location = new System.Drawing.Point(82, 287);
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(62, 20);
             this.txtQuantidade.TabIndex = 7;
@@ -100,7 +97,7 @@
             // lblGenerico
             // 
             this.lblGenerico.AutoSize = true;
-            this.lblGenerico.Location = new System.Drawing.Point(91, 304);
+            this.lblGenerico.Location = new System.Drawing.Point(153, 291);
             this.lblGenerico.Name = "lblGenerico";
             this.lblGenerico.Size = new System.Drawing.Size(58, 13);
             this.lblGenerico.TabIndex = 8;
@@ -109,7 +106,7 @@
             // txtGenerico
             // 
             this.txtGenerico.Enabled = false;
-            this.txtGenerico.Location = new System.Drawing.Point(94, 320);
+            this.txtGenerico.Location = new System.Drawing.Point(214, 288);
             this.txtGenerico.Name = "txtGenerico";
             this.txtGenerico.Size = new System.Drawing.Size(89, 20);
             this.txtGenerico.TabIndex = 9;
@@ -118,7 +115,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(492, 349);
+            this.ClientSize = new System.Drawing.Size(438, 331);
             this.Controls.Add(this.txtGenerico);
             this.Controls.Add(this.lblGenerico);
             this.Controls.Add(this.txtQuantidade);

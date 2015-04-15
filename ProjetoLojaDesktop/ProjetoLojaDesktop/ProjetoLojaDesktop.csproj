@@ -55,6 +55,11 @@
     <Compile Include="Data\ImagemProdutoData.cs" />
     <Compile Include="Data\MarcaData.cs" />
     <Compile Include="Data\ModeloData.cs" />
+    <Compile Include="Data\NotaFiscalData.cs" />
+    <Compile Include="Data\OrdemDeServicoData.cs" />
+    <Compile Include="Data\PagamentoAVistaData.cs" />
+    <Compile Include="Data\PagamentoCartaoData.cs" />
+    <Compile Include="Data\PagamentoData.cs" />
     <Compile Include="Data\PessoaData.cs" />
     <Compile Include="Data\PessoaFisicaData.cs" />
     <Compile Include="Data\PessoaJuridicaData.cs" />
@@ -63,11 +68,13 @@
     <Compile Include="Data\StatusTransacaoData.cs" />
     <Compile Include="Data\TelefoneData.cs" />
     <Compile Include="Data\TipoEnderecoData.cs" />
+    <Compile Include="Data\TipoPagamentoData.cs" />
     <Compile Include="Data\TipoPessoaData.cs" />
     <Compile Include="Data\TipoTelefoneData.cs" />
     <Compile Include="Data\TipoTransacaoData.cs" />
     <Compile Include="Data\TipoUsuarioData.cs" />
     <Compile Include="Data\TransacaoData.cs" />
+    <Compile Include="Data\TransacaoProdutoData.cs" />
     <Compile Include="Data\UF_Data.cs" />
     <Compile Include="Data\UsuarioData.cs" />
     <Compile Include="Entity\ProjetoLojaEntity.Designer.cs">
@@ -76,31 +83,25 @@
       <DependentUpon>ProjetoLojaEntity.edmx</DependentUpon>
     </Compile>
     <Compile Include="Enums\TipoTransacaoEnum.cs" />
+    <Compile Include="Views\Cliente\FormCadastroCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Cliente\FormCadastroCliente.Designer.cs">
+      <DependentUpon>FormCadastroCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FormPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\FormPrincipal.Designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Produto\FormProdutos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Produto\FormProdutos.Designer.cs">
-      <DependentUpon>FormProdutos.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\Cliente\Frm_cadCliente.cs">
+    <Compile Include="Views\FormTransacaoSaida.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Cliente\Frm_cadCliente.Designer.cs">
-      <DependentUpon>Frm_cadCliente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Form_Fornecedor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Form_Fornecedor.Designer.cs">
-      <DependentUpon>Form_Fornecedor.cs</DependentUpon>
+    <Compile Include="Views\FormTransacaoSaida.Designer.cs">
+      <DependentUpon>FormTransacaoSaida.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Fornecedor\FormFornecedor.cs">
       <SubType>Form</SubType>
@@ -126,15 +127,18 @@
     <Compile Include="Views\Produto\FormModelo.Designer.cs">
       <DependentUpon>FormModelo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Produto\FormProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Produto\FormProdutos.Designer.cs">
+      <DependentUpon>FormProdutos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Produto\FormSelecionarProduto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Produto\FormSelecionarProduto.Designer.cs">
       <DependentUpon>FormSelecionarProduto.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Views\Produto\FormProdutos.resx">
-      <DependentUpon>FormProdutos.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -145,11 +149,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Views\Cliente\Frm_cadCliente.resx">
-      <DependentUpon>Frm_cadCliente.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Cliente\FormCadastroCliente.resx">
+      <DependentUpon>FormCadastroCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Form_Fornecedor.resx">
-      <DependentUpon>Form_Fornecedor.cs</DependentUpon>
+    <EmbeddedResource Include="Views\FormTransacaoSaida.resx">
+      <DependentUpon>FormTransacaoSaida.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Fornecedor\FormFornecedor.resx">
       <DependentUpon>FormFornecedor.cs</DependentUpon>
@@ -162,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Produto\FormModelo.resx">
       <DependentUpon>FormModelo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Produto\FormProdutos.resx">
+      <DependentUpon>FormProdutos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Produto\FormSelecionarProduto.resx">
       <DependentUpon>FormSelecionarProduto.cs</DependentUpon>

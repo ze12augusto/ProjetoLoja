@@ -7,28 +7,28 @@ using System.Data.Objects;
 
 namespace ProjetoLojaDesktop.Data
 {
-    class CidadeData
+    class OrdemDeServicoData
     {
         private ProjetoLojaEntities db;
-        private ObjectSet<Cidade> cidades;
+        private ObjectSet<OrdemServico> ordensDeServico;
 
-        public CidadeData(ProjetoLojaEntities _db)
+        public OrdemDeServicoData(ProjetoLojaEntities _db)
         {
             db = _db;
-            cidades = db.CreateObjectSet<Cidade>();
+            ordensDeServico = db.CreateObjectSet<OrdemServico>();
         }
 
-        public List<Cidade> todasCidades()
+        public List<OrdemServico> todasOrdensDeServico()
         {
-            return cidades.ToList();
+            return ordensDeServico.ToList();
         }
 
-        public string excluirCidade(Cidade cidade)
+        public string excluirOrdemDeServico(OrdemServico ordemDeServico)
         {
             string erro = null;
             try
             {
-                cidades.DeleteObject(cidade);
+                ordensDeServico.DeleteObject(ordemDeServico);
                 db.SaveChanges();
             }
             catch (Exception ex)
@@ -38,18 +38,18 @@ namespace ProjetoLojaDesktop.Data
             return erro;
         }
 
-        public Cidade obterCidade(int id)
+        public OrdemServico obterOrdemDeServico(int id)
         {
-            var lista = from c in cidades where c.idCidade == id select c;
+            var lista = from o in ordensDeServico where o.numero == id select o;
             return lista.ToList().FirstOrDefault();
         }
 
-        public string adicionarCidade(Cidade cidade)
+        public string adicionarOrdemDeServico(OrdemServico ordemDeServico)
         {
             string erro = null;
             try
             {
-                cidades.AddObject(cidade);
+                ordensDeServico.AddObject(ordemDeServico);
                 db.SaveChanges();
             }
             catch (Exception ex)
@@ -59,16 +59,16 @@ namespace ProjetoLojaDesktop.Data
             return erro;
         }
 
-        public string editarCidade(Cidade cidade)
+        public string editarOrdemDeSevico(OrdemServico ordemDeServico)
         {
             string erro = null;
             try
             {
-                if (cidade.EntityState == System.Data.EntityState.Detached)
+                if (ordemDeServico.EntityState == System.Data.EntityState.Detached)
                 {
-                    cidades.Attach(cidade);
+                    ordensDeServico.Attach(ordemDeServico);
                 }
-                db.ObjectStateManager.ChangeObjectState(cidade, System.Data.EntityState.Modified);
+                db.ObjectStateManager.ChangeObjectState(ordemDeServico, System.Data.EntityState.Modified);
 
                 db.SaveChanges();
             }
@@ -78,12 +78,5 @@ namespace ProjetoLojaDesktop.Data
             }
             return erro;
         }
-
-        public Cidade obterCidade(string nomeCidade)
-        {
-            var lista = from c in cidades where c.nome.Equals(nomeCidade) select c;
-            return lista.ToList().FirstOrDefault();
-        }
-
     }
 }

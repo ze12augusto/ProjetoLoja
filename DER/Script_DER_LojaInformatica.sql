@@ -10,7 +10,7 @@ CREATE TABLE PessoaJuridica (idPessoa int NOT NULL, CNPJ varchar(18) NOT NULL UN
 CREATE TABLE PessoaFisica (idPessoa int NOT NULL, CPF varchar(14) NOT NULL UNIQUE, RG varchar(11) NOT NULL, PRIMARY KEY (idPessoa));
 CREATE TABLE CaracteristicaProduto (idCaracteristica int IDENTITY NOT NULL, idProduto int NOT NULL, titulo varchar(80) NOT NULL, descricao text NOT NULL, PRIMARY KEY (idCaracteristica));
 CREATE TABLE NotaFiscal (idTransacao int NOT NULL, numero varchar(100) NOT NULL, dataHora date NOT NULL, PRIMARY KEY (idTransacao));
-CREATE TABLE ProdutoVigenciaPreco (idVigencia int NOT NULL, idProduto int NOT NULL, dataVigenciaInicio date NOT NULL, dataVigenciaFim date, preco float(10) NOT NULL, PRIMARY KEY (idVigencia, idProduto));
+CREATE TABLE ProdutoVigenciaPreco (idVigencia int IDENTITY NOT NULL, idProduto int NOT NULL, dataVigenciaInicio date NOT NULL, dataVigenciaFim date, preco float(10) NOT NULL, PRIMARY KEY (idVigencia, idProduto));
 CREATE TABLE UnidadeFederativa (UF char(2) NOT NULL, nome varchar(100), PRIMARY KEY (UF));
 CREATE TABLE Marca (idMarca int IDENTITY NOT NULL, descricao varchar(80) NOT NULL, PRIMARY KEY (idMarca));
 CREATE TABLE Modelo (idModelo int IDENTITY NOT NULL, descricao varchar(80) NOT NULL, idMarca int NOT NULL, PRIMARY KEY (idModelo));
@@ -24,7 +24,7 @@ CREATE TABLE TipoUsuario (idTipoUsuario int IDENTITY NOT NULL, descricao varchar
 CREATE TABLE Usuario (idPessoa int NOT NULL, senha varchar(256) NOT NULL, idTipoUsuario int NOT NULL, PRIMARY KEY (idPessoa));
 CREATE TABLE OrdemServico (idTransacao int NOT NULL, numero int NOT NULL, dataEntrada date NOT NULL, dataPrevistaEntrega date NOT NULL, dataEntrega date, descricao text NOT NULL, valor money, PRIMARY KEY (idTransacao, numero));
 CREATE TABLE ImagemProduto (idAlbumFoto int IDENTITY NOT NULL, caminho varchar(100) NOT NULL, idProduto int NOT NULL, PRIMARY KEY (idAlbumFoto));
-CREATE TABLE Produto (idProduto int IDENTITY NOT NULL, nome varchar(100) NOT NULL, descricao varchar(255) NOT NULL, qtdMinima int NOT NULL, qtdAtual int NOT NULL, idModelo int NOT NULL, PRIMARY KEY (idProduto));
+CREATE TABLE Produto (idProduto int IDENTITY NOT NULL, idMarcaProduto int NOT NULL, nome varchar(100) NOT NULL, descricao varchar(255) NOT NULL, qtdMinima int NOT NULL, qtdAtual int NOT NULL, idModelo int NOT NULL, PRIMARY KEY (idProduto));
 CREATE TABLE Endereco (idEndereco int NOT NULL IDENTITY, idPessoa int NOT NULL, logradouro varchar(80) NOT NULL, numero int NOT NULL, complemento varchar(100), referencia varchar(50), bairro varchar(80) NOT NULL, UF char(2) NOT NULL, idCidade int NOT NULL, CEP varchar(10) NOT NULL, idTipoEndereco tinyint NOT NULL, PRIMARY KEY (idEndereco, idPessoa));
 CREATE TABLE TipoTelefone (idTipoTelefone tinyint IDENTITY NOT NULL, descricao varchar(20) NOT NULL, PRIMARY KEY (idTipoTelefone));
 CREATE TABLE Telefone (idTelefone int IDENTITY NOT NULL, numero varchar(15) NOT NULL, idPessoa int NOT NULL, idTipoTelefone tinyint NOT NULL, PRIMARY KEY (idTelefone));

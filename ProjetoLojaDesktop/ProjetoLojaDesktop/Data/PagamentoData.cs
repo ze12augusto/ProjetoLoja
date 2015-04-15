@@ -7,28 +7,28 @@ using System.Data.Objects;
 
 namespace ProjetoLojaDesktop.Data
 {
-    class CidadeData
+    class PagamentoData
     {
         private ProjetoLojaEntities db;
-        private ObjectSet<Cidade> cidades;
+        private ObjectSet<Pagamento> pagamentos;
 
-        public CidadeData(ProjetoLojaEntities _db)
+        public PagamentoData(ProjetoLojaEntities _db)
         {
             db = _db;
-            cidades = db.CreateObjectSet<Cidade>();
+            pagamentos = db.CreateObjectSet<Pagamento>();
         }
 
-        public List<Cidade> todasCidades()
+        public List<Pagamento> todosPagamentos()
         {
-            return cidades.ToList();
+            return pagamentos.ToList();
         }
 
-        public string excluirCidade(Cidade cidade)
+        public string excluirPagamento(Pagamento pagamento)
         {
             string erro = null;
             try
             {
-                cidades.DeleteObject(cidade);
+                pagamentos.DeleteObject(pagamento);
                 db.SaveChanges();
             }
             catch (Exception ex)
@@ -38,18 +38,18 @@ namespace ProjetoLojaDesktop.Data
             return erro;
         }
 
-        public Cidade obterCidade(int id)
+        public Pagamento obterPagamento(int id)
         {
-            var lista = from c in cidades where c.idCidade == id select c;
+            var lista = from p in pagamentos where p.idTransacao == id select p;
             return lista.ToList().FirstOrDefault();
         }
 
-        public string adicionarCidade(Cidade cidade)
+        public string adicionarPagamento(Pagamento pagamento)
         {
             string erro = null;
             try
             {
-                cidades.AddObject(cidade);
+                pagamentos.AddObject(pagamento);
                 db.SaveChanges();
             }
             catch (Exception ex)
@@ -59,16 +59,16 @@ namespace ProjetoLojaDesktop.Data
             return erro;
         }
 
-        public string editarCidade(Cidade cidade)
+        public string editarPagamento(Pagamento pagamento)
         {
             string erro = null;
             try
             {
-                if (cidade.EntityState == System.Data.EntityState.Detached)
+                if (pagamento.EntityState == System.Data.EntityState.Detached)
                 {
-                    cidades.Attach(cidade);
+                    pagamentos.Attach(pagamento);
                 }
-                db.ObjectStateManager.ChangeObjectState(cidade, System.Data.EntityState.Modified);
+                db.ObjectStateManager.ChangeObjectState(pagamento, System.Data.EntityState.Modified);
 
                 db.SaveChanges();
             }
@@ -78,12 +78,5 @@ namespace ProjetoLojaDesktop.Data
             }
             return erro;
         }
-
-        public Cidade obterCidade(string nomeCidade)
-        {
-            var lista = from c in cidades where c.nome.Equals(nomeCidade) select c;
-            return lista.ToList().FirstOrDefault();
-        }
-
     }
 }

@@ -8,7 +8,7 @@ using ProjetoLojaDesktop;
 using ProjetoLojaDesktop.Enums;
 
 
-namespace cad_fornecedor
+namespace ProjetoLojaDesktop
 {
     static class Program
     {

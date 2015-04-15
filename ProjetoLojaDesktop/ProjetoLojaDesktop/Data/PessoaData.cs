@@ -126,5 +126,85 @@ namespace ProjetoLojaDesktop.Data
             }
             return erro;
         }
+
+        public string adicionarPessoaFisica(Pessoa pessoa)
+        {
+            string erro = null;
+
+            try
+            {
+                if (pessoa.idPessoa == 0)
+                {
+                    db.Pessoa.AddObject(pessoa);
+                    db.PessoaFisica.AddObject(pessoa.PessoaFisica);
+                }
+                else
+                {
+                    if (pessoa.EntityState == System.Data.EntityState.Detached)
+                    {
+                        db.Pessoa.Attach(pessoa);
+                    }
+
+                    db.ObjectStateManager.ChangeObjectState(
+                        pessoa, System.Data.EntityState.Modified);
+
+                    db.ObjectStateManager.ChangeObjectState(
+                        pessoa.PessoaFisica, System.Data.EntityState.Modified);
+                }
+
+                db.SaveChanges();
+            }
+
+            catch (Exception ex)
+            {
+                erro = ex.Message;
+            }
+
+            return erro;
+        }
+
+        public string adicionarPessoaJuridica(Pessoa pessoa)
+        {
+            string erro = null;
+
+            try
+            {
+                if (pessoa.idPessoa == 0)
+                {
+                    db.Pessoa.AddObject(pessoa);
+                    db.PessoaJuridica.AddObject(pessoa.PessoaJuridica);
+                }
+                else
+                {
+                    if (pessoa.EntityState == System.Data.EntityState.Detached)
+                    {
+                        db.Pessoa.Attach(pessoa);
+                    }
+
+                    db.ObjectStateManager.ChangeObjectState(
+                        pessoa, System.Data.EntityState.Modified);
+
+                    db.ObjectStateManager.ChangeObjectState(
+                        pessoa.PessoaJuridica, System.Data.EntityState.Modified);
+                }
+
+                db.SaveChanges();
+            }
+
+            catch (Exception ex)
+            {
+                erro = ex.Message;
+            }
+
+            return erro;
+        }
+
+        public List<Pessoa> pesquisarPessoaPorNome(string nome)
+        {
+            var lista = from p in todasPessoas()
+                        where p.nome.ToLower().Contains(nome.ToLower())
+                        select p;
+            return lista.ToList();
+        }
     }
 }

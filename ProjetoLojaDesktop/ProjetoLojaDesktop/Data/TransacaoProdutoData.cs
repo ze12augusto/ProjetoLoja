@@ -7,28 +7,28 @@ using System.Data.Objects;
 
 namespace ProjetoLojaDesktop.Data
 {
-    class CidadeData
+    class TransacaoProdutoData
     {
         private ProjetoLojaEntities db;
-        private ObjectSet<Cidade> cidades;
+        private ObjectSet<TransacaoProduto> transacoesProduto;
 
-        public CidadeData(ProjetoLojaEntities _db)
+        public TransacaoProdutoData(ProjetoLojaEntities _db)
         {
             db = _db;
-            cidades = db.CreateObjectSet<Cidade>();
+            transacoesProduto = db.CreateObjectSet<TransacaoProduto>();
         }
 
-        public List<Cidade> todasCidades()
+        public List<TransacaoProduto> todostransacoesProduto()
         {
-            return cidades.ToList();
+            return transacoesProduto.ToList();
         }
 
-        public string excluirCidade(Cidade cidade)
+        public string excluirTransacaoProduto(TransacaoProduto transacoeProduto)
         {
             string erro = null;
             try
             {
-                cidades.DeleteObject(cidade);
+                transacoesProduto.DeleteObject(transacoeProduto);
                 db.SaveChanges();
             }
             catch (Exception ex)
@@ -38,18 +38,18 @@ namespace ProjetoLojaDesktop.Data
             return erro;
         }
 
-        public Cidade obterCidade(int id)
+        public TransacaoProduto obterTransacaoProduto(int id)
         {
-            var lista = from c in cidades where c.idCidade == id select c;
+            var lista = from t in transacoesProduto where t.idTransacao == id select t;
             return lista.ToList().FirstOrDefault();
         }
 
-        public string adicionarCidade(Cidade cidade)
+        public string adicionarTransacaoProduto(TransacaoProduto transacaoProduto)
         {
             string erro = null;
             try
             {
-                cidades.AddObject(cidade);
+                transacoesProduto.AddObject(transacaoProduto);
                 db.SaveChanges();
             }
             catch (Exception ex)
@@ -59,16 +59,16 @@ namespace ProjetoLojaDesktop.Data
             return erro;
         }
 
-        public string editarCidade(Cidade cidade)
+        public string editarTransacaoProduto(TransacaoProduto transacaoProduto)
         {
             string erro = null;
             try
             {
-                if (cidade.EntityState == System.Data.EntityState.Detached)
+                if (transacaoProduto.EntityState == System.Data.EntityState.Detached)
                 {
-                    cidades.Attach(cidade);
+                    transacoesProduto.Attach(transacaoProduto);
                 }
-                db.ObjectStateManager.ChangeObjectState(cidade, System.Data.EntityState.Modified);
+                db.ObjectStateManager.ChangeObjectState(transacaoProduto, System.Data.EntityState.Modified);
 
                 db.SaveChanges();
             }
@@ -78,12 +78,5 @@ namespace ProjetoLojaDesktop.Data
             }
             return erro;
         }
-
-        public Cidade obterCidade(string nomeCidade)
-        {
-            var lista = from c in cidades where c.nome.Equals(nomeCidade) select c;
-            return lista.ToList().FirstOrDefault();
-        }
-
     }
 }

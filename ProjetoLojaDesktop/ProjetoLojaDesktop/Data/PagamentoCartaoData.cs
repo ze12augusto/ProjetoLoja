@@ -7,28 +7,28 @@ using System.Data.Objects;
 
 namespace ProjetoLojaDesktop.Data
 {
-    class CidadeData
+    class PagamentoCataoData
     {
         private ProjetoLojaEntities db;
-        private ObjectSet<Cidade> cidades;
+        private ObjectSet<PagamentoCartao> pagamentosCartao;
 
-        public CidadeData(ProjetoLojaEntities _db)
+        public PagamentoCataoData(ProjetoLojaEntities _db)
         {
             db = _db;
-            cidades = db.CreateObjectSet<Cidade>();
+            pagamentosCartao = db.CreateObjectSet<PagamentoCartao>();
         }
 
-        public List<Cidade> todasCidades()
+        public List<PagamentoCartao> todosPagamentosCartao()
         {
-            return cidades.ToList();
+            return pagamentosCartao.ToList();
         }
 
-        public string excluirCidade(Cidade cidade)
+        public string excluirpagamentosCartao(PagamentoCartao pagamentoCartao)
         {
             string erro = null;
             try
             {
-                cidades.DeleteObject(cidade);
+                pagamentosCartao.DeleteObject(pagamentoCartao);
                 db.SaveChanges();
             }
             catch (Exception ex)
@@ -38,18 +38,18 @@ namespace ProjetoLojaDesktop.Data
             return erro;
         }
 
-        public Cidade obterCidade(int id)
+        public PagamentoCartao obterpagamentoCartao(int id)
         {
-            var lista = from c in cidades where c.idCidade == id select c;
+            var lista = from p in pagamentosCartao where p.idTransacao == id select p;
             return lista.ToList().FirstOrDefault();
         }
 
-        public string adicionarCidade(Cidade cidade)
+        public string adicionarPagamentosCartao(PagamentoCartao pagamentoCartao)
         {
             string erro = null;
             try
             {
-                cidades.AddObject(cidade);
+                pagamentosCartao.AddObject(pagamentoCartao);
                 db.SaveChanges();
             }
             catch (Exception ex)
@@ -59,16 +59,16 @@ namespace ProjetoLojaDesktop.Data
             return erro;
         }
 
-        public string editarCidade(Cidade cidade)
+        public string editarPagamentosCartao(PagamentoCartao pagamentoCartao)
         {
             string erro = null;
             try
             {
-                if (cidade.EntityState == System.Data.EntityState.Detached)
+                if (pagamentoCartao.EntityState == System.Data.EntityState.Detached)
                 {
-                    cidades.Attach(cidade);
+                    pagamentosCartao.Attach(pagamentoCartao);
                 }
-                db.ObjectStateManager.ChangeObjectState(cidade, System.Data.EntityState.Modified);
+                db.ObjectStateManager.ChangeObjectState(pagamentoCartao, System.Data.EntityState.Modified);
 
                 db.SaveChanges();
             }
@@ -78,12 +78,5 @@ namespace ProjetoLojaDesktop.Data
             }
             return erro;
         }
-
-        public Cidade obterCidade(string nomeCidade)
-        {
-            var lista = from c in cidades where c.nome.Equals(nomeCidade) select c;
-            return lista.ToList().FirstOrDefault();
-        }
-
     }
 }

@@ -7,28 +7,28 @@ using System.Data.Objects;
 
 namespace ProjetoLojaDesktop.Data
 {
-    class CidadeData
+    class NotaFiscalData
     {
         private ProjetoLojaEntities db;
-        private ObjectSet<Cidade> cidades;
+        private ObjectSet<NotaFiscal> NotasFiscais;
 
-        public CidadeData(ProjetoLojaEntities _db)
+        public NotaFiscalData(ProjetoLojaEntities _db)
         {
             db = _db;
-            cidades = db.CreateObjectSet<Cidade>();
+            NotasFiscais = db.CreateObjectSet<NotaFiscal>();
         }
 
-        public List<Cidade> todasCidades()
+        public List<NotaFiscal> todasNotFiscal()
         {
-            return cidades.ToList();
+            return NotasFiscais.ToList();
         }
 
-        public string excluirCidade(Cidade cidade)
+        public string excluirNotaFiscal(NotaFiscal notaFiscal)
         {
             string erro = null;
             try
             {
-                cidades.DeleteObject(cidade);
+                NotasFiscais.DeleteObject(notaFiscal);
                 db.SaveChanges();
             }
             catch (Exception ex)
@@ -38,18 +38,18 @@ namespace ProjetoLojaDesktop.Data
             return erro;
         }
 
-        public Cidade obterCidade(int id)
+        public NotaFiscal obterNotaFiscal(int id)
         {
-            var lista = from c in cidades where c.idCidade == id select c;
+            var lista = from n in NotasFiscais where n.idTransacao == id select n;
             return lista.ToList().FirstOrDefault();
         }
 
-        public string adicionarCidade(Cidade cidade)
+        public string adicionarNotaFiscal(NotaFiscal notaFiscal)
         {
             string erro = null;
             try
             {
-                cidades.AddObject(cidade);
+                NotasFiscais.AddObject(notaFiscal);
                 db.SaveChanges();
             }
             catch (Exception ex)
@@ -59,16 +59,16 @@ namespace ProjetoLojaDesktop.Data
             return erro;
         }
 
-        public string editarCidade(Cidade cidade)
+        public string editarNotaFiscal(NotaFiscal notaFiscal)
         {
             string erro = null;
             try
             {
-                if (cidade.EntityState == System.Data.EntityState.Detached)
+                if (notaFiscal.EntityState == System.Data.EntityState.Detached)
                 {
-                    cidades.Attach(cidade);
+                    NotasFiscais.Attach(notaFiscal);
                 }
-                db.ObjectStateManager.ChangeObjectState(cidade, System.Data.EntityState.Modified);
+                db.ObjectStateManager.ChangeObjectState(notaFiscal, System.Data.EntityState.Modified);
 
                 db.SaveChanges();
             }
@@ -78,12 +78,5 @@ namespace ProjetoLojaDesktop.Data
             }
             return erro;
         }
-
-        public Cidade obterCidade(string nomeCidade)
-        {
-            var lista = from c in cidades where c.nome.Equals(nomeCidade) select c;
-            return lista.ToList().FirstOrDefault();
-        }
-
     }
 }

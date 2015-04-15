@@ -20,7 +20,7 @@ namespace cad_fornecedor
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormSelecionarProduto(TipoTransacaoEnum.SAIDA));
+            Application.Run(new FormPrincipal());
         }
     }
 }

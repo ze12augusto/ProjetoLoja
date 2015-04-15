@@ -68,16 +68,36 @@ namespace ProjetoLojaDesktop.Views
             if (produtoSelecionado == null)
             {
                 MessageBox.Show("Você precisa selecionar um produto antes.");
+                return;
+            }
+            if (validar())
+            {
+
+                transacaoProduto.idProduto = produtoSelecionado.idProduto;
+                transacaoProduto.qtdProduto = Int32.Parse(txtQuantidade.Text);
+                if (tipoTransacao == TipoTransacaoEnum.SAIDA)
+                    transacaoProduto.valorUnitario = (decimal)valorAtualProduto;
+                else
+                    transacaoProduto.valorUnitario = decimal.Parse(txtGenerico.Text);
+
+                Dispose();
+            }
+        }
+
+        private bool validar()
+        {
+            if (txtQuantidade.Text == "")
+            {
+                MessageBox.Show("Digite a quantidade do produto");
+                return false;
+            }
+            if (tipoTransacao == TipoTransacaoEnum.ENTRADA && txtGenerico.Text == "")
+            {
+                MessageBox.Show("Digite o valor unitário");
+                return false;
             }
 
-            transacaoProduto.idProduto = produtoSelecionado.idProduto;
-            transacaoProduto.qtdProduto = Int32.Parse(txtQuantidade.Text);
-            if (tipoTransacao == TipoTransacaoEnum.SAIDA)
-                transacaoProduto.valorUnitario = (decimal)valorAtualProduto;
-            else
-                transacaoProduto.valorUnitario = decimal.Parse(txtGenerico.Text);
-
-            Dispose();
+            return true;
         }
 
         private void atualizarTabela()

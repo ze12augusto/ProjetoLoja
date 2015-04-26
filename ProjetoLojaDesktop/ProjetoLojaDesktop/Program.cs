@@ -6,6 +6,7 @@ using ProjetoLojaDesktop.Forms;
 using ProjetoLojaDesktop.Views;
 using ProjetoLojaDesktop;
 using ProjetoLojaDesktop.Enums;
+using ProjetoLojaDesktop.Views.Cliente;
 
 
 namespace ProjetoLojaDesktop
@@ -20,7 +21,7 @@ namespace ProjetoLojaDesktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormPrincipal());
+            Application.Run(new FormSelecionarCliente());
         }
     }
 }

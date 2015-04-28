@@ -13,7 +13,7 @@ namespace ProjetoLojaDesktop.Views.Cliente
 {
     public partial class FormSelecionarCliente : Form
     {
-        private Pessoa pessoa;
+        private Pessoa pessoaSelecionada;
         private PessoaData pessoaData;
 
         public FormSelecionarCliente()
@@ -23,6 +23,11 @@ namespace ProjetoLojaDesktop.Views.Cliente
             pessoaData = new PessoaData(db);
 
             atualizarListaClientes(pessoaData.todasPessoas());
+        }
+
+        public Pessoa getPessoaSelecionada()
+        {
+            return pessoaSelecionada;
         }
 
         public void atualizarListaClientes(List<Pessoa> pessoas)
@@ -59,7 +64,7 @@ namespace ProjetoLojaDesktop.Views.Cliente
             Pessoa p = getClienteSelecionadoNaTabela();
             if (p != null)
             {
-                MessageBox.Show(p.nome);
+                pessoaSelecionada = p;
                 Dispose();
             }
             else

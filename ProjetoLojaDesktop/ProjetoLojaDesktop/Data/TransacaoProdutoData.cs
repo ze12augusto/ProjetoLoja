@@ -78,5 +78,14 @@ namespace ProjetoLojaDesktop.Data
             }
             return erro;
         }
+
+        public float estoqueProduto(int idProduto)
+        {
+            ObjectSet<TransacaoProduto> transacoesProdutos = db.CreateObjectSet<TransacaoProduto>();
+            var transacoes = from t in transacoesProdutos
+                             where t.idProduto == idProduto
+                             select t.qtdProduto;
+            return transacoes.ToList().Sum();
+        }
     }
 }

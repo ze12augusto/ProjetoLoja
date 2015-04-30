@@ -21,7 +21,7 @@ namespace ProjetoLojaDesktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormVenda());
+            Application.Run(new FormPrincipal());
         }
     }
 }

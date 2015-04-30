@@ -38,7 +38,9 @@
             this.cadastrarModeloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.financeiroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnVenda = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.btnRelatorio = new System.Windows.Forms.Button();
             this.btnFinanceiro = new System.Windows.Forms.Button();
@@ -57,6 +59,7 @@
             this.produtosToolStripMenuItem,
             this.financeiroToolStripMenuItem,
             this.relatóriosToolStripMenuItem,
+            this.vendaToolStripMenuItem,
             this.sairToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -129,6 +132,14 @@
             this.relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
             this.relatóriosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.relatóriosToolStripMenuItem.Text = "Relatórios";
+            this.relatóriosToolStripMenuItem.Click += new System.EventHandler(this.relatóriosToolStripMenuItem_Click);
+            // 
+            // vendaToolStripMenuItem
+            // 
+            this.vendaToolStripMenuItem.Name = "vendaToolStripMenuItem";
+            this.vendaToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.vendaToolStripMenuItem.Text = "Venda";
+            this.vendaToolStripMenuItem.Click += new System.EventHandler(this.vendaToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 
@@ -137,10 +148,20 @@
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
+            // btnVenda
+            // 
+            this.btnVenda.BackgroundImage = global::ProjetoLojaDesktop.Properties.Resources.Sales_Order;
+            this.btnVenda.Location = new System.Drawing.Point(410, 43);
+            this.btnVenda.Name = "btnVenda";
+            this.btnVenda.Size = new System.Drawing.Size(50, 50);
+            this.btnVenda.TabIndex = 9;
+            this.btnVenda.UseVisualStyleBackColor = true;
+            this.btnVenda.Click += new System.EventHandler(this.btnVenda_Click);
+            // 
             // btnSair
             // 
             this.btnSair.BackgroundImage = global::ProjetoLojaDesktop.Properties.Resources.Door_Closed;
-            this.btnSair.Location = new System.Drawing.Point(411, 43);
+            this.btnSair.Location = new System.Drawing.Point(466, 43);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(50, 50);
             this.btnSair.TabIndex = 8;
@@ -220,6 +241,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 111);
+            this.Controls.Add(this.btnVenda);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnRelatorio);
             this.Controls.Add(this.btnFinanceiro);
@@ -260,6 +282,8 @@
         private System.Windows.Forms.Button btnFinanceiro;
         private System.Windows.Forms.Button btnRelatorio;
         private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.ToolStripMenuItem vendaToolStripMenuItem;
+        private System.Windows.Forms.Button btnVenda;
     }
 }
 

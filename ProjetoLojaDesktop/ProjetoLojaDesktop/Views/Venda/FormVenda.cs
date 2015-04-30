@@ -10,7 +10,7 @@ using ProjetoLojaDesktop.Enums;
 using ProjetoLojaDesktop.Entity;
 using ProjetoLojaDesktop.Views.Cliente;
 
-namespace ProjetoLojaDesktop.Views
+namespace ProjetoLojaDesktop.Forms
 {
     public partial class FormVenda : Form
     {

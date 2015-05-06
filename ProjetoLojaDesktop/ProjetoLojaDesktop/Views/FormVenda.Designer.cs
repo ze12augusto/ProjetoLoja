@@ -190,6 +190,7 @@
             this.btnFinalizar.Text = "Finalizar";
             this.btnFinalizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFinalizar.UseVisualStyleBackColor = true;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
             // btnCancelar
             // 
@@ -212,6 +213,7 @@
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // dgvListaProduto
             // 
@@ -261,6 +263,7 @@
             this.btnRemoverProduto.Size = new System.Drawing.Size(25, 25);
             this.btnRemoverProduto.TabIndex = 7;
             this.btnRemoverProduto.UseVisualStyleBackColor = true;
+            this.btnRemoverProduto.Click += new System.EventHandler(this.btnRemoverProduto_Click);
             // 
             // btnAddProduto
             // 
@@ -289,7 +292,6 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "FormVenda";
             this.Text = "Vendas";
-            this.Load += new System.EventHandler(this.FormVenda_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabListaVenda.ResumeLayout(false);
             this.tabListaVenda.PerformLayout();

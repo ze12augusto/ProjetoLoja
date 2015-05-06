@@ -87,5 +87,11 @@ namespace ProjetoLojaDesktop.Data
                              select t.qtdProduto;
             return transacoes.ToList().Sum();
         }
+
+        public TransacaoProduto obterTransacaoPorId(int id)
+        {
+            var lista = from t in transacoesProduto where t.idTransacao == id select t;
+            return lista.ToList().FirstOrDefault();
+        }
     }
 }

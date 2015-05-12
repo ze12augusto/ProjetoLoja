@@ -117,12 +117,6 @@
     <Compile Include="Views\FormVenda.Designer.cs">
       <DependentUpon>FormVenda.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Produto\FormTransacaoSaida.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Produto\FormTransacaoSaida.Designer.cs">
-      <DependentUpon>FormTransacaoSaida.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\Fornecedor\FormFornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +153,12 @@
     <Compile Include="Views\Produto\FormSelecionarProduto.Designer.cs">
       <DependentUpon>FormSelecionarProduto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Produto\FormTransacaoSaida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Produto\FormTransacaoSaida.Designer.cs">
+      <DependentUpon>FormTransacaoSaida.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Relatorios\Produto\FormRelatorioProduto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,9 +191,6 @@
     <EmbeddedResource Include="Views\FormVenda.resx">
       <DependentUpon>FormVenda.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Produto\FormTransacaoSaida.resx">
-      <DependentUpon>FormTransacaoSaida.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\Fornecedor\FormFornecedor.resx">
       <DependentUpon>FormFornecedor.cs</DependentUpon>
     </EmbeddedResource>
@@ -211,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Produto\FormSelecionarProduto.resx">
       <DependentUpon>FormSelecionarProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Produto\FormTransacaoSaida.resx">
+      <DependentUpon>FormTransacaoSaida.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Relatorios\Produto\FormRelatorioProduto.resx">
       <DependentUpon>FormRelatorioProduto.cs</DependentUpon>

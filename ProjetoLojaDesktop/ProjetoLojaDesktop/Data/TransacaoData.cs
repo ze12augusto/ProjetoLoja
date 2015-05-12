@@ -18,11 +18,9 @@ namespace ProjetoLojaDesktop.Data
             transacoes = db.CreateObjectSet<Transacao>();
         }
 
-        public List<Transacao> todasTransacoes( int idTransacao )
+        public List<Transacao> todasTransacoes()
         {
-            var lista = from t in transacoes
-                        where t.idTransacao == idTransacao
-                        select t;
+            var lista = from t in transacoes select t;
             return lista.ToList();
         }
 

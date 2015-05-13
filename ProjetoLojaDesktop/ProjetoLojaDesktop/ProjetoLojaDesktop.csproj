@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -60,6 +60,7 @@
     <Compile Include="Data\CaracteristicaProdutoData.cs" />
     <Compile Include="Data\CidadeData.cs" />
     <Compile Include="Data\EnderecoData.cs" />
+    <Compile Include="Data\EntradaData.cs" />
     <Compile Include="Data\ImagemProdutoData.cs" />
     <Compile Include="Data\MarcaData.cs" />
     <Compile Include="Data\ModeloData.cs" />
@@ -102,6 +103,24 @@
     </Compile>
     <Compile Include="Views\Cliente\FormSelecionarCliente.Designer.cs">
       <DependentUpon>FormSelecionarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Entrada\FormEntradas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Entrada\FormEntradas.Designer.cs">
+      <DependentUpon>FormEntradas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Entrada\FormSelecionarFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Entrada\FormSelecionarFornecedor.Designer.cs">
+      <DependentUpon>FormSelecionarFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Entrada\FormSelecionarProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Entrada\FormSelecionarProduto.Designer.cs">
+      <DependentUpon>FormSelecionarProduto.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FormPrincipal.cs">
       <SubType>Form</SubType>
@@ -169,6 +188,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Views\Relatorios\Produto\ProdutoSchema.Designer.cs" />
+    <Compile Include="Views\Relatorios\StatusPedido1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StatusPedido.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -184,6 +209,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Cliente\FormSelecionarCliente.resx">
       <DependentUpon>FormSelecionarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Entrada\FormEntradas.resx">
+      <DependentUpon>FormEntradas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Entrada\FormSelecionarFornecedor.resx">
+      <DependentUpon>FormSelecionarFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Entrada\FormSelecionarProduto.resx">
+      <DependentUpon>FormSelecionarProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
@@ -219,7 +253,11 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ProdutoReport.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Relatorios\RelatorioOS.rpt">
+    <EmbeddedResource Include="Views\Relatorios\StatusPedido.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StatusPedido1.cs</LastGenOutput>
+    </EmbeddedResource>
+     <EmbeddedResource Include="Views\Relatorios\RelatorioOS.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RelatorioOS1.cs</LastGenOutput>
     </EmbeddedResource>

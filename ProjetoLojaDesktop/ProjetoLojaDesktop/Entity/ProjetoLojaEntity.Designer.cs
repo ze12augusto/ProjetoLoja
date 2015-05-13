@@ -3695,7 +3695,8 @@ namespace ProjetoLojaDesktop.Entity
         /// <param name="qtdMinima">Initial value of the qtdMinima property.</param>
         /// <param name="qtdAtual">Initial value of the qtdAtual property.</param>
         /// <param name="idModelo">Initial value of the idModelo property.</param>
-        public static Produto CreateProduto(global::System.Int32 idProduto, global::System.String nome, global::System.String descricao, global::System.Int32 qtdMinima, global::System.Int32 qtdAtual, global::System.Int32 idModelo)
+        /// <param name="idMarcaProduto">Initial value of the idMarcaProduto property.</param>
+        public static Produto CreateProduto(global::System.Int32 idProduto, global::System.String nome, global::System.String descricao, global::System.Int32 qtdMinima, global::System.Int32 qtdAtual, global::System.Int32 idModelo, global::System.Int32 idMarcaProduto)
         {
             Produto produto = new Produto();
             produto.idProduto = idProduto;
@@ -3704,6 +3705,7 @@ namespace ProjetoLojaDesktop.Entity
             produto.qtdMinima = qtdMinima;
             produto.qtdAtual = qtdAtual;
             produto.idModelo = idModelo;
+            produto.idMarcaProduto = idMarcaProduto;
             return produto;
         }
 
@@ -3857,6 +3859,30 @@ namespace ProjetoLojaDesktop.Entity
         private global::System.Int32 _idModelo;
         partial void OnidModeloChanging(global::System.Int32 value);
         partial void OnidModeloChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 idMarcaProduto
+        {
+            get
+            {
+                return _idMarcaProduto;
+            }
+            set
+            {
+                OnidMarcaProdutoChanging(value);
+                ReportPropertyChanging("idMarcaProduto");
+                _idMarcaProduto = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("idMarcaProduto");
+                OnidMarcaProdutoChanged();
+            }
+        }
+        private global::System.Int32 _idMarcaProduto;
+        partial void OnidMarcaProdutoChanging(global::System.Int32 value);
+        partial void OnidMarcaProdutoChanged();
 
         #endregion
 

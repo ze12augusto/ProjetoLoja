@@ -40,7 +40,7 @@ namespace ProjetoLojaDesktop.Data
 
         public OrdemServico obterOrdemDeServico(int id)
         {
-            var lista = from o in ordensDeServico where o.numero == id select o;
+            var lista = from o in ordensDeServico where o.idTransacao == id select o;
             return lista.ToList().FirstOrDefault();
         }
 

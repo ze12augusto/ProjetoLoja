@@ -38,7 +38,7 @@ namespace ProjetoLojaDesktop.Forms
 
         private void inicializarDataSources()
         {
-            cbxStatus.DataSource = statusTransacaoData.obterTodos();
+            cbxStatus.DataSource = statusTransacaoData.todosStatusTransacao();
             cbxStatus.DisplayMember = "descricao";
             cbxStatus.ValueMember = "idStatus";
 
@@ -50,7 +50,7 @@ namespace ProjetoLojaDesktop.Forms
         private void instanciarClassesData()
         {
             db = new ProjetoLojaEntities();
-            statusTransacaoData = new StatusTransacaoData(db);
+            statusTransacaoData = new StatusTransacaoData();
             transacaoData = new TransacaoData(db);
             pessoaData = new PessoaData(db);
             ordemServicoData = new OrdemDeServicoData(db);
@@ -239,7 +239,7 @@ namespace ProjetoLojaDesktop.Forms
             FormSelecionarCliente form = new FormSelecionarCliente();
             form.ShowDialog();
 
-            pessoa = form.PessoaSelecionada;
+            pessoa = form.getPessoaSelecionada();
             txtNomeCliente.Text = pessoa.nome;
         }
 

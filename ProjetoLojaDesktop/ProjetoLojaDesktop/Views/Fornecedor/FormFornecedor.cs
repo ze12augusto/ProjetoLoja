@@ -508,7 +508,7 @@ namespace ProjetoLojaDesktop
                 txtNumero.Text = endereco.numero.ToString().Trim();
                 txtComplemento.Text = endereco.complemento.Trim();
                 txtBairro.Text = endereco.bairro.Trim();
-                txtCidade.Text = endereco.Cidade1.nome.Trim();
+                txtCidade.Text = endereco.Cidade.nome.Trim();
                 cbxEstado.SelectedValue = endereco.UF.Trim();
                 txtCEP.Text = endereco.CEP.Trim();
             }

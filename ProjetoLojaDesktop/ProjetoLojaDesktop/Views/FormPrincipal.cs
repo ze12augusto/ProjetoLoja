@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using ProjetoLojaDesktop.Forms;
-
+using ProjetoLojaDesktop.Views;
 
 
 namespace ProjetoLojaDesktop

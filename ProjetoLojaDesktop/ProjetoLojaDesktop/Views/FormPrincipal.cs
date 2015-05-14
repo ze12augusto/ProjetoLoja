@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using ProjetoLojaDesktop.Forms;
-
+using ProjetoLojaDesktop.Views.Relatorios.Produto;
 
 namespace ProjetoLojaDesktop
 {
@@ -82,6 +82,11 @@ namespace ProjetoLojaDesktop
             {
                 Application.Exit();
             }
+        }
+
+        private void produtoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormRelatorioProduto().Show();
         }
 
       

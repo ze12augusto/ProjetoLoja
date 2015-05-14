@@ -220,8 +220,11 @@
     <Content Include="Resources\Add-New.png" />
     <None Include="Resources\Add-New1.png" />
     <Content Include="Resources\Business-Man.png" />
+    <None Include="Resources\Check.png" />
+    <None Include="Resources\Cancel.png" />
     <Content Include="Resources\Clean.png" />
     <Content Include="Resources\Data-Edit.png" />
+    <None Include="Resources\del-New.png" />
     <Content Include="Resources\Document-02.png" />
     <Content Include="Resources\Door-Closed.png" />
     <Content Include="Resources\Folder-Picture.png" />
@@ -230,6 +233,7 @@
     <Content Include="Resources\marca1.png" />
     <Content Include="Resources\marca2.png" />
     <Content Include="Resources\Money-Coin-01.png" />
+    <None Include="Resources\Sales-Order.png" />
     <Content Include="Resources\Save.png" />
     <Content Include="Resources\Search.png" />
     <Content Include="Resources\User-Group.png" />

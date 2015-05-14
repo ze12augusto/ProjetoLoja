@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using ProjetoLojaDesktop.Forms;
+using ProjetoLojaDesktop.Views;
 
 
 namespace ProjetoLojaDesktop
@@ -16,6 +17,27 @@ namespace ProjetoLojaDesktop
         public FormPrincipal()
         {
             InitializeComponent();
+            criarTooltips();
+        }
+
+        public void criarTooltips()
+        {
+            ToolTip tipCliente = new ToolTip();
+            tipCliente.SetToolTip(btnCliente, "Clientes");
+            ToolTip tipFornecedor = new ToolTip();
+            tipFornecedor.SetToolTip(btnFornecedor, "Fornecedor");
+            ToolTip tipUsuario = new ToolTip();
+            tipUsuario.SetToolTip(btnUsuario, "Usuario");
+            ToolTip tipModelo = new ToolTip();
+            tipModelo.SetToolTip(btnModelo, "Modelo");
+            ToolTip tipMarca = new ToolTip();
+            tipMarca.SetToolTip(btnMarca, "Marca");
+            ToolTip tipFinanceiro = new ToolTip();
+            tipFinanceiro.SetToolTip(btnFinanceiro, "Financeiro");
+            ToolTip tipRelatorio = new ToolTip();
+            tipRelatorio.SetToolTip(btnRelatorio, "Relatorio");
+            ToolTip tipSair = new ToolTip();
+            tipSair.SetToolTip(btnSair, "Sair");
         }
 
         private void btnCliente_Click(object sender, EventArgs e)
@@ -82,6 +104,27 @@ namespace ProjetoLojaDesktop
             {
                 Application.Exit();
             }
+        }
+
+
+        private void relatóriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void vendaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormVenda().Show();
+        }
+
+        private void tipCliente_Popup(object sender, PopupEventArgs e)
+        {
+
+        }
+
+        private void btnVenda_Click(object sender, EventArgs e)
+        {
+            new FormVenda().Show();
         }
 
       

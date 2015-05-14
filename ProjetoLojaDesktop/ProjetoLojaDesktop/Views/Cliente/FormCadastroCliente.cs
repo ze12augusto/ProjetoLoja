@@ -143,18 +143,20 @@ namespace ProjetoLojaDesktop
             pessoa.nome = txtRazaoSocial.Text;
             pessoa.email = txtEmail.Text;
 
-            if ((pessoaFisica != null) && (pessoaJuridica == null))
+            if (cbxTipoPessoa.SelectedIndex == 0)
             {
                 pessoa.PessoaFisica.CPF = txtCpf.Text;
                 pessoa.PessoaFisica.RG = txtRg.Text;
-                cbxTipoPessoa.SelectedIndex = 0;
+                pessoa.PessoaJuridica = null;
+                //cbxTipoPessoa.SelectedIndex = 0;
             }
             else
             {
                 pessoa.PessoaJuridica.nomeFantasia = txtNomeFantasia.Text;
                 pessoa.PessoaJuridica.CNPJ = txtCpf.Text;
                 pessoa.PessoaJuridica.razaoSocial = txtRazaoSocial.Text;
-                cbxTipoPessoa.SelectedIndex = 1;
+                pessoa.PessoaFisica = null;
+                //cbxTipoPessoa.SelectedIndex = 1;
             }
         }
 
@@ -477,7 +479,7 @@ namespace ProjetoLojaDesktop
             obterDadosPessoais();
             string erro = null;
 
-            if (cbxTipoPessoa.SelectedIndex == 0)
+            if ((int)cbxTipoPessoa.SelectedIndex == 0)
             {
                 erro = pessoaData.adicionarPessoaFisica(pessoa);
             }

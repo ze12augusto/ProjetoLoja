@@ -9,20 +9,18 @@ namespace ProjetoLojaDesktop.Data
 {
     class TransacaoData
     {
-        private ProjetoLojaEntities db;
+        private ProjetoLojaEntities1 db;
         private ObjectSet<Transacao> transacoes;
 
-        public TransacaoData(ProjetoLojaEntities _db)
+        public TransacaoData(ProjetoLojaEntities1 _db)
         {
             db = _db;
             transacoes = db.CreateObjectSet<Transacao>();
         }
 
-        public List<Transacao> todasTransacoes( int idTransacao )
+        public List<Transacao> todasTransacoes()
         {
-            var lista = from t in transacoes
-                        where t.idTransacao == idTransacao
-                        select t;
+            var lista = from t in transacoes select t;
             return lista.ToList();
         }
 

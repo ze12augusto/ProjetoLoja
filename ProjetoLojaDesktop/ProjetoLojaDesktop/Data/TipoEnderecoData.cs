@@ -9,10 +9,10 @@ namespace ProjetoLojaDesktop.Data
 {
     class TipoEnderecoData
     {
-        private ProjetoLojaEntities db;
+        private ProjetoLojaEntities1 db;
         private ObjectSet<TipoEndereco> tipoenderecos ;
 
-        public TipoEnderecoData(ProjetoLojaEntities _db)
+        public TipoEnderecoData(ProjetoLojaEntities1 _db)
         {
             db = _db;
             tipoenderecos = db.CreateObjectSet<TipoEndereco>();

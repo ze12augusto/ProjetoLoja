@@ -9,9 +9,9 @@ namespace ProjetoLojaDesktop.Data
 {
     class TipoUsuarioData
     {
-        private ProjetoLojaEntities db;
+        private ProjetoLojaEntities1 db;
 
-        public TipoUsuarioData(ProjetoLojaEntities db)
+        public TipoUsuarioData(ProjetoLojaEntities1 db)
         {
 
             this.db = db;

@@ -13,7 +13,7 @@ namespace ProjetoLojaDesktop
 {
     public partial class FormFornecedor : Form
     {
-        private ProjetoLojaEntities db;
+        private ProjetoLojaEntities1 db;
         private PessoaJuridicaData pJus;
         private PessoaData pessoa;
         private UF_Data uf;
@@ -34,7 +34,7 @@ namespace ProjetoLojaDesktop
         {
             InitializeComponent();
             
-            db = new ProjetoLojaEntities();
+            db = new ProjetoLojaEntities1();
             pJus = new PessoaJuridicaData(db);
             pessoa = new PessoaData(db);
             uf = new UF_Data(db);
@@ -508,7 +508,7 @@ namespace ProjetoLojaDesktop
                 txtNumero.Text = endereco.numero.ToString().Trim();
                 txtComplemento.Text = endereco.complemento.Trim();
                 txtBairro.Text = endereco.bairro.Trim();
-                txtCidade.Text = endereco.Cidade1.nome.Trim();
+                txtCidade.Text = endereco.Cidade.nome.Trim();
                 cbxEstado.SelectedValue = endereco.UF.Trim();
                 txtCEP.Text = endereco.CEP.Trim();
             }

@@ -9,10 +9,10 @@ namespace ProjetoLojaDesktop.Data
 {
     class NotaFiscalData
     {
-        private ProjetoLojaEntities db;
+        private ProjetoLojaEntities1 db;
         private ObjectSet<NotaFiscal> NotasFiscais;
 
-        public NotaFiscalData(ProjetoLojaEntities _db)
+        public NotaFiscalData(ProjetoLojaEntities1 _db)
         {
             db = _db;
             NotasFiscais = db.CreateObjectSet<NotaFiscal>();

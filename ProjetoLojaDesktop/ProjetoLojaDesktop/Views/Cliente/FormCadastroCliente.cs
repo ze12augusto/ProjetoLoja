@@ -32,7 +32,7 @@ namespace ProjetoLojaDesktop
         private TipoPessoaData tipoPessoaData;
         private TipoTelefoneData tipoTelefoneData;
         private UF_Data ufData;
-        private ProjetoLojaEntities db;
+        private ProjetoLojaEntities1 db;
 
         public FormCadastroCliente()
         {
@@ -46,7 +46,7 @@ namespace ProjetoLojaDesktop
             cidade = new Cidade();
             uf = new UnidadeFederativa();
             tipoEndereco = new TipoEndereco();
-            db = new ProjetoLojaEntities();
+            db = new ProjetoLojaEntities1();
             this.pessoaData = new PessoaData(db);
             this.cidadeData = new CidadeData(db);
             this.enderecoData = new EnderecoData(db);

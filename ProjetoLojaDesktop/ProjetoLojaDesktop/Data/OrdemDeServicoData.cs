@@ -9,10 +9,10 @@ namespace ProjetoLojaDesktop.Data
 {
     class OrdemDeServicoData
     {
-        private ProjetoLojaEntities db;
+        private ProjetoLojaEntities1 db;
         private ObjectSet<OrdemServico> ordensDeServico;
 
-        public OrdemDeServicoData(ProjetoLojaEntities _db)
+        public OrdemDeServicoData(ProjetoLojaEntities1 _db)
         {
             db = _db;
             ordensDeServico = db.CreateObjectSet<OrdemServico>();
@@ -40,7 +40,7 @@ namespace ProjetoLojaDesktop.Data
 
         public OrdemServico obterOrdemDeServico(int id)
         {
-            var lista = from o in ordensDeServico where o.numero == id select o;
+            var lista = from o in ordensDeServico where o.idTransacao == id select o;
             return lista.ToList().FirstOrDefault();
         }
 

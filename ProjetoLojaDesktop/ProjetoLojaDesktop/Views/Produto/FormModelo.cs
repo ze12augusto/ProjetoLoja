@@ -13,7 +13,7 @@ namespace ProjetoLojaDesktop.Forms
 {
     public partial class FormModelo : Form
     {
-        private ProjetoLojaEntities db;
+        private ProjetoLojaEntities1 db;
         private ModeloData modeloData;
         private MarcaData marcaData;
         private Modelo modelo;
@@ -21,7 +21,7 @@ namespace ProjetoLojaDesktop.Forms
         public FormModelo()
         {
             InitializeComponent();
-            db = new ProjetoLojaEntities();
+            db = new ProjetoLojaEntities1();
             modeloData = new ModeloData();
             marcaData = new MarcaData();
             limparFormulario();

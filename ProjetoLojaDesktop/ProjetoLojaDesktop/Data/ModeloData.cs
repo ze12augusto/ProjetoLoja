@@ -9,11 +9,11 @@ namespace ProjetoLojaDesktop.Data
 {
     class ModeloData
     {
-        private ProjetoLojaEntities db;
+        private ProjetoLojaEntities1 db;
 
         public ModeloData() {
 
-            db = new ProjetoLojaEntities();
+            db = new ProjetoLojaEntities1();
         }
 
         public Modelo obterModelo(int idModelo, int idMarca)

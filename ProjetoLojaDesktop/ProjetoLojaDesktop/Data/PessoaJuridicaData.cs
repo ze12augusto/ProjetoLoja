@@ -9,10 +9,10 @@ namespace ProjetoLojaDesktop.Data
 {
     class PessoaJuridicaData
     {
-        private ProjetoLojaEntities db;
+        private ProjetoLojaEntities1 db;
         private ObjectSet<PessoaJuridica> pessoasjuridicas;
 
-        public PessoaJuridicaData(ProjetoLojaEntities _db)
+        public PessoaJuridicaData(ProjetoLojaEntities1 _db)
         {
             db = _db;
             pessoasjuridicas = db.CreateObjectSet<PessoaJuridica>();

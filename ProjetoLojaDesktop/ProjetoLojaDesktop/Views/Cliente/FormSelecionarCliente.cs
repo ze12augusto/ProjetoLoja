@@ -19,7 +19,7 @@ namespace ProjetoLojaDesktop.Views.Cliente
         public FormSelecionarCliente()
         {
             InitializeComponent();
-            ProjetoLojaEntities db = new ProjetoLojaEntities();
+            ProjetoLojaEntities1 db = new ProjetoLojaEntities1();
             pessoaData = new PessoaData(db);
 
             atualizarListaClientes(pessoaData.todasPessoas());

@@ -13,7 +13,7 @@ namespace ProjetoLojaDesktop
 {
     public partial class FormCadFuncionarios : Form
     {
-        ProjetoLojaEntities db;
+        ProjetoLojaEntities1 db;
         private UsuarioData usuarioData;
         private TipoUsuarioData tipoUsuarioData;
         private PessoaData pessoaData;
@@ -45,7 +45,7 @@ namespace ProjetoLojaDesktop
 
         private void instanciarClassesData()
         {
-            db = new ProjetoLojaEntities();
+            db = new ProjetoLojaEntities1();
             usuarioData = new UsuarioData(db);
             tipoUsuarioData = new TipoUsuarioData(db);
             pessoaData = new PessoaData(db);

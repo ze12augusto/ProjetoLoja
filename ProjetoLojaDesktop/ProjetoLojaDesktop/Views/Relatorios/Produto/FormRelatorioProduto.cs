@@ -22,8 +22,8 @@ namespace ProjetoLojaDesktop.Views.Relatorios.Produto
         public FormRelatorioProduto()
         {
             InitializeComponent();
-            transacaoProdutoData = new TransacaoProdutoData(new ProjetoLojaEntities());
-            produtoData = new ProdutoData(new ProjetoLojaEntities());
+            transacaoProdutoData = new TransacaoProdutoData(new ProjetoLojaEntities1());
+            produtoData = new ProdutoData(new ProjetoLojaEntities1());
             marcaData = new MarcaData();
             modeloData = new ModeloData();
             Marca marcaVazia = new Marca { idMarca = 0, descricao = "Todas as Marcas" };

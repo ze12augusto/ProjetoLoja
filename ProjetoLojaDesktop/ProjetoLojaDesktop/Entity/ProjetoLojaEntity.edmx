@@ -114,10 +114,6 @@
             <End Role="TipoTelefone" EntitySet="TipoTelefone" />
             <End Role="Telefone" EntitySet="Telefone" />
           </AssociationSet>
-          <AssociationSet Name="FKTransaaco242424" Association="ProjetoLojaModel.Store.FKTransaaco242424">
-            <End Role="Pessoa" EntitySet="Pessoa" />
-            <End Role="Transacao" EntitySet="Transacao" />
-          </AssociationSet>
           <AssociationSet Name="FKTransacao266380" Association="ProjetoLojaModel.Store.FKTransacao266380">
             <End Role="TipoTransacao" EntitySet="TipoTransacao" />
             <End Role="Transacao" EntitySet="Transacao" />
@@ -168,7 +164,7 @@
             <PropertyRef Name="idEndereco" />
             <PropertyRef Name="idPessoa" />
           </Key>
-          <Property Name="idEndereco" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="idEndereco" Type="int" Nullable="false" />
           <Property Name="idPessoa" Type="int" Nullable="false" />
           <Property Name="logradouro" Type="varchar" Nullable="false" MaxLength="80" />
           <Property Name="numero" Type="int" Nullable="false" />
@@ -214,15 +210,13 @@
         <EntityType Name="OrdemServico">
           <Key>
             <PropertyRef Name="idTransacao" />
-            <PropertyRef Name="numero" />
           </Key>
           <Property Name="idTransacao" Type="int" Nullable="false" />
-          <Property Name="numero" Type="int" Nullable="false" />
           <Property Name="dataEntrada" Type="date" Nullable="false" />
           <Property Name="dataPrevistaEntrega" Type="date" Nullable="false" />
           <Property Name="dataEntrega" Type="date" />
-          <Property Name="descricao" Type="text" Nullable="false" />
-          <Property Name="valor" Type="money" />
+          <Property Name="descricao" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="valor" Type="real" />
         </EntityType>
         <EntityType Name="Pagamento">
           <Key>
@@ -280,6 +274,7 @@
             <PropertyRef Name="idProduto" />
           </Key>
           <Property Name="idProduto" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="idMarcaProduto" Type="int" Nullable="false" />
           <Property Name="nome" Type="varchar" Nullable="false" MaxLength="100" />
           <Property Name="descricao" Type="varchar" Nullable="false" MaxLength="255" />
           <Property Name="qtdMinima" Type="int" Nullable="false" />
@@ -364,7 +359,6 @@
           <Property Name="desconto" Type="real" />
           <Property Name="idTipoTransacao" Type="tinyint" Nullable="false" />
           <Property Name="idCliente" Type="int" Nullable="false" />
-          <Property Name="idFuncionario" Type="int" Nullable="false" />
           <Property Name="idStatus" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="TransacaoProduto">
@@ -490,7 +484,7 @@
         </Association>
         <Association Name="FKOrdemServi748459">
           <End Role="Transacao" Type="ProjetoLojaModel.Store.Transacao" Multiplicity="1" />
-          <End Role="OrdemServico" Type="ProjetoLojaModel.Store.OrdemServico" Multiplicity="*" />
+          <End Role="OrdemServico" Type="ProjetoLojaModel.Store.OrdemServico" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="Transacao">
               <PropertyRef Name="idTransacao" />
@@ -632,18 +626,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FKTransaaco242424">
-          <End Role="Pessoa" Type="ProjetoLojaModel.Store.Pessoa" Multiplicity="1" />
-          <End Role="Transacao" Type="ProjetoLojaModel.Store.Transacao" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Pessoa">
-              <PropertyRef Name="idPessoa" />
-            </Principal>
-            <Dependent Role="Transacao">
-              <PropertyRef Name="idFuncionario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FKTransacao266380">
           <End Role="TipoTransacao" Type="ProjetoLojaModel.Store.TipoTransacao" Multiplicity="1" />
           <End Role="Transacao" Type="ProjetoLojaModel.Store.Transacao" Multiplicity="*" />
@@ -732,7 +714,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ProjetoLojaModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-        <EntityContainer Name="ProjetoLojaEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ProjetoLojaEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CaracteristicaProduto" EntityType="ProjetoLojaModel.CaracteristicaProduto" />
           <EntitySet Name="Cidade" EntityType="ProjetoLojaModel.Cidade" />
           <EntitySet Name="Endereco" EntityType="ProjetoLojaModel.Endereco" />
@@ -740,7 +722,6 @@
           <EntitySet Name="Marca" EntityType="ProjetoLojaModel.Marca" />
           <EntitySet Name="Modelo" EntityType="ProjetoLojaModel.Modelo" />
           <EntitySet Name="NotaFiscal" EntityType="ProjetoLojaModel.NotaFiscal" />
-          <EntitySet Name="OrdemServico" EntityType="ProjetoLojaModel.OrdemServico" />
           <EntitySet Name="Pagamento" EntityType="ProjetoLojaModel.Pagamento" />
           <EntitySet Name="PagamentoAVista" EntityType="ProjetoLojaModel.PagamentoAVista" />
           <EntitySet Name="PagamentoCartao" EntityType="ProjetoLojaModel.PagamentoCartao" />
@@ -797,10 +778,6 @@
             <End Role="Transacao" EntitySet="Transacao" />
             <End Role="NotaFiscal" EntitySet="NotaFiscal" />
           </AssociationSet>
-          <AssociationSet Name="FKOrdemServi748459" Association="ProjetoLojaModel.FKOrdemServi748459">
-            <End Role="Transacao" EntitySet="Transacao" />
-            <End Role="OrdemServico" EntitySet="OrdemServico" />
-          </AssociationSet>
           <AssociationSet Name="FKPagamento323132" Association="ProjetoLojaModel.FKPagamento323132">
             <End Role="Transacao" EntitySet="Transacao" />
             <End Role="Pagamento" EntitySet="Pagamento" />
@@ -832,6 +809,10 @@
           <AssociationSet Name="FKTelefone320442" Association="ProjetoLojaModel.FKTelefone320442">
             <End Role="Pessoa" EntitySet="Pessoa" />
             <End Role="Telefone" EntitySet="Telefone" />
+          </AssociationSet>
+          <AssociationSet Name="FKTransaaco242424" Association="ProjetoLojaModel.FKTransaaco242424">
+            <End Role="Pessoa" EntitySet="Pessoa" />
+            <End Role="Transacao" EntitySet="Transacao" />
           </AssociationSet>
           <AssociationSet Name="FKTransacao806039" Association="ProjetoLojaModel.FKTransacao806039">
             <End Role="Pessoa" EntitySet="Pessoa" />
@@ -869,9 +850,10 @@
             <End Role="Transacao" EntitySet="Transacao" />
             <End Role="TransacaoProduto" EntitySet="TransacaoProduto" />
           </AssociationSet>
-          <AssociationSet Name="FKTransaaco242424" Association="ProjetoLojaModel.FKTransaaco242424">
-            <End Role="Pessoa" EntitySet="Pessoa" />
+          <EntitySet Name="OrdemServico" EntityType="ProjetoLojaModel.OrdemServico" />
+          <AssociationSet Name="FKOrdemServi748459" Association="ProjetoLojaModel.FKOrdemServi748459">
             <End Role="Transacao" EntitySet="Transacao" />
+            <End Role="OrdemServico" EntitySet="OrdemServico" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="CaracteristicaProduto">
@@ -897,7 +879,7 @@
             <PropertyRef Name="idEndereco" />
             <PropertyRef Name="idPessoa" />
           </Key>
-          <Property Name="idEndereco" Type="Int32" Nullable="false" />
+          <Property Name="idEndereco" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="idPessoa" Type="Int32" Nullable="false" />
           <Property Name="logradouro" Type="String" Nullable="false" MaxLength="80" Unicode="false" FixedLength="false" />
           <Property Name="numero" Type="Int32" Nullable="false" />
@@ -908,7 +890,7 @@
           <Property Name="idCidade" Type="Int32" Nullable="false" />
           <Property Name="CEP" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
           <Property Name="idTipoEndereco" Type="Byte" Nullable="false" />
-          <NavigationProperty Name="Cidade1" Relationship="ProjetoLojaModel.FKEndereco362332" FromRole="Endereco" ToRole="Cidade" />
+          <NavigationProperty Name="Cidade" Relationship="ProjetoLojaModel.FKEndereco362332" FromRole="Endereco" ToRole="Cidade" />
           <NavigationProperty Name="TipoEndereco" Relationship="ProjetoLojaModel.FKEndereco263487" FromRole="Endereco" ToRole="TipoEndereco" />
           <NavigationProperty Name="UnidadeFederativa" Relationship="ProjetoLojaModel.FKEndereco335589" FromRole="Endereco" ToRole="UnidadeFederativa" />
           <NavigationProperty Name="Pessoa" Relationship="ProjetoLojaModel.FKEndereco760014" FromRole="Endereco" ToRole="Pessoa" />
@@ -948,20 +930,6 @@
           <Property Name="numero" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="dataHora" Type="DateTime" Nullable="false" />
           <NavigationProperty Name="Transacao" Relationship="ProjetoLojaModel.FKNotaFiscal277307" FromRole="NotaFiscal" ToRole="Transacao" />
-        </EntityType>
-        <EntityType Name="OrdemServico">
-          <Key>
-            <PropertyRef Name="idTransacao" />
-            <PropertyRef Name="numero" />
-          </Key>
-          <Property Name="idTransacao" Type="Int32" Nullable="false" />
-          <Property Name="numero" Type="Int32" Nullable="false" />
-          <Property Name="dataEntrada" Type="DateTime" Nullable="false" />
-          <Property Name="dataPrevistaEntrega" Type="DateTime" Nullable="false" />
-          <Property Name="dataEntrega" Type="DateTime" />
-          <Property Name="descricao" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
-          <Property Name="valor" Type="Decimal" Precision="19" Scale="4" />
-          <NavigationProperty Name="Transacao" Relationship="ProjetoLojaModel.FKOrdemServi748459" FromRole="OrdemServico" ToRole="Transacao" />
         </EntityType>
         <EntityType Name="Pagamento">
           <Key>
@@ -1007,9 +975,9 @@
           <NavigationProperty Name="PessoaFisica" Relationship="ProjetoLojaModel.FKPessoaFisi179779" FromRole="Pessoa" ToRole="PessoaFisica" />
           <NavigationProperty Name="PessoaJuridica" Relationship="ProjetoLojaModel.FKPessoaJuri138880" FromRole="Pessoa" ToRole="PessoaJuridica" />
           <NavigationProperty Name="Telefone" Relationship="ProjetoLojaModel.FKTelefone320442" FromRole="Pessoa" ToRole="Telefone" />
-          <NavigationProperty Name="Transacao" Relationship="ProjetoLojaModel.FKTransacao806039" FromRole="Pessoa" ToRole="Transacao" />
+          <NavigationProperty Name="Transacao" Relationship="ProjetoLojaModel.FKTransaaco242424" FromRole="Pessoa" ToRole="Transacao" />
+          <NavigationProperty Name="Transacao1" Relationship="ProjetoLojaModel.FKTransacao806039" FromRole="Pessoa" ToRole="Transacao" />
           <NavigationProperty Name="Usuario" Relationship="ProjetoLojaModel.FKUsuario624817" FromRole="Pessoa" ToRole="Usuario" />
-          <NavigationProperty Name="Transacao_1" Relationship="ProjetoLojaModel.FKTransaaco242424" FromRole="Pessoa" ToRole="Transacao" />
         </EntityType>
         <EntityType Name="PessoaFisica">
           <Key>
@@ -1035,6 +1003,7 @@
             <PropertyRef Name="idProduto" />
           </Key>
           <Property Name="idProduto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idMarcaProduto" Type="Int32" Nullable="false" />
           <Property Name="nome" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="descricao" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="qtdMinima" Type="Int32" Nullable="false" />
@@ -1051,7 +1020,7 @@
             <PropertyRef Name="idVigencia" />
             <PropertyRef Name="idProduto" />
           </Key>
-          <Property Name="idVigencia" Type="Int32" Nullable="false" />
+          <Property Name="idVigencia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="idProduto" Type="Int32" Nullable="false" />
           <Property Name="dataVigenciaInicio" Type="DateTime" Nullable="false" />
           <Property Name="dataVigenciaFim" Type="DateTime" />
@@ -1134,16 +1103,16 @@
           <Property Name="desconto" Type="Single" />
           <Property Name="idTipoTransacao" Type="Byte" Nullable="false" />
           <Property Name="idCliente" Type="Int32" Nullable="false" />
+          <Property Name="idFuncionario" Type="Int32" Nullable="false" />
           <Property Name="idStatus" Type="Int32" Nullable="false" />
           <NavigationProperty Name="NotaFiscal" Relationship="ProjetoLojaModel.FKNotaFiscal277307" FromRole="Transacao" ToRole="NotaFiscal" />
-          <NavigationProperty Name="OrdemServico" Relationship="ProjetoLojaModel.FKOrdemServi748459" FromRole="Transacao" ToRole="OrdemServico" />
           <NavigationProperty Name="Pagamento" Relationship="ProjetoLojaModel.FKPagamento323132" FromRole="Transacao" ToRole="Pagamento" />
-          <NavigationProperty Name="Pessoa" Relationship="ProjetoLojaModel.FKTransacao806039" FromRole="Transacao" ToRole="Pessoa" />
+          <NavigationProperty Name="Pessoa" Relationship="ProjetoLojaModel.FKTransaaco242424" FromRole="Transacao" ToRole="Pessoa" />
+          <NavigationProperty Name="Pessoa1" Relationship="ProjetoLojaModel.FKTransacao806039" FromRole="Transacao" ToRole="Pessoa" />
           <NavigationProperty Name="StatusTransacao" Relationship="ProjetoLojaModel.FKTransacao547363" FromRole="Transacao" ToRole="StatusTransacao" />
           <NavigationProperty Name="TipoTransacao" Relationship="ProjetoLojaModel.FKTransacao266380" FromRole="Transacao" ToRole="TipoTransacao" />
           <NavigationProperty Name="TransacaoProduto" Relationship="ProjetoLojaModel.FKTransacaoP933760" FromRole="Transacao" ToRole="TransacaoProduto" />
-          <Property Type="Int32" Name="idFuncionario" Nullable="false" />
-          <NavigationProperty Name="Pessoa_1" Relationship="ProjetoLojaModel.FKTransaaco242424" FromRole="Transacao" ToRole="Pessoa" />
+          <NavigationProperty Name="OrdemServico" Relationship="ProjetoLojaModel.FKOrdemServi748459" FromRole="Transacao" ToRole="OrdemServico" />
         </EntityType>
         <EntityType Name="TransacaoProduto">
           <Key>
@@ -1283,18 +1252,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FKOrdemServi748459">
-          <End Role="Transacao" Type="ProjetoLojaModel.Transacao" Multiplicity="1" />
-          <End Role="OrdemServico" Type="ProjetoLojaModel.OrdemServico" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Transacao">
-              <PropertyRef Name="idTransacao" />
-            </Principal>
-            <Dependent Role="OrdemServico">
-              <PropertyRef Name="idTransacao" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FKPagamento323132">
           <End Role="Transacao" Type="ProjetoLojaModel.Transacao" Multiplicity="1" />
           <End Role="Pagamento" Type="ProjetoLojaModel.Pagamento" Multiplicity="0..1" />
@@ -1388,6 +1345,18 @@
             </Principal>
             <Dependent Role="Telefone">
               <PropertyRef Name="idPessoa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKTransaaco242424">
+          <End Role="Pessoa" Type="ProjetoLojaModel.Pessoa" Multiplicity="1" />
+          <End Role="Transacao" Type="ProjetoLojaModel.Transacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pessoa">
+              <PropertyRef Name="idPessoa" />
+            </Principal>
+            <Dependent Role="Transacao">
+              <PropertyRef Name="idFuncionario" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1499,15 +1468,28 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FKTransaaco242424">
-          <End Type="ProjetoLojaModel.Pessoa" Role="Pessoa" Multiplicity="1" />
-          <End Type="ProjetoLojaModel.Transacao" Role="Transacao" Multiplicity="*" />
+        <EntityType Name="OrdemServico">
+          <Key>
+            <PropertyRef Name="idTransacao" />
+          </Key>
+          <Property Type="Int32" Name="idTransacao" Nullable="false" />
+          <Property Type="Int32" Name="numero" Nullable="false" />
+          <Property Type="DateTime" Name="dataEntrada" Nullable="false" />
+          <Property Type="DateTime" Name="dataPrevistaEntrega" Nullable="false" />
+          <Property Type="DateTime" Name="dataEntrega" />
+          <Property Type="String" Name="descricao" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="valor" Precision="19" Scale="4" />
+          <NavigationProperty Name="Transacao" Relationship="ProjetoLojaModel.FKOrdemServi748459" FromRole="OrdemServico" ToRole="Transacao" />
+        </EntityType>
+        <Association Name="FKOrdemServi748459">
+          <End Type="ProjetoLojaModel.Transacao" Role="Transacao" Multiplicity="1" />
+          <End Type="ProjetoLojaModel.OrdemServico" Role="OrdemServico" Multiplicity="0..1" />
           <ReferentialConstraint>
-            <Principal Role="Pessoa">
-              <PropertyRef Name="idPessoa" />
+            <Principal Role="Transacao">
+              <PropertyRef Name="idTransacao" />
             </Principal>
-            <Dependent Role="Transacao">
-              <PropertyRef Name="idFuncionario" />
+            <Dependent Role="OrdemServico">
+              <PropertyRef Name="idTransacao" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1516,7 +1498,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ProjetoLojaModelStoreContainer" CdmEntityContainer="ProjetoLojaEntities">
+        <EntityContainerMapping StorageEntityContainer="ProjetoLojaModelStoreContainer" CdmEntityContainer="ProjetoLojaEntities1">
           <EntitySetMapping Name="CaracteristicaProduto"><EntityTypeMapping TypeName="ProjetoLojaModel.CaracteristicaProduto"><MappingFragment StoreEntitySet="CaracteristicaProduto">
             <ScalarProperty Name="idCaracteristica" ColumnName="idCaracteristica" />
             <ScalarProperty Name="idProduto" ColumnName="idProduto" />
@@ -1559,15 +1541,6 @@
             <ScalarProperty Name="numero" ColumnName="numero" />
             <ScalarProperty Name="dataHora" ColumnName="dataHora" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="OrdemServico"><EntityTypeMapping TypeName="ProjetoLojaModel.OrdemServico"><MappingFragment StoreEntitySet="OrdemServico">
-            <ScalarProperty Name="idTransacao" ColumnName="idTransacao" />
-            <ScalarProperty Name="numero" ColumnName="numero" />
-            <ScalarProperty Name="dataEntrada" ColumnName="dataEntrada" />
-            <ScalarProperty Name="dataPrevistaEntrega" ColumnName="dataPrevistaEntrega" />
-            <ScalarProperty Name="dataEntrega" ColumnName="dataEntrega" />
-            <ScalarProperty Name="descricao" ColumnName="descricao" />
-            <ScalarProperty Name="valor" ColumnName="valor" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="Pagamento"><EntityTypeMapping TypeName="ProjetoLojaModel.Pagamento"><MappingFragment StoreEntitySet="Pagamento">
             <ScalarProperty Name="idTransacao" ColumnName="idTransacao" />
             <ScalarProperty Name="valorTotal" ColumnName="valorTotal" />
@@ -1603,6 +1576,7 @@
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="Produto"><EntityTypeMapping TypeName="ProjetoLojaModel.Produto"><MappingFragment StoreEntitySet="Produto">
             <ScalarProperty Name="idProduto" ColumnName="idProduto" />
+            <ScalarProperty Name="idMarcaProduto" ColumnName="idMarcaProduto" />
             <ScalarProperty Name="nome" ColumnName="nome" />
             <ScalarProperty Name="descricao" ColumnName="descricao" />
             <ScalarProperty Name="qtdMinima" ColumnName="qtdMinima" />
@@ -1651,8 +1625,7 @@
             <ScalarProperty Name="descricao" ColumnName="descricao" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="Transacao"><EntityTypeMapping TypeName="ProjetoLojaModel.Transacao"><MappingFragment StoreEntitySet="Transacao">
-            <ScalarProperty Name="idFuncionario" ColumnName="idFuncionario" />
-                <ScalarProperty Name="idTransacao" ColumnName="idTransacao" />
+            <ScalarProperty Name="idTransacao" ColumnName="idTransacao" />
             <ScalarProperty Name="data" ColumnName="data" />
             <ScalarProperty Name="desconto" ColumnName="desconto" />
             <ScalarProperty Name="idTipoTransacao" ColumnName="idTipoTransacao" />
@@ -1674,6 +1647,18 @@
             <ScalarProperty Name="senha" ColumnName="senha" />
             <ScalarProperty Name="idTipoUsuario" ColumnName="idTipoUsuario" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="OrdemServico">
+            <EntityTypeMapping TypeName="ProjetoLojaModel.OrdemServico">
+              <MappingFragment StoreEntitySet="OrdemServico">
+                <ScalarProperty Name="valor" ColumnName="valor" />
+                <ScalarProperty Name="descricao" ColumnName="descricao" />
+                <ScalarProperty Name="dataEntrega" ColumnName="dataEntrega" />
+                <ScalarProperty Name="dataPrevistaEntrega" ColumnName="dataPrevistaEntrega" />
+                <ScalarProperty Name="dataEntrada" ColumnName="dataEntrada" />
+                <ScalarProperty Name="idTransacao" ColumnName="idTransacao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1694,197 +1679,204 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="ProjetoLojaEntity" ZoomLevel="83">
+      <Diagram Name="ProjetoLojaEntity" ZoomLevel="74">
         <EntityTypeShape EntityType="ProjetoLojaModel.CaracteristicaProduto" Width="1.5" PointX="13.5" PointY="1.125" Height="1.7566536458333335" IsExpanded="true" />
         <EntityTypeShape EntityType="ProjetoLojaModel.Cidade" Width="1.5" PointX="3" PointY="11.625" Height="1.4279589843749996" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.Endereco" Width="1.5" PointX="5.25" PointY="12.75" Height="3.9033007812500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.Endereco" Width="1.5" PointX="5.25" PointY="12.75" Height="3.4001269531250014" IsExpanded="true" />
         <EntityTypeShape EntityType="ProjetoLojaModel.ImagemProduto" Width="1.5" PointX="13.5" PointY="3.625" Height="1.5923063151041657" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.Marca" Width="1.5" PointX="6.75" PointY="3.875" Height="1.4279589843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.Marca" Width="1.5" PointX="6.75" PointY="3.75" Height="1.4279589843749996" IsExpanded="true" />
         <EntityTypeShape EntityType="ProjetoLojaModel.Modelo" Width="1.5" PointX="9" PointY="3.625" Height="1.7566536458333322" IsExpanded="true" />
         <EntityTypeShape EntityType="ProjetoLojaModel.NotaFiscal" Width="1.5" PointX="10.5" PointY="7.875" Height="1.5923063151041674" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.OrdemServico" Width="1.5" PointX="10.5" PointY="10.25" Height="2.2496956380208317" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.Pagamento" Width="1.5" PointX="10.5" PointY="13.375" Height="1.7566536458333317" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.PagamentoAVista" Width="1.5" PointX="12.75" PointY="12.375" Height="1.7566536458333317" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.PagamentoCartao" Width="1.5" PointX="12.75" PointY="15.75" Height="1.9210009765625031" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.Pessoa" Width="1.5" PointX="3" PointY="14.125" Height="2.7427376302083317" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.PessoaFisica" Width="1.5" PointX="5.25" PointY="17.875" Height="1.5923063151041674" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.PessoaJuridica" Width="1.5" PointX="5.25" PointY="20.125" Height="1.7566536458333388" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.Produto" Width="1.5" PointX="11.25" PointY="3.125" Height="3.1340950520833335" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.ProdutoVigenciaPreco" Width="1.5" PointX="13.5" PointY="6" Height="1.9210009765625031" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.StatusTransacao" Width="1.5" PointX="6" PointY="9.75" Height="1.4279589843750031" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.Telefone" Width="1.5" PointX="8.25" PointY="14.625" Height="1.921000976562496" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.TipoEndereco" Width="1.5" PointX="3" PointY="17.875" Height="1.4279589843750031" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.TipoPagamento" Width="1.5" PointX="10.5" PointY="16.5" Height="1.4279589843750031" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.TipoPessoa" Width="1.5" PointX="0.75" PointY="14.875" Height="1.4279589843750049" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.TipoTelefone" Width="1.5" PointX="6" PointY="22.875" Height="1.427958984374996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.Pagamento" Width="1.5" PointX="10.5" PointY="13.25" Height="1.7566536458333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.PagamentoAVista" Width="1.5" PointX="12.75" PointY="12.25" Height="1.7566536458333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.PagamentoCartao" Width="1.5" PointX="12.75" PointY="15.625" Height="1.9210009765625031" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.Pessoa" Width="1.5" PointX="3" PointY="14" Height="2.9070849609375031" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.PessoaFisica" Width="1.5" PointX="5.25" PointY="17.625" Height="1.5923063151041674" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.PessoaJuridica" Width="1.5" PointX="5.25" PointY="19.875" Height="1.7566536458333388" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.Produto" Width="1.5" PointX="11.25" PointY="3" Height="2.907084960937496" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.ProdutoVigenciaPreco" Width="1.5" PointX="13.5" PointY="5.875" Height="1.9210009765625031" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.StatusTransacao" Width="1.5" PointX="6" PointY="9.625" Height="1.4279589843750031" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.Telefone" Width="1.5" PointX="8.25" PointY="14.5" Height="1.921000976562496" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.TipoEndereco" Width="1.5" PointX="3" PointY="17.75" Height="1.4279589843750031" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.TipoPagamento" Width="1.5" PointX="10.5" PointY="16.375" Height="1.4279589843750031" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.TipoPessoa" Width="1.5" PointX="0.75" PointY="14.75" Height="1.4279589843750049" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.TipoTelefone" Width="1.5" PointX="6" PointY="22.75" Height="1.427958984374996" IsExpanded="true" />
         <EntityTypeShape EntityType="ProjetoLojaModel.TipoTransacao" Width="1.5" PointX="6" PointY="6.875" Height="1.427958984374996" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.TipoUsuario" Width="1.5" PointX="6" PointY="25.875" Height="1.427958984374996" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.Transacao" Width="1.5" PointX="8.25" PointY="10" Height="3.0714322916666674" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.TransacaoProduto" Width="1.5" PointX="13.5" PointY="9.625" Height="1.9210009765625102" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.UnidadeFederativa" Width="1.5" PointX="3" PointY="20" Height="1.427958984374996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.TipoUsuario" Width="1.5" PointX="6" PointY="25.75" Height="1.427958984374996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.Transacao" Width="1.5" PointX="8.25" PointY="9.75" Height="3.4001269531250102" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.TransacaoProduto" Width="1.5" PointX="13.5" PointY="9.5" Height="1.9210009765625102" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.UnidadeFederativa" Width="1.5" PointX="3" PointY="19.875" Height="1.427958984374996" IsExpanded="true" />
         <EntityTypeShape EntityType="ProjetoLojaModel.Usuario" Width="1.5" PointX="8.25" PointY="17.625" Height="1.7566536458333388" IsExpanded="true" />
         <AssociationConnector Association="ProjetoLojaModel.FKCaracteris858294" ManuallyRouted="false">
-          <ConnectorPoint PointX="12" PointY="3.125" />
-          <ConnectorPoint PointX="12" PointY="2.1151432291666667" />
-          <ConnectorPoint PointX="13.5" PointY="2.1151432291666667" />
+          <ConnectorPoint PointX="12" PointY="3" />
+          <ConnectorPoint PointX="12" PointY="2.0033268229166667" />
+          <ConnectorPoint PointX="13.5" PointY="2.0033268229166667" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKEndereco362332" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="12.985341796875" />
-          <ConnectorPoint PointX="4.666666666666667" PointY="12.985341796875" />
-          <ConnectorPoint PointX="4.895833333333333" PointY="12.985341796875" />
-          <ConnectorPoint PointX="5.25" PointY="12.985341796875" />
+          <ConnectorPoint PointX="4.5" PointY="12.9014794921875" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="12.9014794921875" />
+          <ConnectorPoint PointX="5.020833333333333" PointY="12.9014794921875" />
+          <ConnectorPoint PointX="5.25" PointY="12.9014794921875" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKEndereco263487" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="17.876152846153843" />
-          <ConnectorPoint PointX="4.6505680004059267" PointY="17.725584845747914" />
-          <ConnectorPoint PointX="4.8245505650988783" PointY="17.551602281054965" />
-          <ConnectorPoint PointX="4.875" PointY="17.501152846153843" />
-          <ConnectorPoint PointX="4.875" PointY="14.427248949335235" />
-          <ConnectorPoint PointX="5.25" PointY="14.427248949335235" />
+          <ConnectorPoint PointX="4.5" PointY="17.751097429987979" />
+          <ConnectorPoint PointX="4.875" PointY="17.376097429987979" />
+          <ConnectorPoint PointX="4.875" PointY="14.557055222656253" />
+          <ConnectorPoint PointX="5.25" PointY="14.557055222656253" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKEndereco335589" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="20.063460538461534" />
-          <ConnectorPoint PointX="4.9375" PointY="19.625960538461534" />
-          <ConnectorPoint PointX="4.9375" PointY="15.148202525565353" />
-          <ConnectorPoint PointX="5.25" PointY="15.148202525565353" />
+          <ConnectorPoint PointX="4.5" PointY="19.937609509314903" />
+          <ConnectorPoint PointX="4.9098244349011209" PointY="19.527785074413782" />
+          <ConnectorPoint PointX="5.0276755650988791" PointY="19.409933944216025" />
+          <ConnectorPoint PointX="5.0625" PointY="19.375109509314903" />
+          <ConnectorPoint PointX="5.0625" PointY="15.384843087890628" />
+          <ConnectorPoint PointX="5.25" PointY="15.384843087890628" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKEndereco760014" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="15.963251653407678" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="15.963251653407678" />
-          <ConnectorPoint PointX="5.020833333333333" PointY="15.963251653407678" />
-          <ConnectorPoint PointX="5.25" PointY="15.963251653407678" />
+          <ConnectorPoint PointX="4.5" PointY="15.829985020507817" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="15.829985020507817" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="15.829985020507817" />
+          <ConnectorPoint PointX="4.979166666666667" PointY="15.829985020507817" />
+          <ConnectorPoint PointX="5.145833333333333" PointY="15.829985020507817" />
+          <ConnectorPoint PointX="5.25" PointY="15.829985020507817" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKImagemProd470431" ManuallyRouted="false">
-          <ConnectorPoint PointX="12.75" PointY="4.5189925130208337" />
-          <ConnectorPoint PointX="13.5" PointY="4.5189925130208337" />
+          <ConnectorPoint PointX="12.75" PointY="4.4211531575520828" />
+          <ConnectorPoint PointX="13.5" PointY="4.4211531575520828" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKModelo452020" ManuallyRouted="false">
-          <ConnectorPoint PointX="8.25" PointY="4.5889794921875" />
-          <ConnectorPoint PointX="9" PointY="4.5889794921875" />
+          <ConnectorPoint PointX="8.25" PointY="4.4639794921875" />
+          <ConnectorPoint PointX="9" PointY="4.4639794921875" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKProduto379653" ManuallyRouted="false">
-          <ConnectorPoint PointX="10.5" PointY="4.6151432291666659" />
-          <ConnectorPoint PointX="11.25" PointY="4.6151432291666659" />
+          <ConnectorPoint PointX="10.5" PointY="4.5033268229166659" />
+          <ConnectorPoint PointX="11.25" PointY="4.5033268229166659" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKNotaFiscal277307" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.2148421875" PointY="10" />
-          <ConnectorPoint PointX="9.2148421875" PointY="8.7689925130208337" />
-          <ConnectorPoint PointX="10.5" PointY="8.7689925130208337" />
-        </AssociationConnector>
-        <AssociationConnector Association="ProjetoLojaModel.FKOrdemServi748459" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.75" PointY="11.528595377604166" />
-          <ConnectorPoint PointX="10.5" PointY="11.528595377604166" />
+          <ConnectorPoint PointX="9.75" PointY="11.346607778458649" />
+          <ConnectorPoint PointX="11.4375" PointY="11.346607778458649" />
+          <ConnectorPoint PointX="11.4375" PointY="9.4673063151041674" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKPagamento323132" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.75" PointY="13.639150390625" />
-          <ConnectorPoint PointX="10.5" PointY="13.639150390625" />
+          <ConnectorPoint PointX="9.75" PointY="12.279619865791819" />
+          <ConnectorPoint PointX="10.96875" PointY="12.279619865791819" />
+          <ConnectorPoint PointX="10.96875" PointY="13.25" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKPagamentoA869264" ManuallyRouted="false">
-          <ConnectorPoint PointX="12" PointY="13.753326822916666" />
-          <ConnectorPoint PointX="12.479166666666666" PointY="13.753326822916666" />
-          <ConnectorPoint PointX="12.645833333333334" PointY="13.753326822916666" />
-          <ConnectorPoint PointX="12.75" PointY="13.753326822916666" />
+          <ConnectorPoint PointX="12" PointY="13.628326822916666" />
+          <ConnectorPoint PointX="12.479166666666666" PointY="13.628326822916666" />
+          <ConnectorPoint PointX="12.645833333333334" PointY="13.628326822916666" />
+          <ConnectorPoint PointX="12.75" PointY="13.628326822916666" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKPagamentoC183659" ManuallyRouted="false">
-          <ConnectorPoint PointX="12" PointY="15.131653645833332" />
-          <ConnectorPoint PointX="12.375" PointY="15.506653645833332" />
-          <ConnectorPoint PointX="12.375" PointY="15.375" />
-          <ConnectorPoint PointX="12.503574434901122" PointY="15.50357443490112" />
-          <ConnectorPoint PointX="12.621425565098878" PointY="15.621425565098878" />
-          <ConnectorPoint PointX="12.75" PointY="15.75" />
+          <ConnectorPoint PointX="12" PointY="15.006653645833332" />
+          <ConnectorPoint PointX="12.375" PointY="15.381653645833332" />
+          <ConnectorPoint PointX="12.375" PointY="15.25" />
+          <ConnectorPoint PointX="12.503574434901122" PointY="15.37857443490112" />
+          <ConnectorPoint PointX="12.621425565098878" PointY="15.496425565098878" />
+          <ConnectorPoint PointX="12.75" PointY="15.625" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKPagamentoA750421" ManuallyRouted="false">
-          <ConnectorPoint PointX="12" PointY="16.562609509314903" />
-          <ConnectorPoint PointX="12.5625" PointY="16.000109509314903" />
-          <ConnectorPoint PointX="12.5625" PointY="13.032911411458333" />
-          <ConnectorPoint PointX="12.75" PointY="13.032911411458333" />
+          <ConnectorPoint PointX="12" PointY="16.437609509314903" />
+          <ConnectorPoint PointX="12.5625" PointY="15.875109509314903" />
+          <ConnectorPoint PointX="12.5625" PointY="12.907911411458333" />
+          <ConnectorPoint PointX="12.75" PointY="12.907911411458333" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKPessoa328913" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="15.672841796875002" />
-          <ConnectorPoint PointX="3" PointY="15.672841796875002" />
+          <ConnectorPoint PointX="2.25" PointY="15.463979492187502" />
+          <ConnectorPoint PointX="3" PointY="15.463979492187502" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKPessoaFisi179779" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="17.451396484375" />
-          <ConnectorPoint PointX="4.765625" PointY="17.717021484375" />
-          <ConnectorPoint PointX="4.765625" PointY="17.389472153846153" />
-          <ConnectorPoint PointX="4.8785744349011217" PointY="17.502421588747275" />
-          <ConnectorPoint PointX="5.0745505650988791" PointY="17.698397718945031" />
-          <ConnectorPoint PointX="5.2511528461538459" PointY="17.875" />
+          <ConnectorPoint PointX="4.5" PointY="16.907084960937503" />
+          <ConnectorPoint PointX="4.8160744349011217" PointY="17.223159395838625" />
+          <ConnectorPoint PointX="4.9339255650988791" PointY="17.341010526036381" />
+          <ConnectorPoint PointX="5.0035744349011217" PointY="17.410659395838625" />
+          <ConnectorPoint PointX="5.1214255650988791" PointY="17.528510526036381" />
+          <ConnectorPoint PointX="5.125" PointY="17.532084960937503" />
+          <ConnectorPoint PointX="5.125" PointY="18.421153157552084" />
+          <ConnectorPoint PointX="5.25" PointY="18.421153157552084" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKPessoaJuri138880" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.4942307692307688" PointY="17.451396484375" />
-          <ConnectorPoint PointX="4.90625" PointY="17.863415715144232" />
-          <ConnectorPoint PointX="4.90625" PointY="21.115143229166669" />
-          <ConnectorPoint PointX="5.25" PointY="21.115143229166669" />
+          <ConnectorPoint PointX="4.4630769230769225" PointY="16.907084960937503" />
+          <ConnectorPoint PointX="4.96875" PointY="17.412758037860581" />
+          <ConnectorPoint PointX="4.96875" PointY="20.753326822916669" />
+          <ConnectorPoint PointX="5.25" PointY="20.753326822916669" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKTelefone320442" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="17.306320369977961" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="17.306320369977961" />
-          <ConnectorPoint PointX="5.098958333333333" PointY="17.306320369977961" />
-          <ConnectorPoint PointX="7.072916666666667" PointY="17.306320369977961" />
-          <ConnectorPoint PointX="7.239583333333333" PointY="17.306320369977961" />
-          <ConnectorPoint PointX="7.8479870366446276" PointY="17.306320369977961" />
-          <ConnectorPoint PointX="8.0146537033112946" PointY="17.306320369977961" />
-          <ConnectorPoint PointX="9" PointY="17.306320369977961" />
-          <ConnectorPoint PointX="9" PointY="16.797587890625" />
+          <ConnectorPoint PointX="4.5" PointY="16.31681396484375" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="16.31681396484375" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="16.31681396484375" />
+          <ConnectorPoint PointX="4.979166666666667" PointY="16.31681396484375" />
+          <ConnectorPoint PointX="5.145833333333333" PointY="16.31681396484375" />
+          <ConnectorPoint PointX="8.25" PointY="16.31681396484375" />
+        </AssociationConnector>
+        <AssociationConnector Association="ProjetoLojaModel.FKTransaaco242424" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="14.026537461538462" />
+          <ConnectorPoint PointX="4.9375" PointY="13.58903746153846" />
+          <ConnectorPoint PointX="4.9375" PointY="11.508469238281252" />
+          <ConnectorPoint PointX="8.25" PointY="11.508469238281252" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKTransacao806039" ManuallyRouted="false">
-          <ConnectorPoint PointX="3.75" PointY="14.125" />
-          <ConnectorPoint PointX="3.75" PointY="13.47068359375" />
-          <ConnectorPoint PointX="4.75" PointY="13.47068359375" />
-          <ConnectorPoint PointX="4.75" PointY="12.047841796875" />
-          <ConnectorPoint PointX="8.25" PointY="12.047841796875" />
+          <ConnectorPoint PointX="4.47576923076923" PointY="14" />
+          <ConnectorPoint PointX="4.875" PointY="13.600769230769231" />
+          <ConnectorPoint PointX="4.875" PointY="11.901479492187502" />
+          <ConnectorPoint PointX="8.25" PointY="11.901479492187502" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKUsuario624817" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="17.39947240745192" />
-          <ConnectorPoint PointX="4.8785744349011217" PointY="17.778046842353042" />
-          <ConnectorPoint PointX="4.9964255650988791" PointY="17.8958979725508" />
-          <ConnectorPoint PointX="5.015625" PointY="17.91509740745192" />
-          <ConnectorPoint PointX="5.015625" PointY="17.125" />
-          <ConnectorPoint PointX="7.072916666666667" PointY="17.125" />
-          <ConnectorPoint PointX="7.239583333333333" PointY="17.125" />
-          <ConnectorPoint PointX="7.75" PointY="17.125" />
-          <ConnectorPoint PointX="8.25" PointY="17.625" />
+          <ConnectorPoint PointX="4.5" PointY="16.870160884014425" />
+          <ConnectorPoint PointX="4.9119240769230785" PointY="17.282084960937503" />
+          <ConnectorPoint PointX="4.979166666666667" PointY="17.282084960937503" />
+          <ConnectorPoint PointX="5.145833333333333" PointY="17.282084960937503" />
+          <ConnectorPoint PointX="7.072916666666667" PointY="17.282084960937503" />
+          <ConnectorPoint PointX="7.239583333333333" PointY="17.282084960937503" />
+          <ConnectorPoint PointX="9" PointY="17.282084960937503" />
+          <ConnectorPoint PointX="9" PointY="17.625" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKProdutoVig90587" ManuallyRouted="false">
-          <ConnectorPoint PointX="12.6093775" PointY="6.2590950520833335" />
-          <ConnectorPoint PointX="12.6093775" PointY="7.1151253841145774" />
-          <ConnectorPoint PointX="13.5" PointY="7.1151253841145774" />
+          <ConnectorPoint PointX="12" PointY="5.907084960937496" />
+          <ConnectorPoint PointX="12" PointY="6.85154346875" />
+          <ConnectorPoint PointX="12.322916666666666" PointY="6.8515434687499992" />
+          <ConnectorPoint PointX="12.489583333333334" PointY="6.85154346875" />
+          <ConnectorPoint PointX="13.5" PointY="6.85154346875" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKTransacaoP922972" ManuallyRouted="false">
-          <ConnectorPoint PointX="12.30468625" PointY="6.2590950520833335" />
-          <ConnectorPoint PointX="12.30468625" PointY="9.87836501302084" />
-          <ConnectorPoint PointX="13.5" PointY="9.87836501302084" />
+          <ConnectorPoint PointX="12.40625" PointY="5.907084960937496" />
+          <ConnectorPoint PointX="12.40625" PointY="11.004250488281254" />
+          <ConnectorPoint PointX="13.5" PointY="11.004250488281254" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKTransacao547363" ManuallyRouted="false">
-          <ConnectorPoint PointX="7.5" PointY="10.672841796875" />
-          <ConnectorPoint PointX="8.25" PointY="10.672841796875" />
+          <ConnectorPoint PointX="7.5" PointY="10.401479492187502" />
+          <ConnectorPoint PointX="8.25" PointY="10.401479492187502" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKTelefone476788" ManuallyRouted="false">
-          <ConnectorPoint PointX="7.15625" PointY="22.875" />
-          <ConnectorPoint PointX="7.15625" PointY="16.777141113281253" />
-          <ConnectorPoint PointX="8.25" PointY="16.777141113281253" />
+          <ConnectorPoint PointX="7.15625" PointY="22.75" />
+          <ConnectorPoint PointX="7.15625" PointY="16.34806646484375" />
+          <ConnectorPoint PointX="8.25" PointY="16.34806646484375" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKTransacao266380" ManuallyRouted="false">
-          <ConnectorPoint PointX="7.5" PointY="7.672841796875" />
-          <ConnectorPoint PointX="8.7011685937500012" PointY="7.672841796875" />
-          <ConnectorPoint PointX="8.7011685937500012" PointY="10" />
+          <ConnectorPoint PointX="7.5" PointY="7.588979492187498" />
+          <ConnectorPoint PointX="9" PointY="7.588979492187498" />
+          <ConnectorPoint PointX="9" PointY="9.75" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKUsuario557876" ManuallyRouted="false">
-          <ConnectorPoint PointX="7.5" PointY="26.588979492187498" />
-          <ConnectorPoint PointX="9" PointY="26.588979492187498" />
+          <ConnectorPoint PointX="7.5" PointY="26.463979492187498" />
+          <ConnectorPoint PointX="9" PointY="26.463979492187498" />
           <ConnectorPoint PointX="9" PointY="19.381653645833339" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKTransacaoP933760" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.75" PointY="10.09375" />
-          <ConnectorPoint PointX="13.5" PointY="10.09375" />
+          <ConnectorPoint PointX="9.75" PointY="10.314625244140627" />
+          <ConnectorPoint PointX="11.354166666666666" PointY="10.314625244140627" />
+          <ConnectorPoint PointX="11.520833333333334" PointY="10.314625244140627" />
+          <ConnectorPoint PointX="12.322916666666666" PointY="10.314625244140627" />
+          <ConnectorPoint PointX="12.489583333333334" PointY="10.314625244140627" />
+          <ConnectorPoint PointX="13.5" PointY="10.314625244140627" />
         </AssociationConnector>
-        <AssociationConnector Association="ProjetoLojaModel.FKTransaaco242424" >
-          <ConnectorPoint PointX="4.156252" PointY="14.125" />
-          <ConnectorPoint PointX="4.156252" PointY="13.59568359375" />
-          <ConnectorPoint PointX="4.8125" PointY="13.59568359375" />
-          <ConnectorPoint PointX="4.8125" PointY="12.398923398437493" />
-          <ConnectorPoint PointX="8.25" PointY="12.398923398437493" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.OrdemServico" Width="1.5" PointX="10.5" PointY="19.375" Height="2.2496956380208246" />
+        <AssociationConnector Association="ProjetoLojaModel.FKOrdemServi748459" >
+          <ConnectorPoint PointX="9.75" PointY="13.150126953125" />
+          <ConnectorPoint PointX="10.125" PointY="13.525126953125" />
+          <ConnectorPoint PointX="10.125" PointY="20.499847819010412" />
+          <ConnectorPoint PointX="10.5" PointY="20.499847819010412" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>

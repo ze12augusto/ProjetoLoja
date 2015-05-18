@@ -9,10 +9,10 @@ namespace ProjetoLojaDesktop.Data
 {
     class OrdemDeServicoData
     {
-        private ProjetoLojaEntities db;
+        private ProjetoLojaEntities1 db;
         private ObjectSet<OrdemServico> ordensDeServico;
 
-        public OrdemDeServicoData(ProjetoLojaEntities _db)
+        public OrdemDeServicoData(ProjetoLojaEntities1 _db)
         {
             db = _db;
             ordensDeServico = db.CreateObjectSet<OrdemServico>();

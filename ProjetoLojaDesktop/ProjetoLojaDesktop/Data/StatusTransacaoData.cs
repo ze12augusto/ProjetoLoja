@@ -9,11 +9,11 @@ namespace ProjetoLojaDesktop.Data
 {
     class StatusTransacaoData
     {
-        private ProjetoLojaEntities db;
+        private ProjetoLojaEntities1 db;
 
         public StatusTransacaoData() {
 
-            db = new ProjetoLojaEntities();
+            db = new ProjetoLojaEntities1();
         }
 
         public StatusTransacao obterStatusTransacaoData(int id)

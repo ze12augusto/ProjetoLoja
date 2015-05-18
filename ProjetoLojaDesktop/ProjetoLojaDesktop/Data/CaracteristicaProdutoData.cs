@@ -10,11 +10,11 @@ namespace ProjetoLojaDesktop.Data
 {
     class CaracteristicaProdutoData
     {
-        private ProjetoLojaEntities db;
+        private ProjetoLojaEntities1 db;
 
         public CaracteristicaProdutoData() {
 
-            db = new ProjetoLojaEntities();
+            db = new ProjetoLojaEntities1();
         }
 
         public CaracteristicaProduto obterCaracteristica(int idCaracteristica, int idProduto)

@@ -31,7 +31,7 @@ namespace ProjetoLojaDesktop.Views
 
         private void instanciarObjetos()
         {
-            ProjetoLojaEntities db = new ProjetoLojaEntities();
+            ProjetoLojaEntities1 db = new ProjetoLojaEntities1();
             produtoData = new ProdutoData(db);
             transacaoProduto = new TransacaoProduto();
             produtoVigenciaData = new ProdutoVigenciaData(db);

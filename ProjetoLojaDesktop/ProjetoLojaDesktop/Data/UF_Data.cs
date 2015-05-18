@@ -9,10 +9,10 @@ namespace ProjetoLojaDesktop.Data
 {
     class UF_Data
     {
-        private ProjetoLojaEntities db;
+        private ProjetoLojaEntities1 db;
         private ObjectSet<UnidadeFederativa> unidadeFederativas;
 
-        public UF_Data(ProjetoLojaEntities _db)
+        public UF_Data(ProjetoLojaEntities1 _db)
         {
             db = _db;
             unidadeFederativas = db.CreateObjectSet<UnidadeFederativa>();

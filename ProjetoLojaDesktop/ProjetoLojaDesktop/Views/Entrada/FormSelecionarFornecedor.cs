@@ -15,7 +15,7 @@ namespace ProjetoLojaDesktop.Forms
 {
     public partial class FormSelecionarFornecedor : Form
     {
-        private ProjetoLojaEntities db;
+        private ProjetoLojaEntities1 db;
         private PessoaData pessoaData;
         private Pessoa pessoa;
 
@@ -34,7 +34,7 @@ namespace ProjetoLojaDesktop.Forms
         public FormSelecionarFornecedor()
         {
             InitializeComponent();
-            db = new ProjetoLojaEntities();
+            db = new ProjetoLojaEntities1();
             pessoaData = new PessoaData(db);
             inicializar();
         }

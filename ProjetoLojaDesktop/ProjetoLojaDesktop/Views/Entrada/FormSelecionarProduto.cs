@@ -17,7 +17,7 @@ namespace ProjetoLojaDesktop.Forms
     public partial class FormSelecionarProduto : Form
     {
 
-        private ProjetoLojaEntities db;
+        private ProjetoLojaEntities1 db;
         private ProdutoData produtoData;
         private Produto produto;
 
@@ -36,7 +36,7 @@ namespace ProjetoLojaDesktop.Forms
         public FormSelecionarProduto()
         {
             InitializeComponent();
-            db = new ProjetoLojaEntities();
+            db = new ProjetoLojaEntities1();
             produtoData = new ProdutoData(db);
 
             inicializar();

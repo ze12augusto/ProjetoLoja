@@ -9,10 +9,10 @@ namespace ProjetoLojaDesktop.Data
 {
     class PagamentoData
     {
-        private ProjetoLojaEntities db;
+        private ProjetoLojaEntities1 db;
         private ObjectSet<Pagamento> pagamentos;
 
-        public PagamentoData(ProjetoLojaEntities _db)
+        public PagamentoData(ProjetoLojaEntities1 _db)
         {
             db = _db;
             pagamentos = db.CreateObjectSet<Pagamento>();

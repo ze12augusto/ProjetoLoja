@@ -9,11 +9,11 @@ namespace ProjetoLojaDesktop.Data
 {
     class MarcaData
     {
-        private ProjetoLojaEntities db;
+        private ProjetoLojaEntities1 db;
 
         public MarcaData() {
 
-            db = new ProjetoLojaEntities();
+            db = new ProjetoLojaEntities1();
         }
 
         public Marca obterMarca(int id)

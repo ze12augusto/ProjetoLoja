@@ -16,7 +16,7 @@ namespace ProjetoLojaDesktop.Forms
 {
     public partial class FormTransacaoSaida : Form
     {
-        ProjetoLojaEntities db;
+        ProjetoLojaEntities1 db;
         private StatusTransacaoData statusTransacaoData;
         private TransacaoData transacaoData;
         private PessoaData pessoaData;
@@ -49,7 +49,7 @@ namespace ProjetoLojaDesktop.Forms
 
         private void instanciarClassesData()
         {
-            db = new ProjetoLojaEntities();
+            db = new ProjetoLojaEntities1();
             statusTransacaoData = new StatusTransacaoData();
             transacaoData = new TransacaoData(db);
             pessoaData = new PessoaData(db);

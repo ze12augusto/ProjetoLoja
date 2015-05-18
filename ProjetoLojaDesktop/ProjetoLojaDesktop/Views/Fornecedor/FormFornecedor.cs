@@ -13,7 +13,7 @@ namespace ProjetoLojaDesktop
 {
     public partial class FormFornecedor : Form
     {
-        private ProjetoLojaEntities db;
+        private ProjetoLojaEntities1 db;
         private PessoaJuridicaData pJus;
         private PessoaData pessoa;
         private UF_Data uf;
@@ -34,7 +34,7 @@ namespace ProjetoLojaDesktop
         {
             InitializeComponent();
             
-            db = new ProjetoLojaEntities();
+            db = new ProjetoLojaEntities1();
             pJus = new PessoaJuridicaData(db);
             pessoa = new PessoaData(db);
             uf = new UF_Data(db);

@@ -10,10 +10,10 @@ namespace ProjetoLojaDesktop.Data
     class EnderecoData
     {
         
-        private ProjetoLojaEntities db;
+        private ProjetoLojaEntities1 db;
         private ObjectSet<Endereco> enderecos;
 
-        public EnderecoData(ProjetoLojaEntities _db)
+        public EnderecoData(ProjetoLojaEntities1 _db)
         {
             db = _db;
             enderecos = db.CreateObjectSet<Endereco>();

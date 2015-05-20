@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using ProjetoLojaDesktop.Enums;
-using ProjetoLojaDesktop.Entity;
+using ProjetoLojaData.Entity;
 using ProjetoLojaDesktop.Views.Cliente;
-using ProjetoLojaDesktop.Data;
+using ProjetoLojaData.Data;
 
 
 namespace ProjetoLojaDesktop.Views

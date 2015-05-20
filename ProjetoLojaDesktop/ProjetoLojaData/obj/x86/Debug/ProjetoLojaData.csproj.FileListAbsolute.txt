@@ -1,0 +1,6 @@
+C:\Users\Window-PC\Documents\Projetos\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\obj\x86\Debug\ProjetoLojaData.Properties.Resources.resources
+C:\Users\Window-PC\Documents\Projetos\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\obj\x86\Debug\ProjetoLojaData.csproj.GenerateResource.Cache
+C:\Users\Window-PC\Documents\Projetos\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\bin\Debug\ProjetoLojaData.exe
+C:\Users\Window-PC\Documents\Projetos\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\bin\Debug\ProjetoLojaData.pdb
+C:\Users\Window-PC\Documents\Projetos\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\obj\x86\Debug\ProjetoLojaData.exe
+C:\Users\Window-PC\Documents\Projetos\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\obj\x86\Debug\ProjetoLojaData.pdb

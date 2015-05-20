@@ -49,39 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\CaracteristicaProdutoData.cs" />
-    <Compile Include="Data\CidadeData.cs" />
-    <Compile Include="Data\EnderecoData.cs" />
-    <Compile Include="Data\ImagemProdutoData.cs" />
-    <Compile Include="Data\MarcaData.cs" />
-    <Compile Include="Data\ModeloData.cs" />
-    <Compile Include="Data\NotaFiscalData.cs" />
-    <Compile Include="Data\OrdemDeServicoData.cs" />
-    <Compile Include="Data\PagamentoAVistaData.cs" />
-    <Compile Include="Data\PagamentoCartaoData.cs" />
-    <Compile Include="Data\PagamentoData.cs" />
-    <Compile Include="Data\PessoaData.cs" />
-    <Compile Include="Data\PessoaFisicaData.cs" />
-    <Compile Include="Data\PessoaJuridicaData.cs" />
-    <Compile Include="Data\ProdutoData.cs" />
-    <Compile Include="Data\ProdutoVigenciaData.cs" />
-    <Compile Include="Data\StatusTransacaoData.cs" />
-    <Compile Include="Data\TelefoneData.cs" />
-    <Compile Include="Data\TipoEnderecoData.cs" />
-    <Compile Include="Data\TipoPagamentoData.cs" />
-    <Compile Include="Data\TipoPessoaData.cs" />
-    <Compile Include="Data\TipoTelefoneData.cs" />
-    <Compile Include="Data\TipoTransacaoData.cs" />
-    <Compile Include="Data\TipoUsuarioData.cs" />
-    <Compile Include="Data\TransacaoData.cs" />
-    <Compile Include="Data\TransacaoProdutoData.cs" />
-    <Compile Include="Data\UF_Data.cs" />
-    <Compile Include="Data\UsuarioData.cs" />
-    <Compile Include="Entity\ProjetoLojaEntity.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProjetoLojaEntity.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Enums\TipoTransacaoEnum.cs" />
     <Compile Include="Views\Cliente\FormCadastroCliente.cs">
       <SubType>Form</SubType>
@@ -194,10 +161,6 @@
     <EmbeddedResource Include="Views\Produto\FormSelecionarProduto.resx">
       <DependentUpon>FormSelecionarProduto.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="Entity\ProjetoLojaEntity.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ProjetoLojaEntity.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <None Include="App.Config">
       <SubType>Designer</SubType>
     </None>
@@ -240,6 +203,12 @@
     <None Include="Resources\User-Group1.png" />
     <Content Include="Resources\User-Profile.png" />
     <Content Include="Resources\Verify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProjetoLojaData\ProjetoLojaData.csproj">
+      <Project>{141B4820-5D7E-4AFF-BA1C-FF427897A09A}</Project>
+      <Name>ProjetoLojaData</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

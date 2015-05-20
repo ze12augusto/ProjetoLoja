@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
-using ProjetoLojaDesktop.Data;
-using ProjetoLojaDesktop.Entity;
+using ProjetoLojaData.Data;
+using ProjetoLojaData.Entity;
 using ProjetoLojaDesktop.Enums;
 
 namespace ProjetoLojaDesktop.Views

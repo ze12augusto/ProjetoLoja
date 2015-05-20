@@ -6,8 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using ProjetoLojaDesktop.Entity;
-using ProjetoLojaDesktop.Data;
+using ProjetoLojaData.Entity;
+using ProjetoLojaData.Data;
 
 namespace ProjetoLojaDesktop.Forms
 {

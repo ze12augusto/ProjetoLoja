@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoLojaDesktop", "ProjetoLojaDesktop\ProjetoLojaDesktop.csproj", "{A47B207C-685B-4555-86FE-EE3B77D2B046}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoLojaData", "ProjetoLojaData\ProjetoLojaData.csproj", "{141B4820-5D7E-4AFF-BA1C-FF427897A09A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,6 +15,10 @@ Global
 		{A47B207C-685B-4555-86FE-EE3B77D2B046}.Debug|x86.Build.0 = Debug|x86
 		{A47B207C-685B-4555-86FE-EE3B77D2B046}.Release|x86.ActiveCfg = Release|x86
 		{A47B207C-685B-4555-86FE-EE3B77D2B046}.Release|x86.Build.0 = Release|x86
+		{141B4820-5D7E-4AFF-BA1C-FF427897A09A}.Debug|x86.ActiveCfg = Debug|x86
+		{141B4820-5D7E-4AFF-BA1C-FF427897A09A}.Debug|x86.Build.0 = Debug|x86
+		{141B4820-5D7E-4AFF-BA1C-FF427897A09A}.Release|x86.ActiveCfg = Release|x86
+		{141B4820-5D7E-4AFF-BA1C-FF427897A09A}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

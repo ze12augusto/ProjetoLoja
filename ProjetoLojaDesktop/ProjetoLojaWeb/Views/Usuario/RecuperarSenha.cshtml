@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "RecuperarSenha";
+}
+
+<section id="loginForm">
+<h2>RecuperarSenha</h2>
+@using (Html.BeginForm()) {
+
+    <fieldset>
+        @Html.Editor("email")
+        <input type="submit" value="Log in" />
+    </fieldset>
+}
+</section>

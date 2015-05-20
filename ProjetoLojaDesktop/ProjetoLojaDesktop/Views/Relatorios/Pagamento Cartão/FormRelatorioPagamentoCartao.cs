@@ -17,11 +17,11 @@ namespace ProjetoLojaDesktop.Views.Relatorios.Pagamento_Cartão
         private TransacaoData transacaoData;
         private PagamentoData pagamentoData;
         private PagamentoCataoData pagamentoCartaoData;
-        private ProjetoLojaEntities db;
+        private ProjetoLojaEntities1 db;
 
         public FormRelatorioPagamentoCartao()
         {
-            db = new ProjetoLojaEntities();
+            db = new ProjetoLojaEntities1();
         
         }
 

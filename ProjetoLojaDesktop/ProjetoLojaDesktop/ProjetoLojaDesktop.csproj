@@ -178,6 +178,18 @@
     <Compile Include="Views\Produto\FormSelecionarProduto.Designer.cs">
       <DependentUpon>FormSelecionarProduto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Relatorios\NotaFiscal\FormNotaFiscal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Relatorios\NotaFiscal\FormNotaFiscal.designer.cs">
+      <DependentUpon>FormNotaFiscal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Relatorios\NotaFiscal\NotaFiscalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotaFiscalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Views\Relatorios\Pagamento Cartão\FormRelatorioPagamentoCartao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,6 +269,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Produto\FormSelecionarProduto.resx">
       <DependentUpon>FormSelecionarProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Relatorios\NotaFiscal\FormNotaFiscal.resx">
+      <DependentUpon>FormNotaFiscal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Relatorios\NotaFiscal\NotaFiscalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NotaFiscalReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Relatorios\Pagamento Cartão\FormRelatorioPagamentoCartao.resx">
       <DependentUpon>FormRelatorioPagamentoCartao.cs</DependentUpon>

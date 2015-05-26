@@ -103,6 +103,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ProjetoLojaEntity.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="App.Config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

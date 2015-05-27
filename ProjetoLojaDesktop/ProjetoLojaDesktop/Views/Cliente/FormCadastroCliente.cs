@@ -82,25 +82,30 @@ namespace ProjetoLojaDesktop
             cbxTipoEndereco.ValueMember = "idTipoEndereco";
             
             atualizarPesquisaClientes(pessoaData.todasPessoas());
-            
-            
+            inicializar();
         }
 
-
-
-        public void limparDadosPessoais()
+        private void inicializar()
         {
-            txtNomeFantasia.Text = "";
+            preencherCbxTipoPessoa();
+        }
+
+        private void resetarCamposCliente()
+        {
+            pessoa = new Pessoa();
+            pessoaFisica = new PessoaFisica();
+            pessoaJuridica = new PessoaJuridica();
+            cbxTipoPessoa.SelectedIndex = -1;
             txtRazaoSocial.Text = "";
+            txtNomeFantasia.Text = "";
             txtEmail.Text = "";
             txtCpf.Text = "";
             txtRg.Text = "";
-            txtEmail.Text = "";
-            cbxTipoPessoa.SelectedIndex = -1;
         }
 
-        public void limparEndereco()
+        public void resetarEndereco()
         {
+            endereco = new Endereco();
             txtLogradouro.Text = "";
             txtBairro.Text = "";
             txtNumero.Text = "";
@@ -111,20 +116,26 @@ namespace ProjetoLojaDesktop
             cbxCidade.SelectedIndex = -1;
         }
 
-        public void limparTelefone()
+        public void resetarTelefone()
         {
-            txtNumero.Text = "";
+            telefone = new Telefone();
+            txtTelefone.Text = "";
             cbxTipoTelefone.SelectedIndex = -1;
         }
 
         public void limparTodosCampos()
         {
-            limparDadosPessoais();
-            limparEndereco();
-            limparTelefone();
+            resetarCamposCliente();
+            resetarEndereco();
+            resetarTelefone();
         }
 
-
+        private void preencherCbxTipoPessoa()
+        {
+            cbxTipoPessoa.DataSource = tipoPessoaData.todasTipoPessoas();
+            cbxTipoPessoa.DisplayMember = "descricao";
+            cbxTipoPessoa.ValueMember = "idTipoPessoa";
+        }
 
         public void obterDadosPessoais()
         {
@@ -139,7 +150,7 @@ namespace ProjetoLojaDesktop
             }
 
             // 1 é o ID do TipoPessoa Cliente
-            pessoa.idTipoPessoa = 1; 
+            pessoa.idTipoPessoa = (byte)cbxTipoPessoa.SelectedValue;
             pessoa.nome = txtRazaoSocial.Text;
             pessoa.email = txtEmail.Text;
 
@@ -197,76 +208,33 @@ namespace ProjetoLojaDesktop
                         };
             
             dgvPesquisaCliente.DataSource = pessoas;
-            
-            dgvPesquisaCliente.Columns[0].Visible = false;
-            dgvPesquisaCliente.Columns[1].HeaderText = "Nome";
         }
 
-        public void atualizarTelefone(List<Telefone> telefones)
-
+        public void atualizarTelefone() 
         {
-
-            var lista = from t in telefones
-                        join tp in tipoTelefoneData.todosTiposTelefones()
-                        on t.idTipoTelefone equals tp.idTipoTelefone
-                        join p in pessoaData.todasPessoas()
-                        on t.idPessoa equals p.idPessoa
-                        join pf in pessoaFisicaData.todasPessoaFisicas()
-                            on t.idPessoa equals pf.idPessoa
-                        join pj in pessoaJuridicaData.todasPessoasJuridicas()
-                            on t.idPessoa equals pj.idPessoa
-                        select new
-                        {
-                            Telefone = t,
-                            Pessoa = p,
-                            TipoTelefone = tp,
-                            Nome = p.nome,                           
-                           Numero = t.numero,
-                           Tipo = tp.descricao
-                        };
-            
-            
-            dgvTelefone.DataSource = telefones;
-
+            List<Telefone> telefone = telefoneData.listarTelefonesPorPessoa(pessoa.idPessoa);
+            dgvTelefone.DataSource = telefone;
             dgvTelefone.Columns[0].Visible = false;
-            dgvTelefone.Columns[1].HeaderText = "Nome";
+            dgvTelefone.Columns[3].Visible = false;
+
+            dgvTelefone.Columns[1].HeaderText = "TipoTelefone";
+            dgvTelefone.Columns[1].Width = 304;
+            dgvTelefone.Columns[2].HeaderText = "Telefone";
+            dgvTelefone.Columns[2].Width = 304;
+            
         }
 
-        public void atualizarEndereco(List<Endereco> enderecos)
+        public void atualizarEndereco()
         {
-            var lista = from e in enderecos
-                        join p in pessoaData.todasPessoas()
-                        on e.idPessoa equals p.idPessoa
-                        join pf in pessoaFisicaData.todasPessoaFisicas()
-                            on e.idPessoa equals pf.idPessoa
-                        join pj in pessoaJuridicaData.todasPessoasJuridicas()
-                            on e.idPessoa equals pj.idPessoa
-                        join c in cidadeData.todasCidades()
-                        on e.idCidade equals c.idCidade
-                        select new
-                        {
-                            Endereco = e,
-                            Pessoa = p,
-                            Nome = p.nome,
-                           Bairro = e.bairro,
-                           Cidade = c,
-                           Numero = e.numero                      
-                        };
+            List<Endereco> enderecos = enderecoData.listarEnderecosPorPessoa(pessoa.idPessoa);
             dgvEndereco.DataSource = enderecos;
-
-            dgvEndereco.Columns[0].Visible = false;
-            dgvEndereco.Columns[1].HeaderText = "Nome";
         }
-
-
 
         public void atribuirTelefone(Telefone t)
         {
             telefone = t;
             txtTelefone.Text = t.numero;
             cbxTipoTelefone.SelectedValue = t.idTipoTelefone;
-
-           
         }
 
         public void atribuirEndereco(Endereco e)
@@ -304,114 +272,83 @@ namespace ProjetoLojaDesktop
             }
         }
 
-        public bool validarDadosPessoaisPF()
+        public string validarDadosPessoaisPF()
         {
             if (txtRazaoSocial.Text == null || txtRazaoSocial.Text == "")
             {
-                MessageBox.Show("Favor inserir um nome.");
-                return false;
+                return "Favor inserir um nome.";
             }
             if (txtEmail.Text == null || txtEmail.Text == "")
             {
-                MessageBox.Show("Favor inserir um e-mail.");
-                return false;
+                return "Favor inserir um e-mail.";
             }
             if (txtRg.Text == null || txtRg.Text == "")
             {
-                MessageBox.Show("Favor inserir um RG.");
-                return false;
+                return "Favor inserir um RG.";
             }
-            if (txtCpf.Text == null || txtCpf.Text == "")
+            if (txtCpf.Text.Replace("/", "").Replace(".", "").Replace("_", "").Replace(" ", "").Replace("-", "") == "")
             {
-                MessageBox.Show("Favor inserir um CPF.");
-                return false;
+                return "Favor inserir um CPF.";
             }
-            return true;
+            return null;
         }
 
-        public bool validarDadosPessoaisPJ()
+        public string validarDadosPessoaisPJ()
         {
             if (txtRazaoSocial.Text == null || txtRazaoSocial.Text == "")
             {
-                MessageBox.Show("Favor inserir uma razão social.");
-                return false;
+                return "Favor inserir uma razão social.";
             }
             if (txtNomeFantasia.Text == null || txtNomeFantasia.Text == "")
             {
-                MessageBox.Show("Favor inserir um nome fantasia.");
-                return false;
+                return "Favor inserir um nome fantasia.";
             }
             if (txtEmail.Text == null || txtEmail.Text == "")
             {
-                MessageBox.Show("Favor inserir um e-mail.");
-                return false;
+                return "Favor inserir um e-mail.";
             }
-            if (txtCpf.Text == null || txtCpf.Text == "")
+            if (txtCpf.Text.Replace("/", "").Replace(".", "").Replace("_", "").Replace(" ", "").Replace("-", "") == "")
             {
-                MessageBox.Show("Favor inserir um CNPJ.");
-                return false;
+                return "Favor inserir um CNPJ.";
             }
-            return true;
+            return null;
         }
 
-        public bool validarEndereco()
+        public string validarEndereco()
         {
             if (txtLogradouro.Text == null || txtLogradouro.Text == "")
             {
-                MessageBox.Show("Favor inserir um logradouro.");
-                return false;
+                return "Favor inserir um logradouro.";
             }
             if (txtBairro.Text == null || txtBairro.Text == "")
             {
-                MessageBox.Show("Favor inserir um bairro.");
-                return false;
+                return "Favor inserir um bairro.";
             }
             if (txtCep.Text == null || txtCep.Text == "")
             {
-                MessageBox.Show("Favor inserir um CEP.");
-                return false;
+                return "Favor inserir um CEP.";
             }
             if (txtNumero.Text == null || txtNumero.Text == "")
             {
-                MessageBox.Show("Favor inserir um número.");
-                return false;
+                return "Favor inserir um número.";
             }
-            if (cbxCidade.SelectedValue == null || (int) cbxCidade.SelectedValue == 0)
-            {
-                MessageBox.Show("Favor selecionar uma cidade.");
-                return false;
-            }
-            if (cbxUf.SelectedValue == null || (int)cbxUf.SelectedValue == 0)
-            {
-                MessageBox.Show("Favor selecionar uma UF.");
-                return false;
-            }
-            return true;
+            
+            return null;
         }
 
-        public bool validarTelefone()
+        public string validarTelefone()
         {
-            if (txtNumero.Text == null || txtNumero.Text == "")
+            if (txtTelefone.Text.Replace("(", "").Replace(")","").Replace("_","").Replace(" ","").Replace("-","") == "")
             {
-                MessageBox.Show("Favor inserir um número.");
-                return false;
+                return "Favor inserir um número.";
             }
-            //if(cbxTipoTelefone.SelectedValue == null || (int) cbxTipoTelefone.SelectedValue == 0)
-            //{
-            //    MessageBox.Show("Favor selecionar um tipo de telefone.");
-            //    return false;
-            //}
-            return true;
+            return null;
         }
-
-
 
         private void txtConsultaCliente_TextChanged(object sender, EventArgs e)
         {
             atualizarPesquisaClientes(pessoaData.pesquisarPessoaPorNome(txtConsultaCliente.Text));
         }
-
-
 
         private void cbx_tipoPessoa_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -467,77 +404,147 @@ namespace ProjetoLojaDesktop
 
         private void btnNovoCliente_Click(object sender, EventArgs e)
         {
-            pessoa = new Pessoa();
             tabDadosPessoais.Enabled = true;
             tabCadastroCliente.SelectedIndex = 1;
+            resetarCamposCliente();
         }
 
 
 
         private void btnSalvarDadosPessoais_Click(object sender, EventArgs e)
         {
-            obterDadosPessoais();
-            string erro = null;
 
-            if ((int)cbxTipoPessoa.SelectedIndex == 0)
+            string retorno = null;
+            if (Convert.ToInt32(cbxTipoPessoa.SelectedValue) == 1)
             {
-                erro = pessoaData.adicionarPessoaFisica(pessoa);
+                retorno = validarDadosPessoaisPF();
             }
             else
             {
-                erro = pessoaData.adicionarPessoaJuridica(pessoa);
+                retorno = validarDadosPessoaisPJ();
             }
+
+            if (retorno == null)
+            {
+                obterDadosPessoais();
+                string erro = null;
+
+                if (pessoa.idPessoa == 0)
+                {
+
+                    if (Convert.ToInt32(cbxTipoPessoa.SelectedValue) == 1)
+                    {
+                        erro = pessoaData.adicionarPessoaFisica(pessoa);
+                    }
+                    else if (Convert.ToInt32(cbxTipoPessoa.SelectedValue) == 2)
+                    {
+                        erro = pessoaData.adicionarPessoaJuridica(pessoa);
+                    }
+                }
+                else
+                {
+                    erro = pessoaData.editarPessoa(pessoa);
+                }
 
                 if (erro == null)
                 {
                     MessageBox.Show("Salvo com sucesso!");
                     atualizarPesquisaClientes(pessoaData.todasPessoas());
-                    limparDadosPessoais();
+                    limparTodosCampos();
+                    
                 }
                 else
                 {
                     MessageBox.Show("Ocorreu um erro: " + erro);
                 }
-            tabCadastroCliente.SelectedIndex = 2;
+
+                tabCadastroCliente.SelectedIndex = 0;
+            }
+            else
+            {
+                MessageBox.Show(retorno);
+            }
+            tabCadastroCliente.SelectedIndex = 1;
+            
         }
 
         private void btnSalvarTelefone_Click(object sender, EventArgs e)
         {
-            obterTelefone();
-            if (validarTelefone())
+            string retorno = validarTelefone();
+
+            if (retorno == null)
             {
+                obterTelefone();
+                string erro = null;
                 telefone.idPessoa = pessoa.idPessoa;
-                string erro = telefoneData.salvarTelefone(telefone);
+                if (telefone.idTelefone == 0)
+                {
+
+                    erro = telefoneData.salvarTelefone(telefone);
+                }
+                else
+                {
+                    erro = telefoneData.editarTelefone(telefone);
+                }
+
                 if (erro == null)
                 {
                     MessageBox.Show("Salvo com sucesso!");
+                    atualizarTelefone();
+                    resetarTelefone();
                 }
                 else
                 {
                     MessageBox.Show("Ocorreu um erro: " + erro);
                 }
             }
-            atualizarTelefone(pessoa.Telefone.ToList());
-            atualizarPesquisaClientes(pessoaData.todasPessoas());
-            limparTelefone();
+            else
+            {
+                MessageBox.Show(retorno);
+            }
+           
+
+            tabCadastroCliente.SelectedIndex = 3;                                 
         }
 
         private void btnSalvarEndereco_Click(object sender, EventArgs e)
         {
-            obterEndereco();
-            endereco.idPessoa = pessoa.idPessoa;
-            string erro = enderecoData.adicionarEndereco(endereco);
-            if (erro == null)
+            string retorno = validarEndereco();
+
+            if (retorno == null)
             {
-                MessageBox.Show("Salvo com sucesso");
+                obterEndereco();
+                string erro = null;
+                endereco.idPessoa = pessoa.idPessoa;
+                if (endereco.idEndereco == 0)
+                {
+
+                    erro = enderecoData.adicionarEndereco(endereco);
+                }
+                else
+                {
+                    erro = enderecoData.editarEndereco(endereco);
+                }
+
+                if (erro == null)
+                {
+                    MessageBox.Show("Salvo com sucesso!");
+                    atualizarEndereco();
+                    resetarEndereco();
+                }
+                else
+                {
+                    MessageBox.Show("Ocorreu um erro: " + erro);
+                }
             }
             else
             {
-                MessageBox.Show("Ocorreu um erro:" + erro);
+                MessageBox.Show(retorno);
             }
-            atualizarEndereco(pessoa.Endereco.ToList());
-            atualizarPesquisaClientes(pessoaData.todasPessoas());
-            limparEndereco();
+            
+
+            tabCadastroCliente.SelectedIndex = 2;          
+          
         }
 
         private bool obterClienteDaLista()
@@ -553,21 +560,46 @@ namespace ProjetoLojaDesktop
                 return false;
             }
         }
+        private bool obterEndereçoDaLista()
+        {
+            if (dgvEndereco.CurrentRow != null)
+            {
+                endereco = (Endereco)dgvEndereco.CurrentRow.DataBoundItem;
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Selecione um endereço antes.", "Erro");
+                return false;
+            }
+        }
 
-      
+        private bool obterTelefoneDaLista()
+        {
+            if (dgvTelefone.CurrentRow != null)
+            {
+                telefone = (Telefone)dgvTelefone.CurrentRow.DataBoundItem;
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Selecione um telefone antes.", "Erro");
+                return false;
+            }
+        }
+
         private void btnEditarCliente_Click(object sender, EventArgs e)
         {
             if (obterClienteDaLista())
             {
-                atribuirPessoa(pessoa);
-                tabDadosPessoais.Enabled = true;
-                tabCadastroCliente.SelectedIndex = 1;
-                tabEndereco.Enabled = true;
-                tabTelefone.Enabled = true;
+                    atribuirPessoa(pessoa);
+                    tabDadosPessoais.Enabled = true;
+                    tabCadastroCliente.SelectedIndex = 1;
+                    tabEndereco.Enabled = true;
+                    tabTelefone.Enabled = true;
+                    cbxTipoPessoa.Enabled = false;
             }
          }
-
-
 
         private void btnExcluirCliente_Click(object sender, EventArgs e)
         {
@@ -593,23 +625,31 @@ namespace ProjetoLojaDesktop
 
         private void btnEditarEndereco_Click(object sender, EventArgs e)
         {
-            if (dgvEndereco.CurrentRow == null)
+            if (obterEndereçoDaLista())
             {
-                MessageBox.Show("Selecione um endereço para editar!");
-                return;
+                atribuirEndereco(endereco);
+                tabDadosPessoais.Enabled = true;
+                tabCadastroCliente.SelectedIndex = 2;
+                tabEndereco.Enabled = true;
+                tabTelefone.Enabled = true;
+                cbxTipoPessoa.Enabled = false;
             }
-            atribuirEndereco((Endereco)dgvEndereco.CurrentRow.Cells[0].Value);
         }
+
+      
 
         private void btnEditarTenefone_Click(object sender, EventArgs e)
             
         {
-         if (dgvTelefone.CurrentRow == null)
+            if (obterTelefoneDaLista())
             {
-                MessageBox.Show("Selecione um telefone para editar!");
-                return;
+                atribuirTelefone(telefone);
+                tabDadosPessoais.Enabled = true;
+                tabCadastroCliente.SelectedIndex = 3;
+                tabEndereco.Enabled = true;
+                tabTelefone.Enabled = true;
+                cbxTipoPessoa.Enabled = false;
             }
-         atribuirTelefone((Telefone)dgvTelefone.CurrentRow.Cells[0].Value);
         }
 
         private void btnExcluirEndereco_Click(object sender, EventArgs e)
@@ -630,7 +670,7 @@ namespace ProjetoLojaDesktop
                 {
                     MessageBox.Show("Ocorreu um erro: " + erro);
                 }
-                atualizarEndereco(enderecoData.todosEnderecos());
+                atualizarEndereco();
             }
         }
 
@@ -652,8 +692,44 @@ namespace ProjetoLojaDesktop
                 {
                     MessageBox.Show("Ocorreu um erro: " + erro);
                 }
-                atualizarTelefone(telefoneData.todosTelefones());
+                atualizarTelefone();
             }
+        }
+
+        private void btnNovoEndereco_Click(object sender, EventArgs e)
+        {
+            tabEndereco.Enabled = true;
+            tabCadastroCliente.SelectedIndex = 2;         
+            limparTodosCampos();
+        }
+
+        private void btnAdicionarTelefone_Click(object sender, EventArgs e)
+        {
+            tabTelefone.Enabled = true;
+            tabCadastroCliente.SelectedIndex = 3;
+            limparTodosCampos();
+        }
+
+        private void dgvPesquisaCliente_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            pessoa.idPessoa = ((Pessoa)dgvPesquisaCliente.CurrentRow.DataBoundItem).idPessoa;
+            atualizarTelefone();
+            atualizarEndereco();
+            tabCadastroCliente.SelectedIndex = 2;
+
+            tabDadosPessoais.Enabled = true;
+            tabEndereco.Enabled = true;
+            tabTelefone.Enabled = true;
+        }
+
+        private void dgvEndereco_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            atualizarEndereco();
+        }
+
+        private void dgvTelefone_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            atualizarTelefone();
         }       
     }
 }

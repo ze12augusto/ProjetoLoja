@@ -12,11 +12,14 @@ namespace ProjetoLojaData.Data
         
         private ProjetoLojaEntities db;
         private ObjectSet<Endereco> enderecos;
+        private PessoaData pessoaData;
 
+        
         public EnderecoData(ProjetoLojaEntities _db)
         {
             db = _db;
             enderecos = db.CreateObjectSet<Endereco>();
+            pessoaData = new PessoaData(db);
         }
 
         public List<Endereco> todosEnderecos()
@@ -73,6 +76,14 @@ namespace ProjetoLojaData.Data
         var lista = from c in enderecos where c.idEndereco == id select c;
         return lista.ToList().FirstOrDefault();
 	}
+
+    public List<Endereco> listarEnderecosPorPessoa(int idPessoa)
+    {
+        var lista = from e in enderecos
+                    where e.idPessoa == idPessoa
+                    select e;
+        return lista.ToList();
+    }
 
     public string adicionarEndereco(Endereco endereco)
         {

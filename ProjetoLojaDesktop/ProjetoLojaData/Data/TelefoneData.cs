@@ -23,6 +23,14 @@ namespace ProjetoLojaData.Data
         {
             return telefones.ToList();
         }
+        
+        public List<Telefone> listarTelefonesPorPessoa(int idPessoa)
+        {
+            var lista = from t in telefones
+                        where t.idPessoa == idPessoa
+                        select t;
+            return lista.ToList();
+        }
 
         public string salvarTelefone(Telefone telefone)
         {

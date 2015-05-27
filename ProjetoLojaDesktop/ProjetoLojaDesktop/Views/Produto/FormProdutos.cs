@@ -117,7 +117,7 @@ namespace ProjetoLojaDesktop.Forms
             produto.descricao = txtDescricao.Text;
             produto.qtdMinima = Convert.ToInt32(txtQtdM.Text);
             produto.qtdAtual = Convert.ToInt32(txtQtdA.Text);
-            produto.Modelo.Marca.idMarca = (int)cbxMarca.SelectedValue;
+            //produto.Modelo.Marca.idMarca = (int)cbxMarca.SelectedValue;
             produto.idModelo = (int)cbxModelo.SelectedValue;
         }
         private void resetarCampos()

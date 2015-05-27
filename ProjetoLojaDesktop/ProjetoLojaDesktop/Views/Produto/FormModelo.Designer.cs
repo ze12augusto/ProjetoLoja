@@ -94,6 +94,7 @@
             this.Excluir.Text = "Excluir";
             this.Excluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Excluir.UseVisualStyleBackColor = true;
+            this.Excluir.Click += new System.EventHandler(this.Excluir_Click);
             // 
             // Editar
             // 
@@ -106,6 +107,7 @@
             this.Editar.Text = "Editar";
             this.Editar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Editar.UseVisualStyleBackColor = true;
+            this.Editar.Click += new System.EventHandler(this.Editar_Click);
             // 
             // Salvar
             // 
@@ -118,6 +120,7 @@
             this.Salvar.Text = "Salvar";
             this.Salvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Salvar.UseVisualStyleBackColor = true;
+            this.Salvar.Click += new System.EventHandler(this.Salvar_Click);
             // 
             // label1
             // 

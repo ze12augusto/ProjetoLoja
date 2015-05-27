@@ -11,12 +11,16 @@ namespace ProjetoLojaWeb.Controllers
 {
     public class UsuarioController : Controller
     {
+<<<<<<< HEAD
         private UsuarioData usuarioData;
 
         public UsuarioController()
         {
             usuarioData = new UsuarioData(new ProjetoLojaEntities());
         }
+=======
+
+>>>>>>> 5d93537732a0d508920f724faaf44664b4662214
         //
         // GET: /Usuario/
 
@@ -34,6 +38,7 @@ namespace ProjetoLojaWeb.Controllers
         [HttpPost]
         public ActionResult RecuperarSenha(String email)
         {
+<<<<<<< HEAD
             if (email == "")
             {
                 ViewBag.Erro = "Digite seu e-mail";
@@ -64,5 +69,16 @@ namespace ProjetoLojaWeb.Controllers
         {
             return usuarioData.obterUsuarioPorEmail(email);
         }
+=======
+            MensagemEmail mensagem = new MensagemEmail();
+            mensagem.Mensagem = "enviando email para recuperação";
+            mensagem.Assunto = "Recuperação da senha";
+            mensagem.Remetente = "feerpessoa26@gmail.com";
+            mensagem.Destinatario = "tuliohdvp@gmail.com";
+            SMTPHelper.EnviarEmail(mensagem);
+
+            return View();
+        }
+>>>>>>> 5d93537732a0d508920f724faaf44664b4662214
     }
 }

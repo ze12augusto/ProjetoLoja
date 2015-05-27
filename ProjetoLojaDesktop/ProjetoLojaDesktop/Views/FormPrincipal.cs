@@ -127,6 +127,11 @@ namespace ProjetoLojaDesktop
             new FormVenda().Show();
         }
 
+        private void cadastrarProdutoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormProdutos().Show();
+        }
+
       
        
     }

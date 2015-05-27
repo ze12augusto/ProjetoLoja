@@ -168,9 +168,6 @@
             // 
             this.cbxTipoPessoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTipoPessoa.FormattingEnabled = true;
-            this.cbxTipoPessoa.Items.AddRange(new object[] {
-            "Fisica",
-            "Juridica"});
             this.cbxTipoPessoa.Location = new System.Drawing.Point(134, 10);
             this.cbxTipoPessoa.Name = "cbxTipoPessoa";
             this.cbxTipoPessoa.Size = new System.Drawing.Size(255, 21);
@@ -279,6 +276,7 @@
             this.dgvPesquisaCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPesquisaCliente.Size = new System.Drawing.Size(630, 334);
             this.dgvPesquisaCliente.TabIndex = 10;
+            this.dgvPesquisaCliente.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPesquisaCliente_CellDoubleClick);
             // 
             // label7
             // 
@@ -390,6 +388,7 @@
             this.btnNovoEndereco.TabIndex = 41;
             this.btnNovoEndereco.Text = "Novo";
             this.btnNovoEndereco.UseVisualStyleBackColor = true;
+            this.btnNovoEndereco.Click += new System.EventHandler(this.btnNovoEndereco_Click);
             // 
             // btnEditarEndereco
             // 
@@ -584,6 +583,7 @@
             this.dgvEndereco.Name = "dgvEndereco";
             this.dgvEndereco.Size = new System.Drawing.Size(639, 160);
             this.dgvEndereco.TabIndex = 0;
+            this.dgvEndereco.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEndereco_CellContentClick);
             // 
             // tabTelefone
             // 
@@ -660,6 +660,7 @@
             this.btnAdicionarTelefone.TabIndex = 15;
             this.btnAdicionarTelefone.Text = "Novo";
             this.btnAdicionarTelefone.UseVisualStyleBackColor = true;
+            this.btnAdicionarTelefone.Click += new System.EventHandler(this.btnAdicionarTelefone_Click);
             // 
             // cbxTipoTelefone
             // 
@@ -696,8 +697,9 @@
             this.dgvTelefone.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTelefone.Location = new System.Drawing.Point(8, 118);
             this.dgvTelefone.Name = "dgvTelefone";
-            this.dgvTelefone.Size = new System.Drawing.Size(240, 143);
+            this.dgvTelefone.Size = new System.Drawing.Size(514, 224);
             this.dgvTelefone.TabIndex = 12;
+            this.dgvTelefone.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTelefone_CellContentClick);
             // 
             // FormCadastroCliente
             // 

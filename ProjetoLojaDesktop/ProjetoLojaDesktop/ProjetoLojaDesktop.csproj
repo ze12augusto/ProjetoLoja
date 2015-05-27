@@ -136,7 +136,7 @@
       <DependentUpon>NotaFiscalReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Views\Relatorios\Pagamento Cartão\PagamentoCartaoReport.cs">
+    <Compile Include="Views\Relatorios\PagtoCartao\PagamentoCartaoReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PagamentoCartaoReport.rpt</DependentUpon>
@@ -231,7 +231,7 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>NotaFiscalReport.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Relatorios\Pagamento Cartão\PagamentoCartaoReport.rpt">
+    <EmbeddedResource Include="Views\Relatorios\PagtoCartao\PagamentoCartaoReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>PagamentoCartaoReport.cs</LastGenOutput>
     </EmbeddedResource>

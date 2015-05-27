@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProjetoLojaDesktop.Views.Relatorios.Pagamento_Cartão {
+namespace ProjetoLojaDesktop.Views.Relatorios.PagtoCartao {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -41,7 +41,7 @@ namespace ProjetoLojaDesktop.Views.Relatorios.Pagamento_Cartão {
         
         public override string FullResourceName {
             get {
-                return "ProjetoLojaDesktop.Views.Relatorios.Pagamento Cartão.PagamentoCartaoReport.rpt";
+                return "ProjetoLojaDesktop.Views.Relatorios.PagtoCartao.PagamentoCartaoReport.rpt";
             }
             set {
                 // Do nothing

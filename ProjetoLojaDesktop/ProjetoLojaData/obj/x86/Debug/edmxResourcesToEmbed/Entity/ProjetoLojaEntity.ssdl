@@ -109,16 +109,16 @@
       <End Role="TipoTelefone" EntitySet="TipoTelefone" />
       <End Role="Telefone" EntitySet="Telefone" />
     </AssociationSet>
-    <AssociationSet Name="FKTransaaco242424" Association="ProjetoLojaModel.Store.FKTransaaco242424">
-      <End Role="Pessoa" EntitySet="Pessoa" />
-      <End Role="Transacao" EntitySet="Transacao" />
-    </AssociationSet>
     <AssociationSet Name="FKTransacao266380" Association="ProjetoLojaModel.Store.FKTransacao266380">
       <End Role="TipoTransacao" EntitySet="TipoTransacao" />
       <End Role="Transacao" EntitySet="Transacao" />
     </AssociationSet>
     <AssociationSet Name="FKTransacao547363" Association="ProjetoLojaModel.Store.FKTransacao547363">
       <End Role="StatusTransacao" EntitySet="StatusTransacao" />
+      <End Role="Transacao" EntitySet="Transacao" />
+    </AssociationSet>
+    <AssociationSet Name="FKTransacao803746" Association="ProjetoLojaModel.Store.FKTransacao803746">
+      <End Role="Pessoa" EntitySet="Pessoa" />
       <End Role="Transacao" EntitySet="Transacao" />
     </AssociationSet>
     <AssociationSet Name="FKTransacao806039" Association="ProjetoLojaModel.Store.FKTransacao806039">
@@ -163,7 +163,7 @@
       <PropertyRef Name="idEndereco" />
       <PropertyRef Name="idPessoa" />
     </Key>
-    <Property Name="idEndereco" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="idEndereco" Type="int" Nullable="false" />
     <Property Name="idPessoa" Type="int" Nullable="false" />
     <Property Name="logradouro" Type="varchar" Nullable="false" MaxLength="80" />
     <Property Name="numero" Type="int" Nullable="false" />
@@ -209,15 +209,13 @@
   <EntityType Name="OrdemServico">
     <Key>
       <PropertyRef Name="idTransacao" />
-      <PropertyRef Name="numero" />
     </Key>
     <Property Name="idTransacao" Type="int" Nullable="false" />
-    <Property Name="numero" Type="int" Nullable="false" />
     <Property Name="dataEntrada" Type="date" Nullable="false" />
     <Property Name="dataPrevistaEntrega" Type="date" Nullable="false" />
     <Property Name="dataEntrega" Type="date" />
-    <Property Name="descricao" Type="text" Nullable="false" />
-    <Property Name="valor" Type="money" />
+    <Property Name="descricao" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="valor" Type="real" />
   </EntityType>
   <EntityType Name="Pagamento">
     <Key>
@@ -275,6 +273,7 @@
       <PropertyRef Name="idProduto" />
     </Key>
     <Property Name="idProduto" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="idMarcaProduto" Type="int" Nullable="false" />
     <Property Name="nome" Type="varchar" Nullable="false" MaxLength="100" />
     <Property Name="descricao" Type="varchar" Nullable="false" MaxLength="255" />
     <Property Name="qtdMinima" Type="int" Nullable="false" />
@@ -359,8 +358,8 @@
     <Property Name="desconto" Type="real" />
     <Property Name="idTipoTransacao" Type="tinyint" Nullable="false" />
     <Property Name="idCliente" Type="int" Nullable="false" />
-    <Property Name="idFuncionario" Type="int" Nullable="false" />
     <Property Name="idStatus" Type="int" Nullable="false" />
+    <Property Name="idFuncionario" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="TransacaoProduto">
     <Key>
@@ -485,7 +484,7 @@
   </Association>
   <Association Name="FKOrdemServi748459">
     <End Role="Transacao" Type="ProjetoLojaModel.Store.Transacao" Multiplicity="1" />
-    <End Role="OrdemServico" Type="ProjetoLojaModel.Store.OrdemServico" Multiplicity="*" />
+    <End Role="OrdemServico" Type="ProjetoLojaModel.Store.OrdemServico" Multiplicity="0..1" />
     <ReferentialConstraint>
       <Principal Role="Transacao">
         <PropertyRef Name="idTransacao" />
@@ -627,18 +626,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FKTransaaco242424">
-    <End Role="Pessoa" Type="ProjetoLojaModel.Store.Pessoa" Multiplicity="1" />
-    <End Role="Transacao" Type="ProjetoLojaModel.Store.Transacao" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Pessoa">
-        <PropertyRef Name="idPessoa" />
-      </Principal>
-      <Dependent Role="Transacao">
-        <PropertyRef Name="idFuncionario" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FKTransacao266380">
     <End Role="TipoTransacao" Type="ProjetoLojaModel.Store.TipoTransacao" Multiplicity="1" />
     <End Role="Transacao" Type="ProjetoLojaModel.Store.Transacao" Multiplicity="*" />
@@ -660,6 +647,18 @@
       </Principal>
       <Dependent Role="Transacao">
         <PropertyRef Name="idStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKTransacao803746">
+    <End Role="Pessoa" Type="ProjetoLojaModel.Store.Pessoa" Multiplicity="1" />
+    <End Role="Transacao" Type="ProjetoLojaModel.Store.Transacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoa">
+        <PropertyRef Name="idPessoa" />
+      </Principal>
+      <Dependent Role="Transacao">
+        <PropertyRef Name="idFuncionario" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

@@ -28,12 +28,12 @@ namespace ProjetoLojaDesktop
         private enum statusTelaTelefone : int { Editando, Inserindo, Visualizando }
         private statusTelaEndereco statusEnderecoAtual;
         private statusTelaTelefone statusTelefoneAtual;
-        
+
 
         public FormFornecedor()
         {
             InitializeComponent();
-            
+
             db = new ProjetoLojaEntities();
             pJus = new PessoaJuridicaData(db);
             pessoa = new PessoaData(db);
@@ -54,7 +54,7 @@ namespace ProjetoLojaDesktop
             carregarComboTipoTelefone();
         }
 
-/*======FORNECEDOR==============================================================================*/
+        /*======FORNECEDOR==============================================================================*/
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             dgvPesquisar.DataSource = pJus.buscarPessoaJurica(txtPesquisar.Text.Trim());
@@ -86,6 +86,8 @@ namespace ProjetoLojaDesktop
                 incluirFornecedor();
             else
                 editarFornecedor();
+
+            carregarGridPessoa();
         }
 
         private void incluirFornecedor()
@@ -153,7 +155,7 @@ namespace ProjetoLojaDesktop
             }
         }
 
-        private bool dadosSaoValidos() 
+        private bool dadosSaoValidos()
         {
             erroPrv.Clear();
             bool houveErroValidacao = true;
@@ -190,7 +192,7 @@ namespace ProjetoLojaDesktop
                     int id = Convert.ToInt32(dgvPesquisar.CurrentRow.Cells["idPessoa"].Value);
                     PessoaJuridica pessoaJuridica = pJus.obterPessoaJuridica(id);
                     carregarDados(pessoaJuridica);
-                    
+
                 }
                 catch (FormatException ex)
                 {
@@ -205,7 +207,7 @@ namespace ProjetoLojaDesktop
 
         private void carregarDados(PessoaJuridica pesJurico)
         {
-            lblNome.Text = pesJurico.Pessoa.nome.Trim() ;
+            lblNome.Text = pesJurico.Pessoa.nome.Trim();
             txtNomeFantasia.Text = pesJurico.nomeFantasia.Trim();
             txtRazaoSocial.Text = pesJurico.razaoSocial.Trim();
             txtCnpj.Text = pesJurico.CNPJ.Trim();
@@ -216,9 +218,9 @@ namespace ProjetoLojaDesktop
             carregarGridEndereco();
             carregarGridTelefone();
         }
-/*======FORNECEDOR FIM==========================================================================*/
+        /*======FORNECEDOR FIM==========================================================================*/
 
-/*======ENDERECO================================================================================*/
+        /*======ENDERECO================================================================================*/
         private void carregarGridEndereco()
         {
             dgvEndereco.DataSource = null;
@@ -234,7 +236,7 @@ namespace ProjetoLojaDesktop
             dgvEndereco.Columns["idPessoa"].Visible = false;
             dgvEndereco.Columns["idCidade"].Visible = false;
             dgvEndereco.Columns["idTipoEndereco"].Visible = false;
-            dgvEndereco.Columns["Cidade1"].Visible = false;
+            dgvEndereco.Columns["Cidade"].Visible = false;
             dgvEndereco.Columns["Tipoendereco"].Visible = false;
             dgvEndereco.Columns["Unidadefederativa"].Visible = false;
             dgvEndereco.Columns["pessoa"].Visible = false;
@@ -280,7 +282,7 @@ namespace ProjetoLojaDesktop
             }
             if (idFornEditado == 0)
             {
-                MessageBox.Show("Selecione antes um fornecedor","Erro",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Selecione antes um fornecedor", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 houveErro = true;
             }
             return houveErro;
@@ -326,7 +328,7 @@ namespace ProjetoLojaDesktop
 
                 dgvEndereco.Enabled = false;
             }
-            else if(status == statusTelaEndereco.Inserindo)
+            else if (status == statusTelaEndereco.Inserindo)
             {
                 btnNovoEnd.Enabled = false;
                 btnEditarEnd.Enabled = false;
@@ -343,7 +345,7 @@ namespace ProjetoLojaDesktop
 
                 dgvEndereco.Enabled = false;
             }
-            else if(status == statusTelaEndereco.Visualizando)
+            else if (status == statusTelaEndereco.Visualizando)
             {
                 btnNovoEnd.Enabled = true;
                 btnEditarEnd.Enabled = true;
@@ -398,6 +400,7 @@ namespace ProjetoLojaDesktop
                 else
                     editarEndereco();
             }
+            carregarGridPessoa();
         }
 
         private void inserirEndereco()
@@ -527,9 +530,9 @@ namespace ProjetoLojaDesktop
                 }
             }
         }
-/*======ENDERECO FIM============================================================================*/
+        /*======ENDERECO FIM============================================================================*/
 
-/*======TELEFONE================================================================================*/
+        /*======TELEFONE================================================================================*/
         private void alteraStatusTelaTelefone(statusTelaTelefone status)
         {
             statusTelefoneAtual = status;
@@ -544,9 +547,9 @@ namespace ProjetoLojaDesktop
                 cbxTipoTel.Enabled = true;
 
                 dgvTelefone.Enabled = false;
-                
+
             }
-            else if(status == statusTelaTelefone.Inserindo)
+            else if (status == statusTelaTelefone.Inserindo)
             {
                 btnNovoTel.Enabled = false;
                 btnEditarTel.Enabled = false;
@@ -558,7 +561,7 @@ namespace ProjetoLojaDesktop
 
                 dgvTelefone.Enabled = false;
             }
-            else if(status == statusTelaTelefone.Visualizando)
+            else if (status == statusTelaTelefone.Visualizando)
             {
                 btnNovoTel.Enabled = true;
                 btnEditarTel.Enabled = true;
@@ -648,6 +651,7 @@ namespace ProjetoLojaDesktop
                 else
                     editarTelefone();
             }
+            carregarGridPessoa();
         }
 
         private void btnNovoTel_Click(object sender, EventArgs e)
@@ -726,7 +730,7 @@ namespace ProjetoLojaDesktop
             {
                 MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-           
+
         }
 
         private void carregarGridPessoa()
@@ -736,7 +740,7 @@ namespace ProjetoLojaDesktop
             dgvPesquisar.Rows.Clear();
             dgvPesquisar.Columns.Clear();
 
-            
+
             dgvPesquisar.DataSource = pJus.buscarPessoaJurica(txtPesquisar.Text.Trim());
             formatarGrid();
         }
@@ -745,8 +749,8 @@ namespace ProjetoLojaDesktop
 
         private void btnDesatiivarPesq_Click(object sender, EventArgs e)
         {
-            
-        
+
+
             if (dgvPesquisar.Rows.Count > 0)
             {
                 if (MessageBox.Show("Deseja realmente excluir o registro selecionado?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
@@ -770,11 +774,11 @@ namespace ProjetoLojaDesktop
                     MessageBox.Show("Pessoa Juridica exluida", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-        
+
         }
 
 
 
-/*======TELEFONE FIM============================================================================*/
+        /*======TELEFONE FIM============================================================================*/
     }
 }

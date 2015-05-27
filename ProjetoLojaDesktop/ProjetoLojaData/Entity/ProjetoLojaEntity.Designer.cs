@@ -37,6 +37,7 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("ProjetoLojaModel", "FKPessoaFisi179779", "Pessoa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ProjetoLojaData.Entity.Pessoa), "PessoaFisica", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjetoLojaData.Entity.PessoaFisica), true)]
 [assembly: EdmRelationshipAttribute("ProjetoLojaModel", "FKPessoaJuri138880", "Pessoa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ProjetoLojaData.Entity.Pessoa), "PessoaJuridica", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjetoLojaData.Entity.PessoaJuridica), true)]
 [assembly: EdmRelationshipAttribute("ProjetoLojaModel", "FKTelefone320442", "Pessoa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ProjetoLojaData.Entity.Pessoa), "Telefone", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjetoLojaData.Entity.Telefone), true)]
+[assembly: EdmRelationshipAttribute("ProjetoLojaModel", "FKTransacao803746", "Pessoa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ProjetoLojaData.Entity.Pessoa), "Transacao", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjetoLojaData.Entity.Transacao), true)]
 [assembly: EdmRelationshipAttribute("ProjetoLojaModel", "FKTransacao806039", "Pessoa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ProjetoLojaData.Entity.Pessoa), "Transacao", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjetoLojaData.Entity.Transacao), true)]
 [assembly: EdmRelationshipAttribute("ProjetoLojaModel", "FKUsuario624817", "Pessoa", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ProjetoLojaData.Entity.Pessoa), "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ProjetoLojaData.Entity.Usuario), true)]
 [assembly: EdmRelationshipAttribute("ProjetoLojaModel", "FKProdutoVig90587", "Produto", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ProjetoLojaData.Entity.Produto), "ProdutoVigenciaPreco", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ProjetoLojaData.Entity.ProdutoVigenciaPreco), true)]
@@ -3238,8 +3239,30 @@ namespace ProjetoLojaData.Entity
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ProjetoLojaModel", "FKTransacao806039", "Transacao")]
+        [EdmRelationshipNavigationPropertyAttribute("ProjetoLojaModel", "FKTransacao803746", "Transacao")]
         public EntityCollection<Transacao> Transacao
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Transacao>("ProjetoLojaModel.FKTransacao803746", "Transacao");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Transacao>("ProjetoLojaModel.FKTransacao803746", "Transacao", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("ProjetoLojaModel", "FKTransacao806039", "Transacao")]
+        public EntityCollection<Transacao> Transacao1
         {
             get
             {
@@ -5166,13 +5189,15 @@ namespace ProjetoLojaData.Entity
         /// <param name="idTipoTransacao">Initial value of the idTipoTransacao property.</param>
         /// <param name="idCliente">Initial value of the idCliente property.</param>
         /// <param name="idStatus">Initial value of the idStatus property.</param>
-        public static Transacao CreateTransacao(global::System.Int32 idTransacao, global::System.Byte idTipoTransacao, global::System.Int32 idCliente, global::System.Int32 idStatus)
+        /// <param name="idFuncionario">Initial value of the idFuncionario property.</param>
+        public static Transacao CreateTransacao(global::System.Int32 idTransacao, global::System.Byte idTipoTransacao, global::System.Int32 idCliente, global::System.Int32 idStatus, global::System.Int32 idFuncionario)
         {
             Transacao transacao = new Transacao();
             transacao.idTransacao = idTransacao;
             transacao.idTipoTransacao = idTipoTransacao;
             transacao.idCliente = idCliente;
             transacao.idStatus = idStatus;
+            transacao.idFuncionario = idFuncionario;
             return transacao;
         }
 
@@ -5326,6 +5351,30 @@ namespace ProjetoLojaData.Entity
         private global::System.Int32 _idStatus;
         partial void OnidStatusChanging(global::System.Int32 value);
         partial void OnidStatusChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 idFuncionario
+        {
+            get
+            {
+                return _idFuncionario;
+            }
+            set
+            {
+                OnidFuncionarioChanging(value);
+                ReportPropertyChanging("idFuncionario");
+                _idFuncionario = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("idFuncionario");
+                OnidFuncionarioChanged();
+            }
+        }
+        private global::System.Int32 _idFuncionario;
+        partial void OnidFuncionarioChanging(global::System.Int32 value);
+        partial void OnidFuncionarioChanged();
 
         #endregion
 
@@ -5452,8 +5501,46 @@ namespace ProjetoLojaData.Entity
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ProjetoLojaModel", "FKTransacao806039", "Pessoa")]
+        [EdmRelationshipNavigationPropertyAttribute("ProjetoLojaModel", "FKTransacao803746", "Pessoa")]
         public Pessoa Pessoa
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Pessoa>("ProjetoLojaModel.FKTransacao803746", "Pessoa").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Pessoa>("ProjetoLojaModel.FKTransacao803746", "Pessoa").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Pessoa> PessoaReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Pessoa>("ProjetoLojaModel.FKTransacao803746", "Pessoa");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Pessoa>("ProjetoLojaModel.FKTransacao803746", "Pessoa", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("ProjetoLojaModel", "FKTransacao806039", "Pessoa")]
+        public Pessoa Pessoa1
         {
             get
             {
@@ -5469,7 +5556,7 @@ namespace ProjetoLojaData.Entity
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<Pessoa> PessoaReference
+        public EntityReference<Pessoa> Pessoa1Reference
         {
             get
             {

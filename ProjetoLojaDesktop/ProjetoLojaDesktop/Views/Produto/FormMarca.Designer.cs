@@ -61,6 +61,7 @@
             this.Salvar.Text = "Salvar";
             this.Salvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Salvar.UseVisualStyleBackColor = true;
+            this.Salvar.Click += new System.EventHandler(this.Salvar_Click);
             // 
             // Editar
             // 
@@ -73,6 +74,7 @@
             this.Editar.Text = "Editar";
             this.Editar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Editar.UseVisualStyleBackColor = true;
+            this.Editar.Click += new System.EventHandler(this.Editar_Click);
             // 
             // Excluir
             // 
@@ -82,6 +84,7 @@
             this.Excluir.TabIndex = 1;
             this.Excluir.Text = "Excluir";
             this.Excluir.UseVisualStyleBackColor = true;
+            this.Excluir.Click += new System.EventHandler(this.Excluir_Click);
             // 
             // txtDescricao
             // 

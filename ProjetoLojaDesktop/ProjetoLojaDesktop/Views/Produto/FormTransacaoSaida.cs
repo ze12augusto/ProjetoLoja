@@ -51,9 +51,9 @@ namespace ProjetoLojaDesktop.Forms
         {
             db = new ProjetoLojaEntities();
             statusTransacaoData = new StatusTransacaoData();
-            transacaoData = new TransacaoData();
+            transacaoData = new TransacaoData(db);
             pessoaData = new PessoaData(db);
-            ordemServicoData = new OrdemDeServicoData();
+            ordemServicoData = new OrdemDeServicoData(db);
         }
 
         private string validarCamposTransacao()

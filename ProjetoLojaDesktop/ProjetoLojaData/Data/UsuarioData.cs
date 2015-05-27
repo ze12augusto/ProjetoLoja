@@ -27,6 +27,16 @@ namespace ProjetoLojaData.Data
 
         }
 
+        public Usuario obterUsuarioPorEmail(String email)
+        {
+            var Lista = from u in db.Usuario
+                        where u.Pessoa.email == email
+                        select u;
+
+            return Lista.ToList().FirstOrDefault();
+
+        }
+
         public List<Usuario> todasUsuarios() {
             var Lista = from u in db.Usuario
                         select u;

@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Recuperar Senha";
+}
+
+@if (ViewBag.Erro != "")
+{
+    <p style="color: Red">@ViewBag.Erro</p>
+}
+
+<section id="loginForm">
+<h2>Recuperar Senha</h2>
+@using (Html.BeginForm())
+{
+
+    <fieldset>
+        <ol>
+            <li>
+                @Html.Label("Digite seu e-mail")
+                @Html.Editor("email")
+            </li>
+        </ol>
+        <input type="submit" value="Enviar" onclick="return validarEmail();" />
+    </fieldset>
+}
+</section>
+
+<script>
+    function validarEmail() {
+        if ($("#email").val() == "") {
+            alert("Digite seu e-mail.");
+            return false;
+        }
+
+        return true;
+    }
+</script>

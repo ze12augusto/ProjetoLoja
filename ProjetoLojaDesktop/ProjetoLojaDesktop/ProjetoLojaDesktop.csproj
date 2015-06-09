@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A47B207C-685B-4555-86FE-EE3B77D2B046}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProjetoLojaDesktop</RootNamespace>
+    <AssemblyName>ProjetoLojaDesktop</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enums\TipoTransacaoEnum.cs" />
+    <Compile Include="Views\Cliente\FormCadastroCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Cliente\FormCadastroCliente.Designer.cs">
+      <DependentUpon>FormCadastroCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Cliente\FormSelecionarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Cliente\FormSelecionarCliente.Designer.cs">
+      <DependentUpon>FormSelecionarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormPrincipal.Designer.cs">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\FormVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormVenda.Designer.cs">
+      <DependentUpon>FormVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Produto\FormTransacaoSaida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Produto\FormTransacaoSaida.Designer.cs">
+      <DependentUpon>FormTransacaoSaida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Fornecedor\FormFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Fornecedor\FormFornecedor.Designer.cs">
+      <DependentUpon>FormFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Funcionario\FormCadFuncionarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Funcionario\FormCadFuncionarios.Designer.cs">
+      <DependentUpon>FormCadFuncionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Produto\FormMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Produto\FormMarca.Designer.cs">
+      <DependentUpon>FormMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Produto\FormModelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Produto\FormModelo.Designer.cs">
+      <DependentUpon>FormModelo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Produto\FormProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Produto\FormProdutos.Designer.cs">
+      <DependentUpon>FormProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Produto\FormSelecionarProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Produto\FormSelecionarProduto.Designer.cs">
+      <DependentUpon>FormSelecionarProduto.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Views\Cliente\FormCadastroCliente.resx">
+      <DependentUpon>FormCadastroCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Cliente\FormSelecionarCliente.resx">
+      <DependentUpon>FormSelecionarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormVenda.resx">
+      <DependentUpon>FormVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Produto\FormTransacaoSaida.resx">
+      <DependentUpon>FormTransacaoSaida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Fornecedor\FormFornecedor.resx">
+      <DependentUpon>FormFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Funcionario\FormCadFuncionarios.resx">
+      <DependentUpon>FormCadFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Produto\FormMarca.resx">
+      <DependentUpon>FormMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Produto\FormModelo.resx">
+      <DependentUpon>FormModelo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Produto\FormProdutos.resx">
+      <DependentUpon>FormProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Produto\FormSelecionarProduto.resx">
+      <DependentUpon>FormSelecionarProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\ProjetoLojaDesktop.Entity.ProjetoLojaEntities.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\Img\" />
+    <Folder Include="Views\Relatorios\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Add-New.png" />
+    <None Include="Resources\Windows-8-Login3.png" />
+    <None Include="Resources\Windows-8-Login2.png" />
+    <None Include="Resources\Windows-8-Login1.png" />
+    <None Include="Resources\Windows-8-Login.png" />
+    <None Include="Resources\Add-New1.png" />
+    <Content Include="Resources\Business-Man.png" />
+    <None Include="Resources\Check.png" />
+    <None Include="Resources\Cancel.png" />
+    <Content Include="Resources\Clean.png" />
+    <Content Include="Resources\Data-Edit.png" />
+    <None Include="Resources\del-New.png" />
+    <Content Include="Resources\Document-02.png" />
+    <Content Include="Resources\Door-Closed.png" />
+    <Content Include="Resources\Folder-Picture.png" />
+    <Content Include="Resources\Garbage.png" />
+    <None Include="Resources\icon-user.png" />
+    <Content Include="Resources\marca.png" />
+    <Content Include="Resources\marca1.png" />
+    <Content Include="Resources\marca2.png" />
+    <Content Include="Resources\Money-Coin-01.png" />
+    <None Include="Resources\Sales-Order.png" />
+    <Content Include="Resources\Save.png" />
+    <Content Include="Resources\Search.png" />
+    <Content Include="Resources\User-Group.png" />
+    <None Include="Resources\User-Group1.png" />
+    <Content Include="Resources\User-Profile.png" />
+    <Content Include="Resources\Verify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProjetoLojaData\ProjetoLojaData.csproj">
+      <Project>{141B4820-5D7E-4AFF-BA1C-FF427897A09A}</Project>
+      <Name>ProjetoLojaData</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

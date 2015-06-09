@@ -12,6 +12,12 @@ namespace ProjetoLojaData.Data
         private ProjetoLojaEntities db;
         private ObjectSet<Produto> produtos;
 
+        public ProdutoData()
+        {
+            db = new ProjetoLojaEntities();
+            produtos = db.CreateObjectSet<Produto>();
+        }
+
         public ProdutoData(ProjetoLojaEntities _db)
         {
             db = _db;

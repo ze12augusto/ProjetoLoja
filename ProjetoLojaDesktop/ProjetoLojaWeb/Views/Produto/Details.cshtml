@@ -1,0 +1,60 @@
+﻿@model ProjetoLojaData.Entity.Produto
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<fieldset>
+    <legend>Produto</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.idMarcaProduto)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.idMarcaProduto)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.descricao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.descricao)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.qtdMinima)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.qtdMinima)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.qtdAtual)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.qtdAtual)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.idModelo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.idModelo)
+    </div>
+
+    @foreach (var imagem in ViewBag.Imagem)
+    {
+        <img src="@imagem" /> 
+    }
+
+</fieldset>
+<p>
+    @Html.ActionLink("Voltar para lista de produtos", "Index")
+</p>

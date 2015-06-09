@@ -12,3 +12,11 @@ E:\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\obj\x86\Debug\ProjetoLojaData.
 E:\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\obj\x86\Debug\ProjetoLojaData.csproj.GenerateResource.Cache
 E:\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\obj\x86\Debug\ProjetoLojaData.dll
 E:\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\obj\x86\Debug\ProjetoLojaData.pdb
+C:\Users\Walterlmm\Desktop\Web0206\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\bin\Debug\ProjetoLojaData.dll.config
+C:\Users\Walterlmm\Desktop\Web0206\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\bin\Debug\ProjetoLojaData.dll
+C:\Users\Walterlmm\Desktop\Web0206\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\bin\Debug\ProjetoLojaData.pdb
+C:\Users\Walterlmm\Desktop\Web0206\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\obj\x86\Debug\ProjetoLojaData.csprojResolveAssemblyReference.cache
+C:\Users\Walterlmm\Desktop\Web0206\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\obj\x86\Debug\ProjetoLojaData.Properties.Resources.resources
+C:\Users\Walterlmm\Desktop\Web0206\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\obj\x86\Debug\ProjetoLojaData.csproj.GenerateResource.Cache
+C:\Users\Walterlmm\Desktop\Web0206\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\obj\x86\Debug\ProjetoLojaData.dll
+C:\Users\Walterlmm\Desktop\Web0206\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\obj\x86\Debug\ProjetoLojaData.pdb

@@ -163,6 +163,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OrdemServicoController.cs" />
     <Compile Include="Controllers\ProdutoController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -304,6 +305,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Produto\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\OrdemServico\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -12,6 +12,12 @@ namespace ProjetoLojaData.Data
         private ProjetoLojaEntities db;
         private ObjectSet<OrdemServico> ordensDeServico;
 
+        public OrdemDeServicoData()
+        {
+            db = new ProjetoLojaEntities();
+            ordensDeServico = db.CreateObjectSet<OrdemServico>();
+        }
+
         public OrdemDeServicoData(ProjetoLojaEntities _db)
         {
             db = _db;
@@ -21,6 +27,15 @@ namespace ProjetoLojaData.Data
         public List<OrdemServico> todasOrdensDeServico()
         {
             return ordensDeServico.ToList();
+        }
+
+        /**/
+        public List<OrdemServico> listarOrdensDeServicoPorUsuarioLogado(int id)
+        {
+            var lista = from o in ordensDeServico
+                        where o.Transacao.idCliente == id
+                        select o;
+            return lista.ToList();
         }
 
         public string excluirOrdemDeServico(OrdemServico ordemDeServico)

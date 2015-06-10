@@ -20,3 +20,10 @@ C:\Users\Walterlmm\Desktop\Web0206\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaDat
 C:\Users\Walterlmm\Desktop\Web0206\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\obj\x86\Debug\ProjetoLojaData.csproj.GenerateResource.Cache
 C:\Users\Walterlmm\Desktop\Web0206\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\obj\x86\Debug\ProjetoLojaData.dll
 C:\Users\Walterlmm\Desktop\Web0206\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\obj\x86\Debug\ProjetoLojaData.pdb
+F:\Workspace\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\bin\Debug\ProjetoLojaData.dll.config
+F:\Workspace\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\bin\Debug\ProjetoLojaData.dll
+F:\Workspace\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\bin\Debug\ProjetoLojaData.pdb
+F:\Workspace\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\obj\x86\Debug\ProjetoLojaData.Properties.Resources.resources
+F:\Workspace\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\obj\x86\Debug\ProjetoLojaData.csproj.GenerateResource.Cache
+F:\Workspace\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\obj\x86\Debug\ProjetoLojaData.dll
+F:\Workspace\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\obj\x86\Debug\ProjetoLojaData.pdb

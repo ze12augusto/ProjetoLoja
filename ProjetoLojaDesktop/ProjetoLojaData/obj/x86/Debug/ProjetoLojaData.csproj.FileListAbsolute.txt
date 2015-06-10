@@ -1,8 +1,6 @@
-C:\Users\Window-PC\Documents\Projetos\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\bin\Debug\ProjetoLojaData.exe
 C:\Users\Window-PC\Documents\Projetos\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\bin\Debug\ProjetoLojaData.pdb
 C:\Users\Window-PC\Documents\Projetos\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\obj\x86\Debug\ProjetoLojaData.Properties.Resources.resources
 C:\Users\Window-PC\Documents\Projetos\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\obj\x86\Debug\ProjetoLojaData.csproj.GenerateResource.Cache
-C:\Users\Window-PC\Documents\Projetos\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\obj\x86\Debug\ProjetoLojaData.exe
 C:\Users\Window-PC\Documents\Projetos\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\obj\x86\Debug\ProjetoLojaData.pdb
 E:\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\bin\Debug\ProjetoLojaData.dll.config
 E:\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\bin\Debug\ProjetoLojaData.dll
@@ -27,3 +25,7 @@ F:\Workspace\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\obj\x86\Debug\Projet
 F:\Workspace\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\obj\x86\Debug\ProjetoLojaData.csproj.GenerateResource.Cache
 F:\Workspace\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\obj\x86\Debug\ProjetoLojaData.dll
 F:\Workspace\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\obj\x86\Debug\ProjetoLojaData.pdb
+C:\Users\Window-PC\Documents\Projetos\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\bin\Debug\ProjetoLojaData.dll.config
+C:\Users\Window-PC\Documents\Projetos\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\bin\Debug\ProjetoLojaData.dll
+C:\Users\Window-PC\Documents\Projetos\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\obj\x86\Debug\ProjetoLojaData.csprojResolveAssemblyReference.cache
+C:\Users\Window-PC\Documents\Projetos\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\obj\x86\Debug\ProjetoLojaData.dll

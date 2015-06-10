@@ -10,6 +10,8 @@ using ProjetoLojaDesktop.Enums;
 using ProjetoLojaData.Entity;
 using ProjetoLojaDesktop.Views.Cliente;
 using ProjetoLojaData.Data;
+using ProjetoLojaDesktop.Views.Relatorios.StatusPedido;
+using ProjetoLojaDesktop.Views.Relatorios.NotaFiscal;
 
 
 namespace ProjetoLojaDesktop.Views
@@ -161,6 +163,14 @@ namespace ProjetoLojaDesktop.Views
             }
         }
 
-        
+        private void btnStatusPedido_Click(object sender, EventArgs e)
+        {
+            new FormStatusPedido().Show();
+        }
+
+        private void btnNotaFiscal_Click(object sender, EventArgs e)
+        {
+            new FormNotaFiscal().Show();
+        }      
     }
 }

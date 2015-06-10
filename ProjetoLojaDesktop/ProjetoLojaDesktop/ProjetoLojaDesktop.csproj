@@ -122,19 +122,31 @@
     <Compile Include="Views\Cliente\FormSelecionarCliente.Designer.cs">
       <DependentUpon>FormSelecionarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\FormPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FormPrincipal.Designer.cs">
+    <Compile Include="Views\FormPrincipal.designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Relatorios\NotaFiscal\FormNotaFiscal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Relatorios\NotaFiscal\FormNotaFiscal.designer.cs">
+      <DependentUpon>FormNotaFiscal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Relatorios\NotaFiscal\NotaFiscalReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NotaFiscalReport.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\Relatorios\PagtoCartao\FormPagamentoCartao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Relatorios\PagtoCartao\FormPagamentoCartao.designer.cs">
+      <DependentUpon>FormPagamentoCartao.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Relatorios\PagtoCartao\PagamentoCartaoReport.cs">
       <AutoGen>True</AutoGen>
@@ -142,29 +154,41 @@
       <DependentUpon>PagamentoCartaoReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Views\Relatorios\Produto\FormProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Relatorios\Produto\FormProduto.designer.cs">
+      <DependentUpon>FormProduto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Relatorios\Produto\ProdutoReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ProdutoReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Views\Relatorios\RelatorioOS.cs">
+    <Compile Include="Views\Relatorios\RelatorioOS\FormRelatorioOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Relatorios\RelatorioOS\FormRelatorioOS.designer.cs">
+      <DependentUpon>FormRelatorioOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Relatorios\RelatorioOS\RelatorioOS.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RelatorioOS.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Views\Relatorios\StatusPedido.cs">
+    <Compile Include="Views\Relatorios\StatusPedido\FormStatusPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Relatorios\StatusPedido\FormStatusPedido.designer.cs">
+      <DependentUpon>FormStatusPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Relatorios\StatusPedido\StatusPedido.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>StatusPedido.rpt</DependentUpon>
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Views\Venda\FormVenda.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Venda\FormVenda.Designer.cs">
-      <DependentUpon>FormVenda.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Produto\FormTransacaoSaida.cs">
       <SubType>Form</SubType>
@@ -208,6 +232,12 @@
     <Compile Include="Views\Produto\FormSelecionarProduto.Designer.cs">
       <DependentUpon>FormSelecionarProduto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Venda\FormVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Venda\FormVenda.designer.cs">
+      <DependentUpon>FormVenda.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -224,9 +254,6 @@
     <EmbeddedResource Include="Views\Cliente\FormSelecionarCliente.resx">
       <DependentUpon>FormSelecionarCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormPrincipal.resx">
-      <DependentUpon>FormPrincipal.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\Relatorios\NotaFiscal\NotaFiscalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>NotaFiscalReport.cs</LastGenOutput>
@@ -239,16 +266,13 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ProdutoReport.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Relatorios\RelatorioOS.rpt">
+    <EmbeddedResource Include="Views\Relatorios\RelatorioOS\RelatorioOS.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RelatorioOS.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Relatorios\StatusPedido.rpt">
+    <EmbeddedResource Include="Views\Relatorios\StatusPedido\StatusPedido.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>StatusPedido.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Venda\FormVenda.resx">
-      <DependentUpon>FormVenda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Produto\FormTransacaoSaida.resx">
       <DependentUpon>FormTransacaoSaida.cs</DependentUpon>
@@ -290,6 +314,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Add-New.png" />
+    <Content Include="Views\Relatorios\NotaFiscal\71.jpg" />
+    <Content Include="Views\Relatorios\PagtoCartao\71.jpg" />
+    <Content Include="Views\Relatorios\Produto\71.jpg" />
+    <Content Include="Views\Relatorios\RelatorioOS\71.jpg" />
+    <Content Include="Views\Relatorios\StatusPedido\71.jpg" />
     <None Include="Resources\Add-New1.png" />
     <Content Include="Resources\Business-Man.png" />
     <None Include="Resources\Check.png" />

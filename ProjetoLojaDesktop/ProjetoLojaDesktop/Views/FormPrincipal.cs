@@ -8,7 +8,9 @@ using System.Text;
 using System.Windows.Forms;
 using ProjetoLojaDesktop.Forms;
 using ProjetoLojaDesktop.Views;
-
+using ProjetoLojaDesktop.Views.Relatorios.RelatorioOS;
+using ProjetoLojaDesktop.Views.Relatorios.Produto;
+using ProjetoLojaDesktop.Views.Relatorios.PagtoCartao;
 
 namespace ProjetoLojaDesktop
 {
@@ -106,12 +108,6 @@ namespace ProjetoLojaDesktop
             }
         }
 
-
-        private void relatóriosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void vendaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new FormVenda().Show();
@@ -132,7 +128,19 @@ namespace ProjetoLojaDesktop
             new FormProdutos().Show();
         }
 
-      
-       
+        private void ordensDeServiçosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormRelatorioOS().Show();
+        }
+
+        private void produtosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            new FormProduto().Show();
+        }
+
+        private void pagamentoCartãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormPagamentoCartao().Show();
+        }
     }
 }

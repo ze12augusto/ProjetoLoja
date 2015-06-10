@@ -30,6 +30,8 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabListaVenda = new System.Windows.Forms.TabPage();
+            this.btnNotaFiscal = new System.Windows.Forms.Button();
+            this.btnStatusPedido = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
@@ -69,6 +71,8 @@
             // 
             // tabListaVenda
             // 
+            this.tabListaVenda.Controls.Add(this.btnNotaFiscal);
+            this.tabListaVenda.Controls.Add(this.btnStatusPedido);
             this.tabListaVenda.Controls.Add(this.btnNovo);
             this.tabListaVenda.Controls.Add(this.btnEditar);
             this.tabListaVenda.Controls.Add(this.btnExcluir);
@@ -82,6 +86,26 @@
             this.tabListaVenda.TabIndex = 0;
             this.tabListaVenda.Text = "Lista de Vendas";
             this.tabListaVenda.UseVisualStyleBackColor = true;
+            // 
+            // btnNotaFiscal
+            // 
+            this.btnNotaFiscal.Location = new System.Drawing.Point(376, 297);
+            this.btnNotaFiscal.Name = "btnNotaFiscal";
+            this.btnNotaFiscal.Size = new System.Drawing.Size(75, 27);
+            this.btnNotaFiscal.TabIndex = 7;
+            this.btnNotaFiscal.Text = "Nota Fiscal";
+            this.btnNotaFiscal.UseVisualStyleBackColor = true;
+            this.btnNotaFiscal.Click += new System.EventHandler(this.btnNotaFiscal_Click);
+            // 
+            // btnStatusPedido
+            // 
+            this.btnStatusPedido.Location = new System.Drawing.Point(288, 296);
+            this.btnStatusPedido.Name = "btnStatusPedido";
+            this.btnStatusPedido.Size = new System.Drawing.Size(82, 25);
+            this.btnStatusPedido.TabIndex = 6;
+            this.btnStatusPedido.Text = "Status Pedido";
+            this.btnStatusPedido.UseVisualStyleBackColor = true;
+            this.btnStatusPedido.Click += new System.EventHandler(this.btnStatusPedido_Click);
             // 
             // btnNovo
             // 
@@ -288,7 +312,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(483, 374);
+            this.ClientSize = new System.Drawing.Size(506, 374);
             this.Controls.Add(this.tabControl1);
             this.Name = "FormVenda";
             this.Text = "Vendas";
@@ -327,5 +351,7 @@
         private System.Windows.Forms.Button btnRemoverProduto;
         private System.Windows.Forms.Button btnAddProduto;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnStatusPedido;
+        private System.Windows.Forms.Button btnNotaFiscal;
     }
 }

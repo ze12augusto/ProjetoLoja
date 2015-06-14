@@ -73,7 +73,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::ProjetoLojaDesktop.Properties.Resources.Windows_8_Login3;
+            this.pictureBox1.Image = global::ProjetoLojaDesktop.Properties.Resources.Windows_8_Login3;
             this.pictureBox1.Location = new System.Drawing.Point(63, 27);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(223, 96);

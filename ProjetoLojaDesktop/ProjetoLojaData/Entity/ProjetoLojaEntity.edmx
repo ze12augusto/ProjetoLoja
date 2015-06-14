@@ -168,7 +168,7 @@
             <PropertyRef Name="idEndereco" />
             <PropertyRef Name="idPessoa" />
           </Key>
-          <Property Name="idEndereco" Type="int" Nullable="false" />
+          <Property Name="idEndereco" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="idPessoa" Type="int" Nullable="false" />
           <Property Name="logradouro" Type="varchar" Nullable="false" MaxLength="80" />
           <Property Name="numero" Type="int" Nullable="false" />
@@ -290,7 +290,7 @@
             <PropertyRef Name="idVigencia" />
             <PropertyRef Name="idProduto" />
           </Key>
-          <Property Name="idVigencia" Type="int" Nullable="false" />
+          <Property Name="idVigencia" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="idProduto" Type="int" Nullable="false" />
           <Property Name="dataVigenciaInicio" Type="date" Nullable="false" />
           <Property Name="dataVigenciaFim" Type="date" />

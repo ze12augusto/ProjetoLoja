@@ -115,6 +115,7 @@
             this.txtGenerico.Name = "txtGenerico";
             this.txtGenerico.Size = new System.Drawing.Size(89, 20);
             this.txtGenerico.TabIndex = 9;
+            this.txtGenerico.TextChanged += new System.EventHandler(this.txtGenerico_TextChanged);
             // 
             // FormSelecionarProduto
             // 

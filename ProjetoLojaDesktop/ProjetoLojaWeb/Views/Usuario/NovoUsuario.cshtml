@@ -1,0 +1,84 @@
+﻿@model ProjetoLojaData.Entity.Usuario
+
+@{
+    ViewBag.Title = "Registrar";
+}
+
+<h2>SalvarUsuario</h2>
+
+@using (Html.BeginForm()) {
+
+    <fieldset>
+        <legend>Usuario</legend>
+        
+        <div class="editor-label">
+            Nome:
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Pessoa.nome)
+        </div>
+
+        <div class="editor-label">
+            E-mail:
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Pessoa.email)
+        </div>
+
+        <div class="editor-label">
+            Senha:
+        </div>
+        <div class="editor-field">
+            @Html.PasswordFor(model => model.senha)
+        </div>
+
+        <div class="editor-label">
+            Confirme a Senha:
+        </div>
+        <div class="editor-field">
+            @Html.Password("ConfirmarSenha")
+        </div>
+
+        <p>
+            <input type="submit" value="Registrar" onclick="return validarFormUsuario()" />
+        </p>
+    </fieldset>
+}
+
+@if (ViewBag.Erro != null && ViewBag.Erro != "")
+{
+    <script>
+        alert('@Html.Raw(ViewBag.Erro)');
+    </script>
+}
+
+<script>
+    function validarFormUsuario() {
+        if ($("#Pessoa_nome").val() == "") {
+            alert("Digite seu nome");
+            return false;
+        }
+
+        if ($("#Pessoa_email").val() == "") {
+            alert("Digite seu e-mail");
+            return false;
+        }
+
+        if ($("#senha").val() == "") {
+            alert("Digite uma senha");
+            return false;
+        }
+
+        if ($("#ConfirmarSenha").val() == "") {
+            alert("Confirme sua senha");
+            return false;
+        }
+
+        if ($("#ConfirmarSenha").val() != $("#senha").val()) {
+            alert("As senhas digitadas não conferem");
+            return false;
+        }
+
+        return true;    
+    }
+</script>

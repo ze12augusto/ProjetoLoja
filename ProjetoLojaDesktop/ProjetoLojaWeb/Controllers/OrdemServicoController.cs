@@ -7,6 +7,7 @@ using ProjetoLojaData.Data;
 
 namespace ProjetoLojaWeb.Controllers
 {
+    [Authorize]
     public class OrdemServicoController : Controller
     {
         private OrdemDeServicoData osData = new OrdemDeServicoData();

@@ -71,7 +71,8 @@ namespace ProjetoLojaData.Data
                 {
                     db.Pessoa.AddObject(pessoa);
                     db.Usuario.AddObject(pessoa.Usuario);
-                    db.PessoaFisica.AddObject(pessoa.PessoaFisica);
+                    if( pessoa.PessoaFisica != null )
+                        db.PessoaFisica.AddObject(pessoa.PessoaFisica);
                 }
                 else
                 {
@@ -84,10 +85,11 @@ namespace ProjetoLojaData.Data
                         pessoa, System.Data.EntityState.Modified);
 
                     db.ObjectStateManager.ChangeObjectState(
-                        pessoa.PessoaFisica, System.Data.EntityState.Modified);
-
-                    db.ObjectStateManager.ChangeObjectState(
                         pessoa.Usuario, System.Data.EntityState.Modified);
+
+                    if (pessoa.PessoaFisica != null)
+                        db.ObjectStateManager.ChangeObjectState(
+                            pessoa.PessoaFisica, System.Data.EntityState.Modified);
                 }
 
                 db.SaveChanges();

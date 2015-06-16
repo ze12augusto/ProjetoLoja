@@ -35,7 +35,7 @@ namespace ProjetoLojaData.Data
         public List<Pessoa> buscarPessoasFisicasPorNome( string nome )
         {
             var lista = from p in db.Pessoa
-                        where p.nome == nome
+				        where p.nome.ToLower().Contains(nome.ToLower())
                         select p;
 
             return lista.ToList();

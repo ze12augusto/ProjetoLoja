@@ -27,16 +27,6 @@ namespace ProjetoLojaData.Data
 
         }
 
-        public Usuario obterUsuarioPorEmail(String email)
-        {
-            var Lista = from u in db.Usuario
-                        where u.Pessoa.email == email
-                        select u;
-
-            return Lista.ToList().FirstOrDefault();
-
-        }
-
         public List<Usuario> todasUsuarios() {
             var Lista = from u in db.Usuario
                         select u;
@@ -140,6 +130,16 @@ namespace ProjetoLojaData.Data
             }
 
             return erro;
+        }
+
+        public Usuario obterUsuarioPorlogin(string cpf)
+        {
+            var lista = from u in db.Usuario
+                        join p in db.Pessoa on u.idPessoa equals p.idPessoa
+                        join pf in db.PessoaFisica on p.idPessoa equals pf.idPessoa
+                        where pf.CPF == cpf
+                        select u;
+            return lista.ToList().FirstOrDefault();
         }
     }
 

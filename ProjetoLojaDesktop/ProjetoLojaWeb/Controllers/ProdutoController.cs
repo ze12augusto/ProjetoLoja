@@ -35,6 +35,7 @@ namespace ProjetoLojaWeb.Controllers
             }
             
             ViewBag.Imagem = ipModel.obterCaminhosImagem(id);
+            ViewBag.PrimeiraImagem = ipModel.obterCaminhosImagem(id).ToList().FirstOrDefault();
             return View(p);
         }
 

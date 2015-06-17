@@ -168,7 +168,7 @@
             <PropertyRef Name="idEndereco" />
             <PropertyRef Name="idPessoa" />
           </Key>
-          <Property Name="idEndereco" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="idEndereco" Type="int" Nullable="false" />
           <Property Name="idPessoa" Type="int" Nullable="false" />
           <Property Name="logradouro" Type="varchar" Nullable="false" MaxLength="80" />
           <Property Name="numero" Type="int" Nullable="false" />
@@ -290,7 +290,7 @@
             <PropertyRef Name="idVigencia" />
             <PropertyRef Name="idProduto" />
           </Key>
-          <Property Name="idVigencia" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="idVigencia" Type="int" Nullable="false" />
           <Property Name="idProduto" Type="int" Nullable="false" />
           <Property Name="dataVigenciaInicio" Type="date" Nullable="false" />
           <Property Name="dataVigenciaFim" Type="date" />
@@ -1805,200 +1805,198 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="ProjetoLojaEntity" ZoomLevel="83">
-        <EntityTypeShape EntityType="ProjetoLojaModel.CaracteristicaProduto" Width="1.5" PointX="13.5" PointY="1.125" Height="1.9802864583333246" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.Cidade" Width="1.5" PointX="3" PointY="12.625" Height="1.595683593749996" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.Endereco" Width="1.5" PointX="5.25" PointY="13.875" Height="3.903300781249996" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.ImagemProduto" Width="1.5" PointX="13.5" PointY="3.875" Height="1.7879850260416674" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.Marca" Width="1.5" PointX="6.75" PointY="4" Height="1.595683593749996" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.Modelo" Width="1.5" PointX="9" PointY="3.875" Height="1.9802864583333388" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.NotaFiscal" Width="1.5" PointX="10.5" PointY="8.875" Height="1.7879850260416674" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.OrdemServico" Width="1.5" PointX="10.5" PointY="11.375" Height="2.3648893229166674" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.Pagamento" Width="1.5" PointX="10.5" PointY="14.625" Height="1.9802864583333246" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.PagamentoAVista" Width="1.5" PointX="12.75" PointY="13.625" Height="1.9802864583333388" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.PagamentoCartao" Width="1.5" PointX="12.75" PointY="17.25" Height="2.172587890624996" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.Pessoa" Width="1.5" PointX="3" PointY="15.125" Height="3.3263964843750102" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.PessoaFisica" Width="1.5" PointX="5.25" PointY="19.25" Height="1.7879850260416674" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.PessoaJuridica" Width="1.5" PointX="5.25" PointY="21.75" Height="1.9802864583333246" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.Produto" Width="1.5" PointX="11.25" PointY="3.125" Height="3.3263964843750102" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.ProdutoVigenciaPreco" Width="1.5" PointX="13.5" PointY="6.375" Height="2.1725878906250102" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.StatusTransacao" Width="1.5" PointX="6" PointY="10.875" Height="1.5956835937499818" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.Telefone" Width="1.5" PointX="8.25" PointY="15.75" Height="2.1725878906249818" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.TipoEndereco" Width="1.5" PointX="3" PointY="10" Height="1.5956835937499818" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.TipoPagamento" Width="1.5" PointX="10.5" PointY="17.875" Height="1.5956835937499818" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.TipoPessoa" Width="1.5" PointX="0.75" PointY="16" Height="1.5956835937499818" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.TipoTelefone" Width="1.5" PointX="6" PointY="25" Height="1.5956835937499818" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.TipoTransacao" Width="1.5" PointX="6" PointY="8.125" Height="1.5956835937499818" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.TipoUsuario" Width="1.5" PointX="6" PointY="28" Height="1.5956835937499818" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.Transacao" Width="1.5" PointX="8.25" PointY="10.875" Height="3.9033007812499818" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.TransacaoProduto" Width="1.5" PointX="13.5" PointY="10.75" Height="2.1725878906249818" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.UnidadeFederativa" Width="1.5" PointX="3" PointY="19.375" Height="1.5956835937499818" />
-        <EntityTypeShape EntityType="ProjetoLojaModel.Usuario" Width="1.5" PointX="8.25" PointY="18.875" Height="1.9802864583333246" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.CaracteristicaProduto" Width="1.5" PointX="13.5" PointY="1" Height="1.7566536458333246" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.Cidade" Width="1.5" PointX="3" PointY="11.5" Height="1.427958984374996" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.Endereco" Width="1.5" PointX="5.25" PointY="12.625" Height="3.400126953124996" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.ImagemProduto" Width="1.5" PointX="13.5" PointY="3.5" Height="1.5923063151041674" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.Marca" Width="1.5" PointX="6.75" PointY="3.625" Height="1.427958984374996" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.Modelo" Width="1.5" PointX="9" PointY="3.5" Height="1.7566536458333388" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.NotaFiscal" Width="1.5" PointX="10.5" PointY="7.875" Height="1.5923063151041674" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.OrdemServico" Width="1.5" PointX="10.5" PointY="10.125" Height="2.0853483072916674" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.Pagamento" Width="1.5" PointX="10.5" PointY="13.125" Height="1.7566536458333246" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.PagamentoAVista" Width="1.5" PointX="12.75" PointY="12.125" Height="1.7566536458333388" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.PagamentoCartao" Width="1.5" PointX="12.75" PointY="15.5" Height="1.921000976562496" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.Pessoa" Width="1.5" PointX="3" PointY="13.875" Height="2.9070849609375102" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.PessoaFisica" Width="1.5" PointX="5.25" PointY="17.5" Height="1.5923063151041674" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.PessoaJuridica" Width="1.5" PointX="5.25" PointY="19.875" Height="1.7566536458333246" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.Produto" Width="1.5" PointX="11.25" PointY="2.875" Height="2.9070849609375102" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.ProdutoVigenciaPreco" Width="1.5" PointX="13.5" PointY="5.875" Height="1.9210009765625102" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.StatusTransacao" Width="1.5" PointX="6" PointY="9.625" Height="1.4279589843749818" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.Telefone" Width="1.5" PointX="8.25" PointY="14.375" Height="1.9210009765624818" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.TipoEndereco" Width="1.5" PointX="3" PointY="17.625" Height="1.4279589843749818" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.TipoPagamento" Width="1.5" PointX="10.5" PointY="16.25" Height="1.4279589843749818" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.TipoPessoa" Width="1.5" PointX="0.75" PointY="14.625" Height="1.4279589843749836" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.TipoTelefone" Width="1.5" PointX="6" PointY="22.625" Height="1.4279589843749818" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.TipoTransacao" Width="1.5" PointX="6" PointY="6.75" Height="1.4279589843749818" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.TipoUsuario" Width="1.5" PointX="6" PointY="25.625" Height="1.4279589843749818" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.Transacao" Width="1.5" PointX="8.25" PointY="9.625" Height="3.4001269531249818" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.TransacaoProduto" Width="1.5" PointX="13.5" PointY="9.375" Height="1.9210009765624818" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.UnidadeFederativa" Width="1.5" PointX="3" PointY="19.875" Height="1.4279589843749818" />
+        <EntityTypeShape EntityType="ProjetoLojaModel.Usuario" Width="1.5" PointX="8.25" PointY="17.5" Height="1.7566536458333246" />
         <AssociationConnector Association="ProjetoLojaModel.FKCaracteris858294" >
-          <ConnectorPoint PointX="12" PointY="3.125" />
-          <ConnectorPoint PointX="12" PointY="2.1151432291666623" />
-          <ConnectorPoint PointX="13.5" PointY="2.1151432291666623" />
+          <ConnectorPoint PointX="12" PointY="2.875" />
+          <ConnectorPoint PointX="12" PointY="1.8783268229166623" />
+          <ConnectorPoint PointX="13.5" PointY="1.8783268229166623" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKEndereco362332" >
-          <ConnectorPoint PointX="4.5" PointY="14.047841796874998" />
-          <ConnectorPoint PointX="4.666666666666667" PointY="14.047841796874998" />
-          <ConnectorPoint PointX="4.833333333333333" PointY="14.047841796874998" />
-          <ConnectorPoint PointX="4.916666666666667" PointY="14.047841796874998" />
-          <ConnectorPoint PointX="5.083333333333333" PointY="14.047841796874998" />
-          <ConnectorPoint PointX="5.25" PointY="14.047841796874998" />
+          <ConnectorPoint PointX="4.5" PointY="12.776479492187498" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="12.776479492187496" />
+          <ConnectorPoint PointX="5.114583333333333" PointY="12.776479492187498" />
+          <ConnectorPoint PointX="5.25" PointY="12.776479492187498" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKEndereco263487" >
-          <ConnectorPoint PointX="4.5" PointY="10.40625" />
-          <ConnectorPoint PointX="5.59375" PointY="10.40625" />
-          <ConnectorPoint PointX="5.59375" PointY="13.875" />
+          <ConnectorPoint PointX="4.5" PointY="17.625" />
+          <ConnectorPoint PointX="4.875" PointY="17.25" />
+          <ConnectorPoint PointX="4.875" PointY="14.43205522265624" />
+          <ConnectorPoint PointX="5.25" PointY="14.43205522265624" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKEndereco335589" >
-          <ConnectorPoint PointX="4.5" PointY="19.376152846153843" />
-          <ConnectorPoint PointX="4.875" PointY="19.001152846153843" />
-          <ConnectorPoint PointX="4.875" PointY="15.94432328906249" />
-          <ConnectorPoint PointX="5.25" PointY="15.94432328906249" />
+          <ConnectorPoint PointX="4.5" PointY="19.93651107932692" />
+          <ConnectorPoint PointX="4.9098244349011209" PointY="19.526686644425798" />
+          <ConnectorPoint PointX="5.0276755650988791" PointY="19.408835514228041" />
+          <ConnectorPoint PointX="5.0625" PointY="19.37401107932692" />
+          <ConnectorPoint PointX="5.0625" PointY="15.259843087890612" />
+          <ConnectorPoint PointX="5.25" PointY="15.259843087890612" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKEndereco760014" >
-          <ConnectorPoint PointX="4.5" PointY="16.923812035156242" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="16.923812035156242" />
-          <ConnectorPoint PointX="4.958333333333333" PointY="16.923812035156242" />
-          <ConnectorPoint PointX="5.25" PointY="16.923812035156242" />
+          <ConnectorPoint PointX="4.5" PointY="15.704985020507804" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="15.704985020507804" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="15.704985020507804" />
+          <ConnectorPoint PointX="4.979166666666667" PointY="15.704985020507804" />
+          <ConnectorPoint PointX="5.145833333333333" PointY="15.704985020507804" />
+          <ConnectorPoint PointX="5.25" PointY="15.704985020507804" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKImagemProd470431" >
-          <ConnectorPoint PointX="12.75" PointY="4.7689925130208337" />
-          <ConnectorPoint PointX="13.5" PointY="4.7689925130208337" />
+          <ConnectorPoint PointX="12.75" PointY="4.2961531575520837" />
+          <ConnectorPoint PointX="13.5" PointY="4.2961531575520837" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKModelo452020" >
-          <ConnectorPoint PointX="8.25" PointY="4.797841796874998" />
-          <ConnectorPoint PointX="9" PointY="4.797841796874998" />
+          <ConnectorPoint PointX="8.25" PointY="4.338979492187498" />
+          <ConnectorPoint PointX="9" PointY="4.338979492187498" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKProduto379653" >
-          <ConnectorPoint PointX="10.5" PointY="4.8651432291666694" />
-          <ConnectorPoint PointX="11.25" PointY="4.8651432291666694" />
+          <ConnectorPoint PointX="10.5" PointY="4.3783268229166694" />
+          <ConnectorPoint PointX="11.25" PointY="4.3783268229166694" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKNotaFiscal277307" >
-          <ConnectorPoint PointX="9" PointY="10.875" />
-          <ConnectorPoint PointX="9" PointY="9.7689925130208337" />
-          <ConnectorPoint PointX="10.5" PointY="9.7689925130208337" />
+          <ConnectorPoint PointX="9" PointY="9.625" />
+          <ConnectorPoint PointX="9" PointY="8.6711531575520837" />
+          <ConnectorPoint PointX="10.5" PointY="8.6711531575520837" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKOrdemServi748459" >
-          <ConnectorPoint PointX="9.75" PointY="12.557444661458334" />
-          <ConnectorPoint PointX="10.5" PointY="12.557444661458334" />
+          <ConnectorPoint PointX="9.75" PointY="11.167674153645834" />
+          <ConnectorPoint PointX="10.5" PointY="11.167674153645834" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKPagamento323132" >
-          <ConnectorPoint PointX="9.75" PointY="14.778300781249982" />
-          <ConnectorPoint PointX="10.125" PointY="15.153300781249982" />
-          <ConnectorPoint PointX="10.125" PointY="14.25" />
-          <ConnectorPoint PointX="10.5" PointY="14.625" />
+          <ConnectorPoint PointX="9.75" PointY="13.025126953124982" />
+          <ConnectorPoint PointX="10.125" PointY="13.400126953124982" />
+          <ConnectorPoint PointX="10.125" PointY="12.75" />
+          <ConnectorPoint PointX="10.5" PointY="13.125" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKPagamentoA869264" >
-          <ConnectorPoint PointX="12" PointY="15.115143229166669" />
-          <ConnectorPoint PointX="12.479166666666666" PointY="15.115143229166669" />
-          <ConnectorPoint PointX="12.645833333333334" PointY="15.115143229166669" />
-          <ConnectorPoint PointX="12.75" PointY="15.115143229166669" />
+          <ConnectorPoint PointX="12" PointY="13.503326822916669" />
+          <ConnectorPoint PointX="12.479166666666666" PointY="13.503326822916669" />
+          <ConnectorPoint PointX="12.645833333333334" PointY="13.503326822916669" />
+          <ConnectorPoint PointX="12.75" PointY="13.503326822916669" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKPagamentoC183659" >
-          <ConnectorPoint PointX="12" PointY="16.605286458333325" />
-          <ConnectorPoint PointX="12.375" PointY="16.980286458333325" />
-          <ConnectorPoint PointX="12.375" PointY="16.875" />
-          <ConnectorPoint PointX="12.503574434901122" PointY="17.003574434901122" />
-          <ConnectorPoint PointX="12.621425565098878" PointY="17.121425565098878" />
-          <ConnectorPoint PointX="12.75" PointY="17.25" />
+          <ConnectorPoint PointX="12" PointY="14.881653645833325" />
+          <ConnectorPoint PointX="12.375" PointY="15.256653645833325" />
+          <ConnectorPoint PointX="12.375" PointY="15.125" />
+          <ConnectorPoint PointX="12.503574434901122" PointY="15.25357443490112" />
+          <ConnectorPoint PointX="12.621425565098878" PointY="15.371425565098878" />
+          <ConnectorPoint PointX="12.75" PointY="15.5" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKPagamentoA750421" >
-          <ConnectorPoint PointX="12" PointY="17.93730669230769" />
-          <ConnectorPoint PointX="12.5625" PointY="17.37480669230769" />
-          <ConnectorPoint PointX="12.5625" PointY="14.33881961458334" />
-          <ConnectorPoint PointX="12.75" PointY="14.33881961458334" />
+          <ConnectorPoint PointX="12" PointY="16.31151107932692" />
+          <ConnectorPoint PointX="12.5625" PointY="15.74901107932692" />
+          <ConnectorPoint PointX="12.5625" PointY="12.78291141145834" />
+          <ConnectorPoint PointX="12.75" PointY="12.78291141145834" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKPessoa328913" >
-          <ConnectorPoint PointX="2.25" PointY="16.797841796874991" />
-          <ConnectorPoint PointX="3" PointY="16.797841796874991" />
+          <ConnectorPoint PointX="2.25" PointY="15.338979492187491" />
+          <ConnectorPoint PointX="3" PointY="15.338979492187491" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKPessoaFisi179779" >
-          <ConnectorPoint PointX="4.5" PointY="18.45139648437501" />
-          <ConnectorPoint PointX="4.8160744349011217" PointY="18.767470919276132" />
-          <ConnectorPoint PointX="4.9339255650988791" PointY="18.885322049473888" />
-          <ConnectorPoint PointX="5.125" PointY="19.07639648437501" />
-          <ConnectorPoint PointX="5.125" PointY="20.143992513020834" />
-          <ConnectorPoint PointX="5.25" PointY="20.143992513020834" />
+          <ConnectorPoint PointX="4.5" PointY="16.78208496093751" />
+          <ConnectorPoint PointX="4.8160744349011217" PointY="17.098159395838632" />
+          <ConnectorPoint PointX="4.9339255650988791" PointY="17.216010526036388" />
+          <ConnectorPoint PointX="5.0035744349011217" PointY="17.285659395838632" />
+          <ConnectorPoint PointX="5.1214255650988791" PointY="17.403510526036388" />
+          <ConnectorPoint PointX="5.125" PointY="17.40708496093751" />
+          <ConnectorPoint PointX="5.125" PointY="18.296153157552084" />
+          <ConnectorPoint PointX="5.25" PointY="18.296153157552084" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKPessoaJuri138880" >
-          <ConnectorPoint PointX="4.4630769230769225" PointY="18.45139648437501" />
-          <ConnectorPoint PointX="4.8160744349011217" PointY="18.804393996199209" />
-          <ConnectorPoint PointX="4.9339255650988791" PointY="18.922245126396966" />
-          <ConnectorPoint PointX="5.03125" PointY="19.019569561298088" />
-          <ConnectorPoint PointX="5.03125" PointY="22.740143229166662" />
-          <ConnectorPoint PointX="5.25" PointY="22.740143229166662" />
+          <ConnectorPoint PointX="4.4630769230769225" PointY="16.78208496093751" />
+          <ConnectorPoint PointX="4.96875" PointY="17.287758037860588" />
+          <ConnectorPoint PointX="4.96875" PointY="20.753326822916662" />
+          <ConnectorPoint PointX="5.25" PointY="20.753326822916662" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKTelefone320442" >
-          <ConnectorPoint PointX="4.5" PointY="17.881694335937489" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="17.881694335937489" />
-          <ConnectorPoint PointX="4.958333333333333" PointY="17.881694335937489" />
-          <ConnectorPoint PointX="8.25" PointY="17.881694335937489" />
+          <ConnectorPoint PointX="4.5" PointY="16.191813964843739" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="16.191813964843739" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="16.191813964843739" />
+          <ConnectorPoint PointX="4.979166666666667" PointY="16.191813964843739" />
+          <ConnectorPoint PointX="5.145833333333333" PointY="16.191813964843739" />
+          <ConnectorPoint PointX="8.25" PointY="16.191813964843739" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKTransacao803746" >
-          <ConnectorPoint PointX="3.75" PointY="15.125" />
-          <ConnectorPoint PointX="3.75" PointY="14.470683593749996" />
-          <ConnectorPoint PointX="4.75" PointY="14.470683593749996" />
-          <ConnectorPoint PointX="4.75" PointY="13.172841796874991" />
-          <ConnectorPoint PointX="5.510416666666667" PointY="13.172841796874991" />
-          <ConnectorPoint PointX="5.677083333333333" PointY="13.172841796874991" />
-          <ConnectorPoint PointX="8.25" PointY="13.172841796874991" />
+          <ConnectorPoint PointX="4.5" PointY="13.932691307692309" />
+          <ConnectorPoint PointX="5.03125" PointY="13.401441307692309" />
+          <ConnectorPoint PointX="5.03125" PointY="11.838979492187491" />
+          <ConnectorPoint PointX="8.25" PointY="11.838979492187491" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKTransacao806039" >
-          <ConnectorPoint PointX="4.156252" PointY="15.125" />
-          <ConnectorPoint PointX="4.156252" PointY="14.720683593749996" />
-          <ConnectorPoint PointX="5" PointY="14.720683593749996" />
-          <ConnectorPoint PointX="5" PointY="13.523923398437489" />
-          <ConnectorPoint PointX="5.510416666666667" PointY="13.523923398437489" />
-          <ConnectorPoint PointX="5.677083333333333" PointY="13.523923398437489" />
-          <ConnectorPoint PointX="8.25" PointY="13.523923398437489" />
+          <ConnectorPoint PointX="4.47576923076923" PointY="13.875" />
+          <ConnectorPoint PointX="4.875" PointY="13.475769230769231" />
+          <ConnectorPoint PointX="4.875" PointY="11.838979492187491" />
+          <ConnectorPoint PointX="8.25" PointY="11.838979492187491" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKUsuario624817" >
-          <ConnectorPoint PointX="4.5" PointY="18.383318561298086" />
-          <ConnectorPoint PointX="4.65625" PointY="18.539568561298086" />
-          <ConnectorPoint PointX="4.65625" PointY="18.5" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="18.5" />
-          <ConnectorPoint PointX="4.958333333333333" PointY="18.5" />
-          <ConnectorPoint PointX="7.072916666666667" PointY="18.5" />
-          <ConnectorPoint PointX="7.239583333333333" PointY="18.5" />
-          <ConnectorPoint PointX="7.875" PointY="18.5" />
-          <ConnectorPoint PointX="8.25" PointY="18.875" />
+          <ConnectorPoint PointX="4.5" PointY="16.745160884014432" />
+          <ConnectorPoint PointX="4.9119240769230785" PointY="17.15708496093751" />
+          <ConnectorPoint PointX="4.979166666666667" PointY="17.15708496093751" />
+          <ConnectorPoint PointX="5.145833333333333" PointY="17.15708496093751" />
+          <ConnectorPoint PointX="7.072916666666667" PointY="17.15708496093751" />
+          <ConnectorPoint PointX="7.239583333333333" PointY="17.15708496093751" />
+          <ConnectorPoint PointX="9" PointY="17.15708496093751" />
+          <ConnectorPoint PointX="9" PointY="17.5" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKProdutoVig90587" >
-          <ConnectorPoint PointX="12" PointY="6.45139648437501" />
-          <ConnectorPoint PointX="12" PointY="7.4994926875000107" />
-          <ConnectorPoint PointX="12.322916666666666" PointY="7.49949268750001" />
-          <ConnectorPoint PointX="12.489583333333334" PointY="7.4994926875000107" />
-          <ConnectorPoint PointX="13.5" PointY="7.4994926875000107" />
+          <ConnectorPoint PointX="12" PointY="5.78208496093751" />
+          <ConnectorPoint PointX="12" PointY="6.8355004882812551" />
+          <ConnectorPoint PointX="12.322916666666666" PointY="6.8355004882812542" />
+          <ConnectorPoint PointX="12.489583333333334" PointY="6.8355004882812551" />
+          <ConnectorPoint PointX="13.5" PointY="6.8355004882812551" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKTransacaoP922972" >
-          <ConnectorPoint PointX="12.40625" PointY="6.45139648437501" />
-          <ConnectorPoint PointX="12.40625" PointY="11.03125" />
-          <ConnectorPoint PointX="13.5" PointY="11.03125" />
+          <ConnectorPoint PointX="12.40625" PointY="5.78208496093751" />
+          <ConnectorPoint PointX="12.40625" PointY="9.7961531575520837" />
+          <ConnectorPoint PointX="13.5" PointY="9.7961531575520837" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKTransacao547363" >
-          <ConnectorPoint PointX="7.5" PointY="11.672841796874991" />
-          <ConnectorPoint PointX="8.25" PointY="11.672841796874991" />
+          <ConnectorPoint PointX="7.5" PointY="10.338979492187491" />
+          <ConnectorPoint PointX="8.25" PointY="10.338979492187491" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKTelefone476788" >
-          <ConnectorPoint PointX="7.15625" PointY="25" />
-          <ConnectorPoint PointX="7.15625" PointY="17.902141113281235" />
-          <ConnectorPoint PointX="8.25" PointY="17.902141113281235" />
+          <ConnectorPoint PointX="7.15625" PointY="22.625" />
+          <ConnectorPoint PointX="7.15625" PointY="16.223066464843733" />
+          <ConnectorPoint PointX="8.25" PointY="16.223066464843733" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKTransacao266380" >
-          <ConnectorPoint PointX="7.5" PointY="8.9228417968749909" />
-          <ConnectorPoint PointX="8.5937475" PointY="8.9228417968749909" />
-          <ConnectorPoint PointX="8.5937475" PointY="10.875" />
+          <ConnectorPoint PointX="7.5" PointY="7.4639794921874909" />
+          <ConnectorPoint PointX="8.5937475" PointY="7.4639794921874909" />
+          <ConnectorPoint PointX="8.5937475" PointY="9.625" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKUsuario557876" >
-          <ConnectorPoint PointX="7.5" PointY="28.797841796874991" />
-          <ConnectorPoint PointX="9" PointY="28.797841796874991" />
-          <ConnectorPoint PointX="9" PointY="20.855286458333325" />
+          <ConnectorPoint PointX="7.5" PointY="26.338979492187491" />
+          <ConnectorPoint PointX="9" PointY="26.338979492187491" />
+          <ConnectorPoint PointX="9" PointY="19.256653645833325" />
         </AssociationConnector>
         <AssociationConnector Association="ProjetoLojaModel.FKTransacaoP933760" >
-          <ConnectorPoint PointX="9.75" PointY="11.234375" />
-          <ConnectorPoint PointX="13.5" PointY="11.234375" />
+          <ConnectorPoint PointX="9.75" PointY="9.9918265787760419" />
+          <ConnectorPoint PointX="13.5" PointY="9.9918265787760419" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>

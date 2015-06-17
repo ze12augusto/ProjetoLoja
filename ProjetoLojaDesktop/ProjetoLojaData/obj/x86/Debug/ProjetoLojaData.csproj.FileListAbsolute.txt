@@ -21,3 +21,12 @@ C:\Documents and Settings\VirtualBox\Desktop\ProjetoLoja\ProjetoLojaDesktop\Proj
 C:\Documents and Settings\VirtualBox\Desktop\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\bin\Debug\ProjetoLojaData.pdb
 C:\Documents and Settings\VirtualBox\Desktop\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\obj\x86\Debug\ProjetoLojaData.dll
 C:\Documents and Settings\VirtualBox\Desktop\ProjetoLoja\ProjetoLojaDesktop\ProjetoLojaData\obj\x86\Debug\ProjetoLojaData.pdb
+F:\ProjetoLoja-master\ProjetoLoja-poJoao\ProjetoLojaDesktop\ProjetoLojaData\bin\Debug\ProjetoLojaData.dll.config
+F:\ProjetoLoja-master\ProjetoLoja-poJoao\ProjetoLojaDesktop\ProjetoLojaData\bin\Debug\ProjetoLojaData.dll
+F:\ProjetoLoja-master\ProjetoLoja-poJoao\ProjetoLojaDesktop\ProjetoLojaData\bin\Debug\ProjetoLojaData.pdb
+F:\ProjetoLoja-master\ProjetoLoja-poJoao\ProjetoLojaDesktop\ProjetoLojaData\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\ProjetoLoja-master\ProjetoLoja-poJoao\ProjetoLojaDesktop\ProjetoLojaData\obj\x86\Debug\ProjetoLojaData.Properties.Resources.resources
+F:\ProjetoLoja-master\ProjetoLoja-poJoao\ProjetoLojaDesktop\ProjetoLojaData\obj\x86\Debug\GenerateResource.read.1.tlog
+F:\ProjetoLoja-master\ProjetoLoja-poJoao\ProjetoLojaDesktop\ProjetoLojaData\obj\x86\Debug\GenerateResource.write.1.tlog
+F:\ProjetoLoja-master\ProjetoLoja-poJoao\ProjetoLojaDesktop\ProjetoLojaData\obj\x86\Debug\ProjetoLojaData.dll
+F:\ProjetoLoja-master\ProjetoLoja-poJoao\ProjetoLojaDesktop\ProjetoLojaData\obj\x86\Debug\ProjetoLojaData.pdb

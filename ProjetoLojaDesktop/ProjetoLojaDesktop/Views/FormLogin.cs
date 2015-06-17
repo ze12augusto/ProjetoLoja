@@ -28,6 +28,7 @@ namespace ProjetoLojaDesktop.Views
         private void btnEntrar_Click(object sender, EventArgs e)
         {
             string cpf = txtUsuario.Text;
+            cpf = cpf.Replace(".","").Replace(",","").Replace("-","");
             string senhaDigitada = mtxSenha.Text;
             usuario = usuarioData.obterUsuarioPorlogin(cpf);
             if (usuario == null) {
@@ -47,10 +48,15 @@ namespace ProjetoLojaDesktop.Views
             Application.Exit();
         }
 
-      
+        private void mtxSenha_KeyPress(object sender, KeyPressEventArgs e)
+        {
 
-     
-      
+            if ((Keys)e.KeyChar == Keys.Enter)
+            {
+                btnEntrar_Click(sender, null);
+            }
+            
+        }
 
 
     }

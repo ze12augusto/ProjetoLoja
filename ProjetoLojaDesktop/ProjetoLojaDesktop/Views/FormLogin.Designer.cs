@@ -30,11 +30,11 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
             this.mtxSenha = new System.Windows.Forms.MaskedTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEntrar = new System.Windows.Forms.Button();
+            this.txtUsuario = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,13 +56,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Senha";
             // 
-            // txtUsuario
-            // 
-            this.txtUsuario.Location = new System.Drawing.Point(88, 152);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(208, 20);
-            this.txtUsuario.TabIndex = 1;
-            // 
             // mtxSenha
             // 
             this.mtxSenha.Location = new System.Drawing.Point(88, 188);
@@ -70,6 +63,7 @@
             this.mtxSenha.PasswordChar = '*';
             this.mtxSenha.Size = new System.Drawing.Size(208, 20);
             this.mtxSenha.TabIndex = 2;
+            this.mtxSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtxSenha_KeyPress);
             // 
             // pictureBox1
             // 
@@ -106,17 +100,25 @@
             this.btnEntrar.UseVisualStyleBackColor = true;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
+            // txtUsuario
+            // 
+            this.txtUsuario.Location = new System.Drawing.Point(88, 155);
+            this.txtUsuario.Mask = "999,999,999-99";
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(208, 20);
+            this.txtUsuario.TabIndex = 1;
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(350, 287);
             this.ControlBox = false;
+            this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.mtxSenha);
-            this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
@@ -133,10 +135,10 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.MaskedTextBox mtxSenha;
         private System.Windows.Forms.Button btnEntrar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.MaskedTextBox txtUsuario;
     }
 }

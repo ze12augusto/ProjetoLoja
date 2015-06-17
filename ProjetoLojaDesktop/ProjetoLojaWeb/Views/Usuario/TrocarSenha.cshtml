@@ -1,0 +1,56 @@
+﻿@model ProjetoLojaWeb.ViewModels.TrocaDePasswordViewModel
+
+@if (ViewBag.Erro != "")
+{
+    <p style="color: Red">@ViewBag.Erro</p>
+}
+
+<h3>Alteração de senha</h3>
+
+@using (Html.BeginForm()) {
+
+    <fieldset>
+        <legend>Alterar sua senha</legend>
+        <ol>
+            <li>
+                Senha Antiga:
+                @Html.PasswordFor(m => m.SenhaAntiga)
+            </li>
+            <li>
+                Senha Nova:
+                @Html.PasswordFor(m => m.SenhaNova)
+            </li>
+            <li>
+                Confirme sua Senha
+                @Html.PasswordFor(m => m.ConfirmacaoSenha)
+            </li>
+        </ol>
+        <input type="submit" value="Alterar" onclick="return validarFormAlterarSenha();" />
+    </fieldset>
+}
+
+<script>
+    function validarFormAlterarSenha() {
+        if ($("#SenhaAntiga").val() == "") {
+            alert("Digite sua senha antiga");
+            return false;
+        }
+
+        if ($("#SenhaNova").val() == "") {
+            alert("Digite sua nova senha");
+            return false;
+        }
+
+        if ($("#ConfirmacaoSenha").val() == "") {
+            alert("Confirme sua senha");
+            return false;
+        }
+
+        if ($("#ConfirmacaoSenha").val() != $("#SenhaNova").val()) {
+            alert("As senhas digitadas não conferem");
+            return false;
+        }
+
+        return true;    
+    }
+</script>

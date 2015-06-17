@@ -1,0 +1,61 @@
+﻿@model IEnumerable<ProjetoLojaData.Entity.Produto>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Produtos</h2>
+
+
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idMarcaProduto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.qtdMinima)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.qtdAtual)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idModelo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idMarcaProduto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.qtdMinima)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.qtdAtual)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idModelo)
+        </td>
+        <td>           
+            @Html.ActionLink("Detalhar", "Details", new { id=item.idProduto })           
+        </td>
+    </tr>
+}
+
+</table>

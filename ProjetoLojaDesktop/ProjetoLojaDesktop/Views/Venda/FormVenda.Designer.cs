@@ -93,6 +93,7 @@
             this.btnNovo.Text = "Novo";
             this.btnNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // btnEditar
             // 
@@ -104,6 +105,7 @@
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnExcluir
             // 
@@ -115,6 +117,7 @@
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // dgvListaVenda
             // 
@@ -130,6 +133,7 @@
             this.txtPesquisaVenda.Name = "txtPesquisaVenda";
             this.txtPesquisaVenda.Size = new System.Drawing.Size(312, 20);
             this.txtPesquisaVenda.TabIndex = 1;
+            this.txtPesquisaVenda.TextChanged += new System.EventHandler(this.txtPesquisaVenda_TextChanged);
             // 
             // lblPesquisaVenda
             // 
@@ -201,6 +205,7 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnSalvar
             // 
@@ -230,11 +235,13 @@
             this.cbxFuncionario.Name = "cbxFuncionario";
             this.cbxFuncionario.Size = new System.Drawing.Size(242, 21);
             this.cbxFuncionario.TabIndex = 3;
+            this.cbxFuncionario.SelectedIndexChanged += new System.EventHandler(this.cbxFuncionario_SelectedIndexChanged);
             // 
             // txtClienteVenda
             // 
             this.txtClienteVenda.Location = new System.Drawing.Point(103, 18);
             this.txtClienteVenda.Name = "txtClienteVenda";
+            this.txtClienteVenda.ReadOnly = true;
             this.txtClienteVenda.Size = new System.Drawing.Size(242, 20);
             this.txtClienteVenda.TabIndex = 2;
             // 

@@ -145,5 +145,10 @@ namespace ProjetoLojaDesktop.Views
                     valorAtualProduto = produtoVigenciaData.obterPrecoVigenteAtual(produtoSelecionado.idProduto);
             }
         }
+
+        private void txtGenerico_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

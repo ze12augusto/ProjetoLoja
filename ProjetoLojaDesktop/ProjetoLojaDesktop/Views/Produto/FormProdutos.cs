@@ -30,6 +30,8 @@ namespace ProjetoLojaDesktop.Forms
         private ImagemProdutoData imagemProdutoData;
         private CaracteristicaProdutoData caracteristicaProdutoData;
 
+        private int idProduto;
+
         public FormProdutos()
         {
             InitializeComponent();
@@ -48,6 +50,7 @@ namespace ProjetoLojaDesktop.Forms
             ((Control)this.tabProduto).Enabled = false;
             ((Control)this.tabDetalhesProduto).Enabled = false;
             ((Control)this.tabVigencia).Enabled = false;
+            idProduto = 0;
             inicializar();
         }
         private void inicializar()
@@ -164,6 +167,7 @@ namespace ProjetoLojaDesktop.Forms
                 tabProdutos.SelectedIndex = 2;
                 ((Control)this.tabDetalhesProduto).Enabled = true;
                 atualizarTabela();
+                idProduto = produto.idProduto;
             }
             else
             {
@@ -189,7 +193,7 @@ namespace ProjetoLojaDesktop.Forms
                 txtQtdA.Text = produto.qtdAtual.ToString();
                 cbxMarca.SelectedValue = produto.Modelo.Marca.idMarca;
                 cbxModelo.SelectedValue = produto.idModelo;
-                IdProduto.Text = produto.idProduto.ToString();
+                idProduto = produto.idProduto;
             }
             else
             {
@@ -255,7 +259,7 @@ namespace ProjetoLojaDesktop.Forms
 
         private void obterImagemProduto()
         {
-            imagemProduto.idProduto = Convert.ToInt32(IdProduto.Text);
+            imagemProduto.idProduto = idProduto;
             imagemProduto.caminho = nameImg.Text;
         }
         private void obterCaracteristicaProd()
@@ -444,9 +448,9 @@ namespace ProjetoLojaDesktop.Forms
             picImagem.ImageLocation = nomeArquivo;
             picImagem.SizeMode = PictureBoxSizeMode.StretchImage;
             string diretorio = Directory.GetCurrentDirectory();
-            int posicao = diretorio.IndexOf("\\bin\\Debug");
+            int posicao = diretorio.IndexOf("\\ProjetoLojaDesktop\\bin\\Debug");
             diretorio = diretorio.Substring(0, posicao);
-            diretorio = diretorio + "\\Assets\\Img";
+            diretorio = diretorio + "\\ProjetoLojaWeb\\Assets\\Img";
             string nomeImagem = geraNomeImagem();
             MessageBox.Show("Nome da Imagem no Diretorio: " + nomeImagem);
             nameImg.Text = nomeImagem;

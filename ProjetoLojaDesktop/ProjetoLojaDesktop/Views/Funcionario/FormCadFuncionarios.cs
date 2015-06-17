@@ -72,7 +72,7 @@ namespace ProjetoLojaDesktop
             cbxCidade.DisplayMember = "nome";
             cbxCidade.ValueMember = "idCidade";
 
-            cbxTipoUsuario.DataSource = tipoUsuarioData.todasTipoUsuarios();
+            cbxTipoUsuario.DataSource = tipoUsuarioData.todosTipoUsuarios();
             cbxTipoUsuario.DisplayMember = "descricao";
             cbxTipoUsuario.ValueMember = "idTipoUsuario";
 
@@ -265,6 +265,7 @@ namespace ProjetoLojaDesktop
             dgvFuncionarios.Columns[8].Visible = false;
             dgvFuncionarios.Columns[9].Visible = false;
             dgvFuncionarios.Columns[10].Visible = false;
+            dgvFuncionarios.Columns[11].Visible = false;
 
             dgvFuncionarios.Columns[1].HeaderText = "Nome";
             dgvFuncionarios.Columns[1].Width = 304;
@@ -368,8 +369,7 @@ namespace ProjetoLojaDesktop
 
         private void atualizarListaDeEnderecos()
         {
-            List<Endereco> enderecos = funcionario.Endereco.ToList();
-            dgvEndereco.DataSource = enderecos;
+            dgvEndereco.DataSource = enderecoData.listarEnderecosPorPessoa(funcionario.idPessoa);
 
             dgvEndereco.Columns[0].Visible = false;
             dgvEndereco.Columns[1].Visible = false;
@@ -521,7 +521,7 @@ namespace ProjetoLojaDesktop
         {
             if (cbxTipoTelefone.SelectedIndex == -1)
                 return "Selecione um tipo de telefone";
-            if (txtTelefone.Text == "")
+            if (txtTelefone.Text == "" || txtTelefone.Text.Length < 14)
                 return "Preencha o campo telefone";
             
             return null;
@@ -549,8 +549,7 @@ namespace ProjetoLojaDesktop
 
         private void atualizarListaDeTelefones()
         {
-            List<Telefone> telefones = funcionario.Telefone.ToList();
-            dgvTelefone.DataSource = telefones;
+            dgvTelefone.DataSource = telefoneData.listarTelefonesPorPessoa(funcionario.idPessoa);
 
             dgvTelefone.Columns[0].Visible = false;
             dgvTelefone.Columns[2].Visible = false;

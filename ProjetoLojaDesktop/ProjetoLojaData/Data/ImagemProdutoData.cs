@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data.Entity;
 using ProjetoLojaData.Entity;
+using System.IO;
 
 namespace ProjetoLojaData.Data
 {
@@ -16,13 +17,13 @@ namespace ProjetoLojaData.Data
             db = new ProjetoLojaEntities();
         }
 
-        public ImagemProduto obterImagemProduto(int id)
+        public List<ImagemProduto> obterImagemProduto(int id)
         {
             var Lista = from i in db.ImagemProduto
                         where i.idAlbumFoto == id
                         select i;
 
-            return Lista.ToList().FirstOrDefault();
+            return Lista.ToList();
         }
 
         public List<ImagemProduto> todasImagemProdutos()
@@ -89,5 +90,30 @@ namespace ProjetoLojaData.Data
 
             return erro;
         }
+
+
+        public List<string> obterCaminhosImagem(int idProduto)
+        {
+            var lista = from i in db.ImagemProduto
+                        where i.idProduto == idProduto
+                        select "../../Assets/Img/" + i.caminho + ".png";
+            return lista.ToList();
+        }
+
+        //public List<ImagemProduto> ListaArquivos(int idProduto)
+        //{
+        //    List<ImagemProduto> lstArquivos = new List<ImagemProduto>();
+        //    DirectoryInfo dirInfo = new DirectoryInfo("C:/Users/Walterlmm/Desktop/Web0206/ProjetoLoja/ProjetoLojaDesktop/ProjetoLojaDesktop/Assets/Img");
+
+            
+        //    foreach (var item in dirInfo.GetFiles())
+        //    {
+        //       var lista = from i in db.ImagemProduto
+        //                where i.idProduto == idProduto
+        //                   select "../../Assets/Img/" + i.caminho + ".png";
+        //    }
+        //    return lstArquivos;
+        //}
+
     }
 }

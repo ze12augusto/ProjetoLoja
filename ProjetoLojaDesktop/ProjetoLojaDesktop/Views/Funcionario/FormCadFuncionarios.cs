@@ -265,6 +265,7 @@ namespace ProjetoLojaDesktop
             dgvFuncionarios.Columns[8].Visible = false;
             dgvFuncionarios.Columns[9].Visible = false;
             dgvFuncionarios.Columns[10].Visible = false;
+            dgvFuncionarios.Columns[11].Visible = false;
 
             dgvFuncionarios.Columns[1].HeaderText = "Nome";
             dgvFuncionarios.Columns[1].Width = 304;

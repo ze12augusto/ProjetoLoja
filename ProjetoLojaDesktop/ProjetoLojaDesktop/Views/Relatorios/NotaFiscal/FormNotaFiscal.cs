@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using ProjetoLojaData.Data;
 using ProjetoLojaData.Entity;
 using CrystalDecisions.CrystalReports.Engine;
+using System.IO;
 
 namespace ProjetoLojaDesktop.Views.Relatorios.NotaFiscal
 {
@@ -28,7 +29,7 @@ namespace ProjetoLojaDesktop.Views.Relatorios.NotaFiscal
         {
             var lista = notaFiscalData.obterNotaFiscal(1); // apenas para efeito de teste
             ReportDocument rpt = new ReportDocument();
-            rpt.FileName = "C:\\Documents and Settings\\a12027158\\Desktop\\ProjetoLoja-master\\ProjetoLojaDesktop\\ProjetoLojaDesktop\\Views\\Relatorios\\NotaFiscal\\NotaFiscalReport.rpt";
+            rpt.FileName = Directory.GetParent(Directory.GetParent(Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).ToString()).ToString()).ToString() + "\\Views\\Relatorios\\NotaFiscal\\NotaFiscalReport.rpt";
             rpt.SetDataSource(lista);
             rptNotaFiscal.ReportSource = rpt;
         }

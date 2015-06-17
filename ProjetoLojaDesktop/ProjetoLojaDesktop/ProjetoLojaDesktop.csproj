@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -104,6 +104,7 @@
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -136,11 +137,11 @@
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FormLogin.cs">
-    <SubType>Form</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\FormLogin.Designer.cs">
-    <DependentUpon>FormLogin.cs</DependentUpon>
-     </Compile>
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Relatorios\NotaFiscal\FormNotaFiscal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -260,8 +261,8 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Views\FormLogin.resx">
-    <DependentUpon>FormLogin.cs</DependentUpon>
-</EmbeddedResource>
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Cliente\FormCadastroCliente.resx">
       <DependentUpon>FormCadastroCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -329,7 +330,7 @@
   <ItemGroup>
     <None Include="Resources\Windows-8-Login3.png" />
     <None Include="Resources\Windows-8-Login2.png" />
-     <None Include="Resources\Windows-8-Login1.png" />
+    <None Include="Resources\Windows-8-Login1.png" />
     <None Include="Resources\Windows-8-Login.png" />
     <None Include="Resources\icon-user.png" />
     <Content Include="Resources\Add-New.png" />

@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using ProjetoLojaData.Data;
 using ProjetoLojaData.Entity;
 using CrystalDecisions.CrystalReports.Engine;
+using System.IO;
 
 namespace ProjetoLojaDesktop.Views
 {
@@ -28,7 +29,7 @@ namespace ProjetoLojaDesktop.Views
         {
             var lista = pagamentoCartaoData.todosPagamentosCartao();
             ReportDocument rpt = new ReportDocument();
-            rpt.FileName = "C:\\Documents and Settings\\a12027158\\Desktop\\ProjetoLoja-master\\ProjetoLojaDesktop\\ProjetoLojaDesktop\\Views\\Relatorios\\PagtoCartao\\PagamentoCartaoReport.rpt";
+            rpt.FileName = Directory.GetParent(Directory.GetParent(Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).ToString()).ToString()).ToString() + "\\Views\\Relatorios\\PagtoCartao\\PagamentoCartaoReport.rpt";
             rpt.SetDataSource(lista.ToList());
             rptPagamentoCartao.ReportSource = rpt;
         }

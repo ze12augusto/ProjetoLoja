@@ -27,7 +27,7 @@ namespace ProjetoLojaData.Data
 
         }
 
-        public List<TipoUsuario> todasTipoUsuarios() {
+        public List<TipoUsuario> todosTipoUsuarios() {
             var Lista = from t in db.TipoUsuario
                         select t;
 

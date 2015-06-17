@@ -18,98 +18,92 @@ namespace ProjetoLojaDesktop.Views
 {
     public partial class FormVenda : Form
     {
-        ProjetoLojaEntities db;
+        private ProjetoLojaEntities db;
         private Transacao transacao;
-        private Produto produto;
-        private PessoaData pessoaData;
         private TransacaoData transacaoData;
-        private TransacaoProdutoData transacaoProData;
+        private Produto produto;
         private ProdutoData produtoData;
-        private ProdutoVigenciaData pvpData;
+        private PessoaData pessoaData;
+        private UsuarioData usuarioData;
 
 
         public FormVenda()
         {
             InitializeComponent();
             inicializarData();
-            atualizarTabelaProduto(transacaoProData.todostransacoesProduto());
+            preenchercbxFuncionario();
+            atualizarDgvListaVenda();
         }
 
         public void inicializarData()
         {
             db = new ProjetoLojaEntities();
-            pessoaData = new PessoaData(db);
-            transacaoData = new TransacaoData(db);
             produtoData = new ProdutoData(db);
-            transacaoProData = new TransacaoProdutoData(db);
-            pvpData = new ProdutoVigenciaData(db);
+            pessoaData = new PessoaData(db);
+            usuarioData = new UsuarioData(db);
+            transacao = new Transacao();
+            transacaoData = new TransacaoData(db);
         }
 
-        public void atualizarTabelaProduto(List<TransacaoProduto> transacao)
+        private void preenchercbxFuncionario()
         {
-            var lista = from t in transacao
-                        join tp in transacaoProData.todostransacoesProduto()
-                            on t.idTransacao equals tp.idTransacao
-                        join pd in produtoData.todosProdutos()
-                            on tp.idProduto equals pd.idProduto
-
+            var lista = from u in usuarioData.todasUsuarios()
+                        join p in pessoaData.todasPessoas()
+                            on u.idPessoa equals p.idPessoa
                         select new
                         {
-                            NomeProduto = pd.nome,
-                            Quantidade = tp.qtdProduto,
-                            PrecoUnitario = tp.valorUnitario,
-                            PrecoTotal = tp.qtdProduto * tp.valorUnitario
+                            idPessoa = p.idPessoa,
+                            nome = p.nome
                         };
-     
-            dgvListaProduto.DataSource = transacao;
-        }
 
-        public void obterVenda()
-        {
-            transacao.Pessoa.nome = txtClienteVenda.Text;
-            transacao.idFuncionario = (int)cbxFuncionario.SelectedValue;
-        }
-
-        private void limparFormulario()
-        {
-            txtClienteVenda.Text = "";
-            cbxFuncionario.SelectedValue = -1;
-        }
-
-        public void removerProduto()
-        {
-            if (dgvListaProduto.CurrentRow != null)
-            {
-                TransacaoProduto tp = (TransacaoProduto)dgvListaProduto.CurrentRow.DataBoundItem;
-                transacao.TransacaoProduto.Remove(tp);
-            }
-            atualizarTabelaProduto(transacaoProData.todostransacoesProduto());
-        }
-
-        private string validar()
-        {
-            if (txtClienteVenda.Text == null)
-                return "Selecione um cliente!";
-            if (transacao.TransacaoProduto.ToList().Count == 0)
-                return "Selecione um produto!";
-            if (cbxFuncionario.SelectedIndex == -1)
-                return "Selecione um Funcionario";
-
-            return null;
+            cbxFuncionario.DataSource = lista.ToList();
+            cbxFuncionario.DisplayMember = "nome";
+            cbxFuncionario.ValueMember = "idPessoa";
         }
 
         private void btnAddProduto_Click(object sender, EventArgs e)
         {
-
             FormSelecionarProduto form = new FormSelecionarProduto(TipoTransacaoEnum.SAIDA);
             form.ShowDialog();
             TransacaoProduto transacaoProduto = form.getTransacaoProduto();
-
+            transacao.TransacaoProduto.Add(transacaoProduto);
+            atualizarDgvListaProduto();
         }
 
-        private void btnRemoverProduto_Click(object sender, EventArgs e)
+        public void atualizarDgvListaVenda()
         {
-            removerProduto();
+            dgvListaVenda.DataSource = transacaoData.todasTransacoes();
+        }
+
+        public void atualizarDgvListaProduto()
+        {
+            var lista = from t in transacao.TransacaoProduto
+                        join p in produtoData.todosProdutos()
+                            on t.idProduto equals p.idProduto
+                        select new
+                        {
+                            transacaoP = t,
+                            descricao = p.descricao,
+                            quantidade = t.qtdProduto,
+                            valorUni = t.valorUnitario,
+                            total = t.qtdProduto * t.valorUnitario
+                        };
+
+            dgvListaProduto.DataSource = lista.ToList();
+
+
+
+            txtTotalVenda.Text = getTotalVenda().ToString();
+        }
+
+        public float getTotalVenda()
+        {
+            float total = 0;
+            foreach (TransacaoProduto value in transacao.TransacaoProduto)
+            {
+                total += (float)value.valorUnitario * value.qtdProduto;
+            }
+            return total;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -117,52 +111,110 @@ namespace ProjetoLojaDesktop.Views
             FormSelecionarCliente selecionarCliente = new FormSelecionarCliente();
             selecionarCliente.ShowDialog();
             Pessoa pessoa = selecionarCliente.getPessoaSelecionada();
-            txtClienteVenda.Text = pessoa.nome;
+            if (pessoa != null)
+            {
+                txtClienteVenda.Text = pessoa.nome;
+                transacao.idCliente = pessoa.idPessoa;
+            }
+
         }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
+        public bool validar()
         {
-            string erro = validar();
-
-            if (erro == null)
+            if (transacao.idCliente == 0)
             {
-                obterVenda();
-
-                string erro2 = transacaoData.salvarTransacao(transacao);
-                if (erro2 == null)
-                {
-                    MessageBox.Show("Salvo com sucesso!");
-                    limparFormulario();
-                    atualizarTabelaProduto(transacaoProData.todostransacoesProduto());
-                }
-                else
-                {
-                    MessageBox.Show("Ocorreu um erro: " + erro);
-                }
+                MessageBox.Show("Selecione um cliente.");
+                return false;
             }
+            if (cbxFuncionario.SelectedValue == null)
+            {
+                MessageBox.Show("Selecione um funcionario.");
+                return false;
+            }
+            if (transacao.TransacaoProduto.Count() < 1)
+            {
+                MessageBox.Show("Selecione os produtos.");
+                return false;
+            }
+
+            return true;
         }
 
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
-            string erro = validar();
 
-            if (erro == null)
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            if (validar())
             {
-                obterVenda();
+                transacao.data = DateTime.Now.Date;
+                transacao.idStatus = 1;
+                transacao.idTipoTransacao = 2; //2-Saida
+                transacao.idFuncionario = (Int32)cbxFuncionario.SelectedValue;
 
-                string erro2 = transacaoData.salvarTransacao(transacao);
-                if (erro2 == null)
+                String erro = transacaoData.adicionarTransacao(transacao);
+                if (erro == null)
                 {
-                    MessageBox.Show("Salvo com sucesso!");
-                    //Pagamento
+                    MessageBox.Show("Transação salva.");
+                    atualizarDgvListaVenda();
+                    limpar();
+                    
                 }
                 else
                 {
-                    MessageBox.Show("Ocorreu um erro: " + erro);
+                    MessageBox.Show("Não foi possivel salvar a transação agora");
                 }
+                
             }
+            
         }
 
+        public void limpar()
+        {
+            transacao = new Transacao();
+            atualizarDgvListaProduto();
+            txtClienteVenda.Text = "";
+            txtTotalVenda.Text = "";
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            limpar();
+        }
+
+        private void btnRemoverProduto_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPesquisaVenda_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbxFuncionario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+<<<<<<< HEAD
         private void btnStatusPedido_Click(object sender, EventArgs e)
         {
             new FormStatusPedido().Show();
@@ -172,5 +224,7 @@ namespace ProjetoLojaDesktop.Views
         {
             new FormNotaFiscal().Show();
         }      
+=======
+>>>>>>> master
     }
 }

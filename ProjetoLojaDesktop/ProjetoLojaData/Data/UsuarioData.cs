@@ -26,7 +26,7 @@ namespace ProjetoLojaData.Data
             return Lista.ToList().FirstOrDefault();
 
         }
-
+        
         public Usuario obterUsuarioPorEmail(String email)
         {
             var Lista = from u in db.Usuario
@@ -36,6 +36,7 @@ namespace ProjetoLojaData.Data
             return Lista.ToList().FirstOrDefault();
 
         }
+
 
         public List<Usuario> todasUsuarios() {
             var Lista = from u in db.Usuario
@@ -71,7 +72,8 @@ namespace ProjetoLojaData.Data
                 {
                     db.Pessoa.AddObject(pessoa);
                     db.Usuario.AddObject(pessoa.Usuario);
-                    db.PessoaFisica.AddObject(pessoa.PessoaFisica);
+                    if( pessoa.PessoaFisica != null )
+                        db.PessoaFisica.AddObject(pessoa.PessoaFisica);
                 }
                 else
                 {
@@ -84,10 +86,11 @@ namespace ProjetoLojaData.Data
                         pessoa, System.Data.EntityState.Modified);
 
                     db.ObjectStateManager.ChangeObjectState(
-                        pessoa.PessoaFisica, System.Data.EntityState.Modified);
-
-                    db.ObjectStateManager.ChangeObjectState(
                         pessoa.Usuario, System.Data.EntityState.Modified);
+
+                    if (pessoa.PessoaFisica != null)
+                        db.ObjectStateManager.ChangeObjectState(
+                            pessoa.PessoaFisica, System.Data.EntityState.Modified);
                 }
 
                 db.SaveChanges();
@@ -138,6 +141,16 @@ namespace ProjetoLojaData.Data
             }
 
             return erro;
+        }
+
+        public Usuario obterUsuarioPorlogin(string cpf)
+        {
+            var lista = from u in db.Usuario
+                        join p in db.Pessoa on u.idPessoa equals p.idPessoa
+                        join pf in db.PessoaFisica on p.idPessoa equals pf.idPessoa
+                        where pf.CPF == cpf
+                        select u;
+            return lista.ToList().FirstOrDefault();
         }
     }
 

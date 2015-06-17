@@ -276,6 +276,7 @@
             this.dgvPesquisaCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPesquisaCliente.Size = new System.Drawing.Size(630, 334);
             this.dgvPesquisaCliente.TabIndex = 10;
+            this.dgvPesquisaCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPesquisaCliente_CellContentClick);
             this.dgvPesquisaCliente.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPesquisaCliente_CellDoubleClick);
             // 
             // label7

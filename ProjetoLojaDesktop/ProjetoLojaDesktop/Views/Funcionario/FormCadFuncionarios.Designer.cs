@@ -57,7 +57,6 @@
             this.btnEditarTelefone = new System.Windows.Forms.Button();
             this.btnSalvarTelefone = new System.Windows.Forms.Button();
             this.dgvTelefone = new System.Windows.Forms.DataGridView();
-            this.txtTelefone = new System.Windows.Forms.TextBox();
             this.lblTelefone = new System.Windows.Forms.Label();
             this.cbxTipoTelefone = new System.Windows.Forms.ComboBox();
             this.lblTipoTelefone = new System.Windows.Forms.Label();
@@ -85,6 +84,7 @@
             this.lblBairro = new System.Windows.Forms.Label();
             this.lblReferencia = new System.Windows.Forms.Label();
             this.txtReferencia = new System.Windows.Forms.TextBox();
+            this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.tabFuncionarios.SuspendLayout();
             this.tabCadFuncionarios.SuspendLayout();
             this.grpCadastrar.SuspendLayout();
@@ -329,12 +329,12 @@
             // 
             // grpTelefone
             // 
+            this.grpTelefone.Controls.Add(this.txtTelefone);
             this.grpTelefone.Controls.Add(this.btnNovoTelefone);
             this.grpTelefone.Controls.Add(this.btnExcluirTelefone);
             this.grpTelefone.Controls.Add(this.btnEditarTelefone);
             this.grpTelefone.Controls.Add(this.btnSalvarTelefone);
             this.grpTelefone.Controls.Add(this.dgvTelefone);
-            this.grpTelefone.Controls.Add(this.txtTelefone);
             this.grpTelefone.Controls.Add(this.lblTelefone);
             this.grpTelefone.Controls.Add(this.cbxTipoTelefone);
             this.grpTelefone.Controls.Add(this.lblTipoTelefone);
@@ -395,13 +395,6 @@
             this.dgvTelefone.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTelefone.Size = new System.Drawing.Size(254, 75);
             this.dgvTelefone.TabIndex = 17;
-            // 
-            // txtTelefone
-            // 
-            this.txtTelefone.Location = new System.Drawing.Point(108, 58);
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(121, 20);
-            this.txtTelefone.TabIndex = 7;
             // 
             // lblTelefone
             // 
@@ -664,6 +657,14 @@
             this.txtReferencia.Size = new System.Drawing.Size(309, 20);
             this.txtReferencia.TabIndex = 22;
             // 
+            // txtTelefone
+            // 
+            this.txtTelefone.Location = new System.Drawing.Point(109, 58);
+            this.txtTelefone.Mask = "(00) 0000-0000";
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(120, 20);
+            this.txtTelefone.TabIndex = 24;
+            // 
             // FormCadFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -743,11 +744,11 @@
         private System.Windows.Forms.Button btnEditarTelefone;
         private System.Windows.Forms.Button btnSalvarTelefone;
         private System.Windows.Forms.DataGridView dgvTelefone;
-        private System.Windows.Forms.TextBox txtTelefone;
         private System.Windows.Forms.Label lblTelefone;
         private System.Windows.Forms.ComboBox cbxTipoTelefone;
         private System.Windows.Forms.Label lblTipoTelefone;
         private System.Windows.Forms.Button btnNovoTelefone;
         private System.Windows.Forms.Button btnNovoEndereco;
+        private System.Windows.Forms.MaskedTextBox txtTelefone;
     }
 }

@@ -20,6 +20,7 @@ namespace ProjetoLojaDesktop
         {
             InitializeComponent();
             criarTooltips();
+            new FormLogin().ShowDialog();
         }
 
         public void criarTooltips()

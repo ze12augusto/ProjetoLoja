@@ -9,6 +9,7 @@ using ProjetoLojaData.Data;
 
 namespace ProjetoLojaWeb.Controllers
 {
+    [Authorize]
     public class ProdutoController : Controller
     {
         //

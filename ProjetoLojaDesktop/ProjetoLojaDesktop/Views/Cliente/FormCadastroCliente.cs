@@ -730,6 +730,11 @@ namespace ProjetoLojaDesktop
         private void dgvTelefone_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             atualizarTelefone();
+        }
+
+        private void dgvPesquisaCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }       
     }
 }

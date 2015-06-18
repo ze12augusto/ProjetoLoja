@@ -6,14 +6,43 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<style>
+table {
+    width:100%;
+}
+table, th, td {
+    border: 1px solid #666;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+table tr:nth-child(even) {
+    background-color: #eee;
+}
+table tr:nth-child(odd) {
+   background-color:#fff;
+}
+table th	{
+    background-color: #999;
+    color: white;
+}
+.btnDetalhes{
+    width:100%;
+    float:left;
+    text-align:center;
+    padding; 5px;
+}
+</style>
 <h2>
     Ordens de Serviço</h2>
     @if (Model.Count() > 0)
     {
-<table>
+<table style="width:100%">
     <tr>
         <th>
-            Número OS
+            OS
         </th>
         <th>
             Data de Entrada
@@ -66,19 +95,57 @@
                     Detalhes</h4>
             </div>
             <div class="modal-body">
-                <p>
-                    id: <span id="id"></span>
-                    <br />
-                    dataEntrada: <span id="dataEntrada"></span>
-                    <br />
-                    dataPrevistaEntrega: <span id="dataPrevistaEntrega"></span>
-                    <br />
-                    dataEntrega: <span id="dataEntrega"></span>
-                    <br />
-                    descricao: <span id="descricao"></span>
-                    <br />
-                    valor: <span id="valor"></span>
-                </p>
+                 <table id="detalheTb" style="width:100%">
+                    <tr>
+                        <td style="width:100px">
+                            OS
+                        </td>
+                        <td>
+                            <span id="id"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Data Entrada
+                        </td>
+                        <td>
+                            <span id="dataEntrada"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Data Prevista
+                        </td>
+                        <td>
+                            <span id="dataPrevistaEntrega"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Data Entrega
+                        </td>
+                        <td>
+                            <span id="dataEntrega"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Descrição
+                        </td>
+                        <td>
+                            <span id="descricao"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Valor
+                        </td>
+                        <td>
+                            <span id="valor"></span>
+                        </td>
+                    </tr>
+                 </table>
+    
             </div>
         </div>
     </div>

@@ -11,8 +11,15 @@ namespace ProjetoLojaWeb.Controllers
     [Authorize]
     public class OrdemServicoController : Controller
     {
-        private OrdemDeServicoData osData = new OrdemDeServicoData();
+        private OrdemDeServicoData osData;
         private UsuarioData usuarioData;
+
+        public OrdemServicoController()
+        {
+            ProjetoLojaEntities db = new ProjetoLojaEntities();
+            usuarioData = new UsuarioData(db);
+            osData = new OrdemDeServicoData();
+        }
 
         public ActionResult Index()
         {

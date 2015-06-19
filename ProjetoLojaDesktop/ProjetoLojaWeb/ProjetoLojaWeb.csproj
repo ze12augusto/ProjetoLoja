@@ -249,6 +249,103 @@
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Style\css\bootstrap-responsive.css" />
+    <Content Include="Style\css\bootstrap.css" />
+    <Content Include="Style\css\color-schemes\core.css" />
+    <Content Include="Style\css\color-schemes\custom.css" />
+    <Content Include="Style\css\color-schemes\produtos.css" />
+    <Content Include="Style\css\color-schemes\turquoise.css" />
+    <Content Include="Style\css\flexslider.css" />
+    <Content Include="Style\css\fonts\font-awesome.css" />
+    <Content Include="Style\css\fonts\fontawesome-webfont.svg" />
+    <Content Include="Style\img\adverts\advert-1.jpg" />
+    <Content Include="Style\img\adverts\advert-2.jpg" />
+    <Content Include="Style\img\cart.png" />
+    <Content Include="Style\img\free-shipping.png" />
+    <Content Include="Style\img\glyphicons-halflings-white.png" />
+    <Content Include="Style\img\glyphicons-halflings.png" />
+    <Content Include="Style\img\larr.png" />
+    <Content Include="Style\img\layout_set_logo.png" />
+    <Content Include="Style\img\loader.gif" />
+    <Content Include="Style\img\low-price.png" />
+    <Content Include="Style\img\preloader.gif" />
+    <Content Include="Style\img\rarr.png" />
+    <Content Include="Style\img\resources\1.jpg" />
+    <Content Include="Style\img\resources\2.jpg" />
+    <Content Include="Style\img\resources\3.jpg" />
+    <Content Include="Style\img\slides\1.jpg" />
+    <Content Include="Style\img\slides\2.jpg" />
+    <Content Include="Style\img\slides\3.jpg" />
+    <Content Include="Style\img\social.png" />
+    <Content Include="Style\img\stripe.png" />
+    <Content Include="Style\img\thumbnails\116175953_1GG.jpg" />
+    <Content Include="Style\img\thumbnails\116175953_3GG.jpg" />
+    <Content Include="Style\img\thumbnails\avatar.png" />
+    <Content Include="Style\img\thumbnails\db_file_img_107_60x60.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_10_640xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_122_640xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_123_640xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_132_60x60.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_137_60x60.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_137_640xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_138_640xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_151_640xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_152_640xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_155_640xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_159_640xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_175_160xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_17_60xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_227_160xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_228_160xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_228_480xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_229_160xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_230_60xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_261_160xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_265_160xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_269_160xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_272_640xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_273_640xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_274_640xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_32_160xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_32_640xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_33_640xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_34_160xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_34_640xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_35_640xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_39_640xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_42_60x60.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_42_640xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_43_640xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_44_160xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_44_640xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_45_640xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_48_160xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_48_60x60.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_48_640xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_49_640xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_57_160xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_87_640xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_88_640xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_92_640xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_93_640xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_97_640xauto.jpg" />
+    <Content Include="Style\img\thumbnails\db_file_img_98_640xauto.jpg" />
+    <Content Include="Style\img\thumbnails\zm-m215w-front-large.jpg" />
+    <Content Include="Style\img\triangle.png" />
+    <Content Include="Style\img\ui-slider-handle.png" />
+    <Content Include="Style\img\world-shipping.png" />
+    <Content Include="Style\js\bootstrap.js" />
+    <Content Include="Style\js\imagesloaded.js" />
+    <Content Include="Style\js\jquery-ui-1.10.2.custom.js" />
+    <Content Include="Style\js\jquery.cookie.js" />
+    <Content Include="Style\js\jquery.easing-1.3.min.js" />
+    <Content Include="Style\js\jquery.elevatezoom.js" />
+    <Content Include="Style\js\jquery.flexslider.js" />
+    <Content Include="Style\js\jquery.gmap3.js" />
+    <Content Include="Style\js\jquery.isotope.min.js" />
+    <Content Include="Style\js\jquery.sharrre-1.3.4.js" />
+    <Content Include="Style\js\jquery.tweet.js" />
+    <Content Include="Style\js\la_boutique.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -295,12 +392,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Produto\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Produto\Details.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\OrdemServico\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -314,6 +405,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Usuario\TrocarSenha.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Style\css\fonts\fontawesome-webfont.woff" />
+    <None Include="Style\css\fonts\fontawesome-webfont_2d2816fe.eot" />
+    <None Include="Style\css\fonts\fontawesome-webfont_51500cb8.eot" />
+    <None Include="Style\css\fonts\fontawesome-webfont_51500cb8.ttf" />
+    <None Include="Style\css\fonts\fontawesome-webfont_51500cb8.woff" />
+    <Content Include="Views\Shared\Produtos.cshtml" />
+    <Content Include="Views\Produto\Index.cshtml" />
+    <Content Include="Views\Produto\Details.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

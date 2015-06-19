@@ -99,21 +99,5 @@ namespace ProjetoLojaData.Data
                         select "../../Assets/Img/" + i.caminho + ".png";
             return lista.ToList();
         }
-
-        //public List<ImagemProduto> ListaArquivos(int idProduto)
-        //{
-        //    List<ImagemProduto> lstArquivos = new List<ImagemProduto>();
-        //    DirectoryInfo dirInfo = new DirectoryInfo("C:/Users/Walterlmm/Desktop/Web0206/ProjetoLoja/ProjetoLojaDesktop/ProjetoLojaDesktop/Assets/Img");
-
-            
-        //    foreach (var item in dirInfo.GetFiles())
-        //    {
-        //       var lista = from i in db.ImagemProduto
-        //                where i.idProduto == idProduto
-        //                   select "../../Assets/Img/" + i.caminho + ".png";
-        //    }
-        //    return lstArquivos;
-        //}
-
     }
 }

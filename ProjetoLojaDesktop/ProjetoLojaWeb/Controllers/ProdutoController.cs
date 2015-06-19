@@ -17,9 +17,10 @@ namespace ProjetoLojaWeb.Controllers
         private ProdutoData produtoModel = new ProdutoData();
         private ImagemProdutoData ipModel = new ImagemProdutoData();
 
-        public ActionResult Index()
+        public ActionResult Index(int id)
         {
             return View(produtoModel.todosProdutos());
+            ViewBag.PrimeiraImagem = ipModel.obterCaminhosImagem(id).FirstOrDefault();
         }
 
         public ActionResult Details(int id)
@@ -33,8 +34,9 @@ namespace ProjetoLojaWeb.Controllers
             {
                 p = produtoModel.obterProduto(id);
             }
-            
+           
             ViewBag.Imagem = ipModel.obterCaminhosImagem(id);
+            ViewBag.PrimeiraImagem = ipModel.obterCaminhosImagem(id).FirstOrDefault();
             return View(p);
         }
 

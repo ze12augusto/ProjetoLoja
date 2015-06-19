@@ -557,25 +557,27 @@ namespace ProjetoLojaDesktop.Forms
             }
             return true;
         }
-
+        //novoexcluir
         private void btnEditarVigencia_Click(object sender, EventArgs e)
         {
-            resetarCamposVigencia();
             vigencia = getVigenciaSelecionada();
             if (vigencia != null)
             {
-                mtxtPreco.Enabled = true;
-                dtpDataInicio.Enabled = true;
-                mtxtPreco.Text = vigencia.preco.ToString();
-                dtpDataInicio.Value = vigencia.dataVigenciaInicio;
+                    string erro = produtoData.excluirProdutoVigencia(getVigenciaSelecionada());
+                    if (erro == null)
+                    {
+                        MessageBox.Show("Vigência excluída com sucesso!");
+                    }
+                    else
+                    {
+                          MessageBox.Show("Erro ao excluir a vigência.");
+                    }
             }
             else
             {
                 MessageBox.Show("Nenhuma vigência selecionada!");
             }
-
         }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             resetarCampos();

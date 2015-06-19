@@ -638,7 +638,7 @@
             this.btnEditarVigencia.Name = "btnEditarVigencia";
             this.btnEditarVigencia.Size = new System.Drawing.Size(93, 31);
             this.btnEditarVigencia.TabIndex = 2;
-            this.btnEditarVigencia.Text = "Editar";
+            this.btnEditarVigencia.Text = "Excluir";
             this.btnEditarVigencia.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditarVigencia.UseVisualStyleBackColor = true;
             this.btnEditarVigencia.Click += new System.EventHandler(this.btnEditarVigencia_Click);

@@ -206,5 +206,14 @@ namespace ProjetoLojaData.Data
                         select p;
             return lista.ToList();
         }
+
+        public List<Pessoa> todasPessoasJuridicas()
+        {
+            var lista = from p in db.Pessoa
+                        where p.idTipoPessoa == 2
+                        select p;
+
+            return lista.ToList();
+        }
     }
 }

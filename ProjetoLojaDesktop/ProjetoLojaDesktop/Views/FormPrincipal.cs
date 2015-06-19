@@ -143,5 +143,10 @@ namespace ProjetoLojaDesktop
         {
             new FormPagamentoCartao().Show();
         }
+
+        private void entradasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormEntradas().Show();
+        }
     }
 }

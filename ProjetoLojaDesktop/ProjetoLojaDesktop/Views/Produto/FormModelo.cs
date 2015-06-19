@@ -26,6 +26,8 @@ namespace ProjetoLojaDesktop.Forms
             marcaData = new MarcaData();
             limparFormulario();
             atualizarTabela(modeloData.todasModelos());
+
+            cbxMarcas.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         public void limparFormulario()
@@ -142,6 +144,11 @@ namespace ProjetoLojaDesktop.Forms
                 return;
             }
             atribuirModelo((Modelo)dgvModelos.CurrentRow.Cells[0].Value);
+        }
+
+        private void cbxMarcas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
        

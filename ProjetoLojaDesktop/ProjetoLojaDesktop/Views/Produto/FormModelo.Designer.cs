@@ -147,6 +147,7 @@
             this.cbxMarcas.Name = "cbxMarcas";
             this.cbxMarcas.Size = new System.Drawing.Size(230, 21);
             this.cbxMarcas.TabIndex = 19;
+            this.cbxMarcas.SelectedIndexChanged += new System.EventHandler(this.cbxMarcas_SelectedIndexChanged);
             // 
             // btnLimpar
             // 

@@ -223,6 +223,7 @@
             this.txtClienteVenda.Name = "txtClienteVenda";
             this.txtClienteVenda.Size = new System.Drawing.Size(242, 20);
             this.txtClienteVenda.TabIndex = 2;
+            this.txtClienteVenda.TextChanged += new System.EventHandler(this.txtClienteVenda_TextChanged);
             // 
             // lblFuncionario
             // 

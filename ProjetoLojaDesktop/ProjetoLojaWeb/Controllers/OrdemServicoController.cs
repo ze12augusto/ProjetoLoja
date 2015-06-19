@@ -8,7 +8,7 @@ using ProjetoLojaData.Entity;
 
 namespace ProjetoLojaWeb.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class OrdemServicoController : Controller
     {
         private OrdemDeServicoData osData;
@@ -23,12 +23,13 @@ namespace ProjetoLojaWeb.Controllers
             osData = new OrdemDeServicoData();
             transacaoData = new TransacaoData(db);
             produtoData = new ProdutoData();
+
         }
 
         public ActionResult Index()
         {
             Usuario u = usuarioData.obterUsuarioPorEmail(User.Identity.Name);
-            int id = u.idPessoa;
+            int id = 3;//u.idPessoa;
             var lista = osData.listarOrdensDeServicoPorUsuarioLogado(id);
             return View(lista);
         }

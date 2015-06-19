@@ -93,23 +93,22 @@ namespace ProjetoLojaDesktop.Forms
         {
             if (txtNome.Text == "" || txtNome.Text == null)
             {
-                MessageBox.Show("Nome Invalido!");
+                MessageBox.Show("Nome Inválido!");
                 return false;
             }
             if (txtDescricao.Text == "" || txtDescricao.Text == null)
             {
-                MessageBox.Show("Descricao Invalido!");
+                MessageBox.Show("Descrição Inválida!");
+                return false;
+            }
+            if (txtQtdM.Text == "" || txtQtdM.Text == null)
+            {
+                MessageBox.Show("Quantidade Mínima Invalida!");
                 return false;
             }
             if (txtQtdA.Text == "" || txtQtdA.Text == null)
             {
                 MessageBox.Show("Quantidade Atual Invalida!");
-                return false;
-
-            }
-            if (txtQtdM.Text == "" || txtQtdM.Text == null)
-            {
-                MessageBox.Show("Quantidade Minima Invalida!");
                 return false;
             }
             return true;
@@ -178,7 +177,7 @@ namespace ProjetoLojaDesktop.Forms
         }
         private void btnEditarProduto_Click(object sender, EventArgs e)
         {
-            tabProdutos.SelectedIndex = 2;
+            tabProdutos.SelectedIndex = 1;
             ((Control)this.tabProduto).Enabled = true;
             ((Control)this.tabDetalhesProduto).Enabled = true;
             resetarCamposImagem();
@@ -206,7 +205,7 @@ namespace ProjetoLojaDesktop.Forms
 
             if (erro == null)
             {
-                MessageBox.Show("Produto excluido com sucesso!");
+                MessageBox.Show("Produto excluído com sucesso!");
             }
             else
             {
@@ -250,7 +249,7 @@ namespace ProjetoLojaDesktop.Forms
             }
             if (txtDescricaoCaracteristicaProduto.Text == "" || txtDescricaoCaracteristicaProduto.Text == null)
             {
-                MessageBox.Show("Descricao Invalida!");
+                MessageBox.Show("Descrição Inválida!");
                 return false;
             }
             return true;
@@ -264,7 +263,7 @@ namespace ProjetoLojaDesktop.Forms
         }
         private void obterCaracteristicaProd()
         {
-            caracteristicaProduto.idProduto = Convert.ToInt32(IdProduto.Text);
+            caracteristicaProduto.idProduto = idProduto;
             caracteristicaProduto.titulo = txtTitulo.Text;
             caracteristicaProduto.descricao = txtDescricaoCaracteristicaProduto.Text;
         }
@@ -338,13 +337,14 @@ namespace ProjetoLojaDesktop.Forms
 
             if (erro == null)
             {
-                MessageBox.Show("Caracteristica excluida com sucesso!");
+                MessageBox.Show("Característica excluída com sucesso!");
             }
             else
             {
-                MessageBox.Show("Erro ao excluir caracteristica.");
+                MessageBox.Show("Erro ao excluir característica.");
             }
             atualizarTabelaCaracteristicas();
+            resetarCamposCaracteristicas();
         }
 
         private void btnExcluirImagem_Click(object sender, EventArgs e)
@@ -353,7 +353,7 @@ namespace ProjetoLojaDesktop.Forms
 
             if (erro == null)
             {
-                MessageBox.Show("Imagem excluida com sucesso!");
+                MessageBox.Show("Imagem excluída com sucesso!");
             }
             else
             {
@@ -446,29 +446,34 @@ namespace ProjetoLojaDesktop.Forms
             dlgAbrir.ShowDialog();
             string nomeArquivo = dlgAbrir.FileName;
             picImagem.ImageLocation = nomeArquivo;
-            picImagem.SizeMode = PictureBoxSizeMode.StretchImage;
-            string diretorio = Directory.GetCurrentDirectory();
-            int posicao = diretorio.IndexOf("\\ProjetoLojaDesktop\\bin\\Debug");
-            diretorio = diretorio.Substring(0, posicao);
-            diretorio = diretorio + "\\ProjetoLojaWeb\\Assets\\Img";
-            string nomeImagem = geraNomeImagem();
-            MessageBox.Show("Nome da Imagem no Diretorio: " + nomeImagem);
-            nameImg.Text = nomeImagem;
-            picImagem.Image.Save(diretorio + "\\" + nomeImagem + ".png", ImageFormat.Png);
-
-            obterImagemProduto();
-            salvarCaminhoImagem();
+            if (nomeArquivo.Equals(""))
+            {
+                MessageBox.Show("Nenhuma imagem selecionada");
+            }
+            else
+            {
+                picImagem.SizeMode = PictureBoxSizeMode.StretchImage;
+                string diretorio = Directory.GetCurrentDirectory();
+                int posicao = diretorio.IndexOf("\\ProjetoLojaDesktop\\bin\\Debug");
+                diretorio = diretorio.Substring(0, posicao);
+                diretorio = diretorio + "\\ProjetoLojaWeb\\Assets\\Img";
+                string nomeImagem = geraNomeImagem();
+                MessageBox.Show("Nome da Imagem no Diretorio: " + nomeImagem);
+                nameImg.Text = nomeImagem;
+                picImagem.Image.Save(diretorio + "\\" + nomeImagem + ".png", ImageFormat.Png);
+                obterImagemProduto();
+                salvarCaminhoImagem();
+            }
         }
         private void dgvImagem_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             imagemProduto = getImagemSelecionada();
 
             string diretorio = Directory.GetCurrentDirectory();
-            int posicao = diretorio.IndexOf("\\bin\\Debug");
+            int posicao = diretorio.IndexOf("\\ProjetoLojaDesktop\\bin\\Debug");
             diretorio = diretorio.Substring(0, posicao);
-            diretorio = diretorio + "\\Assets\\Img";
+            diretorio = diretorio + "\\ProjetoLojaWeb\\Assets\\Img";
             diretorio = diretorio + "\\" + imagemProduto.caminho + ".png";
-
             nameImg.Text = diretorio;
             picImagem.ImageLocation = nameImg.Text;
             picImagem.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -569,6 +574,29 @@ namespace ProjetoLojaDesktop.Forms
                 MessageBox.Show("Nenhuma vigência selecionada!");
             }
 
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            resetarCampos();
+            resetarCamposCaracteristicas();
+            resetarCamposImagem();
+        }
+
+        private void txtQtdM_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtQtdA_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
         }
 
 

@@ -65,19 +65,24 @@ namespace ProjetoLojaDesktop.Views
 
         private void btnSelecionarProduto_Click(object sender, EventArgs e)
         {
-            if (produtoSelecionado == null)
+            if (produtoSelecionado != null)
+            {
+                transacaoProduto.idProduto = produtoSelecionado.idProduto;
+                transacaoProduto.qtdProduto = Int32.Parse(txtQuantidade.Text);
+                if (tipoTransacao == TipoTransacaoEnum.SAIDA)
+                    transacaoProduto.valorUnitario = (decimal)valorAtualProduto;
+                else
+                    transacaoProduto.valorUnitario = decimal.Parse(txtGenerico.Text);
+
+                Dispose();
+
+            }
+            else
             {
                 MessageBox.Show("Você precisa selecionar um produto antes.");
             }
 
-            transacaoProduto.idProduto = produtoSelecionado.idProduto;
-            transacaoProduto.qtdProduto = Int32.Parse(txtQuantidade.Text);
-            if (tipoTransacao == TipoTransacaoEnum.SAIDA)
-                transacaoProduto.valorUnitario = (decimal)valorAtualProduto;
-            else
-                transacaoProduto.valorUnitario = decimal.Parse(txtGenerico.Text);
-
-            Dispose();
+            
         }
 
         private void atualizarTabela()

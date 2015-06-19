@@ -19,10 +19,10 @@ namespace ProjetoLojaDesktop.Views
         private ProjetoLojaEntities db;
         private Transacao transacao;
         private TransacaoData transacaoData;
-        private Produto produto;
         private ProdutoData produtoData;
         private PessoaData pessoaData;
         private UsuarioData usuarioData;
+        private StatusTransacaoData statusData;
 
 
         public FormVenda()
@@ -31,6 +31,8 @@ namespace ProjetoLojaDesktop.Views
             inicializarData();
             preenchercbxFuncionario();
             atualizarDgvListaVenda();
+            limpar();
+            
         }
 
         public void inicializarData()
@@ -41,6 +43,7 @@ namespace ProjetoLojaDesktop.Views
             usuarioData = new UsuarioData(db);
             transacao = new Transacao();
             transacaoData = new TransacaoData(db);
+            statusData = new StatusTransacaoData();
         }
 
         private void preenchercbxFuncionario()
@@ -70,7 +73,26 @@ namespace ProjetoLojaDesktop.Views
 
         public void atualizarDgvListaVenda()
         {
-            dgvListaVenda.DataSource = transacaoData.todasTransacoes();
+            var lista = from t in transacaoData.todasTransacoes()
+                        join p in pessoaData.todasPessoas()
+                            on t.idFuncionario equals p.idPessoa
+                        join c in pessoaData.todasPessoas()
+                            on t.idCliente equals c.idPessoa
+                        join st in statusData.todosStatusTransacao()
+                            on t.idStatus equals st.idStatus
+                        select new
+                        {
+                            transacao = t,
+                            id = t.idTransacao,
+                            data = t.data,
+                            funcionario = p.nome,
+                            cliente = c.nome,
+                            status = st.descricao,
+
+                        };
+
+            dgvListaVenda.DataSource = lista.ToList();
+            dgvListaVenda.Columns[0].Visible = false;
         }
 
         public void atualizarDgvListaProduto()
@@ -80,7 +102,7 @@ namespace ProjetoLojaDesktop.Views
                             on t.idProduto equals p.idProduto
                         select new
                         {
-                            transacaoP = t,
+                            transacaoProduto = t,
                             descricao = p.descricao,
                             quantidade = t.qtdProduto,
                             valorUni = t.valorUnitario,
@@ -88,7 +110,7 @@ namespace ProjetoLojaDesktop.Views
                         };
 
             dgvListaProduto.DataSource = lista.ToList();
-
+            dgvListaProduto.Columns[0].Visible = false;
 
 
             txtTotalVenda.Text = getTotalVenda().ToString();
@@ -152,18 +174,38 @@ namespace ProjetoLojaDesktop.Views
                 transacao.idTipoTransacao = 2; //2-Saida
                 transacao.idFuncionario = (Int32)cbxFuncionario.SelectedValue;
 
-                String erro = transacaoData.adicionarTransacao(transacao);
-                if (erro == null)
+                if (transacao.idTransacao == 0)
                 {
-                    MessageBox.Show("Transação salva.");
-                    atualizarDgvListaVenda();
-                    limpar();
+                    String erro = transacaoData.adicionarTransacao(transacao);
+                    if (erro == null)
+                    {
+                        MessageBox.Show("Venda salva.");
+                        atualizarDgvListaVenda();
+                        limpar();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Não foi possivel salvar a venda agora");
+                    }
+                }
+                else {
+
+                    String erro = transacaoData.editarTransacao(transacao);
+                    if (erro == null)
+                    {
+                        MessageBox.Show("Venda atualizada.");
+                        atualizarDgvListaVenda();
+                        limpar();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Não foi possivel atualizar a venda agora");
+                    }
                     
                 }
-                else
-                {
-                    MessageBox.Show("Não foi possivel salvar a transação agora");
-                }
+                
                 
             }
             
@@ -175,6 +217,8 @@ namespace ProjetoLojaDesktop.Views
             atualizarDgvListaProduto();
             txtClienteVenda.Text = "";
             txtTotalVenda.Text = "";
+            tabCadastrar.SelectedIndex = 0;
+            tabCadastrarVenda.Enabled = false;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -184,22 +228,72 @@ namespace ProjetoLojaDesktop.Views
 
         private void btnRemoverProduto_Click(object sender, EventArgs e)
         {
-            
+            DataGridViewRow p = dgvListaProduto.CurrentRow;
+            if (p == null)
+            {
+                MessageBox.Show("Selecione um produto para excluir!");
+                return;
+            }
+            else
+            {
+                Object produto = p.DataBoundItem;
+                TransacaoProduto transacaoP = (TransacaoProduto)produto.GetType().GetProperty("transacaoProduto").GetValue(produto, null);
+                transacao.TransacaoProduto.Remove(transacaoP);
+                atualizarDgvListaProduto();
+            }
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
-
+            tabCadastrar.SelectedIndex = 1;
+            tabCadastrarVenda.Enabled = true;
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-
+            DataGridViewRow p = dgvListaVenda.CurrentRow;
+            if (p == null)
+            {
+                MessageBox.Show("Selecione uma venda para excluir!");
+                return;
+            }
+            else
+            {
+                Object t = p.DataBoundItem;
+                transacao = (Transacao)t.GetType().GetProperty("transacao").GetValue(t, null);
+                atualizarDgvListaProduto();
+                tabCadastrar.SelectedIndex = 1;
+                tabCadastrarVenda.Enabled = true;
+                Pessoa pess = pessoaData.obterPessoa(transacao.idCliente);
+                txtClienteVenda.Text = pess.nome;
+                transacao.idCliente = pess.idPessoa;
+            }
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
+            DataGridViewRow p = dgvListaVenda.CurrentRow;
+            if (p == null)
+            {
+                MessageBox.Show("Selecione uma venda para excluir!");
+                return;
+            }
+            if (MessageBox.Show("Tem certeza que deseja excluir?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Object t = p.DataBoundItem;
+                transacao = (Transacao)t.GetType().GetProperty("transacao").GetValue(t, null);
 
+                string erro = transacaoData.excluirTransacao(transacao);
+                if (erro == null)
+                {
+                    MessageBox.Show("Excluído com sucesso!");
+                }
+                else
+                {
+                    MessageBox.Show("Ocorreu um erro: " + erro);
+                }
+                atualizarDgvListaVenda();
+            }
         }
 
         private void txtPesquisaVenda_TextChanged(object sender, EventArgs e)

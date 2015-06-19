@@ -28,14 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabCadastrar = new System.Windows.Forms.TabControl();
             this.tabListaVenda = new System.Windows.Forms.TabPage();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.dgvListaVenda = new System.Windows.Forms.DataGridView();
-            this.txtPesquisaVenda = new System.Windows.Forms.TextBox();
-            this.lblPesquisaVenda = new System.Windows.Forms.Label();
             this.tabCadastrarVenda = new System.Windows.Forms.TabPage();
             this.txtTotalVenda = new System.Windows.Forms.TextBox();
             this.lblTotalVenda = new System.Windows.Forms.Label();
@@ -50,22 +48,22 @@
             this.btnRemoverProduto = new System.Windows.Forms.Button();
             this.btnAddProduto = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.tabControl1.SuspendLayout();
+            this.tabCadastrar.SuspendLayout();
             this.tabListaVenda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaVenda)).BeginInit();
             this.tabCadastrarVenda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaProduto)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tabCadastrar
             // 
-            this.tabControl1.Controls.Add(this.tabListaVenda);
-            this.tabControl1.Controls.Add(this.tabCadastrarVenda);
-            this.tabControl1.Location = new System.Drawing.Point(10, 12);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(467, 356);
-            this.tabControl1.TabIndex = 2;
+            this.tabCadastrar.Controls.Add(this.tabListaVenda);
+            this.tabCadastrar.Controls.Add(this.tabCadastrarVenda);
+            this.tabCadastrar.Location = new System.Drawing.Point(10, 12);
+            this.tabCadastrar.Name = "tabCadastrar";
+            this.tabCadastrar.SelectedIndex = 0;
+            this.tabCadastrar.Size = new System.Drawing.Size(467, 356);
+            this.tabCadastrar.TabIndex = 2;
             // 
             // tabListaVenda
             // 
@@ -73,8 +71,6 @@
             this.tabListaVenda.Controls.Add(this.btnEditar);
             this.tabListaVenda.Controls.Add(this.btnExcluir);
             this.tabListaVenda.Controls.Add(this.dgvListaVenda);
-            this.tabListaVenda.Controls.Add(this.txtPesquisaVenda);
-            this.tabListaVenda.Controls.Add(this.lblPesquisaVenda);
             this.tabListaVenda.Location = new System.Drawing.Point(4, 22);
             this.tabListaVenda.Name = "tabListaVenda";
             this.tabListaVenda.Padding = new System.Windows.Forms.Padding(3);
@@ -122,28 +118,11 @@
             // dgvListaVenda
             // 
             this.dgvListaVenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListaVenda.Location = new System.Drawing.Point(34, 61);
+            this.dgvListaVenda.Location = new System.Drawing.Point(34, 29);
             this.dgvListaVenda.Name = "dgvListaVenda";
-            this.dgvListaVenda.Size = new System.Drawing.Size(371, 229);
+            this.dgvListaVenda.Size = new System.Drawing.Size(371, 261);
             this.dgvListaVenda.TabIndex = 2;
             this.dgvListaVenda.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaVenda_CellContentClick);
-            // 
-            // txtPesquisaVenda
-            // 
-            this.txtPesquisaVenda.Location = new System.Drawing.Point(93, 23);
-            this.txtPesquisaVenda.Name = "txtPesquisaVenda";
-            this.txtPesquisaVenda.Size = new System.Drawing.Size(312, 20);
-            this.txtPesquisaVenda.TabIndex = 1;
-            this.txtPesquisaVenda.TextChanged += new System.EventHandler(this.txtPesquisaVenda_TextChanged);
-            // 
-            // lblPesquisaVenda
-            // 
-            this.lblPesquisaVenda.AutoSize = true;
-            this.lblPesquisaVenda.Location = new System.Drawing.Point(31, 23);
-            this.lblPesquisaVenda.Name = "lblPesquisaVenda";
-            this.lblPesquisaVenda.Size = new System.Drawing.Size(56, 13);
-            this.lblPesquisaVenda.TabIndex = 0;
-            this.lblPesquisaVenda.Text = "Pesquisa: ";
             // 
             // tabCadastrarVenda
             // 
@@ -242,7 +221,6 @@
             // 
             this.txtClienteVenda.Location = new System.Drawing.Point(103, 18);
             this.txtClienteVenda.Name = "txtClienteVenda";
-            this.txtClienteVenda.ReadOnly = true;
             this.txtClienteVenda.Size = new System.Drawing.Size(242, 20);
             this.txtClienteVenda.TabIndex = 2;
             // 
@@ -297,12 +275,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(483, 374);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabCadastrar);
             this.Name = "FormVenda";
             this.Text = "Vendas";
-            this.tabControl1.ResumeLayout(false);
+            this.tabCadastrar.ResumeLayout(false);
             this.tabListaVenda.ResumeLayout(false);
-            this.tabListaVenda.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaVenda)).EndInit();
             this.tabCadastrarVenda.ResumeLayout(false);
             this.tabCadastrarVenda.PerformLayout();
@@ -313,14 +290,12 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabCadastrar;
         private System.Windows.Forms.TabPage tabListaVenda;
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.DataGridView dgvListaVenda;
-        private System.Windows.Forms.TextBox txtPesquisaVenda;
-        private System.Windows.Forms.Label lblPesquisaVenda;
         private System.Windows.Forms.TabPage tabCadastrarVenda;
         private System.Windows.Forms.TextBox txtTotalVenda;
         private System.Windows.Forms.Label lblTotalVenda;

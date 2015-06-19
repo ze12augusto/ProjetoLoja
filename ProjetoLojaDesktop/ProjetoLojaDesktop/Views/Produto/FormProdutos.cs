@@ -563,7 +563,7 @@ namespace ProjetoLojaDesktop.Forms
             vigencia = getVigenciaSelecionada();
             if (vigencia != null)
             {
-                    string erro = produtoData.excluirProdutoVigencia(getVigenciaSelecionada());
+                    string erro = vigenciaData.excluirProdutoVigencia(getVigenciaSelecionada());
                     if (erro == null)
                     {
                         MessageBox.Show("Vigência excluída com sucesso!");

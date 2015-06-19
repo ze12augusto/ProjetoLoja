@@ -55,20 +55,32 @@ li {
                     <li class="standard" data-price="58">
                             <a href="/Produto/Details/@item.idProduto" title="@item.nome">
                                 <div class="image">  
-                                    @*@if (@ViewBag.PrimeiraImagem != null)
-                                     {*@
-                                   @*<img src="@ViewBag.PrimeiraImagem"/> *@
-                                   @*}*@
-                                  @* else
-                                   { *@
+                                    @if (@ViewBag.ListaDeCaminhos != null)
+                                     {
+                                         foreach (var imagem in @ViewBag.ListaDeCaminhos) {
+                                             if( @imagem.id == @item.idProduto ){
+                                                <img src="@imagem.imagem"/>
+                                                break;
+                                             }
+                                        }
+                                     }
+                                    else
+                                    { 
                                        <img class="primary" src="Style/img/thumbnails/116175953_1GG.jpg"  />
                                        <img class="secondary" src="Style/img/thumbnails/116175953_3GG.jpg" /> 
-                                   @*} *@                                                                                                                                 
+                                    }                                                                                                                                  
                                 </div>
                                 <div class="title">
-                                    <div class="prices">                            
-                                      <span class="price">R$ Não informado.</span>
-                                      @*<span class="price">R$ @item</span>*@
+                                    <div class="prices">
+                                      @foreach (var produtoVigenciaPreco in @ViewBag.ProdutoVigenciaPreco)
+                                      {
+
+                                          if (@produtoVigenciaPreco.idProduto == @item.idProduto)
+                                          {                            
+                                            <span class="price">R$@produtoVigenciaPreco.preco</span>
+                                              break;
+                                          }
+                                      }
                                     </div>
                                     <h3>@item.nome</h3>
                                 </div>

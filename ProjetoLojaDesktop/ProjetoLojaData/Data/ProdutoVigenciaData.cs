@@ -46,6 +46,12 @@ namespace ProjetoLojaData.Data
             return lista.ToList().FirstOrDefault();
         }
 
+        public ProdutoVigenciaPreco obterProdutoVigenciaPorIdProduto(int id)
+        {
+            var lista = from c in produtoVigencias where c.idProduto == id select c;
+            return lista.ToList().FirstOrDefault();
+        }
+
         public string adicionarProdutoVigencia(ProdutoVigenciaPreco produtoVigencia)
         {
             string erro = null;

@@ -2,60 +2,98 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/Produtos.cshtml";
 }
 
-<h2>Produtos</h2>
-
-
-
-<table>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.idMarcaProduto)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.nome)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.descricao)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.qtdMinima)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.qtdAtual)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.idModelo)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.idMarcaProduto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.descricao)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.qtdMinima)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.qtdAtual)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.idModelo)
-        </td>
-        <td>           
-            @Html.ActionLink("Detalhar", "Details", new { id=item.idProduto })           
-        </td>
-    </tr>
+<style>
+li {
+  line-height: 20px;
+  list-style: none;
 }
+.product-list a .image img {
+  display: block;
+  width: 100%;
+  margin-left: 20px;
+}
+.image img {
+  width: auto\9;
+  height: auto;
+  max-width: 80%!important;
+  vertical-align: middle;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+</style>
 
-</table>
+<section class="main">
+                <section class="category">
+                    <div class="container">
+                        <div class="row">
+                            <div class="span3">
+                               @* <aside class="sidebar">
+                                    <div class="children">
+                                        <div class="box border-top">
+                                            <div class="hgroup title">
+                                                <h3>
+                                                    <a href="category.html" title="Womens">Marca</a>
+                                                </h3>
+                                            </div>
+                                            <ul class="category-list secondary">
+                                                <li>
+                                                    <a href="category.html" title="Exemplo">
+                                                        Shoes				
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div> 
+                                </aside>*@
+                            </div>
+                            <div class="span9">
+                            <ul class="product-list isotope">
+                    @foreach (var item in Model) {
+                    <li class="standard" data-price="58">
+                            <a href="/Produto/Details/@item.idProduto" title="@item.nome">
+                                <div class="image">  
+                                    @if (@ViewBag.ListaDeCaminhos != null)
+                                     {
+                                         foreach (var imagem in @ViewBag.ListaDeCaminhos) {
+                                             if( @imagem.id == @item.idProduto ){
+                                                <img src="@imagem.imagem"/>
+                                                break;
+                                             }
+                                        }
+                                     }
+                                    else
+                                    { 
+                                       <img class="primary" src="Style/img/thumbnails/116175953_1GG.jpg"  />
+                                       <img class="secondary" src="Style/img/thumbnails/116175953_3GG.jpg" /> 
+                                    }                                                                                                                                  
+                                </div>
+                                <div class="title">
+                                    <div class="prices">
+                                      @foreach (var produtoVigenciaPreco in @ViewBag.ProdutoVigenciaPreco)
+                                      {
+
+                                          if (@produtoVigenciaPreco.idProduto == @item.idProduto)
+                                          {                            
+                                            <span class="price">R$@produtoVigenciaPreco.preco</span>
+                                              break;
+                                          }
+                                      }
+                                    </div>
+                                    <h3>@item.nome</h3>
+                                </div>
+                            </a>
+                        </li> 
+                               
+                    }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     <ul class="product-list isotope">
+                                     
+                                                
+                    </ul>
+                        </div>                            
+                    </div>
+                </div>
+
+                </section>               
+                </section>

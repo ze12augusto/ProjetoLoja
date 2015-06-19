@@ -366,15 +366,16 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Assets\Img\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\Windows-8-Login3.png" />
     <None Include="Resources\Windows-8-Login2.png" />
     <None Include="Resources\Windows-8-Login1.png" />
     <None Include="Resources\Windows-8-Login.png" />
     <None Include="Resources\icon-user.png" />
+    <Content Include="Assets\Img\343requbsl.png" />
+    <Content Include="Assets\Img\88xu4rhudz.png" />
+    <Content Include="Assets\Img\nr648woswa.png" />
     <Content Include="Resources\Add-New.png" />
     <Content Include="Views\Relatorios\NotaFiscal\71.jpg" />
     <Content Include="Views\Relatorios\PagtoCartao\71.jpg" />

@@ -8,7 +8,7 @@ using ProjetoLojaData.Entity;
 
 namespace ProjetoLojaWeb.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class OrdemServicoController : Controller
     {
         private OrdemDeServicoData osData;

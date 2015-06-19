@@ -212,5 +212,10 @@ namespace ProjetoLojaDesktop.Views
 
         }
 
+        private void dgvListaVenda_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
     }
 }

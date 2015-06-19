@@ -310,6 +310,9 @@
     <EmbeddedResource Include="Views\Produto\FormSelecionarProduto.resx">
       <DependentUpon>FormSelecionarProduto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Venda\FormVenda.resx">
+      <DependentUpon>FormVenda.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.Config">
       <SubType>Designer</SubType>
     </None>

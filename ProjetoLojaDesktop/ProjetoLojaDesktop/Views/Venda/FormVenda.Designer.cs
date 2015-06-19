@@ -126,6 +126,7 @@
             this.dgvListaVenda.Name = "dgvListaVenda";
             this.dgvListaVenda.Size = new System.Drawing.Size(371, 229);
             this.dgvListaVenda.TabIndex = 2;
+            this.dgvListaVenda.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaVenda_CellContentClick);
             // 
             // txtPesquisaVenda
             // 

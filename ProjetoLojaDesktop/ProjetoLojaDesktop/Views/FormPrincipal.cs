@@ -114,11 +114,6 @@ namespace ProjetoLojaDesktop
             new FormVenda().Show();
         }
 
-        private void tipCliente_Popup(object sender, PopupEventArgs e)
-        {
-
-        }
-
         private void btnVenda_Click(object sender, EventArgs e)
         {
             new FormVenda().Show();

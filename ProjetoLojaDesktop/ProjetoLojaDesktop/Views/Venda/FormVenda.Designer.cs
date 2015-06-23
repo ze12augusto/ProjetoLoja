@@ -48,6 +48,8 @@
             this.btnRemoverProduto = new System.Windows.Forms.Button();
             this.btnAddProduto = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnStatus = new System.Windows.Forms.Button();
+            this.btnNotaFiscal = new System.Windows.Forms.Button();
             this.tabCadastrar.SuspendLayout();
             this.tabListaVenda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaVenda)).BeginInit();
@@ -62,11 +64,13 @@
             this.tabCadastrar.Location = new System.Drawing.Point(10, 12);
             this.tabCadastrar.Name = "tabCadastrar";
             this.tabCadastrar.SelectedIndex = 0;
-            this.tabCadastrar.Size = new System.Drawing.Size(467, 356);
+            this.tabCadastrar.Size = new System.Drawing.Size(688, 356);
             this.tabCadastrar.TabIndex = 2;
             // 
             // tabListaVenda
             // 
+            this.tabListaVenda.Controls.Add(this.btnNotaFiscal);
+            this.tabListaVenda.Controls.Add(this.btnStatus);
             this.tabListaVenda.Controls.Add(this.btnNovo);
             this.tabListaVenda.Controls.Add(this.btnEditar);
             this.tabListaVenda.Controls.Add(this.btnExcluir);
@@ -74,7 +78,7 @@
             this.tabListaVenda.Location = new System.Drawing.Point(4, 22);
             this.tabListaVenda.Name = "tabListaVenda";
             this.tabListaVenda.Padding = new System.Windows.Forms.Padding(3);
-            this.tabListaVenda.Size = new System.Drawing.Size(459, 330);
+            this.tabListaVenda.Size = new System.Drawing.Size(680, 330);
             this.tabListaVenda.TabIndex = 0;
             this.tabListaVenda.Text = "Lista de Vendas";
             this.tabListaVenda.UseVisualStyleBackColor = true;
@@ -120,7 +124,7 @@
             this.dgvListaVenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaVenda.Location = new System.Drawing.Point(34, 29);
             this.dgvListaVenda.Name = "dgvListaVenda";
-            this.dgvListaVenda.Size = new System.Drawing.Size(371, 261);
+            this.dgvListaVenda.Size = new System.Drawing.Size(612, 261);
             this.dgvListaVenda.TabIndex = 2;
             this.dgvListaVenda.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaVenda_CellContentClick);
             // 
@@ -271,11 +275,31 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnStatus
+            // 
+            this.btnStatus.Location = new System.Drawing.Point(466, 296);
+            this.btnStatus.Name = "btnStatus";
+            this.btnStatus.Size = new System.Drawing.Size(75, 23);
+            this.btnStatus.TabIndex = 6;
+            this.btnStatus.Text = "Status";
+            this.btnStatus.UseVisualStyleBackColor = true;
+            this.btnStatus.Click += new System.EventHandler(this.btnStatus_Click);
+            // 
+            // btnNotaFiscal
+            // 
+            this.btnNotaFiscal.Location = new System.Drawing.Point(570, 296);
+            this.btnNotaFiscal.Name = "btnNotaFiscal";
+            this.btnNotaFiscal.Size = new System.Drawing.Size(75, 23);
+            this.btnNotaFiscal.TabIndex = 7;
+            this.btnNotaFiscal.Text = "Nota Fiscal";
+            this.btnNotaFiscal.UseVisualStyleBackColor = true;
+            this.btnNotaFiscal.Click += new System.EventHandler(this.btnNotaFiscal_Click);
+            // 
             // FormVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(483, 374);
+            this.ClientSize = new System.Drawing.Size(710, 374);
             this.Controls.Add(this.tabCadastrar);
             this.Name = "FormVenda";
             this.Text = "Vendas";
@@ -311,5 +335,7 @@
         private System.Windows.Forms.Button btnRemoverProduto;
         private System.Windows.Forms.Button btnAddProduto;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnNotaFiscal;
+        private System.Windows.Forms.Button btnStatus;
     }
 }

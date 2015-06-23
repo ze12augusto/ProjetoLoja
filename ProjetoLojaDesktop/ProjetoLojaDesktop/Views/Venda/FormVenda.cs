@@ -11,6 +11,8 @@ using ProjetoLojaData.Entity;
 using ProjetoLojaDesktop.Views.Cliente;
 using ProjetoLojaData.Data;
 using ProjetoLojaDesktop.Views.Venda;
+using ProjetoLojaDesktop.Views.Relatorios.StatusPedido;
+using ProjetoLojaDesktop.Views.Relatorios.NotaFiscal;
 
 
 namespace ProjetoLojaDesktop.Views
@@ -328,25 +330,14 @@ namespace ProjetoLojaDesktop.Views
             }
         }
 
-        private void txtPesquisaVenda_TextChanged(object sender, EventArgs e)
+        private void btnStatus_Click(object sender, EventArgs e)
         {
-
+            new FormStatusPedido().Show();
         }
 
-        private void cbxFuncionario_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnNotaFiscal_Click(object sender, EventArgs e)
         {
-
+            new FormNotaFiscal().Show();
         }
-
-        private void dgvListaVenda_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void txtClienteVenda_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
     }
 }

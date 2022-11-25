@@ -117,9 +117,10 @@ namespace ProjetoLojaDesktop
                 }
                 else
                     MessageBox.Show("Erro ao cadastrar o funcionário!", "Erro");
-            } 
-            else {
-                MessageBox.Show(erro, "Erro");    
+            }
+            else
+            {
+                MessageBox.Show(erro, "Erro");
             }
         }
 
@@ -203,7 +204,7 @@ namespace ProjetoLojaDesktop
                 return "RG não pode ser vazio!";
             if (txtSenha.Text == "")
                 return "Senha não pode ser vazia!";
-            if (pessoaFisicaData.verificarCPF(funcionario.idPessoa, mtxtCPF.Text) == false)
+            if (pessoaFisicaData.verificarCPFNaoDuplicado(funcionario.idPessoa, mtxtCPF.Text.Replace(".","").Replace("-","")) == false)
                 return "Já existe um CPF com esse número!";
 
             return null;
@@ -213,7 +214,7 @@ namespace ProjetoLojaDesktop
         {
             if (dgvFuncionarios.CurrentRow != null)
             {
-                funcionario = (Pessoa) dgvFuncionarios.CurrentRow.DataBoundItem;
+                funcionario = (Pessoa)dgvFuncionarios.CurrentRow.DataBoundItem;
                 return true;
             }
             else
@@ -248,10 +249,10 @@ namespace ProjetoLojaDesktop
             funcionario.email = txtEmail.Text;
             funcionario.Usuario.senha = txtSenha.Text;
             funcionario.Usuario.idTipoUsuario = (int)cbxTipoUsuario.SelectedValue;
-            funcionario.PessoaFisica.CPF = mtxtCPF.Text;
+            funcionario.PessoaFisica.CPF = mtxtCPF.Text.Replace(".", "").Replace("-", "");
             funcionario.PessoaFisica.RG = txtRG.Text;
         }
-       
+
         private void atualizarListaDeFuncionarios()
         {
             List<Pessoa> pessoaFisicas = pessoaData.todasPessoaFisicasPorTipo(2);
@@ -438,15 +439,15 @@ namespace ProjetoLojaDesktop
             }
 
             endereco.idPessoa = funcionario.idPessoa;
-            endereco.idTipoEndereco = (byte) cbxTipoEndereco.SelectedValue;
+            endereco.idTipoEndereco = (byte)cbxTipoEndereco.SelectedValue;
             endereco.logradouro = txtLogradouro.Text;
             endereco.numero = Int32.Parse(txtNumero.Text);
             endereco.complemento = txtComplemento.Text;
             endereco.referencia = txtReferencia.Text;
             endereco.bairro = txtBairro.Text;
             endereco.CEP = mtxtCEP.Text;
-            endereco.UF =  cbxUF.SelectedValue.ToString();
-            endereco.idCidade = (int) cbxCidade.SelectedValue;
+            endereco.UF = cbxUF.SelectedValue.ToString();
+            endereco.idCidade = (int)cbxCidade.SelectedValue;
 
             return endereco;
         }
@@ -523,7 +524,7 @@ namespace ProjetoLojaDesktop
                 return "Selecione um tipo de telefone";
             if (txtTelefone.Text == "" || txtTelefone.Text.Length < 14)
                 return "Preencha o campo telefone";
-            
+
             return null;
         }
 

@@ -126,7 +126,6 @@
             this.dgvListaVenda.Name = "dgvListaVenda";
             this.dgvListaVenda.Size = new System.Drawing.Size(612, 261);
             this.dgvListaVenda.TabIndex = 2;
-            this.dgvListaVenda.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaVenda_CellContentClick);
             // 
             // tabCadastrarVenda
             // 
@@ -219,7 +218,6 @@
             this.cbxFuncionario.Name = "cbxFuncionario";
             this.cbxFuncionario.Size = new System.Drawing.Size(242, 21);
             this.cbxFuncionario.TabIndex = 3;
-            this.cbxFuncionario.SelectedIndexChanged += new System.EventHandler(this.cbxFuncionario_SelectedIndexChanged);
             // 
             // txtClienteVenda
             // 
@@ -227,7 +225,6 @@
             this.txtClienteVenda.Name = "txtClienteVenda";
             this.txtClienteVenda.Size = new System.Drawing.Size(242, 20);
             this.txtClienteVenda.TabIndex = 2;
-            this.txtClienteVenda.TextChanged += new System.EventHandler(this.txtClienteVenda_TextChanged);
             // 
             // lblFuncionario
             // 

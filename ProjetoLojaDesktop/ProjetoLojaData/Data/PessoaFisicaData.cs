@@ -90,7 +90,7 @@ namespace ProjetoLojaData.Data
             return erro;
         }
 
-        public bool verificarCPF(int idPessoa, string cpf)
+        public bool verificarCPFNaoDuplicado(int idPessoa, string cpf)
         {
             if (idPessoa == 0)
             {
@@ -106,10 +106,10 @@ namespace ProjetoLojaData.Data
             else
             {
                 var lista = from p in db.PessoaFisica
-                            where p.idPessoa == idPessoa && p.CPF == cpf
+                            where p.idPessoa != idPessoa && p.CPF == cpf
                             select p;
 
-                if (lista.Count() == 1)
+                if (lista.Count() == 0)
                     return true;
                 else
                     return false;

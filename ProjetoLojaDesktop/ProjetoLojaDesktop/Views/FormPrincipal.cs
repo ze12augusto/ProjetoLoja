@@ -25,22 +25,15 @@ namespace ProjetoLojaDesktop
 
         public void criarTooltips()
         {
-            ToolTip tipCliente = new ToolTip();
-            tipCliente.SetToolTip(btnCliente, "Clientes");
-            ToolTip tipFornecedor = new ToolTip();
-            tipFornecedor.SetToolTip(btnFornecedor, "Fornecedor");
-            ToolTip tipUsuario = new ToolTip();
-            tipUsuario.SetToolTip(btnUsuario, "Usuario");
-            ToolTip tipModelo = new ToolTip();
-            tipModelo.SetToolTip(btnModelo, "Modelo");
-            ToolTip tipMarca = new ToolTip();
-            tipMarca.SetToolTip(btnMarca, "Marca");
-            ToolTip tipFinanceiro = new ToolTip();
-            tipFinanceiro.SetToolTip(btnFinanceiro, "Financeiro");
-            ToolTip tipRelatorio = new ToolTip();
-            tipRelatorio.SetToolTip(btnRelatorio, "Relatorio");
-            ToolTip tipSair = new ToolTip();
-            tipSair.SetToolTip(btnSair, "Sair");
+            ToolTip tooltip = new ToolTip();
+            tooltip.SetToolTip(btnCliente, "Clientes");
+            tooltip.SetToolTip(btnFornecedor, "Fornecedor");
+            tooltip.SetToolTip(btnUsuario, "Usuario");
+            tooltip.SetToolTip(btnModelo, "Modelo");
+            tooltip.SetToolTip(btnMarca, "Marca");
+            tooltip.SetToolTip(btnFinanceiro, "Financeiro");
+            tooltip.SetToolTip(btnRelatorio, "Relatorio");
+            tooltip.SetToolTip(btnSair, "Sair");
         }
 
         private void btnCliente_Click(object sender, EventArgs e)
